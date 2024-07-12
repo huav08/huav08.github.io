@@ -87,12 +87,13 @@
     padding: 12px 5px; 
   }
   #Content { width:100vw; padding: 0 5px; }
-  .copyBasic { height: auto !important; border: 1px solid red;}
+  /* .copyBasic { height: auto !important;}
   .copyBasic_L {width: 50vw !important;height: auto !important;}
   .copyBasi_R {width: 50vw !important;padding-left:10px !important;}
-  /* #tbl td { width:10%;font-size:8px; margin-left:0;}  
+  #tbl td { width:10%;font-size:8px; margin-left:0;}  
   #Content { margin: 0 auto; padding-bottom: 0; } */
-  .t_24pt td { font-size:14px !important; }
+  .t_24pt td { font-size:14px !important; } 
+  #aboutservice {width:100vw !important;}
 }
 /* On TABLET screens < 1000px
 @media screen and (max-width: 1000px) {  
@@ -152,11 +153,12 @@
   .aboutMenu_1-out, .aboutMenu_1-over, .aboutMenu_2-out, .aboutMenu_2-over, .aboutMenu_3-out, .aboutMenu_3-over, .aboutMenu_4-out, .aboutMenu_4-over, .aboutMenu_5-out, .aboutMenu_5-over, .aboutMenu_6-out, .aboutMenu_6-over {
     width: 180px; height: 62px; float:left; margin: 10px 7px;
   }
-  .copyBasic { height: auto !important; border: 1px solid red;}
+  /* .copyBasic { height: auto !important;}
   .copyBasic_L {width: 50vw !important;height: auto !important;}
-  .copyBasi_R {width: 50vw !important;padding-left:10px !important;}
+  .copyBasi_R {width: 50vw !important;padding-left:10px !important;} */
   #tbl td span { width:10% !important;font-size:8px !important; margin-left:0 !important;}  
   #tbl td { width:10%;font-size:8px; margin-left:0;}  
   #Content { margin: 0 auto; padding-bottom: 0; }
   .t_24pt td { font-size:12px !important; }
+  #aboutservice {width:100vw !important;}
 }

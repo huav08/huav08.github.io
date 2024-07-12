@@ -22,7 +22,8 @@ iframe {
 
 #main {
 	position:relative;
-	width: 100%; background:#fff;
+	width: 100%; 
+	background:#fff;
 }
 
 #main_index {
@@ -129,6 +130,7 @@ iframe {
 #Content {
 	width:1000px; height:auto; position:relative;
 	margin: 15px auto; padding-bottom: 15px;
+	background: #fff;
 }
 
 #indexNews {

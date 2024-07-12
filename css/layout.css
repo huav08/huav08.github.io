@@ -152,6 +152,7 @@
   }
   .copyBasic_L {width: 50vw;}
   .copyBasi_R {width: 50vw;}
+  #tbl td span { width:10% !important;font-size:8px !important; margin-left:0 !important;}  
   #tbl td { width:10%;font-size:8px; margin-left:0;}  
   #Content { margin: 0 auto; padding-bottom: 0; }
 }

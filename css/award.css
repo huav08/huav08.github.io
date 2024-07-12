@@ -1,0 +1,15 @@
+* {margin:0; padding:0; text-indent:0; }
+ p { color: black; font-family:標楷體; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; margin:0pt; }
+ .h1 { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
+ .s1 { color: black; font-family:標楷體; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
+ .s2 { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
+ .s3 { color: black; font-family:標楷體; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+ .s4 { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+ .s5 { color: black; font-family:標楷體; font-style: normal; font-weight: normal; text-decoration: none; font-size: 6pt; vertical-align: 6pt; }
+ table, tbody {vertical-align: top; overflow: visible; }
+table.center {
+	border-collapse:collapse;
+	margin-left:auto; 
+	margin-right:auto;
+}
+ 

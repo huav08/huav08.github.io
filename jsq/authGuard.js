@@ -50,15 +50,36 @@ console.log("onAuthStateChanged listener attached (authGuard).");
 // 如果 home.html 也有登出按鈕，可以在這裡加上事件監聽器
 import { signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 const logoutButtonHome = document.getElementById('logout-button-home'); // 假設 home.html 有此按鈕
+// if (logoutButtonHome) {
+//      logoutButtonHome.addEventListener('click', async () => {
+//          try {
+//              await signOut(auth);
+//              console.log("User signed out from home page.");
+//              // onAuthStateChanged 會自動處理跳轉回 index.html
+//          } catch (error) {
+//              console.error("Sign Out Error from home:", error);
+//              alert(`登出時發生錯誤：${error.message}`);
+//          }
+//      });
+// }
+
+// --- 加入登出按鈕的事件監聽器 ---
 if (logoutButtonHome) {
-     logoutButtonHome.addEventListener('click', async () => {
-         try {
-             await signOut(auth);
-             console.log("User signed out from home page.");
-             // onAuthStateChanged 會自動處理跳轉回 index.html
-         } catch (error) {
-             console.error("Sign Out Error from home:", error);
-             alert(`登出時發生錯誤：${error.message}`);
-         }
-     });
+    logoutButtonHome.addEventListener('click', async () => {
+        try {
+            console.log("Attempting to sign out from home page...");
+            await signOut(auth); // 呼叫 signOut 函數
+            console.log("User signed out successfully from home page.");
+            // 登出成功後，不需要手動跳轉頁面。
+            // 上方的 onAuthStateChanged 監聽器會偵測到狀態改變 (user 變為 null)，
+            // 並自動執行 window.location.replace('index.html');
+        } catch (error) {
+            console.error("Sign Out Error from home:", error);
+            // 可以在這裡向使用者顯示錯誤訊息
+            alert(`登出時發生錯誤：${error.message}`);
+        }
+    });
+    console.log("Logout button event listener attached.");
+} else {
+    console.warn("Logout button with ID 'logout-button-home' not found.");
 }

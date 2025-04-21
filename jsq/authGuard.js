@@ -40,9 +40,10 @@ onAuthStateChanged(auth, (user) => {
 
     } else {
         // --- 使用者已登出或未登入 ---
+        alert("使用者已登出或未登入");
         console.log("User is not authenticated. Redirecting to login page...");
         // **執行跳轉回登入頁面 (例如 index.html)**
-        window.location.replace('index.html'); // <-- 跳轉回你的登入頁面
+        window.location.replace('https://huav08.github.io/'); // <-- 跳轉回你的登入頁面
     }
 });
 
@@ -73,8 +74,7 @@ if (logoutButtonHome) {
             console.log("User signed out successfully from home page.");
             // 登出成功後，不需要手動跳轉頁面。
             // 上方的 onAuthStateChanged 監聽器會偵測到狀態改變 (user 變為 null)，
-            // 並自動執行 
-            window.location.replace('https://huav08.github.io/');
+            // 並自動執行  window.location.replace('https://huav08.github.io/');
         } catch (error) {
             console.error("Sign Out Error from home:", error);
             // 可以在這裡向使用者顯示錯誤訊息

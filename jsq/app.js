@@ -178,7 +178,6 @@ forgotPasswordLink.addEventListener('click', async (e) => {
     }
 });
 
-
 // --- 處理登入/註冊表單切換的連結 ---
 showRegisterLink.addEventListener('click', (e) => {
     e.preventDefault();

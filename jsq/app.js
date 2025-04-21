@@ -1,8 +1,10 @@
-// 匯入 Firebase SDK 的核心功能和所需服務
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"; // 使用 CDN URL 或 'firebase/app' (若使用打包工具)
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"; // 或 'firebase/auth'
-import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"; // 或 'firebase/firestore'
+// 匯入 Firebase SDK 的核心功能和所需服務 (假設已匯入)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+// 從 firebase/auth 匯入 sendPasswordResetEmail 函數
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"; // [1, 2]
+import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
+// Firebase 初始化 (假設已完成)
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBiueCPvAt53TFlP__pxGq1qYoeNsazGWI",

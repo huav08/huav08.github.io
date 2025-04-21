@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Auth on GitHub Pages</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>使用者驗證系統</h1>
+
+    <div id="login-section">
+        <h2>登入</h2>
+        <form id="login-form">
+            <label for="login-email">電子郵件:</label>
+            <input type="email" id="login-email" name="email" required autocomplete="username"><br>
+
+            <label for="login-password">密碼:</label>
+            <input type="password" id="login-password" name="password" required autocomplete="current-password"><br>
+
+            <button type="submit">登入</button>
+            <p id="login-error" style="color: red;"></p>
+        </form>
+        <p>還沒有帳號？ <a href="#" id="show-register">註冊</a></p>
+    </div>
+
+    <div id="register-section" style="display: none;">
+        <h2>註冊</h2>
+        <form id="register-form">
+            <label for="register-username">使用者名稱:</label>
+            <input type="text" id="register-username" name="username" required><br>
+
+            <label for="register-email">電子郵件:</label>
+            <input type="email" id="register-email" name="email" required autocomplete="username"><br>
+
+            <label for="register-password">密碼:</label>
+            <input type="password" id="register-password" name="password" required autocomplete="new-password"><br>
+
+            <label for="register-confirm-password">確認密碼:</label>
+            <input type="password" id="register-confirm-password" name="confirmPassword" required autocomplete="new-password"><br>
+
+            <button type="submit">註冊</button>
+            <p id="register-error" style="color: red;"></p>
+        </form>
+        <p>已經有帳號？ <a href="#" id="show-login">登入</a></p>
+    </div>
+
+    <div id="user-info-section" style="display: none;">
+        <h2>歡迎！</h2>
+        <p id="user-details"></p>
+        <button id="logout-button">登出</button>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

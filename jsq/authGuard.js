@@ -73,7 +73,8 @@ if (logoutButtonHome) {
             console.log("User signed out successfully from home page.");
             // 登出成功後，不需要手動跳轉頁面。
             // 上方的 onAuthStateChanged 監聽器會偵測到狀態改變 (user 變為 null)，
-            // 並自動執行 window.location.replace('index.html');
+            // 並自動執行 
+            window.location.replace('index.html');
         } catch (error) {
             console.error("Sign Out Error from home:", error);
             // 可以在這裡向使用者顯示錯誤訊息

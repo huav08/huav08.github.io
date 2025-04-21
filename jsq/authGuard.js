@@ -35,7 +35,7 @@ onAuthStateChanged(auth, (user) => {
         // 假設 home.html 有一個 <span id="welcome-user"></span>
         const welcomeElement = document.getElementById('welcome-user');
         if (welcomeElement) {
-            welcomeElement.textContent = `歡迎，${user.email}！`;
+            welcomeElement.textContent = `歡迎，${user.uid}！`;
         }
 
     } else {
@@ -74,7 +74,7 @@ if (logoutButtonHome) {
             // 登出成功後，不需要手動跳轉頁面。
             // 上方的 onAuthStateChanged 監聽器會偵測到狀態改變 (user 變為 null)，
             // 並自動執行 
-            window.location.replace('index.html');
+            window.location.replace('https://huav08.github.io/');
         } catch (error) {
             console.error("Sign Out Error from home:", error);
             // 可以在這裡向使用者顯示錯誤訊息

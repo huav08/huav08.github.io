@@ -126,6 +126,34 @@ registerForm.addEventListener('submit', async (e) => {
     }
 });
 //
+// (此程式碼應放在 app.js 中，例如在 DOM 元素選取之後)
+
+logoutButton.addEventListener('click', async () => {
+    try {
+        console.log("Attempting to sign out...");
+        await signOut(auth);
+        console.log("User signed out successfully.");
+        // 登出成功後的處理 (UI 更新由 onAuthStateChanged 自動處理)
+        // alert('您已成功登出。'); // 可以顯示提示
+
+    } catch (error) {
+        console.error("Sign Out Error:", error);
+        alert(`登出時發生錯誤：${error.message}`); // 顯示錯誤訊息
+    }
+});
+
+// --- 處理登入/註冊表單切換的連結 ---
+showRegisterLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginSection.style.display = 'none';
+    registerSection.style.display = 'block';
+});
+
+showLoginLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    registerSection.style.display = 'none';
+    loginSection.style.display = 'block';
+});
 // 輔助函數：處理 Firebase Auth 錯誤並顯示訊息
 function handleAuthError(error, errorElement) {
     console.error("Auth Error Code:", error.code);

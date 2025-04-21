@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+// 從 firebase/auth 匯入 signOut 函數
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
 // TODO: 將此處替換為您在 Firebase 控制台中取得的設定物件
 // 確保這裡的設定與 app.js 中的設定完全相同

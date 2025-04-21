@@ -35,7 +35,7 @@ onAuthStateChanged(auth, (user) => {
         // 假設 home.html 有一個 <span id="welcome-user"></span>
         const welcomeElement = document.getElementById('welcome-user');
         if (welcomeElement) {
-            welcomeElement.textContent = `歡迎，${user.uid}！`;
+            welcomeElement.textContent = `歡迎，${user.email}！`;
         }
 
     } else {

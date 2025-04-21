@@ -49,7 +49,7 @@ onAuthStateChanged(auth, (user) => {
 console.log("onAuthStateChanged listener attached (authGuard).");
 
 // 如果 home.html 也有登出按鈕，可以在這裡加上事件監聽器
-import { signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+// import { signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 const logoutButtonHome = document.getElementById('logout-button-home'); // 假設 home.html 有此按鈕
 // if (logoutButtonHome) {
 //      logoutButtonHome.addEventListener('click', async () => {

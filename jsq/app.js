@@ -36,7 +36,11 @@ onAuthStateChanged(auth, (user) => {
         registerSection.style.display = 'none';
         userInfoSection.style.display = 'block';
 
-        // 可以在此處執行其他登入後操作，例如從 Firestore 獲取使用者設定檔
+        // **執行跳轉到登入後首頁 (例如 home.html)**
+        // 使用 window.location.replace() 較好，它不會在瀏覽器歷史紀錄中留下登入頁面
+        // 這樣使用者按下返回鍵時，不會回到登入頁。
+        console.log("Redirecting to home page...");
+        window.location.replace('home.html');
 
     } else {
         // 使用者已登出或未登入

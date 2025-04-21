@@ -72,6 +72,8 @@ const loginForm = document.getElementById('login-form'); // (用於後續登入)
 const loginEmailInput = document.getElementById('login-email'); // (用於後續登入)
 const loginPasswordInput = document.getElementById('login-password'); // (用於後續登入)
 const loginErrorElement = document.getElementById('login-error'); // (用於後續登入)
+const resetMessageElement = document.getElementById('reset-message'); // 選取密碼重設訊息元素
+const forgotPasswordLink = document.getElementById('forgot-password-link'); // 選取忘記密碼連結
 
 const userDetailsElement = document.getElementById('user-details'); // (用於後續顯示)
 const logoutButton = document.getElementById('logout-button'); // (用於後續登出)
@@ -145,6 +147,37 @@ logoutButton.addEventListener('click', async () => {
         alert(`登出時發生錯誤：${error.message}`); // 顯示錯誤訊息
     }
 });
+
+
+// --- 忘記密碼連結點擊處理 ---
+forgotPasswordLink.addEventListener('click', async (e) => {
+    e.preventDefault(); // 防止連結的預設跳轉行為
+    loginErrorElement.textContent = ''; // 清除登入錯誤
+    resetMessageElement.textContent = ''; // 清除之前的重設訊息
+    resetMessageElement.style.color = 'green'; // 重設為成功訊息顏色
+
+    const email = loginEmailInput.value.trim();
+
+    if (!email) {
+        resetMessageElement.textContent = '請在上方欄位輸入您的電子郵件地址。';
+        resetMessageElement.style.color = 'red';
+        loginEmailInput.focus(); // 將焦點移至電子郵件輸入框
+        return;
+    }
+
+    try {
+        console.log(`Attempting to send password reset email to ${email}...`);
+        await sendPasswordResetEmail(auth, email); // [1, 2]
+        console.log("Password reset email sent successfully.");
+        resetMessageElement.textContent = '密碼重設郵件已發送！請檢查您的收件匣。';
+
+    } catch (error) {
+        console.error("Password Reset Error:", error);
+        // 使用 handleAuthError 處理錯誤，並顯示在 resetMessageElement
+        handleAuthError(error, resetMessageElement);
+    }
+});
+
 
 // --- 處理登入/註冊表單切換的連結 ---
 showRegisterLink.addEventListener('click', (e) => {

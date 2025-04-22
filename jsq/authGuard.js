@@ -40,7 +40,7 @@ onAuthStateChanged(auth, (user) => {
 
     } else {
         // --- 使用者已登出或未登入 ---
-        alert("使用者已登出或未登入");
+        alert("使用者已登出...");
         console.log("User is not authenticated. Redirecting to login page...");
         // **執行跳轉回登入頁面 (例如 index.html)**
         window.location.replace('https://huav08.github.io/'); // <-- 跳轉回你的登入頁面

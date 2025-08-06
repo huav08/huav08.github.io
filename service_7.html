@@ -46,6 +46,17 @@
       gtag("config", "G-FLZZF2NJC6");
     </script>    
     <!-- Google Analytics Script碼(End) --> 
+	 <style>	 
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #chart-container {
+            /* 設定容器的最大寬度，圖表會在這個範圍內自動縮放 */
+            max-width: 600px;
+            margin: 20px auto;
+        }
+	</style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 	<script type="text/javascript" src="jsq/jquery-tablepage-1.0.js"></script>        
@@ -271,7 +282,7 @@
 								'rgb(255, 205, 86)',  // 黃色
 								'rgb(75, 192, 192)'   // 綠色
 							],
-							hoverOffset: 7
+							hoverOffset: 4
 						}]
 					},
 					options: {

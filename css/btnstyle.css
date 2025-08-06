@@ -1,0 +1,72 @@
+#aboutservice .btn {
+    width: 30%;
+    padding: 12px 12px;
+    margin: 10px;
+    display: inline-block;
+    border: none;
+    font-family: 'Lato';
+    font-size: medium;
+    font-weight: 700;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    border-radius: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  
+  #aboutservice .btn:after {
+    width: 25% !important;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  /* Pseudo elements for icons */
+  #aboutservice .btn:before {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Button 1 */
+  #aboutservice .btn-1 {
+    color: white;
+    background: linear-gradient(to top, #399B37, #DAEBCE);
+  }
+  
+  #aboutservice .btn-1:hover {
+    background: linear-gradient(to top, #0B9B9E, #D5E6F5);
+  }
+  
+  #aboutservice .btn-1:active {
+    background: linear-gradient(to top, #0B9B9E, #D5E6F5);
+    top: 1px;
+  }
+  
+  #aboutservice .btn-1:before {
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 4.1;
+    font-size: 0;
+  }    
+  
+  #aboutservice .icon-info:before {
+    content: "\f05a";
+  }

@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<title>景丰科技 SimEnvi | 氣候永續服務</title>
-	<meta name="keywords" content="氣候永續服務"/>   
+	<meta name="keywords" content="健康風險評估"/>   
 	<!-- <meta http-equiv="Cache-control" content="max-age=604800, private"> -->     
     <!-- 網頁描述 -->
 	<meta name="description" content="氣候永續服務"/>
@@ -20,7 +20,7 @@
 	<!-- MOBILE MENU-->	 
     <link href="css/default.css" rel="stylesheet" type="text/css" />
     <link href="css/component.css" rel="stylesheet" type="text/css" />
-   <link href="css/layout.css?t=20250125" rel="stylesheet" type="text/css" />
+    <link href="css/layout.css?t=20250125" rel="stylesheet" type="text/css" />
 	<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
 	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="jsq/modernizr.custom.js"></script>
@@ -32,7 +32,41 @@
     <!-- script src="jsq/jquery-latest.min.js" type="text/javascript"></script -->
     <!-- script src="jsq/simenvi_menu_script.js"></script -->
     <link rel="stylesheet" href="css/show_more_list.css" type="text/css" />
-	<script type="text/javascript" src="jsq/show-more.js"></script>
+	<script type="text/javascript" src="jsq/show-more.js"></script>	
+	<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/easyzoom.css" />    
+    <style>
+        ol.a li {
+            list-style-type: disc;
+            list-style-position: outside;
+            text-indent: 0; /* 調整文本與項目符號之間的距離 */
+            padding-left: 25px; /* 保持項目符號與左側的空間 */
+        }
+        ol.b li {
+            list-style-type: circle;
+            list-style-position: outside;
+            text-indent: 0; /* 調整文本與項目符號之間的距離 */
+            padding-left: 25px; /* 保持項目符號與左側的空間 */
+        }        
+        ol.c li {
+            list-style-type: disc;
+            list-style-position: outside;
+            text-indent: 0; /* 調整文本與項目符號之間的距離 */
+            padding-left: 25px; /* 保持項目符號與左側的空間 */
+        }
+        ol.d li {
+            list-style-type: '◼ ';
+            list-style-position: outside;
+            text-indent: 0; /* 調整文本與項目符號之間的距離 */
+            padding-left: 25px; /* 保持項目符號與左側的空間 */
+        }
+        ol.e li {
+            list-style-type: '🟇 ';
+            list-style-position: outside;
+            text-indent: 0; /* 調整文本與項目符號之間的距離 */
+            padding-left: 25px; /* 保持項目符號與左側的空間 */
+        } 
+    </style>
     <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async  src="https://www.googletagmanager.com/gtag/js?id=G-FLZZF2NJC6"></script>
@@ -45,21 +79,7 @@
 
       gtag("config", "G-FLZZF2NJC6");
     </script>    
-    <!-- Google Analytics Script碼(End) --> 
-	 <style>	 
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        #chart-container {
-            /* 設定容器的最大寬度，圖表會在這個範圍內自動縮放 */
-            max-width: 600px;
-            margin: 20px auto;
-        }
-	</style>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-	<script type="text/javascript" src="jsq/jquery-tablepage-1.0.js"></script>        
+    <!-- Google Analytics Script碼(End) -->         
  </head>
 <body>
 <a id="TOP01" style="line-height: 0; padding: 0; margin: 0;">&nbsp;</a>
@@ -72,111 +92,111 @@
     <!-- Top Bar End -->
     
     <div class="BannerBG_L"></div><div class="BannerBG_R"></div>
-    <div id="BannerShow_upon2"></div>
+    <div id="BannerShow_upon1"></div>
     
     <!-- menu 選單 -->
 			
 <div id="menuPad">
-	<ul>
-		<li id="menuM_1" class="menuBtn_1-out" onmouseover="this.className='menuBtn_1-over'"  onmouseout="this.className='menuBtn_1-out'"></li>
-		<li id="menuM_2" class="menuBtn_2-out" onmouseover="this.className='menuBtn_2-over'"  onmouseout="this.className='menuBtn_2-out'"></li>
-		<li id="menuM_3" class="menuBtn_3-out" onmouseover="this.className='menuBtn_3-over'"  onmouseout="this.className='menuBtn_3-out'"></li>
-		  <!--<a href="air.html" target="_parent"><li id="menuM_3" class="menuBtn_3-out" onmouseover="this.className='menuBtn_3-over'"  onmouseout="this.className='menuBtn_3-out'"></li></a>-->
-		  <a href="links.html" target="_parent"><li id="menuM_4" class="menuBtn_4-out" onmouseover="this.className='menuBtn_4-over'"  onmouseout="this.className='menuBtn_4-out'"></li></a>
-		  <a href="contact.html" target="_parent"><li id="menuM_5" class="menuBtn_5-out" onmouseover="this.className='menuBtn_5-over'"  onmouseout="this.className='menuBtn_5-out'"></li></a>
-		  <!--<a href="download.html" target="_parent"><li id="menuM_6" class="menuBtn_6-out" onmouseover="this.className='menuBtn_6-over'"  onmouseout="this.className='menuBtn_6-out'"></li></a>-->
-		<li id="menuM_6" class="menuBtn_6-out" onmouseover="this.className='menuBtn_6-over'"  onmouseout="this.className='menuBtn_6-out'"></li>
-	</ul>
-	<div id="menuCh_1" class="chdMenuPad" style="left:35px; top:60px; z-index: 10;">
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="about.html" target="_parent">公司簡介　　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="award.html" target="_parent">榮譽認證　　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="human.html" target="_parent">人力資源　　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="organiz.html" target="_parent">組織結構　　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li>
-	</div>
-	<div id="menuCh_2" class="chdMenuPad" style="left:180px; top:60px; z-index: 10;">
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="service_1.html" target="_parent">環境影響評估及環境監測　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="service_2.html" target="_parent">空氣品質及河川水質之模擬</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="service_3.html" target="_parent">空氣污染物排放量調查　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="service_4.html" target="_parent">健康風險評估　　　　　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="service_5.html" target="_parent">環境管理與資訊系統　　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="service_6.html" target="_parent">生態檢核　　　　　　　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		<span class="t_sp10"><a href="service_7.html" target="_self">氣候永續服務　　　　　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li>
-	</div>
-	<div id="menuCh_3" class="chdMenuPad" style="left:350px; top:60px; z-index: 10;">
-		<!-- <li class="chdMenuPad_L"></li>
+		  <ul>
+			  <li id="menuM_1" class="menuBtn_1-out" onmouseover="this.className='menuBtn_1-over'"  onmouseout="this.className='menuBtn_1-out'"></li>
+			  <li id="menuM_2" class="menuBtn_2-out" onmouseover="this.className='menuBtn_2-over'"  onmouseout="this.className='menuBtn_2-out'"></li>
+			  <li id="menuM_3" class="menuBtn_3-out" onmouseover="this.className='menuBtn_3-over'"  onmouseout="this.className='menuBtn_3-out'"></li>
+				<!--<a href="air.html" target="_parent"><li id="menuM_3" class="menuBtn_3-out" onmouseover="this.className='menuBtn_3-over'"  onmouseout="this.className='menuBtn_3-out'"></li></a>-->
+				<a href="links.html" target="_parent"><li id="menuM_4" class="menuBtn_4-out" onmouseover="this.className='menuBtn_4-over'"  onmouseout="this.className='menuBtn_4-out'"></li></a>
+				<a href="contact.html" target="_parent"><li id="menuM_5" class="menuBtn_5-out" onmouseover="this.className='menuBtn_5-over'"  onmouseout="this.className='menuBtn_5-out'"></li></a>
+				<!--<a href="download.html" target="_parent"><li id="menuM_6" class="menuBtn_6-out" onmouseover="this.className='menuBtn_6-over'"  onmouseout="this.className='menuBtn_6-out'"></li></a>-->
+			  <li id="menuM_6" class="menuBtn_6-out" onmouseover="this.className='menuBtn_6-over'"  onmouseout="this.className='menuBtn_6-out'"></li>
+		  </ul>
+		  <div id="menuCh_1" class="chdMenuPad" style="left:35px; top:60px; z-index: 10;">
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="about.html" target="_parent">公司簡介　　　</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="award.html" target="_parent">榮譽認證　　　</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="human.html" target="_parent">人力資源　　　</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="organiz.html" target="_parent">組織結構　　　</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li>
+		  </div>
+		  <div id="menuCh_2" class="chdMenuPad" style="left:180px; top:60px; z-index: 10;">
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="service_1.html" target="_parent">環境影響評估及環境監測　</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="service_2.html" target="_parent">空氣品質及河川水質之模擬</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="service_3.html" target="_parent">空氣污染物排放量調查　　</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="service_4.html" target="_parent">健康風險評估　　　　　　</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="service_5.html" target="_parent">環境管理與資訊系統　　　</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+			<span class="t_sp10"><a href="service_6.html" target="_parent">生態檢核　　　　　　　　</a></span>
+		</li>
+		<li class="chdMenuPad_R"></li><p />
+		<li class="chdMenuPad_L"></li>
 		<li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="air.html" target="_parent">未來三天空品預報</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />  -->
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="air_his.html" target="_parent">重大空污事件模擬</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li>
-	</div>
-	<div id="menuCh_6" class="chdMenuPad" style="left:810px; top:60px; z-index: 10;">
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="download_simenvi.html" target="_parent">公司介紹　　　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="download_paper.html" target="_parent">景丰公司研究發表</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li><p />
-	  <li class="chdMenuPad_L"></li>
-	  <li class="chdMenuPad_B">
-		  <span class="t_sp10"><a href="download_model.html" target="_parent">技術文件　　　　</a></span>
-	  </li>
-	  <li class="chdMenuPad_R"></li>
-	</div>
-  </div>
-<!-- menu 選單 End -->
+			<span class="t_sp10"><a href="service_7.html" target="_self">氣候永續服務　　　　　　</a></span>
+		</li>
+		<li class="chdMenuPad_R"></li>
+		  </div>
+		  <div id="menuCh_3" class="chdMenuPad" style="left:350px; top:60px; z-index: 10;">
+			  <!-- <li class="chdMenuPad_L"></li>
+			  <li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="air.html" target="_parent">未來三天空品預報</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />  -->
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="air_his.html" target="_parent">重大空污事件模擬</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li>
+		  </div>
+		  <div id="menuCh_6" class="chdMenuPad" style="left:810px; top:60px; z-index: 10;">
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="download_simenvi.html" target="_parent">公司介紹　　　　</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="download_paper.html" target="_parent">景丰公司研究發表</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li><p />
+			<li class="chdMenuPad_L"></li>
+			<li class="chdMenuPad_B">
+				<span class="t_sp10"><a href="download_model.html" target="_parent">技術文件　　　　</a></span>
+			</li>
+			<li class="chdMenuPad_R"></li>
+		  </div>
+		</div>
+	<!-- menu 選單 End -->
 
     <!-- MOBILE 選單 -->
 	<div id="menuMobile">      
@@ -258,7 +278,7 @@
 			<div><h3 class="titleBar_img">企 業 及 組 織 碳 管 理 流 程 簡 介</h3></div>
 			<div class="copyBasic t_14pt">
                 <blockquote style="text-indent: 32px;">循序協助企業建構碳盤查、碳足跡及減碳能力並降低來自國際淨零趨勢、供應鏈要求及各國碳邊境調整機制壓力&nbsp;<a href="#" class="mymultiplediv" id="one" target="_blank"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></blockquote>
-				<p style="display: block;margin: auto;width:80%;"><img class="service-pic-6 service7-800" src="images/7_/01.png" /></p>
+				<p style="display: block;margin: auto;width:80%;"><img class="service7-800" src="images/7_/01.png" /></p>
 			</div>
 			<div><h3 class="titleBar_img">人 員 資 格</h3></div>
 			<div style="width: 500px; margin: auto;">

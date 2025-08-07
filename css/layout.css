@@ -99,19 +99,19 @@
 .copyBasicT3 { display: flex;flex-direction: row;justify-content: flex-start; align-items: flex-start;}
 #t01, #t02, #t03 {flex-basis: 1; width:30%;}
 
-.service7, .service7-800, .service7-800, .service7-800 {width: 60%;  height:auto; margin-left: auto;margin-right: auto; }
-.service7 img {width: 900px; height: auto; position: absolute;}
-.service7-800 img {width: 800px; height: auto; position: absolute;}
-.service7-600 img {width: 600px; height: auto; position: absolute;}
-.service7-300 img {width: 300px; height: auto; position: absolute;}
+.service7, .service7-800, .service7-800, .service7-800 {width: 97% !important;  height:auto; margin-left: auto;margin-right: auto; }
+.service7 img {width: 900px !important; height: auto; position: absolute;}
+.service7-800 img {width: 800px !important; height: auto; position: absolute;}
+.service7-600 img {width: 600px !important; height: auto; position: absolute;}
+.service7-300 img {width: 300px !important; height: auto; position: absolute;}
  
 /* On TABLET screens < 1400  */
 @media screen and (max-width: 1400px) {
-  .service7, .service7-800, .service7-800, .service7-800 {width: 30%;  height:auto; margin-left: auto;margin-right: auto; }
-  .service7 img {width: 550px; height: auto; position: absolute;}
-  .service7-800 img {width: 500px; height: auto; position: absolute;}
-  .service7-600 img {width: 400px; height: auto; position: absolute;}
-  .service7-300 img {width: 250px;  height: auto; position: absolute;}  
+  .service7, .service7-800, .service7-800, .service7-800 {width: 30% !important;  height:auto; margin-left: auto;margin-right: auto; }
+  .service7 img {width: 550px !important; height: auto; position: absolute;}
+  .service7-800 img {width: 500px !important; height: auto; position: absolute;}
+  .service7-600 img {width: 400px !important; height: auto; position: absolute;}
+  .service7-300 img {width: 250px !important;  height: auto; position: absolute;}  
   .indexAirPic img {
     margin-left: -20px;
     width: 70%;
@@ -204,11 +204,11 @@
   .service-pic-61 { width:50vw; height:auto; margin-left: auto;margin-right: auto; }
   .service-pic-62 { width:50vw; height:250px; margin-left: auto;margin-right: auto; }
   .service-pic-63 { width:33.3vw; height:250px; margin: 0; padding: 0; } 
-  .service7, .service7-800, .service7-800, .service7-800 {width: 30%;  height:auto; margin-left: auto;margin-right: auto; }
-  .service7 img {width: 50%; height: auto; position: absolute;}
-  .service7-800 img {width: 40%; height: auto; position: absolute;}
-  .service7-600 img {width: 35%; height: auto; position: absolute;}
-  .service7-300 img {width: 30%; height: auto; position: absolute;}
+  .service7, .service7-800, .service7-800, .service7-800 {width: 30% !important;  height:auto; margin-left: auto;margin-right: auto; }
+  .service7 img {width: 50% !important; height: auto; position: absolute;}
+  .service7-800 img {width: 40% !important; height: auto; position: absolute;}
+  .service7-600 img {width: 35% !important; height: auto; position: absolute;}
+  .service7-300 img {width: 30% !important; height: auto; position: absolute;}
   .copyBasicT3 { flex-wrap: wrap; }
   #t01, #t02, #t03  {flex: none; width:45%;} 
   .indexAirPic img {
@@ -363,11 +363,11 @@
   .service-pic-61 { width:50vw; height:auto; margin-left: auto;margin-right: auto; }
   .service-pic-62 { width:50vw; height:250px; margin-left: auto;margin-right: auto; }  
   .service-pic-63 { width:33.3vw; height:250px; margin: 0; padding: 0; } 
-  .service7, .service7-800, .service7-800, .service7-800 {width: 30%;  height:auto; margin-left: auto;margin-right: auto; }
-  .service7 img {width: 50%; height: auto; position: absolute;}
-  .service7-800 img {width: 40%; height: auto; position: absolute;}
-  .service7-600 img {width: 35%; height: auto; position: absolute;}
-  .service7-300 img {width: 30%; height: auto; position: absolute;} 
+  .service7, .service7-800, .service7-800, .service7-800 {width: 30% !important;  height:auto; margin-left: auto;margin-right: auto; }
+  .service7 img {width: 50% !important; height: auto; position: absolute;}
+  .service7-800 img {width: 40% !important; height: auto; position: absolute;}
+  .service7-600 img {width: 35% !important; height: auto; position: absolute;}
+  .service7-300 img {width: 30% !important; height: auto; position: absolute;} 
   .copyBasicT3 { flex-wrap: wrap; }
   #t01, #t02, #t03  {flex: none; width:60%;}
   #indexNews a:link, #indexNews a:visited {

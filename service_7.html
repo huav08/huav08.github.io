@@ -36,36 +36,15 @@
 	<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/easyzoom.css" />    
     <style>
-        ol.a li {
-            list-style-type: disc;
-            list-style-position: outside;
-            text-indent: 0; /* 調整文本與項目符號之間的距離 */
-            padding-left: 25px; /* 保持項目符號與左側的空間 */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
-        ol.b li {
-            list-style-type: circle;
-            list-style-position: outside;
-            text-indent: 0; /* 調整文本與項目符號之間的距離 */
-            padding-left: 25px; /* 保持項目符號與左側的空間 */
-        }        
-        ol.c li {
-            list-style-type: disc;
-            list-style-position: outside;
-            text-indent: 0; /* 調整文本與項目符號之間的距離 */
-            padding-left: 25px; /* 保持項目符號與左側的空間 */
+        #chart-container {
+            /* 設定容器的最大寬度，圖表會在這個範圍內自動縮放 */
+            max-width: 600px;
+            margin: 20px auto;
         }
-        ol.d li {
-            list-style-type: '◼ ';
-            list-style-position: outside;
-            text-indent: 0; /* 調整文本與項目符號之間的距離 */
-            padding-left: 25px; /* 保持項目符號與左側的空間 */
-        }
-        ol.e li {
-            list-style-type: '🟇 ';
-            list-style-position: outside;
-            text-indent: 0; /* 調整文本與項目符號之間的距離 */
-            padding-left: 25px; /* 保持項目符號與左側的空間 */
-        } 
     </style>
     <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -79,7 +58,9 @@
 
       gtag("config", "G-FLZZF2NJC6");
     </script>    
-    <!-- Google Analytics Script碼(End) -->         
+    <!-- Google Analytics Script碼(End) -->  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>       
  </head>
 <body>
 <a id="TOP01" style="line-height: 0; padding: 0; margin: 0;">&nbsp;</a>

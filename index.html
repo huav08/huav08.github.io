@@ -1,402 +1,137 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<title>景丰科技 SIMULATION</title>
-	<meta name="keywords" content="景丰科技股份有限公司, 工程"/>     
-	<meta http-equiv="Cache-control" content="max-age=604800, private"> 
-    <!-- 網頁描述 -->
-	<meta name="description" content="景丰科技股份有限公司成立於民國92 年，為行政院公共工程委員會核可之「工程技術顧問公司」，由一群資深的環境專業人員共同組成，主要的專業領域包括環境影響評估及環境監測、環境規劃管理、環境品質模擬、生態調查評估、許可申請等。藉由專業與誠信的服務， 凡承辦過的工作都能圓滿達成， 在業主與同業之間均獲得高度的評價。"/>
-	<meta name="Author" content="景丰科技股份有限公司, 天井創意,Art Tangency Creation Co., Ltd."/>
-	<meta name="copyright" content="Copyright © 2012 ENVIRONMENTAL SIMULATION CO., LTD. All Rights Reserved">
-    <!-- iCon圖示 -->
-	<link rel="shortcut icon" href="favicon.ico">
-    <!-- FB分享用圖 -->
-	<!--<link rel="image_src" type="image/jpeg" href=""/>-->
-    <link href="css/simenvi_basic.css" rel="stylesheet" type="text/css" />
-    <link href="css/simenvi_menu.css?t=20250125" rel="stylesheet" type="text/css" />
-    <link href="css/show_more_list.css" rel="stylesheet" type="text/css" />
-	<!-- MOBILE MENU-->	 
-    <link href="css/default.css" rel="stylesheet" type="text/css" />
-    <link href="css/component.css" rel="stylesheet" type="text/css" />
-   <link href="css/layout.css?t=20250125" rel="stylesheet" type="text/css" />
-	<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
-	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-	<!-- Swiper -->
-	<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
-	<style>
-		.swiper { width: 500px; height: 440px; }
-	</style>
-    <!-- MOBILE MENU-->	 
-	<script type="text/javascript" src="jsq/modernizr.custom.js"></script>
-	<!-- Swiper -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>建構運輸管理交育訓練</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        
+        #login-section, #register-section, #user-info-section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #4cae4c;
+        }
+        
+        p {
+            margin-top: 15px;
+        }
+        
+        a {
+            color: #0275d8;
+            text-decoration: none;
+            cursor: pointer; /* Make links look clickable */
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        #login-error, #register-error {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        
+        /* Initially hide sections that should only appear based on state */
+        /* These are also controlled by inline styles in HTML, but CSS is cleaner */
+        /* #register-section, #user-info-section {
+            display: none;
+        } */
+    </style>
+</head>
+<body>
+    <h1>建構運輸管理交育訓練</h1>
+        <h2>使用者驗證系統</h2>
 
-    <!-- 外部連結  -->
-		<!-- <script type="text/javascript" src="jsq/jquery-1.7.2.min.js"></script> -->
-	<script type="text/javascript" src="jsq/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript" src="jsq/swfobject.js"></script>
-    <script type="text/javascript" src="jsq/simenvi_menu_script.js"></script>
-	<!-- Google Analytics (分析) 追蹤程式碼 -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <div id="login-section">
+        <h2>登入</h2>
+        <form id="login-form">
+            <label for="login-email">電子郵件:</label>
+            <input type="email" id="login-email" name="email" required autocomplete="username"><br>
 
-		ga('create', 'UA-58625455-1', 'auto');
-		ga('send', 'pageview');
-	</script>
-    <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async  src="https://www.googletagmanager.com/gtag/js?id=G-FLZZF2NJC6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+            <label for="login-password">密碼:</label>
+            <input type="password" id="login-password" name="password" required autocomplete="current-password"><br>
 
-      gtag("config", "G-FLZZF2NJC6");
-    </script>    
-    <!-- Google Analytics Script碼(End) -->         
- </head>
-<body style="background-color: #1d2087;">
-  <div id="main_index">
-	<div class="ilogoBar" style="padding-top:15px;">
-		<div id="ilogoImg"><img src="images/logo.png" /></div>
-	
-		<div class="search-form-wrapper0">
-			<form class="search-form-left" id="" action="">
-				<div class="input-group" style="z-index:0;">
-					<label for="search_e" title="搜尋" style="color: darkblue;">&nbsp;搜尋：</label>
-					<input tabindex="1" type="search" name="search" id="search_e" class="search form-control" placeholder="請輸入或選擇關鍵字" />
-					<span tabindex="1" id="search-bar" class="search-button search-button-v2" accesskey="s" title="搜尋 / Alt + s" name="search_btn" role="button"><i class='fa fa-search' aria-hidden="true"></i></span>
-					<span tabindex="1" id="adv-search-bar" class="search-button search-button-v2" title="進階搜尋" name="advanced_search_btn" role="button"><i class='fa fa-search-plus' aria-hidden="true"></i></span>
-				</div>
-			</form>
-		</div>	
-	</div>
-	<!-- menu 選單 -->
-	<div id="menuPad">
-		<ul>
-			<li id="menuM_1" class="menuBtn_1-out" onmouseover="this.className='menuBtn_1-over'"  onmouseout="this.className='menuBtn_1-out'"></li>
-			<li id="menuM_2" class="menuBtn_2-out" onmouseover="this.className='menuBtn_2-over'"  onmouseout="this.className='menuBtn_2-out'"></li>
-			<li id="menuM_3" class="menuBtn_3-out" onmouseover="this.className='menuBtn_3-over'"  onmouseout="this.className='menuBtn_3-out'"></li>
-			<!--<a href="air.html" target="_parent"><li id="menuM_3" class="menuBtn_3-out" onmouseover="this.className='menuBtn_3-over'"  onmouseout="this.className='menuBtn_3-out'"></li></a>-->
-			<a href="links.html" target="_parent"><li id="menuM_4" class="menuBtn_4-out" onmouseover="this.className='menuBtn_4-over'"  onmouseout="this.className='menuBtn_4-out'"></li></a>
-			<a href="contact.html" target="_parent"><li id="menuM_5" class="menuBtn_5-out" onmouseover="this.className='menuBtn_5-over'"  onmouseout="this.className='menuBtn_5-out'"></li></a>
-			<!--<a href="download.html" target="_parent"><li id="menuM_6" class="menuBtn_6-out" onmouseover="this.className='menuBtn_6-over'"  onmouseout="this.className='menuBtn_6-out'"></li></a>-->
-			<li id="menuM_6" class="menuBtn_6-out" onmouseover="this.className='menuBtn_6-over'"  onmouseout="this.className='menuBtn_6-out'"></li>
-		</ul>
-		<div id="menuCh_1" class="chdMenuPad" style="left:35px; top:60px; z-index: 10;">
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="about.html" target="_parent">公司簡介　　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="award.html" target="_parent">榮譽認證　　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="human.html" target="_parent">人力資源　　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="organiz.html" target="_parent">組織結構　　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li>
-		</div>
-		<div id="menuCh_2" class="chdMenuPad" style="left:180px; top:60px; z-index: 10;">
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="service_1.html" target="_parent">環境影響評估及環境監測　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="service_2.html" target="_parent">空氣品質及河川水質之模擬</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="service_3.html" target="_parent">空氣污染物排放量調查　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="service_4.html" target="_parent">健康風險評估　　　　　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="service_5.html" target="_parent">環境管理與資訊系統　　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="service_6.html" target="_parent">生態檢核　　　　　　　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="service_7.html" target="_self">氣候永續服務　　　　　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li>
-		</div>
-		<div id="menuCh_3" class="chdMenuPad" style="left:350px; top:60px; z-index: 10;">
-			<!-- <li class="chdMenuPad_L"></li>
-			<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="air.html" target="_parent">未來三天空品預報</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />  -->
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="air_his.html" target="_parent">重大空污事件模擬</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li>
-		</div>
-		<div id="menuCh_6" class="chdMenuPad" style="left:810px; top:60px; z-index: 10;">
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="download_simenvi.html" target="_parent">公司介紹　　　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="download_paper.html" target="_parent">景丰公司研究發表</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li><p />
-		<li class="chdMenuPad_L"></li>
-		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="download_model.html" target="_parent">技術文件　　　　</a></span>
-		</li>
-		<li class="chdMenuPad_R"></li>
-		</div>
-	</div>
-	<!-- menu 選單 End -->
+            <p style="text-align: right; margin-top: 0; margin-bottom: 10px;display: block;">
+                <a href="#" id="forgot-password-link">忘記密碼？</a>
+            </p>
 
-    <!-- MOBILE 選單 -->
-	<div id="menuMobile">      
-		<div id="dl-menu" class="dl-menuwrapper">
-		<button class="dl-trigger">Open Menu</button>
-		<ul class="dl-menu">
-			<li>
-			<a href="javascript:;">關於景丰 ...</a>
-			<ul class="dl-submenu">
-				<li><a href="about.html">公司簡介</a></li>
-				<li><a href="award.html">榮譽認證</a></li>
-				<li><a href="human.html">人力資源</a></li>
-				<li><a href="organiz.html">組織結構</a></li>
-			</ul>
-			</li>
-			<li>
-			<a href="javascript:;">服務項目與實績 ...</a>
-			<ul class="dl-submenu">
-				<li><a href="service_1.html">環境影響評估及環境監測</a></li>
-				<li><a href="service_2.html">空氣品質及河川水質之模擬</a></li>
-				<li><a href="service_3.html">空氣污染物排放量調查</a></li>
-				<li><a href="service_4.html">健康風險評估</a></li>
-				<li><a href="service_5.html">環境管理與資訊系統</a></li>
-				<li><a href="service_6.html">生態檢核</a></li>
-				<li><a href="service_7.html">氣候永續服務</a></li>
-			</ul>
-			</li>
-			<li>
-			<a href="javascript:;">空污事件模擬 ...</a>
-			<ul class="dl-submenu">
-				<li>
-				<a href="air_his.html">重大空污事件模擬</a>
-				</li>
-			</ul>
-			</li>
-			<li>
-			<a href="links.html">人才招募</a>
-			</li>
-			<li>
-			<a href="contact.html">聯絡我們</a>
-			</li>
-			<li>
-			<a href="javascript:;">文件下載 ...</a>
-			<ul class="dl-submenu">
-				<li>
-				<a href="download_simenvi.html">公司介紹</a>
-				</li>
-				<li>
-				<a href="download_paper.html">景丰公司研究發表</a>
-				</li>
-				<li>
-				<a href="download_model.html">技術文件</a>
-				</li>
-			</ul>
-			</li>
-		</ul>
-		</div><!-- /dl-menuwrapper -->
-	</div>
-	<!-- MOBILE 選單 End -->
+            <button type="submit">登入</button>
+            <p id="login-error" style="color: red;"></p>
+            <p id="reset-message" style="color: green;"></p>
+        </form>
+        <p>還沒有帳號？ <a href="#" id="show-register">註冊</a></p>
+    </div>
 
-	<!-- News & Air -->
-	<div id="indexContent">
-        <div id="indexNews">
-		<!-- <li><img src="images/title_index_news.png" style="height: 25px;" /></li>
-			<li>114-05-29 <span class="indexNewsList"><a href="https://www.ipas.org.tw/NZ" target="_blank" title="賀!本公司14人通過iPAS淨零碳規劃管理師能力鑑定 (另開新視窗)">賀！本公司14人通過iPAS淨零碳規劃管理師能力鑑定</a> </li>
-			<li>113-12-16 <span class="indexNewsList"><a href="https://enews.moenv.gov.tw/Page/3B3C62C78849F32F/779d1333-63a3-4a3e-a569-cab3e91f52c3" target="_blank" title="本週兩波冷空氣 留意境外污染物影響空氣品質 (另開新視窗)">本週兩波冷空氣 留意境外污染物影響空氣品質</a> </li>
-			<li>113-12-12 <span class="indexNewsList"><a href="https://enews.moenv.gov.tw/Page/3B3C62C78849F32F/7cc3fa17-f7ae-4345-a8d7-c5b6e6c70a13" target="_blank" title="14日大陸冷氣團南下挾帶境外污染物影響臺灣空氣品質 (另開新視窗)">14日大陸冷氣團南下挾帶境外污染物影響臺灣空氣品質</a> </li>
-			<li>113-12-06 <span class="indexNewsList"><a href="https://enews.moenv.gov.tw/Page/3B3C62C78849F32F/83f86e57-fef4-4be5-9677-dbcc4e256129" target="_blank" title="環境部預告「自願性產品碳足跡管理辦法」相關草案 (另開新視窗)">環境部預告「自願性產品碳足跡管理辦法」相關草案</a> </li>
-			<li>113-12-06 <span class="indexNewsList"><a href="https://enews.moenv.gov.tw/Page/3B3C62C78849F32F/088ae6e4-7e66-4e44-929a-4d76dbddfabb" target="_blank" title="東北季風挾帶境外污染物影響臺灣，請留意空品變化 (另開新視窗)">東北季風挾帶境外污染物影響臺灣，請留意空品變化</a> </li>
-			<li>113-08-28 <span class="indexNewsList"><a href="award.html#AWARD03" target="_self" title="本公司於113年協同環境部大氣環境司報名參加第四屆航港大數據創意應用大賽，榮獲社會組第三名成績。">本公司於113年協同環境部大氣環境司報名參加第四屆航港大數據創意應用大賽，榮獲社會組第三名成績。</a> </li>
-            <li>113-03-27 <span class="indexNewsList"><a href="download/20240427-111年至112年環評顧問機構評鑑結果.pdf" target="_blank" title="賀本公司榮獲111年至112年環評顧問機構評鑑準A級 (另開新視窗)">賀本公司榮獲111年至112年環評顧問機構評鑑準A級</a> </li>
-			<li>113-02-27 <span class="indexNewsList"><a href="https://enews.moenv.gov.tw/Page/3B3C62C78849F32F/a383f8bb-74de-45a7-97ec-0d7fbd2afc16" target="_blank" title="環境用藥4要3不 安全合法無負擔 (另開新視窗)">環境用藥4要3不 安全合法無負擔</a> </li>
-			<li>113-02-15 <span class="indexNewsList"><a href="https://enews.moenv.gov.tw/Page/3B3C62C78849F32F/a0e397a8-e47f-4f6a-8522-8599522fe27e" target="_blank" title="環境部與NASA合作亞洲空氣品質實驗 (另開新視窗)">環境部與NASA合作亞洲空氣品質實驗</a> </li>
-			<li>113-02-13 <span class="indexNewsList"><a href="https://enews.moenv.gov.tw/Page/3B3C62C78849F32F/99a87aa4-5f0f-4b82-8798-65d754c3b8df" target="_blank" title="顧健康 護食安 龍光煥發過好年 (另開新視窗)">顧健康 護食安 龍光煥發過好年</a> </li>
-		</div> -->
-			<!-- Slider main container -->
-			<div class="swiper">
-				<!-- Additional required wrapper -->
-				<div class="swiper-wrapper">
-				<!-- Slides -->
-				<div class="swiper-slide"><a href="service_1.html" target="_self" title="環境影響評估及環境監測－新建工程環境影響說明書"><img class="swiper-img" src="images\1_\pic_1_b4.png"><p class="swiper-txt">環境影響評估及環境監測<br>－新建工程環境影響說明書</p></a></div>
-				<div class="swiper-slide"><a href="service_2-5.html" target="_self" title="空氣品質及河川水質之模擬－空氣品質影響評估（原生性及衍生性）"><img class="swiper-img" src="images/pic_2_5_b.jpg"><p class="swiper-txt">空氣品質及河川水質之模擬<br>－空氣品質影響評估（原生性及衍生性）</p></a></div>
-				<div class="swiper-slide"><a href="service_3-1.html" target="_self" title="空氣污染物排放量調查－港區空氣污染物排放清冊建置及管制策略"><img class="swiper-img" src="images/2_3/pic_2_3_b.png"><p class="swiper-txt">空氣污染物排放量調查<br>－港區空氣污染物排放清冊建置及管制策略</p></a></div>
-				<div class="swiper-slide"><a href="service_4-3.html" target="_self" title="健康風險評估－台南縣威致鋼鐵官田廠擴建環評"><img class="swiper-img" src="images/2_4/pic_2_4_e.jpg"><p class="swiper-txt">健康風險評估<br>－台南縣威致鋼鐵官田廠擴建環評</p></a></div>
-				<div class="swiper-slide"><a href="https://infotech.simenvi.com.tw/map" target="_blank" title="環境管理與資訊系統－臺南七股環境數據公開平台（另開新視窗）"><img class="swiper-img" src="images/swiper/photo_04.png"><p class="swiper-txt">環境管理與資訊系統<br>－臺南七股環境數據公開平台</p></a></div>
-				<div class="swiper-slide"><a href="service_6-4.html" target="_self" title="生態檢核－新竹左岸生態環境與棲地改善工程"><img class="swiper-img" src="images/6_4/pic_6_4_a2.jpg"><p class="swiper-txt">生態檢核<br>－新竹左岸生態環境與棲地改善工程</p></a></div>
-				<div class="swiper-slide"><a href="service_1.html" target="_self" title="環境影響評估及環境監測－產業園區環境影響評估"><br><img class="swiper-img" src="images\1_\pic_1_is_1.png"><p class="swiper-txt">環境影響評估及環境監測<br>－產業園區環境影響評估</p></a></div>
-				<div class="swiper-slide"><a href="service_2-8.html" target="_self" title="空氣品質及河川水質之模擬－排放量推估及臭氧、PM 網格模式模擬評估"><img class="swiper-img" src="images/pic_2_8_b.jpg"><p class="swiper-txt">空氣品質及河川水質之模擬<br>－排放量推估及臭氧、PM 網格模式模擬評估</p></a></div>
-				<div class="swiper-slide"><a href="service_3-2.html" target="_self" title="空氣污染物排放量調查－全國性空氣污染物排放量趨勢"><img class="swiper-img" src="images/2_3/pic_2_3_a.png"><p class="swiper-txt">空氣污染物排放量調查<br>－全國性空氣污染物排放量趨勢</p></a></div>
-				<div class="swiper-slide"><a href="service_4-4.html" target="_self" title="健康風險評估－南部科學工業園區健康風險評估計畫"><img class="swiper-img" src="images/2_4/pic_2_4_d.jpg"><p class="swiper-txt">健康風險評估<br>－南部科學工業園區健康風險評估計畫</p></a></div>
-				<div class="swiper-slide"><a href="download/Simenvi_20200707.pdf" target="_blank" title="環境管理與資訊系統－核災輻射物質大氣傳輸預報系統簡介（另開新視窗）"><img class="swiper-img" src="images/swiper/photo_05.png"><p class="swiper-txt">環境管理與資訊系統<br>－核災輻射物質大氣傳輸預報系統簡介</p></a></div>
-				<div class="swiper-slide"><a href="service_6-1.html" target="_self" title="生態檢核－107年度彰化縣生態檢核工作計畫"><img class="swiper-img" src="images/6_1/pic_6_1_a1.png"><p class="swiper-txt">生態檢核<br>－107年度彰化縣生態檢核工作計畫</p></a></div>
-				...
-				</div>
-				<!-- If we need pagination -->
-				<div class="swiper-pagination"></div>
-			
-				<!-- If we need navigation buttons -->
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
-			
-				<!-- If we need scrollbar -->
-				<div class="swiper-scrollbar"></div>
-				<div class="autoplay-progress">
-				  <svg viewBox="0 0 48 48">
-					<circle cx="24" cy="24" r="20"></circle>
-				  </svg>
-				  <span></span>
-				</div>
-			</div>
-		</div>
-    	<div id="indexAir">
-			<div>&nbsp;&nbsp;<img src="images/title_index_pm2.5.png" style="height: 20px;" /></div>
-			<!-- <a href="images/date_img/myimage.gif" target="_blank"><div class="indexAirPic"><img src="images/date_img/myimage.png" data-src="images/date_img/myimage.gif" height="371" class="lazyload forecast" /></div></a> -->
-			<a href="images/date_img/myimage.gif" target="_blank"><div class="indexAirPic"><img src="images/date_img/myimage.png" height="371" class="lazyload forecast" alt="測試" /></div></a>
-        </div>		
-		<div class="contFt">
-			<a tabindex="2" href="javascript:;" class="btn_print up" accesskey="t" title="回到最上層 / Alt + t" role="button"><img src="images/icons8-up3.png" alt="Alt + t" title="回到最上層 / Alt + t"/></a>
-		</div>
-		<div id="mobileFooter">	
-			Copyright © 2012 <br />景丰科技股份有限公司 <br />ENVIRONMENTAL SIMULATION CO. LTD. │<br /> 最佳瀏覽解析度: 1024 x 768<br />
-			地址：10663 台北市大安區復興南路二段286號4樓 │<br /> TEL：(02)2377-8011 │<br /> FAX: (02)2739-3446
-		</div>	
-	</div>
-	<!-- News & Air End -->
+    <div id="register-section" style="display: none;">
+        <h2>註冊</h2>
+        <form id="register-form">
+            <label for="register-username">使用者名稱:</label>
+            <input type="text" id="register-username" name="username" required><br>
 
-  </div>
-  
-<!-- main End -->
-  <!-- Footer Area -->
-  <div id="footer">	
-	<iframe src="footer.html" style="width:100%; height:76px;margin-top:40px;" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-  </div>
-		<!-- <? include('footer.php') ?> -->
-  <!-- Footer End -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>     -->
-  <script type="text/javascript" src="jsq/jquery-3.7.1.min.js"></script>
-  <script type="text/javascript" src="jsq/jquery-ui.min.js"></script> 
-  <script type="text/javascript" src="jsq/at_cage.js"></script>
-  <script type="text/javascript" src="jsq/jquery.dlmenu.js"></script>
-  <script type="text/javascript" src="jsq/action.js?t=20250125"></script>
-  <script src="jsq/jquery.dlmenu.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
-  <script>
-	$( document ).ready(function() {
-		let images = document.querySelectorAll(".forecast");
-		lazyload(images);
-	});
-  </script> -->
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-	const progressCircle = document.querySelector(".autoplay-progress svg");
-    const progressContent = document.querySelector(".autoplay-progress span");
-    const swiper = new Swiper('.swiper', {
-		// Optional parameters
-        slidesPerView: 1, // 設定每次只顯示一張投影片。
-        spaceBetween: 30, // 設定投影片之間有 30 像素的間距。
-		// direction: 'vertical',
-      	centeredSlides: true, // 使當前活躍的投影片始終居中顯示。
-		loop: true, // 啟用無限循環模式，當到達最後一張投影片後會回到第一張。
-		effect: "cube", // 設定投影片切換效果為 立方體效果。		
-		// effect: "Coverflow", // 設定投影片切換效果為 立方體效果。
-		// effect: "cards",
-		grabCursor: true, // 在投影片容器上顯示抓取手勢（cursor）。
-		cubeEffect: {
-			shadow: true, // 啟用立方體效果的陰影。
-			slideShadows: true, // 為每張投影片啟用陰影。
-			shadowOffset: 20, // 設定陰影的偏移量。
-			shadowScale: 0.94, // 設定陰影的縮放比例。
-		},
-		/* Coverflow effect parameters
-		coverflowEffect: {
-			rotate: 50, // slide rotation degree
-			stretch: 0, // distance between slides
-			depth: 100, // depth of the slides
-			modifier: 1,
-			slideShadows: true,
-		}, */
-		/* Cards effect parameters
-		cardsEffect: {
-			slideShadows: true,
-			perSlideOffset: 8, // The distance between slides
-			perSlideRotate: 2, // The degree of rotation for each slide
-		}, */
-		autoplay: {
-			delay: 5000, // 設定每張投影片停留 5000 毫秒（即 5 秒）。
-			disableOnInteraction: false, // 設定使用者與 Swiper 互動（如手動切換）後，自動播放功能不會停止。
-		},
-		// If we need pagination
-		pagination: {
-			el: '.swiper-pagination', // 指定分頁器的容器為 class 為 swiper-pagination 的元素。
-			clickable: true, // 分頁器可以被點擊來切換投影片。
-		},
+            <label for="register-email">電子郵件:</label>
+            <input type="email" id="register-email" name="email" required autocomplete="username"><br>
 
-		// Navigation arrowsu
-		navigation: {
-		 	nextEl: '.swiper-button-next', // 指定下一個投影片的按鈕為 class 為 swiper-button-next 的元素。
-		 	prevEl: '.swiper-button-prev', // 指定上一個投影片的按鈕為 class 為 swiper-button-prev 的元素。
-		},
+            <label for="register-password">密碼:</label>
+            <input type="password" id="register-password" name="password" required autocomplete="new-password"><br>
 
-		// And if we need scrollbar
-		scrollbar: {
-			el: '.swiper-scrollbar', // 指定滾動條的容器為 class 為 swiper-scrollbar 的元素。
-		},
-		on: {
-			autoplayTimeLeft(s, time, progress) { // 這是一個事件監聽器，會在自動播放的計時器更新時觸發。
-			progressCircle.style.setProperty("--progress", 1 - progress); // 根據自動播放的進度 (progress)，動態更新 CSS 變數 --progress，用於控制圓環進度條的視覺呈現。
-			progressContent.textContent = `${Math.ceil(time / 1000)}s`; // 計算剩餘時間（time），並更新進度文字，顯示倒數秒數。
-			}
-		}
-	});
-    $(function() {
-      $( '#dl-menu' ).dlmenu({ // 選取 id 為 dl-menu 的元素，並呼叫 dlmenu 外掛來初始化它，這通常用於創建下拉式選單。
-        animationClasses : { classin : 'dl-animate-in-5', classout : 'dl-animate-out-5' } // 設定選單展開和收合時的動畫類別，dl-animate-in-5 控制進入動畫，dl-animate-out-5 控制離開動畫。
-      });
-    });
-  </script>
+            <label for="register-confirm-password">確認密碼:</label>
+            <input type="password" id="register-confirm-password" name="confirmPassword" required autocomplete="new-password"><br>
+
+            <button type="submit">註冊</button>
+            <p id="register-error" style="color: red;"></p>
+        </form>
+        <p>已經有帳號？ <a href="#" id="show-login">登入</a></p>
+    </div>
+
+    <div id="user-info-section" style="display: none;">
+        <h2>歡迎！</h2>
+        <p id="user-details"></p>
+        <button id="logout-button">登出</button>
+    </div>   
+
+    <script type="module" src="/jsq/app.js"></script>
 </body>
 </html>

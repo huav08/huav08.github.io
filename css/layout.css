@@ -60,7 +60,7 @@
 	/*  background: rgba(255, 255, 255, 0.8); huav 2025-08-20 */
 }
 #indexAir { 
-  border: 2px solid gray;
+  border: 2px solid rgba(128, 128, 128, 0);
 	padding: 10px 10px 0 10px;
 	border-radius: 20px 20px;  
 	background: rgba(255, 255, 255, 0.8); 

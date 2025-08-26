@@ -67,7 +67,7 @@
 }
 .swiper { width: 500px; height: 430px !important; position: relative;}
 .swiper-img { width: 500px; height: 430px !important;background: rgb(234, 237, 238);position: absolute;left: 0;top: 0;
-	border-radius: 3px !important;background: linear-gradient(to top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 255));}
+	border-radius: 3px !important;background: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 255));}
 .swiper-button-next, 
 .swiper-button-prev {
     color: var(--swiper-navigation-color,#eff1f321) !important;

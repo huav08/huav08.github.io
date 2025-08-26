@@ -1,0 +1,4 @@
+UPDATE areagrid SET dict = " " WHERE nsc = "51" AND nsc_sub in ("C","D")
+UPDATE areasum SET dict = " " WHERE nsc = "51" AND nsc_sub in ("C","D")
+SELECT nsc,nsc_sub,dict,SUM(em_Tsp) as em_tsp,SUM(em_PM) as em_PM,SUM(em_PM6) as em_PM6,SUM(em_PM25) as em_PM25,SUM(em_sox) as em_sox,SUM(em_nox) as em_nox,SUM(em_Thc) as em_thc,SUM(em_nmhc) as em_nmhc,SUM(em_co) as em_co,SUM(em_pb) as em_pb,SUM(em_nh3) as em_nh3 FROM areasum GROUP BY nsc,nsc_sub,dict
+COPY TO areasum1.dbf foxplus

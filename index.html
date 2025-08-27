@@ -412,39 +412,53 @@
         animationClasses : { classin : 'dl-animate-in-5', classout : 'dl-animate-out-5' } // 設定選單展開和收合時的動畫類別，dl-animate-in-5 控制進入動畫，dl-animate-out-5 控制離開動畫。
       });
     });
+	// 動態圓圈特效：
 	const container = document.getElementById('imageContainer');
 	const colors = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#ff9f1c', '#6a0dad', '#e71d36'];
+	let mouseHoverInterval;
 
 	// 隨機數生成函數
 	const getRandomNumber = (min, max) => Math.random() * (max - min) + min;
 	const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
 
 	// 創建單個圓圈並將其附加到容器中
-	const createCircle = () => {
+	const createCircle = (isMouseTriggered = false, x = 0, y = 0) => {
 		const circle = document.createElement('div');
 		circle.className = 'circle';
 
-		// 隨機設置大小、顏色、位置和動畫延遲
-		const size = getRandomNumber(50, 250); // 隨機大小
-		const top = getRandomNumber(0, 100); // 隨機垂直位置
-		const left = getRandomNumber(0, 100); // 隨機水平位置
-		const animationDuration = getRandomNumber(3, 6); // 隨機動畫持續時間
-		const animationDelay = getRandomNumber(0, animationDuration - 1); // 隨機動畫延遲
-
+		// 隨機設置大小、顏色和動畫持續時間
+		const size = getRandomNumber(50, 250);
+		const animationDuration = getRandomNumber(3, 6);
+		
 		circle.style.width = `${size}px`;
 		circle.style.height = `${size}px`;
 		circle.style.borderColor = getRandomColor();
-		circle.style.top = `${top}%`;
-		circle.style.left = `${left}%`;
 		circle.style.animation = `pulse-and-fade ${animationDuration}s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
-		circle.style.animationDelay = `${animationDelay}s`;
-
-		// 在動畫結束後移除舊圓圈並創建新圓圈
-		circle.addEventListener('animationend', (e) => {
-			e.target.remove();
-			createCircle();
-		});
-
+		
+		// 根據是否為滑鼠觸發來設定位置
+		if (isMouseTriggered) {
+			circle.style.top = `${y}px`;
+			circle.style.left = `${x}px`;
+			// 在動畫結束後移除這個圓圈
+			circle.addEventListener('animationend', (e) => {
+				e.target.remove();
+			});
+		} else {
+			// 原有動畫循環的圓圈
+			const top = getRandomNumber(0, 100);
+			const left = getRandomNumber(0, 100);
+			const animationDelay = getRandomNumber(0, animationDuration - 1);
+			circle.style.top = `${top}%`;
+			circle.style.left = `${left}%`;
+			circle.style.animationDelay = `${animationDelay}s`;
+			
+			// 在動畫結束後移除舊圓圈並創建新圓圈
+			circle.addEventListener('animationend', (e) => {
+				e.target.remove();
+				createCircle();
+			});
+		}
+		
 		container.appendChild(circle);
 	};
 
@@ -453,6 +467,21 @@
 	for (let i = 0; i < initialCircles; i++) {
 		createCircle();
 	}
+
+	// 添加滑鼠事件監聽器
+	container.addEventListener('mouseenter', () => {
+		// 每 200 毫秒生成一個新圓圈
+		mouseHoverInterval = setInterval(() => {
+			const x = getRandomNumber(0, container.offsetWidth);
+			const y = getRandomNumber(0, container.offsetHeight);
+			createCircle(true, x, y);
+		}, 200);
+	});
+
+	container.addEventListener('mouseleave', () => {
+		// 清除定時器，停止生成圓圈
+		clearInterval(mouseHoverInterval);
+	});
   </script>
 </body>
 </html>

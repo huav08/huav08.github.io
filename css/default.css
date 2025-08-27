@@ -12,7 +12,10 @@
 	font-style: normal;
 }
 
-body, html { font-size: 100%; 	padding: 0; margin: 0;}
+body, html { font-size: 100%; 	padding: 0; margin: 0; scrollbar-width: none;  /* 隱藏 Firefox 捲動軸 */}
+body::-webkit-scrollbar {
+    display: none; /* 隱藏捲動軸 */
+}
 
 /* Reset */
 *,

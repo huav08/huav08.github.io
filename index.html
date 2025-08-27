@@ -27,6 +27,15 @@
 	<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
 	<style>
 		.swiper { width: 500px; height: 440px;}
+		/* 針對 Firefox 瀏覽器隱藏捲動軸 */
+		html {
+			scrollbar-width: none;
+		}
+		
+		/* 針對 Webkit 瀏覽器 (Chrome, Safari, Edge) 隱藏捲動軸 */
+		body::-webkit-scrollbar {
+			display: none;
+		}
 	</style>
     <!-- MOBILE MENU-->	 
 	<script type="text/javascript" src="jsq/modernizr.custom.js"></script>
@@ -142,11 +151,11 @@
 		<li class="chdMenuPad_B">
 			<span class="t_sp10"><a href="service_6.html" target="_parent">生態檢核　　　　　　　　</a></span>
 		</li>
-		<li class="chdMenuPad_R"></li><p />
+		<!-- <li class="chdMenuPad_R"></li><p />
 		<li class="chdMenuPad_L"></li>
 		<li class="chdMenuPad_B">
 			<span class="t_sp10"><a href="service_7.html" target="_self">氣候永續服務　　　　　　</a></span>
-		</li>
+		</li> -->
 		<li class="chdMenuPad_R"></li><p />
 		<li class="chdMenuPad_L"></li>
 		<li class="chdMenuPad_B">
@@ -209,7 +218,7 @@
 				<li><a href="service_4.html">健康風險評估</a></li>
 				<li><a href="service_5.html">環境管理與資訊系統</a></li>
 				<li><a href="service_6.html">生態檢核</a></li>
-				<li><a href="service_7.html">氣候永續服務</a></li>
+				<!-- <li><a href="service_7.html">氣候永續服務</a></li> -->
 				<li><a href="service_8.html">氣候變遷風險評估</a></li>
 			</ul>
 			</li>
@@ -264,21 +273,21 @@
 			<!-- Slider main container -->
 			<div class="swiper">
 				<!-- Additional required wrapper -->
-				<div class="swiper-wrapper">
-				<!-- Slides -->
-				<div class="swiper-slide image-container"><a href="service_1.html" target="_self" title="環境影響評估及環境監測－新建工程環境影響說明書"><img class="swiper-img" src="images/swiper/pic_1_b4.png"><p class="swiper-txt">環境影響評估及環境監測<br>－新建工程環境影響說明書</p></a></div>
-				<div class="swiper-slide image-container"><a href="service_2-5.html" target="_self" title="空氣品質及河川水質之模擬－空氣品質影響評估（原生性及衍生性）"><img class="swiper-img" src="images/swiper/pic_2_5_b.png"><p class="swiper-txt">空氣品質及河川水質之模擬<br>－空氣品質影響評估（原生性及衍生性）</p></a></div>
-				<div class="swiper-slide image-container"><a href="service_3-1.html" target="_self" title="空氣污染物排放量調查－港區空氣污染物排放清冊建置及管制策略"><img class="swiper-img" src="images/swiper/pic_2_3_b.png"><p class="swiper-txt">空氣污染物排放量調查<br>－港區空氣污染物排放清冊建置及管制策</p></a></div>
-				<div class="swiper-slide image-container"><a href="service_4-3.html" target="_self" title="健康風險評估－台南縣威致鋼鐵官田廠擴建環評"><img class="swiper-img" src="images/swiper/pic_2_4_e.png"><p class="swiper-txt">健康風險評估<br>－台南縣威致鋼鐵官田廠擴建環評</p></a></div>
-				<div class="swiper-slide image-container"><a href="https://infotech.simenvi.com.tw/map" target="_blank" title="環境管理與資訊系統－臺南七股環境數據公開平台（另開新視窗）"><img class="swiper-img" src="images/swiper/photo_04.png"><p class="swiper-txt">環境管理與資訊系統<br>－臺南七股環境數據公開平台</p></a></div>
-				<div class="swiper-slide image-container"><a href="service_6-4.html" target="_self" title="生態檢核－新竹左岸生態環境與棲地改善工程"><img class="swiper-img" src="images/swiper/pic_6_4_a2.png"><p class="swiper-txt">生態檢核<br>－新竹左岸生態環境與棲地改善工程</p></a></div>
-				<div class="swiper-slide image-container"><a href="service_1.html" target="_self" title="環境影響評估及環境監測－產業園區環境影響評估"><br><img class="swiper-img" src="images/swiper/pic_1_is_1.png"><p class="swiper-txt">環境影響評估及環境監測<br>－產業園區環境影響評估</p></a></div>
-				<div class="swiper-slide image-container"><a href="service_2-8.html" target="_self" title="空氣品質及河川水質之模擬－排放量推估及臭氧、PM 網格模式模擬評估"><img class="swiper-img" src="images/swiper/pic_2_8_b.png"><p class="swiper-txt">空氣品質及河川水質之模擬<br>－排放量推估及臭氧、PM 網格模式模擬評估</p></a></div>
-				<div class="swiper-slide image-container"><a href="service_3-2.html" target="_self" title="空氣污染物排放量調查－全國性空氣污染物排放量趨勢"><img class="swiper-img" src="images/swiper/pic_2_3_a.png"><p class="swiper-txt">空氣污染物排放量調查<br>－全國性空氣污染物排放量趨勢</p></a></div>
-				<div class="swiper-slide image-container"><a href="service_4-4.html" target="_self" title="健康風險評估－南部科學工業園區健康風險評估計畫"><img class="swiper-img" src="images/swiper/pic_2_4_d.png"><p class="swiper-txt">健康風險評估<br>－南部科學工業園區健康風險評估計畫</p></a></div>
-				<div class="swiper-slide image-container"><a href="download/Simenvi_20200707.pdf" target="_blank" title="環境管理與資訊系統－核災輻射物質大氣傳輸預報系統簡介（另開新視窗）"><img class="swiper-img" src="images/swiper/photo_05.png"><p class="swiper-txt">環境管理與資訊系統<br>－核災輻射物質大氣傳輸預報系統簡介</p></a></div>
-				<div class="swiper-slide image-container"><a href="service_6-1.html" target="_self" title="生態檢核－107年度彰化縣生態檢核工作計畫"><img class="swiper-img" src="images/swiper/pic_6_1_a1.png"><p class="swiper-txt">生態檢核<br>－107年度彰化縣生態檢核工作計畫</p></a></div>
-				...
+				<div class="swiper-wrapper" id="imageContainer">
+					<!-- Slides -->
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="service_1.html" target="_self" title="環境影響評估及環境監測－新建工程環境影響說明書"><img class="swiper-img" src="images/swiper/pic_1_b4.png"><p class="swiper-txt">環境影響評估及環境監測<br>－新建工程環境影響說明書</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="service_2-5.html" target="_self" title="空氣品質及河川水質之模擬－空氣品質影響評估（原生性及衍生性）"><img class="swiper-img" src="images/swiper/pic_2_5_b.png"><p class="swiper-txt">空氣品質及河川水質之模擬<br>－空氣品質影響評估（原生性及衍生性）</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="service_3-1.html" target="_self" title="空氣污染物排放量調查－港區空氣污染物排放清冊建置及管制策略"><img class="swiper-img" src="images/swiper/pic_2_3_b.png"><p class="swiper-txt">空氣污染物排放量調查<br>－港區空氣污染物排放清冊建置及管制策</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="service_4-3.html" target="_self" title="健康風險評估－台南縣威致鋼鐵官田廠擴建環評"><img class="swiper-img" src="images/swiper/pic_2_4_e.png"><p class="swiper-txt">健康風險評估<br>－台南縣威致鋼鐵官田廠擴建環評</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="https://infotech.simenvi.com.tw/map" target="_blank" title="環境管理與資訊系統－臺南七股環境數據公開平台（另開新視窗）"><img class="swiper-img" src="images/swiper/photo_04.png"><p class="swiper-txt">環境管理與資訊系統<br>－臺南七股環境數據公開平台</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="service_6-4.html" target="_self" title="生態檢核－新竹左岸生態環境與棲地改善工程"><img class="swiper-img" src="images/swiper/pic_6_4_a2.png"><p class="swiper-txt">生態檢核<br>－新竹左岸生態環境與棲地改善工程</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="service_1.html" target="_self" title="環境影響評估及環境監測－產業園區環境影響評估"><br><img class="swiper-img" src="images/swiper/pic_1_is_1.png"><p class="swiper-txt">環境影響評估及環境監測<br>－產業園區環境影響評估</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="service_2-8.html" target="_self" title="空氣品質及河川水質之模擬－排放量推估及臭氧、PM 網格模式模擬評估"><img class="swiper-img" src="images/swiper/pic_2_8_b.png"><p class="swiper-txt">空氣品質及河川水質之模擬<br>－排放量推估及臭氧、PM 網格模式模擬評估</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="service_3-2.html" target="_self" title="空氣污染物排放量調查－全國性空氣污染物排放量趨勢"><img class="swiper-img" src="images/swiper/pic_2_3_a.png"><p class="swiper-txt">空氣污染物排放量調查<br>－全國性空氣污染物排放量趨勢</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="service_4-4.html" target="_self" title="健康風險評估－南部科學工業園區健康風險評估計畫"><img class="swiper-img" src="images/swiper/pic_2_4_d.png"><p class="swiper-txt">健康風險評估<br>－南部科學工業園區健康風險評估計畫</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="download/Simenvi_20200707.pdf" target="_blank" title="環境管理與資訊系統－核災輻射物質大氣傳輸預報系統簡介（另開新視窗）"><img class="swiper-img" src="images/swiper/photo_05.png"><p class="swiper-txt">環境管理與資訊系統<br>－核災輻射物質大氣傳輸預報系統簡介</p></a></div>
+					<div class="swiper-slide image-container"><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><a href="service_6-1.html" target="_self" title="生態檢核－107年度彰化縣生態檢核工作計畫"><img class="swiper-img" src="images/swiper/pic_6_1_a1.png"><p class="swiper-txt">生態檢核<br>－107年度彰化縣生態檢核工作計畫</p></a></div>
+					...
 				</div>
 				<!-- If we need pagination -->
 				<div class="swiper-pagination"></div>
@@ -403,6 +412,47 @@
         animationClasses : { classin : 'dl-animate-in-5', classout : 'dl-animate-out-5' } // 設定選單展開和收合時的動畫類別，dl-animate-in-5 控制進入動畫，dl-animate-out-5 控制離開動畫。
       });
     });
+	const container = document.getElementById('imageContainer');
+	const colors = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#ff9f1c', '#6a0dad', '#e71d36'];
+
+	// 隨機數生成函數
+	const getRandomNumber = (min, max) => Math.random() * (max - min) + min;
+	const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
+
+	// 創建單個圓圈並將其附加到容器中
+	const createCircle = () => {
+		const circle = document.createElement('div');
+		circle.className = 'circle';
+
+		// 隨機設置大小、顏色、位置和動畫延遲
+		const size = getRandomNumber(50, 250); // 隨機大小
+		const top = getRandomNumber(0, 100); // 隨機垂直位置
+		const left = getRandomNumber(0, 100); // 隨機水平位置
+		const animationDuration = getRandomNumber(3, 6); // 隨機動畫持續時間
+		const animationDelay = getRandomNumber(0, animationDuration - 1); // 隨機動畫延遲
+
+		circle.style.width = `${size}px`;
+		circle.style.height = `${size}px`;
+		circle.style.borderColor = getRandomColor();
+		circle.style.top = `${top}%`;
+		circle.style.left = `${left}%`;
+		circle.style.animation = `pulse-and-fade ${animationDuration}s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+		circle.style.animationDelay = `${animationDelay}s`;
+
+		// 在動畫結束後移除舊圓圈並創建新圓圈
+		circle.addEventListener('animationend', (e) => {
+			e.target.remove();
+			createCircle();
+		});
+
+		container.appendChild(circle);
+	};
+
+	// 初始生成一些圓圈來開始效果
+	const initialCircles = 10;
+	for (let i = 0; i < initialCircles; i++) {
+		createCircle();
+	}
   </script>
 </body>
 </html>

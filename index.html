@@ -436,14 +436,14 @@
 		circle.style.animation = `pulse-and-fade ${animationDuration}s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
 		
 		// 根據是否為滑鼠觸發來設定位置
-		if (isMouseTriggered) {
+		/* if (isMouseTriggered) {
 			circle.style.top = `${y}px`;
 			circle.style.left = `${x}px`;
 			// 在動畫結束後移除這個圓圈
 			circle.addEventListener('animationend', (e) => {
 				e.target.remove();
 			});
-		} else {
+		} else { */
 			// 原有動畫循環的圓圈
 			const top = getRandomNumber(0, 100);
 			const left = getRandomNumber(0, 100);
@@ -457,7 +457,7 @@
 				e.target.remove();
 				createCircle();
 			});
-		}
+		/* } */
 		
 		container.appendChild(circle);
 	};

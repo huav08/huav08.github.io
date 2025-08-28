@@ -33,7 +33,7 @@ iframe {
 #main_index {
 	position:relative;
 	width: 100vw; 
-	height: 127vh;
+	height: auto;
 	background:#1d2087  url(../images/bg_sky_index3.jpg) top center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;

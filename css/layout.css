@@ -245,7 +245,7 @@
 
 /* On TABLET screens < 1200px   */
 @media screen and (max-width: 1200px) {   
-  #main_index { background-repeat: repeat;} /* height: 200vh;} */
+  #main_index { background-repeat: repeat; height: 200vh;} 
   .ilogoBar { width: auto; height:75px;padding-top:10px;}
   #ilogoImg img { width: 50%; height: auto; position: absolute; top: 10px; left:72px;}   
   .logoBar {width: auto; height: 100%; }
@@ -397,7 +397,7 @@
 
 /* On TABLET screens < 650px  */
 @media screen and (max-width: 650px) {   
-  #main_index { background-repeat: repeat;} /* height: 132vh; } */
+  #main_index { background-repeat: repeat; height: 132vh; } 
   .ilogoBar { width: auto; height:70px;padding-top:10px;}
   #ilogoImg img { width: 85%; height: auto; position: absolute; top: 12px; left:50px;}  
   .logoBar { width: 100%; height: auto; position: absolute;}

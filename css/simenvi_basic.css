@@ -176,14 +176,6 @@ iframe {
 	color:#C60;
 	text-decoration:underline;
 }
-#indexAir {
-	flex:none;
-	width: 45%; 
-	height:450px; 
-	margin-left: 10px;
-	float:right;
-	/* background:url(../images/bg_a_index.png) no-repeat top left; */
-}
 .indexAirPic {
 	width:320px; height:380px; overflow:hidden;
 	margin: 10px auto auto;  text-align:center;

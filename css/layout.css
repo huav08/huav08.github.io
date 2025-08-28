@@ -54,57 +54,101 @@
 .copyBasic2_L { 	height:170px !important; width:700px !important;}
 /* 2024-07-30 */
 #indexNews { 
-  /*  border: 2px solid gray;   huav 2025-08-20 */
-	padding: 10px 10px 0 10px;
+  /* border: 2px solid gray;  huav 2025-08-20 */
+	padding: 0 10px 0 10px;
 	border-radius: 20px 20px;
-	/*  background: rgba(255, 255, 255, 0.8); huav 2025-08-20 */
+	background: rgba(255, 255, 255, 0.5); /* huav 2025-08-20 */
 }
-#indexAir { 
-  border: 2px solid rgba(128, 128, 128, 0);
-	padding: 10px 10px 0 10px;
+indexAir# {
+	flex:none;
+	width: 45%; 
+	height:450px; 
+	margin-left: 10px;
+	float:right;  
+	/* background:url(../images/bg_a_index.png) no-repeat top left; */
+  /* border: 2px solid gray;  huav 2025-08-20 */
+	padding: 0 10px 0 10px;
 	border-radius: 20px 20px;  
-	background: rgba(255, 255, 255, 0.8); 
+	background: rgba(255, 255, 255, 0.5); 
 }
-.swiper { width: 500px; height: 430px !important; position: relative;}
-.swiper-img { width: 500px; height: 430px !important;background: rgb(234, 237, 238);position: absolute;left: 0;top: 0;
-	border-radius: 3px !important;background: linear-gradient(to top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 255));}
+#slide {
+	flex:none;
+	margin: auto;
+  width: 53%;
+  margin-top: -20px;	
+	padding: 0 10px 0 10px;
+	border-radius: 20px 20px;  
+	background: rgba(255, 255, 255, 0.5); 
+}
+.swiper {
+  position: relative;
+  width: 100%;  
+  margin: 0;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px !important;
+	height: 170px !important;
+}
+.swiper-slide img {
+  display: block;
+  width: 270px;
+	height: 170px;
+  object-fit: cover;
+	background: white; 
+  border:0px solid gray;  
+	border-radius: 5px 5px; 
+}
+/* .swiper-slide {
+  width: 40%;
+}
+.swiper-slide:nth-child(2n) {
+  width: 20%;
+}
+.swiper-slide:nth-child(3n) {
+  width: 20%;
+} 
 .swiper-button-next, 
 .swiper-button-prev {
-    color: var(--swiper-navigation-color,#eff1f321) !important;
+  color: var(--swiper-navigation-color,#eff1f321) !important;
 }
+  */
 /* Container holding the image and the text */
 .swiper-txt {
   z-index: 100;
   position: absolute;
-  color: rgb(246, 248, 246);
-  text-shadow:  1px 1px 2px rgb(240, 235, 204),  0 0 1em blue,  0 0 0.2em rgb(0, 217, 255);
+  color: rgb(6, 63, 110);
+  text-shadow:  2px 2px 2px rgb(255, 255, 255),  0 0 1em rgb(245, 242, 242),  0 0 0.2em rgb(133, 136, 136);
+  line-height: 1.2;
   font-weight: 900;
-  font-size: 24px;
-  font-weight: bold;
-  left: 20px;
-  top: 10px;
+  font-size: 22px;
+  text-align: left;
+  left: 0px;
+  top: 0px;
 } 
-/* 引入 Google Fonts 的 Inter 字體 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-/* 圖片容器，用於定位圓圈 */
+
+/* 引入 Google Fonts 的 Inter 字體
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); */
+/* 圖片容器，用於定位圓圈
 .image-container {
     position: relative;
     width: 400px;
     height: 400px;
     overflow: hidden;
-}
-/* 動畫圓圈的通用樣式 */
+} */
+/* 動畫圓圈的通用樣式
 .circle {
     position: absolute;
     border-radius: 50%;
     border-width: 3px;
     border-style: solid;
-    /* 保持 translate 來維持圓圈中心在指定位置 */
     transform: translate(-50%, -50%) scale(0);
     animation: pulse-and-fade 4s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 100;
-}
-/* 定義動畫 keyframes */
+}  */
+/* 定義動畫 keyframes
 @keyframes pulse-and-fade {
     0% {
         transform: translate(-50%, -50%) scale(0);
@@ -116,40 +160,37 @@
         opacity: 0;
         border-width: 3px;
     }
-}
-/* 第一個圓圈的特定樣式 */
+} */
+/* 第一個圓圈的特定樣式
 .circle-1 {
     width: 100px;
     height: 100px;
     border-color: #f53939;
     animation-delay: 0s;
-    /* 設置不同的顯示位置 */
     top: 25%;
     left: 75%;
     z-index: 100;
-}
-/* 第二個圓圈的特定樣式 */
+} */
+/* 第二個圓圈的特定樣式
 .circle-2 {
     width: 150px;
     height: 150px;
     border-color: #07f1e2;
-    animation-delay: 1.33s; /* 延遲動畫開始時間 */
-    /* 設置不同的顯示位置 */
+    animation-delay: 1.33s; 
     top: 70%;
     left: 20%;
     z-index: 100;
-}
-/* 第三個圓圈的特定樣式 */
+} */
+/* 第三個圓圈的特定樣式
 .circle-3 {
     width: 200px;
     height: 200px;
     border-color: #f1d234;
-    animation-delay: 2.66s; /* 延遲動畫開始時間 */
-    /* 設置不同的顯示位置 */
+    animation-delay: 2.66s; 
     top: 80%;
     left: 60%;
     z-index: 100;
-}
+} */
 
 .autoplay-progress {
   position: absolute;
@@ -221,8 +262,6 @@
 	  padding: 5px;
     font-size: 11px;
   } 
-  .swiper { width: 500px !important; }
-  .swiper-img { width: 500px !important; }
   #indexNews li {
     min-height:30px; line-height:14px; margin-left:15px;
   }
@@ -238,6 +277,9 @@
 	  margin: 10px 3px;
 	  padding: 5px;
     background: rgb(255, 255, 255);
+  }
+  #slide {
+    display: none;
   }
   #footer { display: none; font-size: 14.5px;} 
   #mobileFooter { display: block; max-width:100%; height:auto;margin-top: 15px; background-color: #1d2087;z-index: 990; }
@@ -376,8 +418,6 @@
 	  padding: 5px;
     font-size: 12px;
   }
-  .swiper { width: 360px !important; }
-  .swiper-img { width: 360px !important;}
   #indexNews li {
     min-height:25px; line-height:13px; margin-left:12px;
   }
@@ -394,6 +434,10 @@
 	  padding: 5px -1px;
     background: rgb(255, 255, 255);
   }
+  #slide {
+    display: none;
+  }
+  #foot
   #mobileFooter { display: block; max-width:100vw; margin-top: 10px; background-color: #1d2087;z-index: 990; }
   .dl-menuwrapper li a {
     font-size: 16px;

@@ -12,6 +12,26 @@
 	font-style: normal;
 }
 
+/* 讓 top_logo.html 框架和選單固定在頁面頂端 */
+#fixedHeader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: white; /* 確保背景不會透明 */
+	z-index: 1000; /* 確保內容在最上層 */
+}
+
+/* 調整內容區塊的間距，避免被固定區塊遮擋 */
+#scrollableContent {
+	/*
+		請根據 fixedHeader 的實際高度來設定 padding-top 的值。
+		您可以透過瀏覽器的開發者工具來測量 #main 和 #menuPad 的總高度。
+		以您提供的程式碼來說，大約會是 160px。
+	*/
+	padding-top: 160px; 
+}
+
 body, html { font-size: 100%; 	padding: 0; margin: 0; scrollbar-width: none;  /* 隱藏 Firefox 捲動軸 */}
 body::-webkit-scrollbar {
     display: none; /* 隱藏捲動軸 */

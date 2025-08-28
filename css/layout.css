@@ -100,6 +100,7 @@
 	background: white; 
   border:0px solid gray;  
 	border-radius: 5px 5px; 
+  background: rgba(255, 255, 255, 0); 
 }
 /* .swiper-slide {
   width: 40%;
@@ -126,7 +127,7 @@
   font-size: 22px;
   text-align: left;
   left: 0px;
-  top: 0px;
+  top: 5px;
 } 
 
 /* 引入 Google Fonts 的 Inter 字體
@@ -257,11 +258,11 @@
     justify-content: center; 
   }
   #indexNews {
-    /* width: 75vw;    
+    width: 75vw;    
 	  margin: 3px;
 	  padding: 5px;
-    font-size: 11px; */
-    display: none;
+    font-size: 11px;
+	  padding: 10px 10px 0 10px;
   } 
   #indexNews li {
     min-height:30px; line-height:14px; margin-left:15px;
@@ -416,11 +417,11 @@
     justify-content: center;
   }
   #indexNews {
-    /* width: 370px;  
+    width: 370px;  
 	  margin: 3px; 
 	  padding: 5px;
-    font-size: 12px; */
-    display: none;
+    font-size: 12px;
+	  padding: 10px 10px 0 10px;
   }
   #indexNews li {
     min-height:25px; line-height:13px; margin-left:12px;

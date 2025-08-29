@@ -1,0 +1,238 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+=========== 透明度 ===========
+	opacity: 0.7;
+	-moz-opacity:0.7;
+	filter: alpha(opacity=70);
+	background-color: #000;
+
+*/
+body, div, ul, li, img, table, a  {
+	margin: 0px; padding: 0px; border:0px none; text-decoration: none; list-style:none;
+	font-family: "微軟正黑體", "華康細黑體", "華康中黑體", "華康儷細黑", "儷黑體", "新細明體";
+	line-height:24px;
+}
+body {
+	background:#1d2087;
+}
+iframe {
+	border: 0px;
+}
+
+#main {
+	position:relative;
+	width: 100%; background:#fff;
+}
+#main_index {
+	position:relative;
+	width: 100%; background:#1d2087  url(../images/bg_sky_index.jpg) top center;
+}
+#logoIframe {
+	width:100%; height:65px; padding-top:15px;
+	position:relative; z-index:90;
+}
+.logoBar {
+	width: 1000px; height:65px;
+	position:relative; margin: 0px auto;
+}
+#logoImg {
+	background:url(../images/logo.png) no-repeat;
+	width:420px; height:50px;
+}
+.topArea {
+	position:absolute; right: 20px; bottom:5px;
+	width: auto; height:20px; font-size: 14px;
+	text-align:right;
+}
+.indexBannerBG_L, .indexBannerBG_R {
+	width: 50%; height:368px; position: absolute;  top:60px;
+}
+.indexBannerBG_L {
+	left: 0px;
+	background:url(../images/side_big_l.jpg) repeat-x;
+}
+.indexBannerBG_R {
+	right: 0px;
+	background:url(../images/side_big_r.jpg) repeat-x;
+}
+#indexBannerShow {
+	width: 100%; height:368px; position:relative;
+}
+.bannerShow {
+	width:100%; height:368px; position:relative;
+	margin: 0px auto;
+}
+
+.BannerBG_L, .BannerBG_R {
+	width: 50%; height:190px; position: absolute;  top:80px;
+}
+.BannerBG_L {
+	left: 0px;
+	background:url(../images/side_smart_l.png) repeat-x;
+}
+.BannerBG_R {
+	right: 0px;
+	background:url(../images/side_smart_r.png) repeat-x;
+}
+#BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
+	width: 100%; height:190px; position:relative;
+}
+#BannerShow_upon1 {
+	background:url(../images/bg_upon_1.jpg) center no-repeat;
+}
+#BannerShow_upon2 {
+	background:url(../images/bg_upon_2.jpg) center no-repeat;
+}
+#BannerShow_upon3 {
+	background:url(../images/bg_upon_3.jpg) center no-repeat;
+}
+#BannerShow_upon4 {
+	background:url(../images/bg_upon_4.jpg) center no-repeat;
+}
+#BannerShow_upon5 {
+	background:url(../images/bg_upon_5.jpg) center no-repeat;
+}
+
+
+.topArea a:link, .topArea a:visited {
+	color: #339;
+}
+.topArea a:hover, .topArea a:active {
+	color:#3C3;
+}
+/*=== BODY ===*/
+#indexContent {
+	width:1000px; height:340px; position:relative;
+	margin: 15px auto;
+}
+#Content {
+	width:1000px; height:auto; position:relative;
+	margin: 15px auto; padding-bottom: 15px;
+}
+#indexNews {
+	width: 600px;
+	height:480px;
+	padding-top: 50px;
+	float:left;
+	font-size:14px; font-weight:bold;
+	color:#333;
+	background: url(../images/bg_news_index.png) no-repeat top left;
+}
+#indexNewsPad {
+	width:inherit; height:inherit;
+	background:#fff;
+}
+#indexNews li {
+	min-height:40px; line-height:24px; margin-left:20px;
+}
+.indexNewsList {
+	margin-left:10px;
+}
+#indexNews a:link, #indexNews a:visited {
+	font-size: 16px; color:#390;
+	text-decoration:underline;
+}
+#indexNews a:hover, #indexNews a:active {
+	font-size: 16px; color:#06F;
+	text-decoration:underline;
+}
+
+#indexAir {
+	width: 370px; height:420px; padding-top: 45px; float:right;
+	background:url(../images/bg_air_index.png) no-repeat top left;
+}
+.indexAirPic {
+	width:320px; height:380px; overflow:hidden;
+	margin: 10px auto auto;  text-align:center;
+}
+.indexAirPic img {
+	text-align:center;
+	margin-left: -100px;
+}
+
+.footerSave {
+	height: 76px; margin-top:10px; position: relative;
+}
+#footerBar {
+	width: 100%; height:66px; padding: 10px 0px 0px 0px;
+	font-size: 16px; line-height:24px;
+	color:#ccc; text-align:center;
+}
+.copyService img {
+	-moz-box-shadow:4px 4px 12px -2px rgba(20%,20%,40%,0.5);
+	-webkit-box-shadow:4px 4px 12px -2px rgba(20%,20%,40%,0.5);
+	box-shadow:4px 4px 12px -2px rgba(20%,20%,40%,0.5);
+}
+
+/* Title */
+.titleBar_blue {
+	width: inherit; height: 27px;
+	text-align:left;
+}
+.titleBar_green {
+	background:url(../images/titleBar_green.png) no-repeat;
+	height:30px; padding-left:40px; color:#090;
+	
+}
+
+/* Font */
+.copyBasic {
+	height:auto; line-height:24px; font-size:16px;
+	margin: 18px auto; position:relative; clear:both;
+}
+.t_B {
+	font-weight:bold;
+}
+.t_sp10 {
+	margin: 14px;
+}
+.t_wt {
+	color: #fff;
+}
+.t_12pt {
+	font-size: 16px;
+}
+.t_14pt {
+	font-size: 16px;
+}
+.t_16pt {
+	font-size: 18px;
+	line-height: 24px;
+}
+.t_24pt {
+	font-size: 24px;
+}
+
+
+/*=== BTN ===*/
+.btn_Top-out, .btn_Top-over {
+	width:106px; height:48px; float:right;
+}
+.btn_Top-out {
+	background:url(../images/btn_top.png) no-repeat top;
+}
+.btn_Top-over {
+	background:url(../images/btn_top.png) no-repeat bottom;
+}
+.btn_Send-out, .btn_Send-over {
+	width:84px; height:32px; float:right; cursor:pointer;
+}
+.btn_Send-out {
+	background:url(../images/btn_send.png) no-repeat top;
+}
+.btn_Send-over {
+	background:url(../images/btn_send.png) no-repeat bottom;
+}
+.btn_Clean-out, .btn_Clean-over {
+	width:84px; height:32px; float:right; cursor:pointer;
+}
+.btn_Clean-out {
+	background:url(../images/btn_cl.png) no-repeat top;
+}
+.btn_Clean-over {
+	background:url(../images/btn_cl.png) no-repeat bottom;
+}
+.t_9pt {
+	font-size: 9px;
+}

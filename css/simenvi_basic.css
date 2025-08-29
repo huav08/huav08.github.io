@@ -280,6 +280,10 @@ iframe {
 	font-size: 18px;
 	line-height: 24px;
 }
+.t_6pt {
+	font-size: 16px;
+	line-height: 24px;
+}
 .t_24pt {
 	font-size: 24px;
 }
@@ -290,10 +294,12 @@ iframe {
 	width:106px; height:48px; float:right;
 }
 .btn_Top-out {
-	background:url(../images/btn_top.png) no-repeat top;
+	display:none !important;
+	/* background:url(../images/btn_top.png) no-repeat top; */
 }
 .btn_Top-over {
-	background:url(../images/btn_top.png) no-repeat bottom;
+	display:none !important;
+	/* background:url(../images/btn_top.png) no-repeat bottom; */
 }
 .btn_Send-out, .btn_Send-over {
 	width:84px; height:32px; float:right; cursor:pointer;

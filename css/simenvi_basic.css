@@ -291,7 +291,8 @@ iframe {
 
 /*=== BTN ===*/
 .btn_Top-out, .btn_Top-over {
-	width:106px; height:48px; float:right;
+	display:none !important;
+	/* width:106px; height:48px; float:right; */ 
 }
 .btn_Top-out {
 	display:none !important;

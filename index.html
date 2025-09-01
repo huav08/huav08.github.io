@@ -281,7 +281,7 @@
 	</div>
 	<!-- Slider main container -->
 	<div id="slide">
-		<div style="font-size:larger;font-weight:bold;">&nbsp;&nbsp;<img src="images/title_Company.png" /> 服務項目與實績</div>
+		<!-- <div style="font-size:larger;font-weight:bold;">&nbsp;&nbsp;<img src="images/title_Company.png" /> 服務項目與實績</div> -->
 		<div class="swiper mySwiper">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide"><a href="service_1.html" target="_self" title="環境影響評估及環境監測－臺北市萬華區福星段"><img class="swiper-img" src="images/swiper/pic_1_b4.png"><p class="swiper-txt">環境影響評估及環境監測<br>－臺北市萬華區福星段</p></a></div>
@@ -300,6 +300,8 @@
 				<div class="swiper-slide"><a href="service_7-2.html" target="_self" title="碳盤查及淨零管理－三重環北幹線等工程碳盤查與減量"><br><img class="swiper-img" src="images/swiper/04.png"><p class="swiper-txt">碳盤查及淨零管理<br>－三重環北幹線等工程碳盤查與減量</p></a></div>
 				<div class="swiper-slide"><a href="service_8.html#principle" target="_self" title="氣候變遷風險評估－環境影響評估階段"><br><img class="swiper-img" src="images/swiper/pic_8_3.png"><p class="swiper-txt">氣候變遷風險評估<br>－環境影響評估階段</p></a></div>
 			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
 			<div class="swiper-pagination"></div>
 		</div>
 	</div>
@@ -343,6 +345,8 @@
       grabCursor: true,
       centeredSlides: true,
       slidesPerView: "auto",
+	  initialSlide: 2, // 新增這行，從第5個 slide 開始顯示
+	  loop: true, // 這行程式碼就已經讓你的輪播具備無限循環的功能了
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -353,6 +357,10 @@
       pagination: {
         el: ".swiper-pagination",
       },
+	  navigation: { // 新增這段，啟用左右切換按鈕
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	  },
     });
     $(function() {
       $( '#dl-menu' ).dlmenu({ // 選取 id 為 dl-menu 的元素，並呼叫 dlmenu 外掛來初始化它，這通常用於創建下拉式選單。

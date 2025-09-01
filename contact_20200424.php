@@ -185,7 +185,7 @@ if($action){
 		<li class="chdMenuPad_R"></li><p />
 		<li class="chdMenuPad_L"></li>
 		<li class="chdMenuPad_B">
-			<span class="t_sp10"><a href="service_7.html" target="_self">氣候永續服務　　　　　　</a></span>
+			<span class="t_sp10"><a href="service_7.html" target="_self">碳盤查及淨零管理　　　　</a></span>
 		</li>
 		<li class="chdMenuPad_R"></li><p />
 		<li class="chdMenuPad_L"></li>

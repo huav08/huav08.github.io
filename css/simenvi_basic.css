@@ -231,6 +231,15 @@ iframe {
 	background-position: left;
 }
 
+.titleBar_img2 {
+	padding: 3px 27px; 
+	color:white; 
+	background: url(../images/title_background2.png); 
+	background-size: 500x 27px; 
+	background-repeat: no-repeat; 
+	background-position: left;
+}
+
 .titleBar_green {
 	background:url(../images/titleBar_green.png) no-repeat;
 	height:30px; padding-left:40px; color:#090;
@@ -240,6 +249,13 @@ iframe {
 .titleBar_green_circle {
 	background:url(../images/titleBar_green_circle.png) no-repeat;
 	height:30px; padding-left:40px; color:#090;
+	
+}
+
+.titleBar_green_circle2 {
+	background:url(../images/titleBar_green_circle2.png) no-repeat;
+	height:30px; padding-left:40px; color:#090;
+	vertical-align:middle;
 	
 }
 
@@ -262,6 +278,14 @@ iframe {
 }
 .t_B {
 	font-weight:bold;
+}
+.t_B2 {	
+    vertical-align: middle !important;
+	color:#538135 !important;
+	font-weight:bold !important;
+}
+img.t_B2 {
+	vertical-align: baseline !important;
 }
 .t_sp10 {
 	margin: 14px;

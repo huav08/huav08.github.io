@@ -16,12 +16,13 @@
         width: 100%; 
         height: 85%;
         overflow-y: auto; /* Show vertical scrollbar only when needed */
-        overflow-x: hidden;
+        overflow-x: auto;
         scrollbar-width: thin; /* Renders a thinner scrollbar */
     }
 
     date-badge {
         text-wrap: nowrap;
+        white-space: nowrap;
     }
 
     /* 頁籤導覽列樣式 */
@@ -61,7 +62,7 @@
     /* 頁籤內容區塊樣式 */
     .tabcontent {
         display: none;
-        padding: 20px;
+        padding: 2px;
         animation: fadeIn 0.5s;
     }
 

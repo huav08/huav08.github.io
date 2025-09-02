@@ -17,18 +17,20 @@ function openTab(evt, tabName) {
 const rssFeeds = [
     {
         // 由於瀏覽器安全性限制 (CORS)，我們需要透過代理伺服器來取得 RSS 內容
-        url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://service.ema.gov.tw/Rss/RssChannel/zh-tw/215'),
-        listId: 'newsReleaseList'
+        url: 'https://corsproxy.io/?' + encodeURIComponent('https://service.ema.gov.tw/Rss/RssChannel/zh-tw/215'),
+        listId: 'newsReleaseList',
+        useMinguo: true // 使用民國年
     },
     {
-        url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://service.ema.gov.tw/Rss/RssChannel/zh-tw/217'),
-        listId: 'clarificationList'
+        url: 'https://corsproxy.io/?' + encodeURIComponent('https://www.epa.ie/resources/rss/index-90474.xml'),
+        listId: 'clarificationList',
+        useMinguo: false // 使用西元年
     }
 ];
 
 /**
  * 取得並顯示 RSS 內容
- * @param {object} feed - 包含 url 和 listId 的物件
+ * @param {object} feed - 包含 url、listId 和 useMinguo 的物件
  */
 const fetchAndDisplayRss = async (feed) => {
     const listElement = document.getElementById(feed.listId);
@@ -49,26 +51,54 @@ const fetchAndDisplayRss = async (feed) => {
 
         // 將 NodeList 轉為陣列並排序
         const sortedItems = Array.from(items).sort((a, b) => {
-            const dateA = new Date(a.querySelector('pubDate').textContent);
-            const dateB = new Date(b.querySelector('pubDate').textContent);
-            return dateB - dateA; // 由新到舊排序
+            let pubDateAEl = a.querySelector('pubDate') || a.querySelector('updated');
+            let pubDateBEl = b.querySelector('pubDate') || b.querySelector('updated');
+
+            // 防禦性檢查，處理 item 中缺少 pubDate 標籤的情況
+            if (!pubDateAEl && !pubDateBEl) return 0; // 兩者都缺，視為相等
+            if (!pubDateAEl) return 1;  // a 缺少日期，排到後面
+            if (!pubDateBEl) return -1; // b 缺少日期，排到後面
+
+            try {
+                const dateA = new Date(pubDateAEl.textContent);
+                const dateB = new Date(pubDateBEl.textContent);
+                // 處理無效日期
+                if (isNaN(dateA.getTime())) return 1;
+                if (isNaN(dateB.getTime())) return -1;
+                return dateB - dateA; // 由新到舊排序
+            } catch (e) {
+                return 0; // 如果日期解析出錯，視為相等
+            }
         });
 
         let html = '';
         sortedItems.forEach(item => {
-            const title = item.querySelector('title').textContent;
-            const link = item.querySelector('link').textContent;
-            const pubDate = new Date(item.querySelector('pubDate').textContent);
+            const titleEl = item.querySelector('title');
+            const linkEl = item.querySelector('link');
+            let pubDateEl = item.querySelector('pubDate');
+            if(pubDateEl == null) pubDateEl = item.querySelector('updated');
 
-            // 格式化日期為 YYYY-mm-dd
-            const currentYear = new Date().getFullYear() - 1911;
-            const year = pubDate.getFullYear() - 1911;
-            const month = String(pubDate.getMonth() + 1).padStart(2, '0');
-            const day = String(pubDate.getDate()).padStart(2, '0');
-            const formattedDate = `${year}-${month}-${day}`;
-            if(year == currentYear) {
-                html += `<li><span class="date-badge">${formattedDate}</span> <span class="indexNewsList"><a href="${link}" target="_blank" title="${title}(另開新視窗)">${title}</a></span></li>`;
+            // 如果缺少標題或連結，則跳過此項目
+            if (!titleEl || !linkEl) {
+                return;
             }
+
+            const title = titleEl.textContent;
+            const link = linkEl.textContent;
+            let formattedDate = '無日期'; // 日期預設文字
+
+            if (pubDateEl && pubDateEl.textContent) {
+                const pubDate = new Date(pubDateEl.textContent);
+                if (!isNaN(pubDate.getTime())) { // 檢查日期是否有效
+                    // 根據 feed 設定決定使用民國年或西元年
+                    const year = feed.useMinguo ? pubDate.getFullYear() - 1911 : pubDate.getFullYear();
+                    const month = String(pubDate.getMonth() + 1).padStart(2, '0');
+                    const day = String(pubDate.getDate()).padStart(2, '0');
+                    formattedDate = `${year}-${month}-${day}`;
+                }
+            }
+
+            html += `<li><span class="date-badge">${formattedDate}</span> <span class="indexNewsList"><a href="${link}" target="_blank" title="${title}(另開新視窗)">${title}</a></span></li>`;
         });
         
         listElement.innerHTML = html;

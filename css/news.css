@@ -16,16 +16,12 @@
         width: 100%; 
         height: 85%;
         overflow-y: auto; /* Show vertical scrollbar only when needed */
+        overflow-x: hidden;
         scrollbar-width: thin; /* Renders a thinner scrollbar */
     }
 
-    /* 標題樣式 */
-    h2 {
-        text-align: center;
-        padding: 20px;
-        margin: 0;
-        background-color: #005a31;
-        color: white;
+    date-badge {
+        text-wrap: nowrap;
     }
 
     /* 頁籤導覽列樣式 */

@@ -115,8 +115,6 @@ iframe {
 #BannerShow_upon5 {
 	background:url(../images/bg_upon_5.jpg) center no-repeat;
 }
-
-
 .topArea a:link, .topArea a:visited {
 	color: #339;
 }
@@ -145,7 +143,6 @@ iframe {
 	float:left;
 	font-size:16px; font-weight:bold;
 	color:#333;
-	/* background: url(../images/bg_news_index.png) no-repeat top left; */	
 }
 #indexNewsPad {
 	width:inherit; height:inherit;
@@ -171,18 +168,19 @@ iframe {
 	font-size: 16px; color:#1b4d02;
 	text-decoration:underline;
 }
+//
 #indexNews a:hover, #indexNews a:active {
 	font-size: 16px;
 	color:#C60;
 	text-decoration:underline;
 }
 .indexAirPic {
-	width:320px; height:380px; overflow:hidden;
-	margin: 10px auto auto;  text-align:center;
+	width:350px; height:437px; overflow:hidden;
+	margin: 5px auto auto;  text-align:center;
 }
 .indexAirPic img {
 	text-align:center;
-	margin-left: 10px;
+	margin-left: -20px;
 }
 
 .footerSave {

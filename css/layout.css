@@ -54,31 +54,31 @@
 .copyBasic2_L { 	height:170px !important; width:700px !important;}
 /* 2024-07-30 */
 #indexNews { 
-	width: 600px; 
-	height: 450px; 
+	width: 610px; 
+	height: 490px; 
   /* border: 2px solid gray;  huav 2025-08-20 */
-	padding: 0 10px 0 10px;
+	padding: 0 10px;
 	border-radius: 20px 20px;
 	background: rgba(255, 255, 255, 0.7); /* huav 2025-08-20 */  
 }
 #indexAir {
 	flex:none;
-	width: 370px; 
-	height: 450px; 
+	width: 360px; 
+	height: 490px; 
 	margin-left: 10px;
 	float:right;  
 	/* background:url(../images/bg_a_index.png) no-repeat top left; */
   /* border: 2px solid gray;  huav 2025-08-20 */
-	padding: 0 10px 0 10px;
+	padding: 0 10px;
 	border-radius: 20px 20px;  
 	background: rgba(255, 255, 255, 0.7); 
 }
 #slide {
 	flex:none;
 	margin: auto;
-  width: 995px;
-  margin-top: 0;	
-	padding: 0 10px 0 10px;
+  width: 990px;
+  margin-top: 35px;	
+	padding: 10px;
 	border-radius: 20px 20px;  
 	background: rgba(255, 255, 255, 0.7); 
 }
@@ -363,7 +363,7 @@
 	  padding: 5px;
     font-size: 12px;
 	  padding: 10px 10px 0 10px;
-  }
+  } 
   #indexNews li {
     min-height:25px; line-height:13px; margin-left:12px;
   }

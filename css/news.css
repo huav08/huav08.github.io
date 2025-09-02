@@ -3,7 +3,7 @@
     /* 容器樣式 */
     .container {
         width: 100%; 
-        height: 85%;
+        height: 87%;
         /* max-width: 800px; */
         margin: 0 auto;
         /* background-color: #ffffff; */
@@ -14,7 +14,7 @@
 
    .tabcontent {
         width: 100%; 
-        height: 85%;
+        height: 87%;
         overflow-y: auto; /* Show vertical scrollbar only when needed */
         overflow-x: auto;
         scrollbar-width: thin; /* Renders a thinner scrollbar */
@@ -79,11 +79,11 @@
     }
 
     .tabcontent li {
-        padding: 12px 8px;
+        padding: 6px;
         border-bottom: 1px solid #eee;
         display: flex;
         align-items: center;
-        gap: 15px; /* 日期和標題之間的間距 */
+        gap: 10px; /* 日期和標題之間的間距 */
     }
 
     .tabcontent li:last-child {

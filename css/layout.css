@@ -197,7 +197,6 @@
     justify-content: center; 
   }
   #indexNews {
-    display: none;
     width: 75vw;    
 	  margin: 3px;
 	  padding: 5px;
@@ -216,6 +215,7 @@
 	  padding: 10px 10px 0 10px;
   }
   #indexAir {
+    display: none;
     width: 65vw; 
 	  margin: 10px 3px;
 	  padding: 5px;
@@ -358,7 +358,6 @@
     justify-content: center;
   }
   #indexNews {
-    display: none;
     width: 370px;  
 	  margin: 3px; 
 	  padding: 5px;
@@ -377,6 +376,7 @@
 	  padding: 10px 10px 0 10px;
   }
   #indexAir {
+    display: none;
     width: 370px;  
 	  margin: 10px 3px;
 	  padding: 5px -1px;

@@ -228,6 +228,12 @@
         #about .main-content {
             margin-top: 330px;
         }
+        
+        /* Award page with BannerShow */
+        #award .main-content {
+            margin-top: 330px;
+            min-height: 1200px;
+        }
 
         /* SERVICE */                
         .BannerShow_upon,

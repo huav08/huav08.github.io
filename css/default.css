@@ -960,6 +960,16 @@
                 margin-top: 280px;
             }
             
+            #about .titleBar_blue {
+                width: 100%;
+                text-align: center;
+            }
+            
+            #about .titleBar_blue img {
+                max-width: 100%;
+                height: auto;
+            }
+            
             .footer {
                 padding: 1.5rem 0;
             }

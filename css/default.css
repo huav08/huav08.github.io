@@ -629,6 +629,12 @@
                 margin-left: 15px;
             }
             
+            .submenu {
+                min-width: 350px;
+                right: 0;
+                left: auto;
+            }
+            
             .index-components {
                 flex-direction: column;
                 gap: 15px;

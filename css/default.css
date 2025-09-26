@@ -1,0 +1,988 @@
+
+        /* 基本設定 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        .header {
+            background-color: #004d80; /* 模擬環境部藍色 */
+            color: white;
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .topArea {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 0.9rem;
+            margin-right: -2rem;
+            position: relative;
+            right: 0;
+        }
+        
+        .topArea a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .topArea a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .topArea .separator {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .header-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo img {
+            height: 42px;
+            margin-right: 15px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+        }
+
+        .logo-text h2 {
+            font-size: 0.8rem;
+            font-weight: normal;
+            opacity: 0.8;
+        }
+
+        .nav-links li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            width: 280px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            padding: 8px 15px;
+            color: white;
+            outline: none;
+            width: 220px;
+        }
+
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .main-nav {
+            position: relative; /* 子選單定位用 */
+        }
+
+        .main-nav .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li.has-submenu {
+            position: relative;
+            margin-left: 25px;
+        }
+
+        #about {
+            background-color: white;
+        }
+
+        @media (min-width: 769px) {
+            .nav-links li a:hover {
+                border-bottom: 2px solid white;
+            }
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            background-color: #003366;
+            min-width: 300px;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-links li:hover > .submenu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .submenu li a {
+            padding: 12px 20px;
+            border-bottom: none;
+            white-space: nowrap;
+            text-align: left;
+        }
+
+        .submenu li a:hover {
+            background-color: #0358ac;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Scrollable Container */
+        .main-content {
+            margin-top: 140px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2rem;
+        }
+        
+        /* About page with BannerShow */
+        #about .main-content {
+            margin-top: 330px;
+        }
+
+        /* SERVICE */                
+        .BannerShow_upon,
+        #BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
+            width: 100vw;
+            height: 190px;
+            position: fixed;
+            top: 140px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: cover !important;
+            background-position: center !important;
+            z-index: 999;
+        }
+        #BannerShow_upon1 {
+            background:url(../images/bg_upon_1.jpg) center no-repeat;
+        }
+        #BannerShow_upon2 {
+            background:url(../images/bg_upon_2.jpg) center no-repeat;
+        }
+        #BannerShow_upon3 {
+            background:url(../images/bg_upon_3.jpg) center no-repeat;
+        }
+        #BannerShow_upon4 {
+            background:url(../images/bg_upon_4.jpg) center no-repeat;
+        }
+        #BannerShow_upon5 {
+            background:url(../images/bg_upon_5.jpg) center no-repeat;
+        }
+
+        /* Carousel */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            position: relative;
+            display: none;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 500px;
+            display: block;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+        }
+
+        .carousel-caption h3 {
+            font-size: 1.5rem;
+        }
+
+        .carousel-caption p {
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        /* 圓形按鈕樣式 */
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            /* 核心修改：將 border-radius 改為 50% */
+            border-radius: 50%;
+            width: 50px; /* 設定寬高相等以確保是正圓 */
+            height: 50px;
+            display: flex; /* 使用 Flexbox 讓箭頭居中 */
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .prev-btn:hover, .next-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        /* News Section */
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin: 3rem 0 1.5rem 0;
+        }
+
+        .section-title h2 {
+            color: #004d80;
+            font-size: 1.8rem;
+        }
+
+        .section-title span a {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .news-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .index-components {
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+        }
+
+        #indexNews {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            flex: 2;
+            height: 490px;
+            padding: 0 10px;
+        }
+
+        #indexAir {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            flex: 1;
+            height: 490px;
+        }
+        
+        .airunit {
+            background-color: #004d80;
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover, #indexNews:hover, #indexAir:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h4 {
+            color: #004d80;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card-content p {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #004d80;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #003366;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-info, .footer-links, .copyright {
+            text-align: left;
+        }
+
+        .footer-info p, .footer-links ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            display: block;
+            margin-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ddd;
+        }
+
+        .copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Go To Top Button */
+        .go-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .go-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .go-to-top img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .go-to-top:hover img {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* News Date Badge */
+        .date-badge {
+            white-space: nowrap !important;
+            display: inline-block;
+            min-width: 80px;
+        }
+        
+
+        
+        #indexNews li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        #indexNews .indexNewsList {
+            flex: 1;
+        }
+        
+        /* Tab 樣式 */
+        .tab {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+        
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        
+        .tab button.active {
+            background-color: #004d80;
+            color: white;
+        }
+        
+        .tabcontent {
+            display: none;
+            padding: 12px;
+            border-top: none;
+        }
+        
+        .tabcontent ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .tabcontent li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tabcontent li:last-child {
+            border-bottom: none;
+        }
+
+        /* RWD 響應式設計 */
+        /* 平板設備 (Tablet) */
+        @media (max-width: 1024px) {
+            .header-right {
+                gap: 10px;
+            }
+            
+            .topArea {
+                font-size: 0.85rem;
+                gap: 8px;
+                margin-right: -1rem;
+            }
+            
+            .topArea a {
+                padding: 4px 8px;
+            }
+            
+            .BannerShow_upon,
+            #BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
+                height: 150px;
+                top: 130px;
+            }
+
+            .nav-links li {
+                margin-left: 15px;
+            }
+            
+            .index-components {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 2rem;
+            }
+            
+            #indexNews, #indexAir {
+                flex: none;
+                height: auto;
+                min-height: 400px;
+                margin: 0;
+            }
+            
+            #indexNews {
+                max-height: 500px;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            #indexNews .container {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            
+            #indexNews .tab {
+                flex-shrink: 0;
+            }
+            
+            #indexNews .tabcontent {
+                flex: 1;
+                overflow-y: auto;
+                min-height: 0;
+            }
+            
+            #indexAir img {
+                width: 100%;
+                height: auto;
+                max-width: 350px;
+            }
+            
+            .news-cards {
+                padding: 0 2rem;
+            }
+            
+            .main-content {
+                margin-top: 130px;
+            }
+            
+            #about .main-content {
+                margin-top: 280px;
+            }
+        }
+
+        /* 手機設備 (Mobile) */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                gap: 10px;
+            }
+            
+            .topArea {
+                align-self: flex-end;
+                font-size: 0.8rem;
+                gap: 8px;
+                margin-right: -1rem;
+            }
+            
+            .topArea a {
+                padding: 3px 6px;
+            }
+            
+            .BannerShow_upon,
+            #BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
+                height: 120px;
+                top: 160px;
+            }
+
+            .header-right {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 1rem;
+            }
+
+            .search-bar {
+                flex-grow: 1; 
+                /* 移除原有的 margin-right，避免間距 */
+                margin-right: 0;
+                /* 新增：使用 Flexbox 並對齊到右側 */
+                display: flex;
+                align-items: center;
+                /* 將所有內容推向右側，但輸入框保持拉伸 */
+                justify-content: flex-end; 
+            }
+
+            .search-bar input {
+                /* 讓輸入框佔滿除按鈕外的所有空間 */
+                flex-grow: 1;
+                /* 增加右側內邊距，讓輸入框和按鈕有距離 */
+                padding: 8px 10px 8px 15px;
+                border-radius: 20px 0 0 20px;
+                /* 確保輸入框邊界與父容器對齊 */
+                margin: 0;
+            }
+
+            .search-bar button {
+                /* 將按鈕背景色延伸至左側 */
+                padding: 8px 15px;
+                border-radius: 0 20px 20px 0;
+                flex-shrink: 0;
+                /* 調整按鈕的視覺效果，使其與輸入框對齊 */
+                margin-left: -1px; /* 微調以消除間隙 */
+            }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+                transition: all 0.5s ease;
+            }
+
+            .main-nav.active {
+                display: block;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                background-color: #003366;
+                border-radius: 5px;
+            }
+
+            .nav-links li {
+                margin: 0;
+                width: 100%;
+            }
+
+            .nav-links li a {
+                padding: 15px 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                position: relative;
+            }
+            
+            .nav-links li a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 20px;
+                right: 20px;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            
+            .nav-links li a {
+                border-bottom: none;
+            }
+            
+            .index-components {
+                flex-direction: column;
+                gap: 20px;
+                margin: 1rem auto 0;
+                padding: 0 2rem;
+                max-width: 1200px;
+            }
+            
+            #indexNews, #indexAir {
+                margin: 0;
+            }
+            
+            #indexNews {
+                height: auto;
+                min-height: 350px;
+                max-height: 450px;
+                padding: 5px;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            #indexNews .container {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            
+            #indexNews .tab {
+                flex-shrink: 0;
+            }
+            
+            #indexNews .tabcontent {
+                flex: 1;
+                overflow-y: auto;
+                min-height: 0;
+            }
+            
+            #indexAir {
+                height: auto;
+                text-align: center;
+            }
+            
+            #indexAir img {
+                width: 100%;
+                height: auto;
+                max-width: 300px;
+            }
+            
+            .airunit {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+            
+            .nav-links li:last-child a {
+                border-bottom: none;
+            }
+            
+            .submenu {
+                position: static;
+                display: none;
+                background-color: #002244;
+                border-radius: 0;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-out;
+            }
+
+            .submenu.active {
+                display: block;
+                max-height: 500px; /* 大於實際內容高度即可 */
+            }
+
+            .submenu li a {
+                padding: 10px 20px;
+                margin-right: 60px;
+            }
+            
+            .submenu li a:hover {
+                background: rgba(52, 152, 219, 0.15);
+                transform: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+
+            .logo-text h1, .logo-text h2 {
+                font-size: 1rem;
+            }
+
+            .carousel-caption {
+                bottom: 10px;
+                left: 10px;
+                padding: 10px 15px;
+            }
+
+            .carousel-caption h3 {
+                font-size: 1.2rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.8rem;
+            }
+
+            .news-cards {
+                grid-template-columns: 1fr;
+                padding: 0 2rem;
+                gap: 20px;
+            }
+            
+            .card {
+                margin: 0;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-info, .footer-links {
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+            
+            .go-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .go-to-top img {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        /* 小尺寸手機設備 (Small Mobile) */
+        @media (max-width: 480px) {
+            .header-content {
+                padding: 0 1rem;
+            }
+
+            .logo img {
+                height: 31px;
+            }
+
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+
+            .logo-text h2 {
+                font-size: 0.7rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+                margin-top: 160px;
+            }
+            
+            #about .main-content {
+                margin-top: 280px;
+            }
+            
+            .footer {
+                padding: 1.5rem 0;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .go-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .go-to-top img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .BannerShow_upon,
+            #BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
+                height: 100px;
+                top: 160px;
+            }
+        }

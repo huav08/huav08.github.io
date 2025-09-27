@@ -231,6 +231,7 @@ a {
 /* About page with BannerShow */
 #about .main-content {
 		margin-top: 330px;
+		min-height: 1200px;
 }
 
 /* Award page with BannerShow */
@@ -726,9 +727,9 @@ a {
 				margin-top: 130px;
 		}
 		
-		#about .main-content {
+		/* #about .main-content {
 				margin-top: 280px;
-		}
+		} */
 }
 
 /* 手機設備 (Mobile) */
@@ -1012,9 +1013,9 @@ a {
 				margin-top: 160px;
 		}
 		
-		#about .main-content {
+		/* #about .main-content {
 				margin-top: 280px;
-		}
+		} */
 		
 		.titleBar_blue {
 				font-size: 1.6rem;

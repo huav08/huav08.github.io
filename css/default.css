@@ -937,13 +937,16 @@ a {
 				visibility: visible;
 				transform: none;
 				max-height: 0;
-				overflow: hidden;
+				overflow: visible;
 				transition: max-height 0.4s ease-out;
+				width: 100%;
+				min-width: 100%;
 		}
 
 		.submenu.active {
 				display: block;
-				max-height: 500px; /* 大於實際內容高度即可 */
+				max-height: none;
+				overflow: visible;
 		}
 
 		.submenu li a {

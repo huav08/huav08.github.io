@@ -505,6 +505,26 @@
             color: #aaa;
         }
 
+        /* Title Bar Blue */
+        .titleBar_blue {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #004d80;
+            margin-bottom: 1rem;
+        }
+        
+        .titleBar_blue img {
+            height: 24px;
+            width: auto;
+        }
+        
+        .copyBasic {
+            text-align: left;
+        }
+
         /* Go To Top Button */
         .go-to-top {
             position: fixed;
@@ -697,6 +717,10 @@
 
         /* 手機設備 (Mobile) */
         @media (max-width: 768px) {
+            .titleBar_blue {
+                text-align: center;
+                font-size: 0.9rem;
+            }
             .header-content {
                 flex-direction: column;
                 align-items: flex-start;
@@ -972,12 +996,14 @@
                 margin-top: 280px;
             }
             
-            #about .titleBar_blue {
+            .titleBar_blue {
+                font-size: 0.8rem;
                 width: 100%;
                 text-align: center;
+                justify-content: flex-start;
             }
             
-            #about .titleBar_blue img {
+            .titleBar_blue img {
                 max-width: 100%;
                 height: auto;
             }

@@ -96,11 +96,6 @@
 }
 
 @media (max-width: 768px) {
-    .titleBar_blue {
-        text-align: center;
-        font-size: 0.9rem;
-    }
-    
     .copyBasic {
         padding: 10px;
     }
@@ -129,17 +124,6 @@
 }
 
 @media (max-width: 480px) {
-    .titleBar_blue {
-        font-size: 0.8rem;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .titleBar_blue img {
-        max-width: 100%;
-        height: auto;
-    }
-    
     .service-pic-61 {
         max-width: 250px;
     }

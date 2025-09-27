@@ -43,6 +43,29 @@
     z-index: 9999 !important;
 }
 
+/* Mobile Dialog 調整 */
+@media (max-width: 768px) {
+    .ui-dialog {
+        width: 95% !important;
+        height: 90% !important;
+        max-width: none !important;
+        max-height: none !important;
+        left: 2.5% !important;
+        top: 5% !important;
+    }
+    
+    #dialog-image {
+        height: 95% !important;
+        overflow-y: auto;
+    }
+    
+    #dialog-image img {
+        width: 95% !important;
+        max-height: 95% !important;
+        object-fit: contain;
+    }
+}
+
 /* 圖片響應式 */
 .service-pic-61 {
     max-width: 100%;

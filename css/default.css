@@ -639,9 +639,6 @@ a {
 /* RWD 響應式設計 */
 /* 平板設備 (Tablet) */
 @media (max-width: 1024px) {
-		.titleBar_img {
-			font-size: 1rem;
-		}
 		.header-right {
 				gap: 10px;
 		}
@@ -724,6 +721,9 @@ a {
 		#about .main-content {
 				margin-top: 280px;
 		}
+		.titleBar_img {
+			font-size: 0.5rem;
+		}
 }
 
 /* 手機設備 (Mobile) */
@@ -762,6 +762,8 @@ a {
 		.header-content {
 				flex-direction: column;
 				align-items: flex-start;
+				max-width: 100vw;
+				overflow-x: hidden;
 		}
 		
 		.header-top {
@@ -786,6 +788,8 @@ a {
 		#BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
 				height: 120px;
 				top: 160px;
+				max-width: 100vw;
+				overflow: hidden;
 		}
 
 		.header-right {
@@ -944,7 +948,9 @@ a {
 
 		.submenu li a {
 				padding: 10px 20px;
-				margin-right: 60px;
+				margin-right: 0;
+				white-space: nowrap;
+				overflow: visible;
 		}
 		
 		.submenu li a:hover {
@@ -1004,6 +1010,10 @@ a {
 		.go-to-top img {
 				width: 45px;
 				height: 45px;
+		}
+
+		.titleBar_img {
+			font-size: 0.5rem;
 		}
 }
 
@@ -1070,5 +1080,8 @@ a {
 		#BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
 				height: 100px;
 				top: 160px;
+		}
+		.titleBar_img {
+			font-size: 0.5rem;
 		}
 }

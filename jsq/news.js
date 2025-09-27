@@ -25,12 +25,12 @@ const rssFeeds = [
         url: 'https://corsproxy.io/?' + encodeURIComponent('https://www.epa.ie/resources/rss/index-90474.xml'),
         listId: 'clarificationList',
         useMinguo: false // 使用西元年
-    } /*,
+    },
     {
         url: 'https://corsproxy.io/?' + encodeURIComponent('https://www.simenvi.com.tw/rss/simenvinews.xml'),
         listId: 'newsSimenviList',
         useMinguo: true // 使用民國年
-    } */
+    }
 ];
 
 /**

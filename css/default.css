@@ -843,6 +843,8 @@ a {
 				flex-direction: column;
 				background-color: #003366;
 				border-radius: 5px;
+				width: 100vw;
+				margin-left: calc(-50vw + 50%);
 		}
 
 		.nav-links li {
@@ -939,9 +941,8 @@ a {
 				max-height: 0;
 				overflow: visible;
 				transition: max-height 0.4s ease-out;
-				width: 100vw;
-				min-width: 100vw;
-				margin-left: -20px;
+				width: 100%;
+				margin: 0;
 		}
 
 		.submenu.active {
@@ -951,12 +952,13 @@ a {
 		}
 
 		.submenu li a {
-				padding: 10px 5px;
+				padding: 10px 20px;
 				margin-right: 0;
 				white-space: nowrap;
 				overflow: visible;
-				width: auto;
-				min-width: max-content;
+				width: 100%;
+				display: block;
+				text-overflow: clip;
 		}
 		
 		.submenu li a:hover {

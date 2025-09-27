@@ -1,0 +1,134 @@
+/* Award Page RWD Styles */
+
+/* 基本樣式 */
+.ui-tabs-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.ui-tabs-panel th, .ui-tabs-panel td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.ui-tabs-panel th {
+    background-color: #f0f0f0;
+}
+
+.dialog-link {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px;
+}
+
+#dialog-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ui-dialog {
+    z-index: 10000 !important;
+}
+
+.ui-widget-overlay {
+    z-index: 9999 !important;
+}
+
+/* 圖片響應式 */
+.service-pic-61 {
+    max-width: 100%;
+    height: auto;
+}
+
+.copyService table {
+    width: 100%;
+}
+
+/* RWD 設計 */
+@media (max-width: 1024px) {
+    .copyService td {
+        display: block;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .service-pic-61 {
+        width: 100%;
+        max-width: 400px;
+        margin: 10px auto;
+    }
+    
+    .dialog-link {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .titleBar_blue {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    
+    .copyBasic {
+        padding: 10px;
+    }
+    
+    .service-pic-61 {
+        max-width: 300px;
+    }
+    
+    .ui-tabs-nav {
+        flex-direction: column;
+    }
+    
+    .ui-tabs-nav li {
+        width: 100%;
+        margin: 2px 0;
+    }
+    
+    .ui-tabs-panel {
+        padding: 10px;
+        overflow-x: auto;
+    }
+    
+    .ui-tabs-panel table {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titleBar_blue {
+        font-size: 0.8rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .titleBar_blue img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .service-pic-61 {
+        max-width: 250px;
+    }
+    
+    .dialog-link {
+        width: 90%;
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    
+    .ui-tabs-panel th, .ui-tabs-panel td {
+        padding: 4px;
+        font-size: 0.8rem;
+    }
+}

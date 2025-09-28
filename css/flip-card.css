@@ -42,7 +42,7 @@
 .flip-card-front img {
   float: none !important;
   display: block;
-  margin: 0;
+  margin: 0 auto;
 }
 
 .flip-card-back {

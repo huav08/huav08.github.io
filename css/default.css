@@ -539,6 +539,9 @@ a {
 		overflow: hidden;
 		background-size: cover !important;
 		background-position: center !important;
+		height: auto;
+		min-height: 300px;
+		padding: 20px 0;
 }
 
 #aboutservice {

@@ -533,6 +533,23 @@ a {
 		text-align: left;
 }
 
+.copyBasic2 {
+		width: 100%;
+		max-width: 100vw;
+		overflow: hidden;
+		background-size: cover !important;
+		background-position: center !important;
+}
+
+#aboutservice {
+		max-width: 100%;
+		width: 100%;
+		position: relative;
+		margin: 0 auto;
+		padding: 0 1rem;
+		box-sizing: border-box;
+}
+
 /* Go To Top Button */
 .go-to-top {
 		position: fixed;

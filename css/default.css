@@ -747,8 +747,9 @@ a {
 @media (max-width: 768px) {
 		#aboutservice {
 				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 8px;
+				grid-template-columns: repeat(2, 1fr); /* 2個等寬的列 */
+				grid-template-rows: repeat(4, 1fr);    /* 4個等高的行 */
+				gap: 2px;
 				max-width: 100%;
 		}
 		
@@ -758,14 +759,14 @@ a {
 		}
 		
 		#aboutservice .btn {
-				width: 90% !important;
-				font-size: 0.65rem;
-				padding: 8px 4px;
-				white-space:nowrap;
+				width: 70% !important;
+				font-size: 0.5rem;
+				padding: 4px 1px;
+				white-space: normal;
 				word-break: keep-all;
 				box-sizing: border-box;
 				height: auto;
-				min-height: 45px;
+				min-height: 35px;
 		}
 		
 		.titleBar_blue {

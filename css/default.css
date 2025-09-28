@@ -30,17 +30,12 @@ a {
 		left: 0;
 		right: 0;
 		z-index: 1000;
-		width: 100%;
-		max-width: 100vw;
-		overflow-x: hidden;
 }
 
 .header-content {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 0 2rem;
-		width: 100%;
-		box-sizing: border-box;
 }
 
 .header-top {
@@ -231,7 +226,6 @@ a {
 /* About page with BannerShow */
 #about .main-content {
 		margin-top: 330px;
-		min-height: 1200px;
 }
 
 /* Award page with BannerShow */
@@ -727,9 +721,9 @@ a {
 				margin-top: 130px;
 		}
 		
-		/* #about .main-content {
+		#about .main-content {
 				margin-top: 280px;
-		} */
+		}
 }
 
 /* 手機設備 (Mobile) */
@@ -741,9 +735,6 @@ a {
 		.header-content {
 				flex-direction: column;
 				align-items: flex-start;
-				padding: 0 1rem;
-				max-width: 100vw;
-				overflow-x: hidden;
 		}
 		
 		.header-top {
@@ -768,9 +759,6 @@ a {
 		#BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
 				height: 120px;
 				top: 160px;
-				width: 100vw;
-				left: 0;
-				transform: none;
 		}
 
 		.header-right {
@@ -780,12 +768,14 @@ a {
 		}
 
 		.search-bar {
-				flex-grow: 1;
+				flex-grow: 1; 
+				/* 移除原有的 margin-right，避免間距 */
 				margin-right: 0;
+				/* 新增：使用 Flexbox 並對齊到右側 */
 				display: flex;
 				align-items: center;
-				justify-content: flex-end;
-				max-width: calc(100vw - 80px);
+				/* 將所有內容推向右側，但輸入框保持拉伸 */
+				justify-content: flex-end; 
 		}
 
 		.search-bar input {
@@ -1013,9 +1003,9 @@ a {
 				margin-top: 160px;
 		}
 		
-		/* #about .main-content {
+		#about .main-content {
 				margin-top: 280px;
-		} */
+		}
 		
 		.titleBar_blue {
 				font-size: 1.6rem;

@@ -6,6 +6,9 @@
   padding: 0 5px 0 5px;
   max-width: 100vw;
   box-sizing: border-box;
+  display: block;
+  clear: both;
+  margin: 10px 0;
 }
 
 .flip-card-inner {
@@ -34,6 +37,12 @@
 .flip-card-front {
   background-color: white;
   color: black;
+}
+
+.flip-card-front img {
+  float: none !important;
+  display: block;
+  margin: 0 auto;
 }
 
 .flip-card-back {

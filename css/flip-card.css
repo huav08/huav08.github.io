@@ -78,16 +78,6 @@
     height: auto;
     max-width: calc(100vw - 4px);
   }
-  
-  .flip-card-back {
-    padding: 10px;
-    font-size: 12px;
-  }
-  
-  .flip-card-back h3 {
-    font-size: 12px;
-    padding: 5px;
-  }
 }
 
 .flip-card-back h3 {

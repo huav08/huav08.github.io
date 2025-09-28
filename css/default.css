@@ -746,25 +746,26 @@ a {
 /* 手機設備 (Mobile) */
 @media (max-width: 768px) {
 		#aboutservice {
-				flex-direction: column;
-				align-items: center;
-				gap: 5px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 8px;
+				max-width: 100%;
 		}
 		
 		#aboutservice a {
-				width: 90%;
+				width: 100%;
 				display: block;
 		}
 		
 		#aboutservice .btn {
-				width: 100%;
-				font-size: 0.8rem;
-				padding: 10px 8px;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
+				width: 90% !important;
+				font-size: 0.65rem;
+				padding: 8px 4px;
+				white-space:nowrap;
 				word-break: keep-all;
 				box-sizing: border-box;
+				height: auto;
+				min-height: 45px;
 		}
 		
 		.titleBar_blue {

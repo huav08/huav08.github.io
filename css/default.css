@@ -745,6 +745,28 @@ a {
 
 /* 手機設備 (Mobile) */
 @media (max-width: 768px) {
+		#aboutservice {
+				flex-direction: column;
+				align-items: center;
+				gap: 5px;
+		}
+		
+		#aboutservice a {
+				width: 90%;
+				display: block;
+		}
+		
+		#aboutservice .btn {
+				width: 100%;
+				font-size: 0.8rem;
+				padding: 10px 8px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				word-break: keep-all;
+				box-sizing: border-box;
+		}
+		
 		.titleBar_blue {
 				text-align: center;
 				font-size: 1.8rem;

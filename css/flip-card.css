@@ -42,7 +42,7 @@
 .flip-card-front img {
   float: none !important;
   display: block;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .flip-card-back {
@@ -77,6 +77,16 @@
     width: calc(100vw - 4px);
     height: auto;
     max-width: calc(100vw - 4px);
+  }
+  
+  .flip-card-back {
+    padding: 10px;
+    font-size: 12px;
+  }
+  
+  .flip-card-back h3 {
+    font-size: 12px;
+    padding: 5px;
   }
 }
 

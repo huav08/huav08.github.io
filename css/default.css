@@ -773,8 +773,9 @@ a {
 		}
 
 		.flip-card-front img {
-				width: 300px !important;
-				height: auto !important;
+				/* width: 300px !important;
+				height: auto !important; */
+				display: none
 		}
 		.flip-card-back {
 				/* width: 410px !important;

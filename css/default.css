@@ -772,14 +772,7 @@ a {
 				min-height: 35px;
 		}
 
-		.flip-card-front img {
-				/* width: 300px !important;
-				height: auto !important; */
-				display: none
-		}
-		.flip-card-back {
-				/* width: 410px !important;
-				height: 310px !important; */
+		.flip-card {
 				display: none
 		}
 		

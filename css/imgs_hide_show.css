@@ -10,9 +10,15 @@
 	} */
 	.mydiv{
 		display:none;
+		max-width: 100%;
+		overflow: hidden;
 	}
 	.mydiv img{
 	  margin: 0 auto;
+	  max-width: 100%;
+	  width: 100%;
+	  height: auto;
+	  object-fit: contain;
 	}
 	.mydiv2{
 		display:none;

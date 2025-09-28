@@ -771,6 +771,17 @@ a {
 				height: auto;
 				min-height: 35px;
 		}
+
+		.service_ {
+				margin: 3px !important;
+				padding: 2px !important;
+		}
+
+		.flip-card-front img, .flip-card-back {
+				width: calc(100vw - 7px) !important;
+				height: auto !important;
+				max-width: calc(100vw - 7px) !important
+		}
 		
 		.titleBar_blue {
 				text-align: center;

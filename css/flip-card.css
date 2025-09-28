@@ -63,6 +63,12 @@
     width: 90vw;
     max-width: 90vw;
   }
+  
+  .flip-card-front img {
+    width: calc(100vw - 4px);
+    height: auto;
+    max-width: calc(100vw - 4px);
+  }
 }
 
 .flip-card-back h3 {

@@ -777,8 +777,9 @@ a {
 				height: auto !important;
 		}
 		.flip-card-back {
-				width: 410px !important;
-				height: 310px !important;
+				/* width: 410px !important;
+				height: 310px !important; */
+				display: none
 		}
 		
 		.titleBar_blue {

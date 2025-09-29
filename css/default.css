@@ -659,9 +659,7 @@ a {
 /* RWD 響應式設計 */
 /* 平板設備 (Tablet) */
 @media (max-width: 1024px) {
-		.titleBar_img {
-			font-size: 1.2rem;
-		}
+	
 		.header-right {
 				gap: 10px;
 		}

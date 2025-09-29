@@ -5,7 +5,7 @@
  *
  * Date: 2017-02-09T23:09:19.514Z
  */
-// $(window).on('load', function() {
+
     $(window).on('load', function() {
         "use strict";
         var Gw = $(window),
@@ -187,7 +187,15 @@
             // $('.search').val(''); //清空欄位
             searchfire(event, keyword, 'tw');
         });
-    
+
+        // 按下 Enter 鍵時執行搜尋
+        const searchInput = document.getElementById('search_e');
+        searchInput.addEventListener('keypress', (e) => {
+            var keyword = $('#search_e').val();
+            if (e.key === 'Enter') {
+                searchfire(e, keyword, 'tw');
+            }
+        });
         $('#adv-search-bar').click(function(event) {
             var keyword = $('.search').val();
             // $('.search').val(''); //清空欄位

@@ -96,7 +96,9 @@ img.t_B2 {
 		/* 在圖片左側增加 20 像素的外部邊距 */
 		margin-left: 50px; 
 }
-
+.ui-autocomplete {
+    z-index: 1111 !important; /* Use !important if necessary to override theme styles */
+}
 /* Header */
 .header {
 		background-color: #004d80; /* 模擬環境部藍色 */

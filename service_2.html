@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>景丰科技 SIMULATION | 空氣品質及河川水質之模擬</title>
+	<meta name="keywords" content="空氣品質及河川水質之模擬"/>    
+   <!-- 網頁描述 -->
+	<meta name="description" content="空氣品質及河川水質之模擬"/>
+	<meta name="Author" content="景丰科技股份有限公司, Jih-Li Hua"/>
+	<meta name="copyright" content="Copyright © 2012 SIMLATION CO., LTD. All Rights Reserved">
+	<link rel="stylesheet" href="./css/show_more_list.css" />
+	<link rel="stylesheet" href="./css/flip-card.css" />
+	<link rel="stylesheet" href="./css/imgs_hide_show.css">
+  <link rel="stylesheet" href="./css/default.css" />  
+   
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />  
+  <link rel="stylesheet" href="./css/award.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+	<script type="text/javascript" src="./jsq/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="./jsq/swfobject.js"></script>
+  <script type="text/javascript" src="./jsq/show-more.js"></script>	
+	<script type="text/javascript" src="./jsq/show-more.js"></script>
+	<script type="text/javascript" src="./jsq/show-more-2.js"></script>
+	<script type="text/javascript" src="./jsq/show-more-3.js"></script>
+<!-- Google Analytics Script碼(start) 要放在</head>之前 -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async  src="https://www.googletagmanager.com/gtag/js?id=G-FLZZF2NJC6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-FLZZF2NJC6");
+    </script>    
+    <!-- Google Analytics Script碼(End) -->         
+ </head>
+<body id="about">
+
+    <header class="header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="./images/sieenvi_logo.png" alt="景丰科技股份有限公司logo" />
+                    <div class="logo-text">
+                        <h1>景丰科技股份有限公司</h1>
+                        <h2>ENVIRONMENTAL SIMULATION CO. LTD. </h2>
+                    </div>
+                </a>
+                <div class="topArea">
+                  <a href="index.html" target="_parent">回首頁</a>
+                  <span class="separator">|</span>
+                  <a href="https://www.simenvi.com.tw/images/date_img/myimage.gif" target="_blank" title="空氣品質預報 (另開新視窗)">空氣品質預報</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="搜尋..." id="search-input">
+                    <button id="search-button"><i class="fas fa-search"></i></button>
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="nav-links" id="nav-links">
+                        <li class="has-submenu">
+                            <a href="#">關於景丰</a>
+                            <ul class="submenu">
+                        <li><a href="about.html">公司簡介</a></li>
+                        <li><a href="award.html">榮譽認證</a></li>
+                        <li><a href="human.html">人力資源</a></li>
+                        <li><a href="organiz.html">組織結構</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#">服務項目與實績</a>
+                            <ul class="submenu">
+                                <li><a href="service_1.html">環境影響評估及環境監測</a></li>
+                                <li><a href="service_2.html">空氣品質及河川水質之模擬</a></li>
+                                <li><a href="service_3.html">空氣污染物排放量調查</a></li>
+                                <li><a href="service_4.html">健康風險評估</a></li>
+                                <li><a href="service_5.html">環境管理與資訊系統</a></li>
+                                <li><a href="service_6.html">生態檢核</a></li>
+                                <li><a href="service_7.html">碳盤查及淨零管理</a></li>
+                                <li><a href="service_8.html">氣候變遷風險評估</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#">空污事件模擬</a>
+                            <ul class="submenu">
+				                <li><a href="air_his.html">重大空污事件模擬</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="links.html">人才招募</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="https://mail.google.com/mail/u/0/?fs=1&amp;to=simenvi_it@simenvi.com.tw&amp;tf=cm" tabindex="1" role="button" title="送信到意見信箱 (另開新視窗)" target="_blank">聯絡我們</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#">文件下載</a>
+                            <ul class="submenu">
+                                <li><a href="download_simenvi.html">公司介紹</a></li>
+                                <li><a href="download_paper.html">研究發表</a></li>
+                                <li><a href="download_model.html">技術文件</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div id="BannerShow_upon2" class="BannerShow_upon"></div>
+    <main class="main-content">
+        <section class="content-container">
+          <div><h4 class="titleBar_img">空 氣 品 質 及 河 川 水 質 之 模 擬</h4></div>
+          <div class="copyBasic t_14pt">
+            <blockquote style="text-indent: 32px;">空氣品質模式模擬在環境空氣品質分析及管理上扮演非常重要的角色。空氣品質模式模擬的主要工作在模擬污染物從排放源排出後，經過大氣的傳輸、擴散、轉化及沈降等過程後，到達我們生活環境時的濃度。因此，空品模式模擬可用於針對既有環境污染來源的解析及政策管制成果的分析，例如，應用於各縣市空氣品質改善計畫；也可用於模擬尚未設置的新增或變更污染源的可能影響，例如，應用於污染源設置及操作許可評估及開發計畫環境影響評估等。</blockquote>
+				    <blockquote style="text-indent: 32px;">景丰公司在空氣品質模式上有多年的工作經驗，對空氣品質模式模擬領域的理論與應用均有相當專業且豐富的知識與能力。不論是評估直接排放的原生性污染物為主的高斯擴散模式(如AERMOD、ISCST3)或軌跡模式（如CALPUFF），或是以大氣中生成或轉化的衍生性污染物為主的三維網格模式(如CMAQ)，均有多年實際執行經驗，且相當多的工作實績。</blockquote>
+            <blockquote style="text-indent: 32px;">在環境部公告「環境影響評估河川水質評估模式技術規範」後，景丰公司也配合規範要求，積極投入人力深化評估技術，在不同開發行為之執行案例中，已分別採用規範認可之SWMM、WASP及QUAL2K等評估模式進行模擬，模擬成果不僅可作為放流水減量、水質加嚴之依據，亦提供擬定環境保護對策有用之工具。</blockquote>
+          </div><BR>
+          <div id="T1" class="titleBar_blue3"><h4 class="titleBar_img">主 要 實 績</h4></div>
+          <div class="copyBasic t_14pt">
+            <blockquote>
+              <table class="service_" style="width:90vw; height:auto;" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td valign="top">
+                    <div class="wrapper">
+                      <ul class="show-more-list">
+                      <li style="list-style:disc;">台灣運輸部門排放研體與電動公車政策對空氣品質影響之模式分析案（中技社）</li>
+                      <li style="list-style:disc;">環境空氣品質監測管理整合與應用計畫(環輿)-台中地區空氣品質不良事件日即時模擬系統改善及維護</li>
+                      <li style="list-style:disc;">豐德天然氣發電廠提高天然氣用量（第八次）環差-空氣品質模式模擬</li>
+                      <li style="list-style:disc;">台南三爺溪水資中心擴建案-河川水質模擬</li>
+                      <li style="list-style:disc;">國光電廠興建計畫第4次環境影響差異分析報告（提升容量因數）－空氣品質擴散模擬研究</li>
+                      <li style="list-style:disc;">國道7號高雄路段計畫第二階段環境影響評估-空氣品質調查評估</li>
+                      <li style="list-style:disc;">協和電廠更新改建計畫第二階段環境影響評估-衍生性空氣品質模式模擬評估工作</li>
+                      <li style="list-style:disc;">臺灣桃園國際機場第三跑道環境影響評估--網格模式模擬及影響評估</li>
+                      <li style="list-style:disc;">建置AERMOD本土化模式及空品模式審驗制度專案工作計畫（第二年）</li>
+                      <li style="list-style:disc;">中鋼公司MS3製程燒結機鉛污染物排放模擬研究</li>
+                      <li style="list-style:disc;">大潭電廠8、9號機設置許可模式模擬</li>
+                      <li style="list-style:disc;">大潭電廠7號機設置許可模式模擬(高斯模式)</li>
+                      <li style="list-style:disc;">塑化環差新增6項物質ISC模擬(健康風險)工作</li>
+                      <li style="list-style:disc;">國道1號甲線工程規劃暨配合工作第2號契約變更-第二階段環境影響評估衍生性空氣品質模式模擬分析評估工作</li>
+                      <li style="list-style:disc;">塑化環差新增四項物質ISC模擬(健康風險)工作</li>
+                      <li style="list-style:disc;">正隆紙業大園廠鍋爐汽電共生程序M05設置許可申請-高斯類及網格類模式模擬工作</li>
+                      <li style="list-style:disc;">麥寮LNG接收站暨燃氣電廠新建計畫環評-衍生性空氣品質模式模擬分析及影響評估</li>
+                      <li style="list-style:disc;">撰寫空氣污染物ISC電腦模擬工作報告</li>
+                      <li style="list-style:disc;">台中發電廠運轉期間環境調查評析－空品不良事件日即時模擬工具建置</li>
+                      <li style="list-style:disc;">建置AERMOD本土化模式及空品模式審驗制度專案工作計畫</li>
+                      <li style="list-style:disc;">彰濱天然氣發電廠興建計畫環說書變更內容對照表（提高發電效能及天然氣用量）-空品模式模擬</li>
+                      <li style="list-style:disc;">雲林大環境空氣品質提升先期計畫</li>
+                      <li style="list-style:disc;">大潭電廠增建燃氣複循環機組發電計畫環說書第三次環差（單循環機組延長發電期限）-空品及廢熱模擬評估</li>
+                      <li style="list-style:disc;">協和發電廠空氣品質模式模擬工作</li>
+                      <li style="list-style:disc;">東聯化學許可ISC模擬工作</li>
+                      <li style="list-style:disc;">DIOXIN空氣品質模式模擬工作</li>
+                      <li style="list-style:disc;">107年度辦理雲林離島工業區（雲嘉南空品區）空氣品質評估模式探空數據資料庫之應用計畫</li>
+                      <li style="list-style:disc;">龍港天然氣發電廠興建計畫環差模式模擬（空品、廢熱模擬）</li>
+                      <li style="list-style:disc;">新竹科學工業園區（寶山用地）擴建計畫實質計畫－環評有關空品模擬及健康風險評估</li>
+                      <li style="list-style:disc;">台南園區空氣品質監測計畫續約計畫期間污染來源解析模式模擬工作</li>
+                      <li style="list-style:disc;">南科台南園區開發調整辦理環評作業計畫-空品模擬及健康風險評估報告</li>
+                      <li style="list-style:disc;">嘉惠二期發電計畫第二次提升容量因數環差（空品模擬）</li>
+                      <li style="list-style:disc;">台南光洋應材ISC模擬工作</li>
+                      <li style="list-style:disc;">台積電空氣品質監測系統研究計畫之模式模擬與分析等相關工作</li>
+                      <li style="list-style:disc;">106年度辦理雲林離島工業區(雲嘉南空品區)空氣品質評估模式探空數據資料計畫</li>
+                      <li style="list-style:disc;">岱稜科技空氣污染物模式模擬</li>
+                      <li style="list-style:disc;">台化4.6環差4項空氣污染物健康風險ISC模擬</li>
+                      <li style="list-style:disc;">東南水泥高雄廠ISCST3模擬工作</li>
+                      <li style="list-style:disc;">星元天然氣發電廠開發計畫第三次環境影響差異分析(提高天然氣用量)-空氣品質擴散模擬研究</li>
+                      <li style="list-style:disc;">105年竹科4處空氣品質監測設施選址作業規劃</li>
+                      <li style="list-style:disc;">大潭電廠環差報告(增設緊急備用機組)-高斯及網格空品模式模擬及廢熱擴散模擬</li>
+                      <li style="list-style:disc;">遠東新世紀化纖新埔廠汽電共生製程設置許可ISC模式模擬</li>
+                      <li style="list-style:disc;">105年臺中市空氣品質暨細懸浮微粒(PM2.5)綜合管理計畫受體模式執行工作</li>
+                      <li style="list-style:disc;">東和鋼鐵桃園廠電弧爐煉鋼製造程序設置許可-高斯類及網格類模式模擬工作</li>
+                      <li style="list-style:disc;">台肥第五次環差報告回覆第2次審查意見之PM網格模式模擬</li>
+                      <li style="list-style:disc;">中油大林廠環境影響差異分析報告及變更內容對照表工作-空氣品質擴散模擬研究(高斯及網格模式模擬)</li>
+                      <li style="list-style:disc;">國產實業臺北港爐石研磨廠設置許可空品模式模擬</li>
+                      <li style="list-style:disc;">長春石化苗栗廠設置許可-M18汽電共生空氣污染物模式模擬</li>
+                      <li style="list-style:disc;">六輕4.6環差苯ISC模擬</li>
+                      <li style="list-style:disc;">104年度辦理雲林離島工業區基礎工業區(雲嘉南空品區)空氣品質評估模式探空數據資料計畫</li>
+                      <li style="list-style:disc;">遠東新世紀化纖新埔廠設置許可ISC模擬</li>
+                      <li style="list-style:disc;">竹苗空品區污染成因及管制策略成效網格模式模擬</li>
+                      <li style="list-style:disc;">林口電廠擴建廠址開發最適機組規模之空氣品質擴散模擬工作</li>
+                      <li style="list-style:disc;">林口電廠設置許可模式模擬</li>
+                      <li style="list-style:disc;">竹苗空品區污染成因及管制策略成效模式模擬</li>
+                      <li style="list-style:disc;">台苯高斯模式模擬評估</li>
+                      <li style="list-style:disc;">慶欣欣電弧爐煉鋼廠彰濱工業區開發計畫環評原生性空氣品質模擬</li>
+                      <li style="list-style:disc;">六輕4.7期台化公司環境影響評估-空氣品質網格模擬</li>
+                      <li style="list-style:disc;">岡山本洲擴大工業區環說之空氣品質模擬工作</li>
+                      <li style="list-style:disc;">台電蘆竹及雲林縣四湖風力發電計畫環評--風場模擬評估</li>
+                      <li style="list-style:disc;">華威建設八方建築物環境風場模擬分析</li>
+                      <li style="list-style:disc;">長欣電廠興建工程環評－對鄰近地區風場之影響及熱擴散之數值模擬研究</li>
+                      <li style="list-style:disc;">亞裕、星能及聯合電廠興建計畫環境影響說明書廢熱擴散模擬工作</li>
+                      <li style="list-style:disc;">台懋電廠興建計畫環境影響說明書廢熱擴散模擬工作</li>
+                      <li style="list-style:disc;">褔興電廠興建計畫環境影響說明書廢熱擴散模擬工作</li>
+                      <li style="list-style:disc;">雲林縣設置風力發電機計畫環境影響評估工作第一階段環境影響說明書防風林風場模擬及環境影響評估工作</li>
+                      <li style="list-style:disc;">台中縣交通要衝地區交通流量對空氣品質影響及暴露量評估計畫（空氣品質模擬工作）</li>
+                      <li style="list-style:disc;">斗六加工出口區對環境空氣品質臭氧及衍生性懸浮微粒之影響評估作業服務計畫</li>
+                      <li style="list-style:disc;">彰化縣排放量管制策略對臭氧事件日發生比例影響之模擬研究分析</li>
+                      <li style="list-style:disc;">彰化縣九十二年度空氣品質改善維護綜合管理暨資訊整合計畫-臭氧及衍生性懸浮微粒模擬研究工作</li>
+                      <li style="list-style:disc;">台塑公司仁武廠M71鍋爐汽電共生程序汰舊換新計畫對環境空氣品質臭氧增量之影響評估作業服務計畫</li>
+                      <li style="list-style:disc;">豐德天然氣發電廠興建計畫環評第四次變更之臭氧影響模擬工作</li>
+                      <li style="list-style:disc;">台電大潭燃氣火力發電計畫空氣污染物增量模擬分析</li>
+                      <li style="list-style:disc;">中部科學工業園區第三期發展區（后里基地－七星農場部分）環境影響評估--有關臭氧及懸浮微粒模擬評估</li>
+                      <li style="list-style:disc;">六輕三期汽電共生製程臭氧及衍生性懸浮微粒之模擬評估</li>
+                      <li style="list-style:disc;">六輕四期擴建計畫臭氧及衍生性懸浮微粒之模擬評估</li>
+                      <li style="list-style:disc;">嘉惠電廠臭氧增量模擬研究</li>
+                      <li style="list-style:disc;">中油高雄煉油廠第五輕油裂解工場空污模擬分析（臭氧及懸浮微粒）</li>
+                      <li style="list-style:disc;">國光石化建廠計畫環評--臭氧及衍生性懸浮微粒之增量模擬影響評估</li>
+                      <li style="list-style:disc;">旭硝子發殷科技斗六廠設置許可申請案--原生性空氣污染物增量模擬</li>
+                      <li style="list-style:disc;">新竹科學園區龍潭基地開發計畫環評--臭氧模擬評估</li>
+                      <li style="list-style:disc;">台南科學工業園區二期基地開發暨原台南科學工業園區變更計畫(第六次變更)環境影響差異分析-原生性空氣污染物模擬評估分析</li>
+                      <li style="list-style:disc;">新竹科學園區龍潭基地（替代方案）開發計畫環評--衍生性臭氧模擬評估</li>
+                      <li style="list-style:disc;">龍風燃煤火力發電廠環評--空氣品質評估（含現況分析、原生性及衍生性空氣污染物增量模擬評估）</li>
+                      <li style="list-style:disc;">彰工電廠環評--排放二氧化硫對彰化地區古蹟及建築物之影響研究</li>
+                      <li style="list-style:disc;">樹谷園區開發計畫環評--原生及衍生性空氣污染物增量模擬評估</li>
+                      <li style="list-style:disc;">東和鋼鐵新桃園廠建廠計畫環評--網格模式臭氧增量模擬及影響評估</li>
+                      <li style="list-style:disc;">龍港天然氣發電廠興建計畫環評--臭氧增量模擬影響評估</li>
+                      <li style="list-style:disc;">台電大潭燃氣火力發電計畫NOx環評差異分析--原生性及衍生性空氣污染物擴散模擬</li>
+                      <li style="list-style:disc;">台中電廠11、12 號機發電計畫環境影響評估--衍生性空氣污染物擴散模擬及酸性沈降模擬</li>
+                      <li style="list-style:disc;">貝民台中港石化專區建廠環評--衍生性懸浮微粒網格模式電腦數值模擬</li>
+                      <li style="list-style:disc;">亞泥花蓮廠設置許可變更申請案--容許量限值之模式模擬（衍生性空氣污染物增量模擬）</li>
+                      <li style="list-style:disc;">台糖生質酒精工廠投資計畫環評--臭氧模式模擬評估</li>
+                      <li style="list-style:disc;">星元電廠設置許可之衍生性懸浮微粒模擬</li>
+                      <li style="list-style:disc;">豐邑尊榮飯店及新竹喜來登大飯店環差分析--餐廳油煙臭味擴散模擬</li>
+                      <li style="list-style:disc;">鹽埔漁港北防砂堤後續興建計畫環評--原生性空氣污染物模擬評估</li>
+                      <li style="list-style:disc;">六輕五期開發計畫環評--原生性及衍生性空氣污染物模擬評估</li>
+                      <li style="list-style:disc;">高雄縣岡山本洲擴大工業區開發計畫環評--原生性空氣污染物模擬評估</li>
+                      <li style="list-style:disc;">新竹縣鳳山工業區開發計畫環評--原生性空氣污染物模擬評估</li>
+                      <li style="list-style:disc;">高雄縣創新金屬園區開發計畫環評--原生性空氣污染物模擬評估</li>
+                      <li style="list-style:disc;">台灣苯乙烯設置許可ISC 模式模擬</li>
+                      <li style="list-style:disc;">國喬設置許可ISC 模式模擬</li>
+                      <li style="list-style:disc;">台中港西五號碼頭後線儲槽新建工程環境影響差異分析--衍生性空氣污染物臭氧濃度增量模擬分析</li>
+                      <li style="list-style:disc;">榮剛材料科技公司(VIM 廠)開發計畫環評--原生性空氣污染物擴散模擬</li>
+                      <li style="list-style:disc;">中石化臺中港石化工業專業區建廠計畫環評--空氣品質網格模式模擬評估</li>
+                      <li style="list-style:disc;">中龍鋼鐵二期二階擴建計畫環評--臭氧及衍生性懸浮微粒之增量模擬影響評估</li>
+                      <li style="list-style:disc;">中龍鋼鐵二期一階擴建計畫設置許可申請案--容許量限值之模式模擬（原生性及衍生性空氣污染物增量模擬）</li>
+                      <li style="list-style:disc;">中龍鋼鐵二期二階擴建計畫設置許可申請案--容許量限值之模式模擬（原生性及衍生性空氣污染物增量模擬）</li>
+                      <li style="list-style:disc;">彰工電廠環評--衍生性空氣污染物模擬及酸雨對古蹟影響之研究&nbsp;<a href="service_2-9.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
+                      <li style="list-style:disc;">南星計畫遊艇產業專區（第一期）環評--有關排放量推估及臭氧、PM 網格模式模擬評估&nbsp;<a href="service_2-8.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
+                      <li style="list-style:disc;">長春大發廠原生性ISC 高斯模式及衍生性PM 網格模式增量模擬&nbsp;<a href="service_2-7.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
+                      <li style="list-style:disc;">金門塔山電廠第三期擴建計畫空氣品質擴散模擬暨氮氧化物排放濃度限值建議分析工作&nbsp;<a href="service_2-6.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
+                      <li style="list-style:disc;">桃園科技工業區第二期開發計畫環評--空氣品質影響評估（原生性及衍生性）&nbsp;<a href="service_2-5.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
+                      <li style="list-style:disc;">彰化大城石化科技園區健康風險評估擴散模擬&nbsp;<a href="service_2-1.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
+                      <li style="list-style:disc;">投17 線0K+640~21K+000（草屯鎮－中寮鄉）道路拓寬改善工程環評--原生性空氣污染物模擬評估&nbsp;<a href="service_2-2.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
+                      <li style="list-style:disc;">大潭電廠增建燃氣複循環機組發電計畫環評—原生性及衍生性空氣污染物模擬&nbsp;<a href="service_2-3.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
+                      <li style="list-style:disc;">中龍二期二階擴建第二次環差--有關臭氧及PM 網格模式模擬評估&nbsp;<a href="service_2-4.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
+                      <li style="list-style:disc;">北高雄產業園區-放流水排放之QUAL2K水質模式模擬成果&nbsp;<a href="service_2-10.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
+                      </ul>
+                      <button id="show-more-next">讀取更多</button>
+                    </div>
+                  </td>
+                  <td>&nbsp;</td>
+                <tr>                
+              </table>
+            </blockquote>
+          </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>地址：10663 台北市大安區復興南路二段286號4樓</p>
+                <p>TEL：(02)2377-8011 │ FAX: (02)2739-3446</p>
+            </div>
+            <div class="footer-links">
+                <h3>相關連結</h3>
+                <ul>
+                    <li><a href="download_paper.html">研究發表</a></li>
+                    <li><a href="download_model.html">技術文件</a></li>
+                    <li><a href="https://mail.google.com/mail/u/0/?fs=1&amp;to=simenvi_it@simenvi.com.tw&amp;tf=cm" tabindex="1" role="button" title="送信到意見信箱 (另開新視窗)" target="_blank">意見信箱</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>© 2012 景丰科技股份有限公司 版權所有</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Go To Top Button -->
+    <a tabindex="2" href="javascript:;" id="goToTop" class="go-to-top" title="回到最頂層" role="button"><img src="./images/icons8-up3.png" alt="TOP" title="回到最頂層"></a>   
+    
+    <script type="text/javascript" src="./jsq/submenu.js"></script>
+    <script type="text/javascript" src="./jsq/search.js"></script>
+    <script type="text/javascript" src="./jsq/gototop.js"></script>    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script type="text/javascript" src="jsq/jquery-ui.min.js"></script> 
+    <script type="text/javascript" src="jsq/at_cage.js"></script>
+    <script type="text/javascript" src="jsq/jquery.dlmenu.js"></script>
+    <script type="text/javascript" src="jsq/action.js?t=20250125"></script>
+    <script type="text/javascript" src="jsq/jquery.dlmenu.js"></script>     
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script> 
+        $(function() {
+            // 啟用 Dialog 小部件
+            $("#dialog-image").dialog({
+                autoOpen: false, // 預設不開啟
+                modal: true,    // 設置為模態，強制用戶互動
+                width: 850,     // 設置 Dialog 寬度
+                height: 600,    // 設置 Dialog 高度
+                open: function() {
+                    // 讓 Dialog 內容可以滾動，以便查看長圖
+                    $(this).parent().css({
+                        'overflow': 'auto'
+                    });
+                }
+            });
+            // 點擊按鈕或連結時開啟 Dialog
+            $("#view-cert-dialog").on("click", function(event) {
+                event.preventDefault(); // 阻止連結跳轉
+                $("#dialog-image").dialog("open");
+            });
+        });
+    </script>  
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.mymultiplediv').mouseover(function() {
+          myvar = this.id;
+          $("div.mydiv").hide();
+          $("div.mydiv2").hide();
+          $('#div'+myvar).show();
+        });
+        /* $('.mymultiplediv2').mouseover(function() {
+          myvar2 = this.id;
+            
+          $('#div'+myvar2).css("position","absolute");
+          $('#div'+myvar2).css("left","550px");
+          $('#div'+myvar2).css("z-index","999");
+          $('#div'+myvar2).show();
+        }); */
+      });
+    </script>
+</body>
+</html>

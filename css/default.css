@@ -781,7 +781,7 @@ a {
 		}
 
 		.easyzoom img {
-				width: 370px;
+				width: 370px !important;
 		}
 		
 		.titleBar_blue {

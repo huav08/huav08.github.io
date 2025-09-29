@@ -25,19 +25,19 @@ const rssFeeds = [
         url: 'https://corsproxy.io/?' + encodeURIComponent('https://www.epa.ie/resources/rss/index-90474.xml'),
         listId: 'clarificationList',
         useMinguo: false // 使用西元年
-    },
+    } /* ,
     {
         url: 'https://corsproxy.io/?' + encodeURIComponent('https://www.simenvi.com.tw/rss/simenvinews.xml'),
         listId: 'newsSimenviList',
         useMinguo: true // 使用民國年
-    }
+    } */
 ];
 
 /**
  * 取得並顯示 RSS 內容
  * @param {object} feed - 包含 url、listId 和 useMinguo 的物件
  */
-const fetchAndDisplayRss = async (feed) => {
+    const fetchAndDisplayRss = async (feed) => {
     const listElement = document.getElementById(feed.listId);
     try {
         const response = await fetch(feed.url);

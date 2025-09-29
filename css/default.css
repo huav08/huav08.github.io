@@ -79,18 +79,22 @@ ol.f li {
 .service7-300 img {width: 250px !important; height: auto; position: absolute;}
 
 .t_B {
-	font-weight:bold;
+		font-weight:bold;
 }
 .t_B2 {	
     vertical-align: middle !important;
-	color:#538135 !important;
-	font-weight:bold !important;
+		color:#538135 !important;
+		font-weight:bold !important;
 }
 img.t_B2 {
-	vertical-align: baseline !important;
+		vertical-align: baseline !important;
 }
 .t_24pt {
-	font-size: 24px;
+		font-size: 24px;
+}
+.indented-image {
+		/* 在圖片左側增加 20 像素的外部邊距 */
+		margin-left: 50px; 
 }
 
 /* Header */
@@ -905,6 +909,10 @@ img.t_B2 {
 
 		.easyzoom img {
 				width: 350px !important;
+		}
+		.indented-image {
+				/* 在圖片左側增加 20 像素的外部邊距 */
+				margin-left: 80px !important; 
 		}
 
 		.copyBasic2_R img {max-width:250px !important;height:auto !important;}

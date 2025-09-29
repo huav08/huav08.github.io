@@ -666,10 +666,6 @@ a {
 				gap: 10px;
 		}
 
-		.easyzoom {
-				width: 400px;
-		}
-
 		.titleBar_img {
 			font-size: 0.9rem;
 		}
@@ -782,6 +778,10 @@ a {
 
 		.flip-card {
 				display: none
+		}
+
+		.easyzoom {
+				width: 370px;
 		}
 		
 		.titleBar_blue {

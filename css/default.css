@@ -669,6 +669,10 @@ a {
 		.easyzoom {
 				width: 400px;
 		}
+
+		.titleBar_img {
+			font-size: 0.9rem;
+		}
 		
 		.topArea {
 				font-size: 0.85rem;

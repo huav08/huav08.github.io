@@ -903,10 +903,16 @@ img.t_B2 {
 				min-height: 35px;
 		}
 
-		.flip-card {
+		/* .flip-card {
 				display: none
+		} */
+		.flip-card-front img {
+				width: 300px !important;
+				height: auto !important;
 		}
-
+		.flip-card-back {
+				margin-left: -50px !important; 
+		}
 		.easyzoom img {
 				width: 350px !important;
 		}

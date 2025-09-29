@@ -251,7 +251,7 @@
                 };
 
 
-                // Search for <h1> through <h6> and <li> and <br> to add a pause at the end of those tags. This is done
+                // Search for <h1> through <h6> and <li> and <br/> to add a pause at the end of those tags. This is done
                 // because these tags require a pause, but often don't have a comma or period at the end of their text.
 
                 jQuery(clone).find("h1,h2,h3,h4,h5,h6,li,p").addBack("h1,h2,h3,h4,h5,h6,li,p").each(function() {

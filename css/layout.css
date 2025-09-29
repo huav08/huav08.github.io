@@ -286,7 +286,7 @@
   .service-pic-63 { width:33.3vw; height:250px; margin: 0; padding: 0; } 
   .service7, .service7-800, .service7-800, .service7-800 {width: 60% !important;  height:auto; margin-left: auto;margin-right: auto; }
   .service7 img {width: 50% !important; height: auto; position: absolute;}
-  .service7-800 img {width: 40% !important; height: auto; position: absolute;}
+   img {width: 40% !important; height: auto; position: absolute;}
   .service7-600 img {width: 35% !important; height: auto; position: absolute;}
   .service7-300 img {width: 25% !important; height: auto; position: absolute;}
   .copyBasicT3 { flex-wrap: wrap; }
@@ -382,7 +382,7 @@
     white-space: nowrap; 
     width: 320px; 
     overflow: hidden;
-    text-overflow: ellipsis;  
+    text-overflow: .service7-800ellipsis;  
     font-size: 12.5px;
 	  padding: 10px 10px 0 10px;
   }

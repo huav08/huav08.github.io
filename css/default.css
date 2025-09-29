@@ -19,6 +19,80 @@ a {
 		color: inherit;
 }
 
+#chart-container {
+		/* 設定容器的最大寬度，圖表會在這個範圍內自動縮放 */
+		max-width: 500px;
+		margin: 20px auto;
+}
+.t_16pt {
+  font-size: 18px;
+  line-height: 24px;
+}
+.t_B {
+  font-weight: bold;
+}
+ol.a, ol.e, ol.f {
+	padding-left: 20px; 
+}
+ol.a1, ol.d  {
+	padding-left: 60px; 
+}
+ol.a li {
+		list-style-type: disc;
+		list-style-position: outside;
+		text-indent: 0; /* 調整文本與項目符號之間的距離 */
+		padding-left: 25px; /* 保持項目符號與左側的空間 */
+		margin-bottom: 5px;
+} 
+ol.a1 li {
+		list-style-type: disc;
+		list-style-position: outside;
+		text-indent: 0; /* 調整文本與項目符號之間的距離 */
+		padding-left: 25px; /* 保持項目符號與左側的空間 */
+		margin-bottom: 5px;
+}
+ol.d li {
+		list-style-type: '◼ ';
+		list-style-position: outside;
+		text-indent: 0; /* 調整文本與項目符號之間的距離 */
+		padding-left: 25px; /* 保持項目符號與左側的空間 */
+		margin-bottom: 5px;
+}
+ol.e li {
+		list-style-type: '🟇 ';
+		list-style-position: outside;
+		text-indent: 0; /* 調整文本與項目符號之間的距離 */
+		padding-left: 25px; /* 保持項目符號與左側的空間 */
+		margin-bottom: 5px;
+}
+ol.f li {
+		list-style-type: '－ ';
+		list-style-position: outside;
+		text-indent: 0; /* 調整文本與項目符號之間的距離 */
+		padding-left: 25px; /* 保持項目符號與左側的空間 */
+		margin-bottom: 5px;
+} 
+.service7, .service7-800, .service7-800, .service7-800 {width: 97% !important;  height:auto; margin-left: auto;margin-right: auto; }
+.service7 img {width: 900px !important; height: auto; position: absolute;}
+.service7-800 img {width: 800px !important; height: auto; position: absolute;}
+.service7-600 img {width: 600px !important; height: auto; position: absolute;}
+.service7-300 img {width: 250px !important; height: auto; position: absolute;}
+
+.t_B {
+	font-weight:bold;
+}
+.t_B2 {	
+    vertical-align: middle !important;
+	color:#538135 !important;
+	font-weight:bold !important;
+}
+img.t_B2 {
+	vertical-align: baseline !important;
+}
+.t_24pt {
+	font-size: 24px;
+}
+
 /* Header */
 .header {
 		background-color: #004d80; /* 模擬環境部藍色 */
@@ -529,6 +603,37 @@ a {
 	background-position: left;
 }
 
+.titleBar_img2 {
+	padding: 3px 27px; 
+	color:white; 
+	background: url(../images/title_background2.png); 
+	background-size: 500x 27px; 
+	background-repeat: no-repeat; 
+	background-position: left;
+}
+/* .titleBar_img2 { height: 100%; text-align: left;font-size: 14px;}  */
+
+.titleBar_green {
+	background:url(../images/titleBar_green.png) no-repeat;
+	height:30px; padding-left:40px; color:#090;
+	
+}
+
+.titleBar_green_circle {
+	background:url(../images/titleBar_green_circle.png) no-repeat;
+	height:30px; padding-left:40px; color:#090;
+	
+}
+
+.copyBasic, .copyBasic3 {
+  height: auto;
+  line-height: 24px;
+  font-size: 16px;
+  margin: 18px auto;
+  position: relative;
+  clear: both;
+}
+
 .copyBasic {
 		text-align: left;
 }
@@ -668,15 +773,21 @@ a {
 /* RWD 響應式設計 */
 /* 平板設備 (Tablet) */
 @media (max-width: 1024px) {
-	
+		.service7, .service7-800, .service7-800, .service7-800 {width: 70% !important;  height:auto; margin-left: auto;margin-right: auto; }
+		.service7 img {width: 550px !important; height: auto; position: absolute;}
+		.service7-800 img {width: 500px !important; height: auto; position: absolute;}
+		.service7-600 img {width: 400px !important; height: auto; position: absolute;}
+		.service7-300 {width: 200px !important;  height: auto; position: absolute;}  
+
 		.header-right {
 				gap: 10px;
 		}
 
 		.titleBar_img {
 			font-size: 0.9rem;
-		}
-		
+		}		
+  	.titleBar_img2 { height: 100%; text-align: left;font-size: 14px;} 
+
 		.topArea {
 				font-size: 0.85rem;
 				gap: 8px;
@@ -760,6 +871,10 @@ a {
 
 /* 手機設備 (Mobile) */
 @media (max-width: 768px) {
+		.titleBar_img2 { height: 100%; text-align: left;font-size: 12px;} 
+		.service7-800 img {width: 40% !important; height: auto; position: absolute;}
+  	.service7-600 img {width: 35% !important; height: auto; position: absolute;}
+  	.service7-300 img {width: 25% !important; height: auto; position: absolute;} 
 		#aboutservice {
 				display: grid;
 				grid-template-columns: 1fr;              /* 1個等寬的列 */
@@ -1048,6 +1163,12 @@ a {
 
 /* 小尺寸手機設備 (Small Mobile) */
 @media (max-width: 480px) {
+		.service7-800 img {width: 40% !important; height: auto; position: absolute;}
+  	.service7-600 img {width: 35% !important; height: auto; position: absolute;}
+  	.service7-300 img {width: 25% !important; height: auto; position: absolute;} 
+
+		.titleBar_img2 { height: 100%; text-align: left;font-size: 12px;} 
+
 		.header-content {
 				padding: 0 1rem;
 		}

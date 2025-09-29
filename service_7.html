@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>景丰科技 SIMULATION | 健康風險評估</title>
-	<meta name="keywords" content="健康風險評估"/>    
+  <title>景丰科技 SIMULATION | 碳盤查及淨零管理 | 上位計畫 | 碳盤查</title>
+	<meta name="keywords" content="碳盤查及淨零管理 | 上位計畫 | 碳盤查"/>    
    <!-- 網頁描述 -->
-	<meta name="description" content="健康風險評估"/>
+	<meta name="description" content="碳盤查及淨零管理 | 上位計畫 | 碳盤查"/>
 	<meta name="Author" content="景丰科技股份有限公司, Jih-Li Hua"/>
 	<meta name="copyright" content="Copyright © 2012 SIMLATION CO., LTD. All Rights Reserved">
 	<link rel="stylesheet" href="./css/show_more_list.css" />
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="./css/default.css" />   
   <link rel="stylesheet" href="./css/jquery-ui.min.css" />  
   <link rel="stylesheet" href="./css/award.css" />
+  <link rel="stylesheet" href="./css/easyzoom.css" /> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 	<script type="text/javascript" src="./jsq/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="./jsq/swfobject.js"></script>
@@ -34,7 +35,9 @@
 
       gtag("config", "G-FLZZF2NJC6");
     </script>    
-    <!-- Google Analytics Script碼(End) -->         
+    <!-- Google Analytics Script碼(End) --> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>           
  </head>
 <body id="about">
 
@@ -112,58 +115,94 @@
             </div>
         </div>
     </header>
-    <div id="BannerShow_upon2" class="BannerShow_upon"></div>
+    <div id="BannerShow_upon1" class="BannerShow_upon"></div>
     <main class="main-content">
         <section class="content-container">
-          <div><h5 class="titleBar_img">健 康 風 險 評 估</h5></div>
+          <div><h3 class="titleBar_img2">碳盤查及淨零管理：邁向永續未來的第一步</h3></div>
           <div class="copyBasic t_14pt">
-            <blockquote style="text-indent: 32px;">近年來國人越來越重視開發計畫對健康的影響，環境部已於民國99年4月9日公告「健康風險評估技術規範」，並於民國100年10月7日修訂「開發行為環境影響評估作業準則」規定開發行為可能運作或運作時衍生危害性化學物質者，開發單位應依健康風險評估技術規範進行健康風險評估，並將其納入說明書或評估書初稿。完整之健康風險評估計畫包括：</blockquote><br />
-            <img src="images/2_4/pic_2_4_a.png" style="width:100%; height:auto;"/><br /><br /><br />
-            <blockquote style="text-indent: 32px;">因此未來運作或可能衍生危害性化學物質之開發計畫，必須辦理健康風險評估。本公司具有相當豐富的健康風險評估計畫之執行經驗，曾辦理「新竹科學工業園區龍潭基地健康風險追蹤管理計畫」、「六輕相關計畫之特定有害空氣污染物所致健康風險評估計畫」、「南部科學工業園區（台南園區）健康風險評估計畫」、「台南縣威致鋼鐵官田廠擴建環評之健康風險評估工作」、環境部「固定污染源有害性揮發性有機物排放調查及健康風險評估計畫」、「大湳淨水廠使用液氯量化風險評估計畫」等計畫。並隨時掌握健康風險評估相關訊息，對於健康風險評估相關法令規範、評估技術、調查分析技術以及追蹤管理作業皆十分熟悉。</blockquote>
-            <br /><br />
-            <img src="images/2_4/pic_2_4_b.png" style="width:100%; height:auto;" />      
-          </div><br/>
+            <blockquote style="text-indent: 32px;">在全球氣候變遷日益嚴峻的背景下，企業不再只是生產者，更是環境責任的承擔者。碳盤查與淨零管理，正是企業邁向永續發展的關鍵策略。</blockquote>
+            <BR><blockquote>
+              <img src="./images/7_1/icon02.png" width="16" height="16" />&nbsp;<span class="t_16pt t_B">什麼是碳盤查與淨零管理？</span>
+              <ol class="f">
+                <li>碳盤查是指針對企業活動所產生的溫室氣體進行量化與分類，依據國際標準（如 ISO 14064、ISO 14067）進行盤點。</li>
+                <li>淨零管理則是企業透過減量、替代與抵換等方式，逐步達成「碳排放 = 碳移除」的目標，實現真正的淨零排放。</li>
+              </ol>
+              <p style="display: block;margin: auto;width:100%;"><a href="images/7_/00.png"><img class="service7-800" src="images/7_/00.png" /></a></p>
+            </blockquote>
+            <blockquote>
+              <img src="./images/7_1/icon03.png" width="16" height="16" />&nbsp;<span class="t_16pt t_B">國際趨勢：淨零已成全球共識</span>
+              <ol class="f">
+                <li>根據 Net Zero Tracker，截至 2024 年已有超過 145 個國家宣示 2050 年達成淨零排放目標。</li>
+                <li>歐盟推動碳邊境調整機制（CBAM），要求進口商品揭露碳排放，影響全球供應鏈。</li>
+                <li>國際品牌已將「低碳製程」列為供應商選擇標準。</li>
+              </ol>
+            </blockquote><br />
+            <blockquote>
+              <img src="./images/7_1/icon04.png" width="16" height="16" />&nbsp;<span class="t_16pt t_B">台灣規範：法制化推動企業減碳</span>
+              <ol class="f">
+                <li>台灣於 2023 年正式施行《氣候變遷因應法》，明訂 2050 淨零排放目標。</li>
+                <li>高排放企業須進行溫室氣體盤查並委託第三方查驗，並將逐步徵收碳費。</li>
+                <li>金管會要求上市櫃公司於 2027 年完成碳盤查，2029 年完成查驗並揭露於 ESG 報告中。</li>
+              </ol>
+            </blockquote>
+          </div><BR>
+          <blockquote>
+            <img src="./images/7_/i001.png" width="20" height="20" />&nbsp;<span class="t_16pt t_B">景丰的服務：從盤查到淨零，一站式支援</span><BR>
+              
+            <div class="copyBasic t_14pt">
+              <blockquote style="text-indent: 32px;">景丰於碳盤查及淨零管理議題上長期致力於環評溫室氣體排放計算、溫室氣體盤查、產品碳足跡量化以及工程碳管理等，從上游政府溫室氣體盤查、減量之政策面，至下游各廠家、業者之溫室氣體盤查或產品碳足跡量，長期具備充足相關執行經驗。</blockquote><br />
+              <blockquote style="text-indent: 32px;">輔導團隊之專業能力採以循序方式協助企業建構碳盤查、碳足跡及減碳能力並降低來自國際淨零趨勢、供應鏈要求及各國碳邊境調整機制壓力，為政府及企業長期合作之技術顧問團隊&nbsp;<a href="download/景丰碳管理簡介.pdf" class="mymultiplediv" id="one" target="_blank"  style="color: blue; white-space: nowrap;" title="景丰碳管理簡介（開啟新視窗）">（瞭解詳情）</a></blockquote>
+              <p style="display: block;margin: auto;width:90%;"><a href="./images/7_/01.png"><img class="service7-800" src="images/7_/01.png" /></a></p>
+            </div>
+          </blockquote><BR>
+          <blockquote>
+            <img src="./images/7_/i001.png" width="20" height="20" />&nbsp;<span class="t_16pt t_B">為什麼選擇景丰</span><BR>
+            
+            <ol class="f">
+              <li>專業顧問團隊具備 ISO 認證與實務經驗</li>
+              <li>熟悉國際與台灣法規，協助企業合規又超前部署</li>
+              <li>客製化服務，運用於政府政策、中小企業治理至大型集團</li>
+            </ol>	
+            <div id="copyBasic t_14pt">
+              <!-- <canvas id="myPieChart"></canvas> -->
+              <p style="display: block;margin: auto;width:100%;"><a href="./images/7_/membership.png"><img class="service7-800" src="images/7_/membership.png" /></a></p>
+            </div>
+          </blockquote>
           <div id="T1" class="titleBar_blue3"><h5 class="titleBar_img">主 要 實 績</h5></div>
           <div class="copyBasic t_14pt">
             <blockquote>
               <table width="96%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                  <td valign="top">
+                  <td valign="top" colspan="2">
+                    <strong>上位計畫&nbsp;<a href="service_7-1.html" class="mymultiplediv" id="one" target="_self"  style="color: blue; white-space: nowrap;font-size:15px;"">（瞭解詳情）</a></strong>
                     <div class="wrapper">
-                    <ul class="show-more-list">
-                      <li style="list-style:disc;">新竹科學園區寶山二期擴建環境影響評估暨健康風險評估專業服務工作</li>
-                      <li style="list-style:disc;">林口發電廠燃煤機組健康風險評估（陽明大學）</li>
-                      <li style="list-style:disc;">仁大工業區污染減量及風險改善計畫</li>
-                      <li style="list-style:disc;">六輕相關計畫之特定有害空氣污染物所致健康風險評估（107-109年度報告）</li>
-                      <li style="list-style:disc;">台橡高雄廠污染物丁二烯及苯風險評估作業</li>
-                      <li style="list-style:disc;">107年臺中市后里區、西屯區、大雅區及港區空氣污染物健康風險調查計畫</li>
-                      <li style="list-style:disc;">106年度六輕相關計畫之特定有害空氣污染物所致健康風險評估</li>
-                      <li style="list-style:disc;">六輕四期擴建計畫環差健康風險模擬工作</li>
-                      <li style="list-style:disc;">曄揚公司固污許可健康風險模擬工作</li>
-                      <li style="list-style:disc;">新竹市垃圾資源回收廠健康風險評估工作</li>
-                      <li style="list-style:disc;">新竹科學工業園區（寶山用地）擴建計畫實質計畫－環評有關空品模擬及健康風險評估</li>
-                      <li style="list-style:disc;">南科台南園區開發調整辦理環評作業計畫-空品模擬及健康風險評估報告</li>
-                      <li style="list-style:disc;">長春石化苗栗廠健康風險暨臭味評估</li>
-                      <li style="list-style:disc;">彰化縣打鐵厝南北基地產業園區環說及健康風險評估</li>
-                      <li style="list-style:disc;">台塑桃園儲運站健康風險評估計畫</li>
-                      <li style="list-style:disc;">105年六輕相關計畫之特定有害空氣污染物所致健康風險評估計畫</li>
-                      <li style="list-style:disc;">台南園區及高雄園區健康風險評估計畫</li>
-                      <li style="list-style:disc;">中科臺中園區一、二期健康風險評估作業</li>
-                      <li style="list-style:disc;">塑化氫化石油樹脂廠環差健康風險評估初步評估工作</li>
-                      <li style="list-style:disc;">南部科學工業園區健康風險評估</li>
-                      <li style="list-style:disc;">六輕南亞環差健康風險評估初步評估工作</li>
-                      <li style="list-style:disc;">仁大工業區鄰近區域居民健康風險評估計畫（排放量推估及模式模擬）</li>
-                      <li style="list-style:disc;">台塑六輕四期健康風險評估</li>
-                      <li style="list-style:disc;">六輕相關計畫之特定有害空氣污染物所致健康風險評估計畫&nbsp;<a href="service_4-1.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
-                      <li style="list-style:disc;">新竹科學工業園區龍潭基地健康風險追蹤管理計畫&nbsp;<a href="service_4-2.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
-                      <li style="list-style:disc;">台南縣威致鋼鐵官田廠擴建環評之健康風險評估工作&nbsp;<a href="service_4-3.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
-                      <li style="list-style:disc;">南部科學工業園區(台南園區)健康風險評估計畫&nbsp;<a href="service_4-4.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
-                      <li style="list-style:disc;">大湳淨水廠使用液氯量化風險評估計畫&nbsp;<a href="service_4-5.html" target="_self"  style="color: blue; white-space: nowrap; ">（瞭解詳情）</a></li>
-                    </ul>
-                    <button id="show-more-next">讀取更多</button>
+                      <ol class="a">
+                        <li style="list-style:disc;">運輸業溫室氣體盤查、碳足跡建立及減量對策推動計畫</li>
+                        <li style="list-style:disc;">海運低碳化整體藍圖規劃及推動方案</li>
+                        <li style="list-style:disc;">113 年建立車輛溫室氣體效能標準相關管制措施專案計畫</li>
+                        <li style="list-style:disc;">貨運三業、公路汽車客運業、遊覽車客運業－碳足跡及碳標籤綠色運輸先期規劃委託案</li>
+                        <li style="list-style:disc;">建立車輛溫室氣體效能標準相關管制措施專案計畫</li>
+                      </ol>
+                      <!-- <button id="show-more-next">讀取更多</button> -->
                     </div>
                   </td>
-                  <td>&nbsp;</td>
+                </tr>
+                <tr><td colspan="2">&nbsp;</td></tr>
+                <tr>
+                  <td colspan="2">
+                    <strong>碳盤查&nbsp;<a href="service_7-2.html" class="mymultiplediv" id="two" target="_self"  style="color: blue; white-space: nowrap;font-size:15px;">（瞭解詳情）</a></strong>
+                    <div class="wrapper">
+                      <ol class="a">
+                        <li style="list-style:disc;">異丙醇專門運輸服務碳足跡盤查</li>
+                        <li style="list-style:disc;">113 至116 年度中大口徑幹管不斷水工法配合工程-工程碳足跡</li>
+                        <li style="list-style:disc;">113 至116 年度西北區自來水管線清洗、檢視及修復配合工程-工程碳足跡</li>
+                        <li style="list-style:disc;">113 至116 年西北區自來水管線推進配合工程-工程碳足跡</li>
+                        <li style="list-style:disc;">關渡三重支線輸水幹管潛盾統包工程-工程碳足跡</li>
+                        <li style="list-style:disc;">貨運三業、公路汽車客運業、遊覽車客運業－碳足跡及碳標籤綠色運輸先期規劃委託案</li>
+                      </ol>
+                      <!-- <button id="show-more-next">讀取更多</button> -->
+                    </div>
+                  </td>
                 </tr>
               </table>
             </blockquote>

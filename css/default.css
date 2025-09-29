@@ -596,8 +596,6 @@ a {
 		min-width: 80px;
 }
 
-
-
 #indexNews li {
 		display: flex;
 		align-items: flex-start;
@@ -746,6 +744,8 @@ a {
 		#about .main-content {
 				margin-top: 280px;
 		}
+		
+		.copyBasic2_R img {max-width:350px !important;height:auto !important;}
 }
 
 /* 手機設備 (Mobile) */
@@ -781,6 +781,8 @@ a {
 		.easyzoom img {
 				width: 350px !important;
 		}
+
+		.copyBasic2_R img {max-width:350px !important;height:auto !important;}
 		
 		.titleBar_blue {
 				text-align: center;
@@ -1098,4 +1100,5 @@ a {
 				height: 100px;
 				top: 160px;
 		}
+		.copyBasic2_R img {max-width:350px !important;height:auto !important;}
 }

@@ -790,7 +790,7 @@ a {
 				width: 350px !important;
 		}
 
-		.copyBasic2_R img {max-width:350px !important;height:auto !important;}
+		.copyBasic2_R img {max-width:250px !important;height:auto !important;}
 		
 		.titleBar_blue {
 				text-align: center;
@@ -1108,5 +1108,5 @@ a {
 				height: 100px;
 				top: 160px;
 		}
-		.copyBasic2_R img {max-width:350px !important;height:auto !important;}
+		.copyBasic2_R img {max-width:200px !important;height:auto !important;}
 }

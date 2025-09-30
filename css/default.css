@@ -909,11 +909,11 @@ img.t_B2 {
 				display: none
 		} */
 		.flip-card-front img {
-				width: 225px !important;
+				width: 270px !important;
 				height: auto !important;
 		}
 		.flip-card-back {
-				margin-left: -15px !important; 
+				margin-left: -25px !important; 
 		}
 		.easyzoom img, .mydiv img {
 				width: 350px !important;
@@ -1210,11 +1210,11 @@ img.t_B2 {
 		.titleBar_img2 { height: 100%; text-align: left;font-size: 12px;} 
 
 		.flip-card-front img {
-				width: 200px !important;
+				width: 240px !important;
 				height: auto !important;
 		}
 		.flip-card-back {
-				margin-left: -15px !important; 
+				margin-left: -25px !important; 
 		}
 
 		.easyzoom img, .mydiv img {

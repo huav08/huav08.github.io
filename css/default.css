@@ -94,7 +94,7 @@ img.t_B2 {
 }
 .indented-image {
 		/* 在圖片左側增加 20 像素的外部邊距 */
-		margin-left: 50px; 
+		margin-left: 20px; 
 }
 .ui-autocomplete {
     z-index: 1111 !important; /* Use !important if necessary to override theme styles */
@@ -920,8 +920,8 @@ img.t_B2 {
 		}
 		
 		.indented-image {
-				/* 在圖片左側增加 20 像素的外部邊距 */
-				margin-left: 80px !important; 
+				/* 在圖片左側增加 30 像素的外部邊距 */
+				margin-left: 30px !important; 
 		}
 
 		.copyBasic2_R img {max-width:250px !important;height:auto !important;}
@@ -1209,6 +1209,7 @@ img.t_B2 {
 		.flip-card-back {
 				margin-left: -30px !important; 
 		}
+
 		.easyzoom img, .mydiv img {
 				width: 320px !important;
 		}

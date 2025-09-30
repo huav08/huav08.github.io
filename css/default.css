@@ -915,9 +915,10 @@ img.t_B2 {
 		.flip-card-back {
 				margin-left: -30px !important; 
 		}
-		.easyzoom img {
+		.easyzoom img, .mydiv img {
 				width: 350px !important;
 		}
+		
 		.indented-image {
 				/* 在圖片左側增加 20 像素的外部邊距 */
 				margin-left: 80px !important; 
@@ -1184,6 +1185,17 @@ img.t_B2 {
   	.service7-300 img {width: 25% !important; height: auto; position: absolute;} 
 
 		.titleBar_img2 { height: 100%; text-align: left;font-size: 12px;} 
+
+		.flip-card-front img {
+				width: 240px !important;
+				height: auto !important;
+		}
+		.flip-card-back {
+				margin-left: -30px !important; 
+		}
+		.easyzoom img, .mydiv img {
+				width: 320px !important;
+		}
 
 		.header-content {
 				padding: 0 1rem;

@@ -14,13 +14,15 @@
         link.addEventListener('click', (e) => {
             // 在行動裝置寬度時才啟用此功能
             if (window.innerWidth <= 768) {
-                e.preventDefault(); // 阻止超連結跳轉
                 const parentLi = link.parentElement;
                 const submenu = parentLi.querySelector('.submenu');
                 
+                // 只有真正有子選單的項目才阻止預設行為
                 if (submenu) {
+                    e.preventDefault(); // 阻止超連結跳轉
                     submenu.classList.toggle('active');
                 }
+                // 沒有子選單的項目（如人才招募、聯絡我們）讓其正常跳轉
             }
         });
     });

@@ -914,7 +914,7 @@ img.t_B2 {
 		}
 		.flip-card-back {
 			border: 1px solid red;
-				margin-left: -25px !important; 
+				margin-left: -20px !important; 
 		}
 		.easyzoom img, .mydiv img {
 				width: 350px !important;
@@ -1216,7 +1216,7 @@ img.t_B2 {
 		}
 		.flip-card-back {
 			border: 1px solid blue;
-				margin-left: -25px !important; 
+				margin-left: -20px !important; 
 		}
 
 		.easyzoom img, .mydiv img {

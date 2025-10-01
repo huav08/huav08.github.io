@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>景丰科技 SIMULATION | 人力資源</title>
-	<meta name="keywords" content="人力資源"/>    
+  <title>景丰科技 SIMULATION | 聯絡我們</title>
+	<meta name="keywords" content="聯絡我們"/>    
    <!-- 網頁描述 -->
-	<meta name="description" content="人力資源"/>
+	<meta name="description" content="聯絡我們"/>
 	<meta name="Author" content="景丰科技股份有限公司, Jih-Li Hua"/>
 	<meta name="copyright" content="Copyright © 2012 SIMLATION CO., LTD. All Rights Reserved">
   <link rel="stylesheet" href="./css/default.css" />  
   <link rel="stylesheet" href="./css/jquery-ui.min.css" />  
-  <link rel="stylesheet" href="./css/btnstyle.css" />
+  <link rel="stylesheet" href="./css/contact.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -103,17 +103,79 @@
             </div>
         </div>
     </header>
-    <div id="BannerShow_upon1" class="BannerShow_upon"></div>
+    <div id="BannerShow_upon3" class="BannerShow_upon"></div>
     <main class="main-content">
         <section class="content-container">
-          <div class="titleBar_blue"><img src="./images/title_Company.png" /><h5>人 力 資 源</h5></div>
+          <div class="titleBar_blue"><img src="./images/title_Company.png" /><h5>聯 絡 我 們</h5></div>
           <div class="copyBasic">
-            <img src="./images/pic_1_3.gif" style="width:100%; height:auto;" />
-        	  <img src="./images/pic_1_3_f.jpg" style="width:100%; height:auto;" />
+            <blockquote style="text-indent: 32px;">歡迎您來信洽詢任何問題，[景丰科技] 將有專人竭誠為您服務，謝謝您！ 您所留下的個人資料，本公司僅用來答覆您的意見回饋，不會使用於其他用途。</blockquote><br />
           </div> 
-          <hr />          
+          <div class="container">            
+            <form id="contactForm" 
+                  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe-R4YLq0ujtwJPhst6DrBu4pDOSYqOpHuEIrFUzkV8ocK1FQ/formResponse" 
+                  method="POST" 
+                  target="hidden_iframe" 
+                  onsubmit="return validateForm();">
+
+                <div class="form-group">
+                    <label for="name" class="required">中文姓名</label>
+                    <input type="text" id="name" name="entry.357966767" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">性 別</label>
+                    <div class="radio-group">
+                        <input type="radio" id="gender_m" name="entry.1957485384" value="男" required>
+                        <label for="gender_m">男</label>
+                        <input type="radio" id="gender_f" name="entry.1957485384" value="女">
+                        <label for="gender_f">女</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="unit">任職單位</label>
+                    <input type="text" id="unit" name="entry.1419603257">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="required">連絡電話</label>
+                    <input type="tel" id="phone" name="entry.1768474319" required 
+                          pattern="^[\d\s\-\(\)]{7,15}$" 
+                          title="請輸入正確的電話號碼格式 (例如: 09XX-XXXXXX 或 (02)XXXX-XXXX)">
+                    <div id="phone-error" class="error-message">電話號碼格式不正確。</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="required">E-mail</label>
+                    <input type="email" id="email" name="entry.1448383671" required>
+                    <div id="email-error" class="error-message">E-mail 格式不正確。</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inquiry" class="required">洽詢事項</label>
+                    <textarea id="inquiry" name="entry.1178002190" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">送出表單</button>
+            </form>
+            <div id="form-status"></div>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+          </div>
           <br />
-          <br />
+          <div class="frame">
+            <div id="item1">
+              <div class="titleBar_blue"><img src="./images/title_Company.png"/><h6>北 部 總 公 司</h6></div>					
+              <br />台北市10663大安區復興南路二段286號4樓<br /><br />電話:02-23778011<br /><br />傳真:02-27393446<br /><br />統一編號:80509318<br /><br />
+              <iframe class="gmap" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.tw/maps?f=q&amp;source=s_q&amp;hl=zh-TW&amp;geocode=&amp;q=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E5%BE%A9%E8%88%88%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B5286%E8%99%9F4%E6%A8%93&amp;aq=&amp;sll=23.48575,119.49965&amp;sspn=8.005136,9.876709&amp;t=m&amp;brcurrent=3,0x3442aa2c194b66cd:0x1ea97d148ba72564,0,0x3442ac6b61dbbd9d:0xc0c243da98cba64b&amp;ie=UTF8&amp;hq=&amp;hnear=106%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E5%BE%A9%E8%88%88%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B5286%E8%99%9F&amp;ll=25.024074,121.543216&amp;spn=0.007729,0.009645&amp;z=14&amp;output=embed"></iframe>
+              <br /><small><a href="https://maps.google.com.tw/maps?f=q&amp;source=embed&amp;hl=zh-TW&amp;geocode=&amp;q=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E5%BE%A9%E8%88%88%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B5286%E8%99%9F4%E6%A8%93&amp;aq=&amp;sll=23.48575,119.49965&amp;sspn=8.005136,9.876709&amp;t=m&amp;brcurrent=3,0x3442aa2c194b66cd:0x1ea97d148ba72564,0,0x3442ac6b61dbbd9d:0xc0c243da98cba64b&amp;ie=UTF8&amp;hq=&amp;hnear=106%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E5%BE%A9%E8%88%88%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B5286%E8%99%9F&amp;ll=25.024074,121.543216&amp;spn=0.007729,0.009645&amp;z=14" style="color:#0000FF;text-align:left">檢視較大的地圖</a></small>
+            </div><br />
+            <div id="item2">	
+              <div class="titleBar_blue"><img src="./images/title_Company.png"/><h6>台 南 分 公 司</h6></div>					
+              <br />台南市70164東區東門路二段299號4樓<br /><br />電話:06-2098539<br /><br />傳真:06-2082115<br /><br /><br /><br />
+              <iframe class="gmap" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10389.093343753257!2d120.22327734036107!3d22.983380228247825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e769867929317%3A0xf820c39be6e0bb3d!2zNzAx5Y-w5Y2X5biC5p2x5Y2A5p2x6ZaA6Lev5LqM5q61Mjk56Jmf!5e0!3m2!1szh-TW!2stw!4v1451891967577"></iframe>
+              <br /><small><a href="https://www.google.com.tw/maps/place/701%E5%8F%B0%E5%8D%97%E5%B8%82%E6%9D%B1%E5%8D%80%E6%9D%B1%E9%96%80%E8%B7%AF%E4%BA%8C%E6%AE%B5299%E8%99%9F/@22.9833802,120.2232773,15.5z/data=!4m2!3m1!1s0x346e769867929317:0xf820c39be6e0bb3d" style="color:#0000FF;">檢視較大的地圖</a></small>
+            </div>
+          </div>
         </section>
     </main>
 
@@ -146,5 +208,8 @@
     <script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script> 
     <script type="text/javascript" src="./jsq/at_cage.js"></script>
     <script type="text/javascript" src="./jsq/gototop.js"></script>
+    <script type="text/javascript" src="jsq/articulate.js"></script>
+    <script type="text/javascript" src="jsq/ajax-loading.js"></script>  
+    <script type="text/javascript" src="jsq/contact.js"></script>  
 </body>
 </html>

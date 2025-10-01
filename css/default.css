@@ -30,6 +30,36 @@ a {
 }
 .t_B {
   font-weight: bold;
+}/*=== BTN ===*/
+.btn_Top-out, .btn_Top-over {
+	display:none !important;
+	/* width:106px; height:48px; float:right; */ 
+}
+.btn_Top-out {
+	display:none !important;
+	/* background:url(../images/btn_top.png) no-repeat top; */
+}
+.btn_Top-over {
+	display:none !important;
+	/* background:url(../images/btn_top.png) no-repeat bottom; */
+}
+.btn_Send-out, .btn_Send-over {
+	width:84px; height:32px; float:right; cursor:pointer;
+}
+.btn_Send-out {
+	background:url(../images/btn_send.png) no-repeat top;
+}
+.btn_Send-over {
+	background:url(../images/btn_send.png) no-repeat bottom;
+}
+.btn_Clean-out, .btn_Clean-over {
+	width:84px; height:32px; float:right; cursor:pointer;
+}
+.btn_Clean-out {
+	background:url(../images/btn_cl.png) no-repeat top;
+}
+.btn_Clean-over {
+	background:url(../images/btn_cl.png) no-repeat bottom;
 }
 ol.a, ol.e, ol.f {
 	padding-left: 20px; 
@@ -675,6 +705,22 @@ img.t_B2 {
 		box-sizing: border-box;
 }
 
+.frame {
+		display: flex;
+		gap: 20px;
+		justify-content: center;
+		align-items: flex-start;
+		max-width: 1000px;
+		margin: 20px auto;
+		padding: 0 20px;
+		box-sizing: border-box;
+}
+
+#item1, #item2 {
+		flex: 1;
+		max-width: 48%;
+}
+
 /* Go To Top Button */
 .go-to-top {
 		position: fixed;
@@ -804,6 +850,23 @@ img.t_B2 {
 				padding: 4px 8px;
 		}
 		
+		.frame {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				max-width: 800px;
+				margin: 0 auto;
+		}
+		
+		#item1, #item2 {
+				flex: 1;
+				max-width: 48%;
+				margin: 7px;
+				white-space: nowrap;
+				font-size: 13px;
+				line-height: 15px;
+		}
+		
 		.BannerShow_upon,
 		#BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
 				height: 150px;
@@ -903,6 +966,20 @@ img.t_B2 {
 				box-sizing: border-box;
 				height: auto;
 				min-height: 35px;
+		}
+
+		.frame {
+				flex-direction: column;
+				gap: 15px;
+		}
+		
+		#item1, #item2 {
+				max-width: 100%;
+				width: 100%;
+				margin: 0;
+				white-space: normal;
+				font-size: 12px;
+				line-height: 18px;
 		}
 
 		/* .flip-card {
@@ -1249,6 +1326,25 @@ img.t_B2 {
 
 		.header-content {
 				padding: 0 1rem;
+		}		
+				
+		.frame {
+			display:flex; /* 水平排列 */
+			justify-content: center; /* 水平置中對齊 */
+			/* align-items: center; 垂直置中對齊 */  
+			width: 100%;
+			height: auto;
+			margin: 10px;
+		}
+		#item1, #item2 {
+			flex: none;
+			width: 400px;
+			text-align: left;
+			font-size: 17px;
+			font-weight:600;  
+			line-height: 24px;
+			height: auto;
+			margin: 5px 20px;
 		}
 
 		.logo img {

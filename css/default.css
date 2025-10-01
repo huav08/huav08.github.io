@@ -1281,9 +1281,22 @@ img.t_B2 {
 				margin: 0;
 		}
 
+		.footer {
+				margin: 0;
+				padding: 1.5rem 0;
+				width: 100vw;
+				position: relative;
+				left: 50%;
+				right: 50%;
+				margin-left: -50vw;
+				margin-right: -50vw;
+		}
+		
 		.footer-content {
 				flex-direction: column;
 				align-items: flex-start;
+				padding: 0 1rem;
+				max-width: none;
 		}
 
 		.footer-info, .footer-links {

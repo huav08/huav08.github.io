@@ -952,6 +952,17 @@ img.t_B2 {
 				height: 25px;
 				padding: 0;
 				font-size: 0.8rem;
+				top: auto;
+				bottom: 10px;
+				transform: none;
+		}
+		
+		.prev-btn {
+				left: 10px;
+		}
+		
+		.next-btn {
+				right: 10px;
 		}
 		.header-content {
 				flex-direction: column;

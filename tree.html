@@ -12,28 +12,31 @@
 	<meta name="copyright" content="Copyright © 2012 ENVIRONMENTAL SIMULATION CO., LTD. All Rights Reserved">
     <!-- iCon圖示 -->
 	<link rel="shortcut icon" href="favicon.ico" /> 
-    <link rel="stylesheet" href="./css/default.css" />
-    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">   
-    <link rel="stylesheet" href="./css/jquery-ui.min.css" />    
+  <link rel="stylesheet" href="./css/default.css" />
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">   
+  <link rel="stylesheet" href="./css/jquery-ui.min.css" />    
 	<link rel="stylesheet" href="./css/news.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="./css/3Dsky.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async  src="https://www.googletagmanager.com/gtag/js?id=G-FLZZF2NJC6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async  src="https://www.googletagmanager.com/gtag/js?id=G-FLZZF2NJC6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-      gtag("config", "G-FLZZF2NJC6");
-    </script>    
+    gtag("config", "G-FLZZF2NJC6");
+  </script>    
     <!-- Google Analytics Script碼(End) -->         
  </head>
 <body>
+    // 3D Sky Background
     <div id="sky-container"></div>
+    
     <header class="header">
         <div class="header-content">
             <a href="#" class="logo">
@@ -310,5 +313,8 @@
     <script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script> 
     <script type="text/javascript" src="./jsq/at_cage.js"></script>
     <script type="text/javascript" src="./jsq/gototop.js"></script>
+    // 3D Sky Background
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="text/javascript" src="./jsq/3Dsky.js"></script>
 </body>
 </html>

@@ -822,6 +822,18 @@ img.t_B2 {
 		border-bottom: none;
 }
 
+/* 表格最後一欄（文獻下載）中央對齊 */
+#tbl td:last-child {
+		text-align: center;
+		vertical-align: middle;
+}
+
+/* 表格第一欄（PDF icon）中央對齊 */
+#tbl td:first-child {
+		text-align: center;
+		vertical-align: middle;
+}
+
 /* RWD 響應式設計 */
 /* 平板設備 (Tablet) */
 @media (max-width: 1024px) {

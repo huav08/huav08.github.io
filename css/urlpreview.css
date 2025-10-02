@@ -1,0 +1,88 @@
+/* 基礎 RWD 設定 */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* 連結容器 */
+.link-container {
+    margin: 20px 0;
+    display: inline-block; /* 讓容器只佔內容所需的寬度 */
+}
+
+/* 預覽連結 */
+.preview-link {
+    /* 建立定位上下文 */
+    position: relative; 
+    text-decoration: underline;
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 2px 0; /* 增加懸停區域 */
+    display: inline-block;
+}
+
+/* 預覽小視窗的基本樣式 (預設隱藏) */
+.preview-box {
+    display: none; /* 預設隱藏 */
+    position: absolute;
+    z-index: 10;
+    width: 300px; /* 預覽框的寬度 */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    border-radius: 8px;
+    top: 100%; /* 定位在連結下方 */
+    left: 0;
+    transform: translateY(10px); /* 稍微往下偏移，與連結產生間隔 */
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s; /* 加入動畫效果 */
+    pointer-events: none; /* 讓滑鼠可以穿透，避免阻擋點擊連結 */
+}
+
+/* 懸停時顯示預覽小視窗 */
+.preview-link:hover > .preview-box {
+    display: block; /* 懸停時顯示 */
+    opacity: 1;
+    transform: translateY(0); /* 移回原始位置 */
+    pointer-events: auto;
+}
+
+/* 預覽內容的樣式 */
+.preview-box h4 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.preview-box p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.preview-box img {
+    width: 100%; /* 圖片寬度佔滿預覽框 */
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    object-fit: cover;
+}
+
+/* --- RWD 響應式調整 --- */
+@media (max-width: 600px) {
+    /* 在小螢幕設備上，調整預覽框的寬度和位置 */
+    .preview-box {
+        width: 90vw; /* 讓預覽框寬度佔滿視窗寬度的大部分 */
+        max-width: 350px; /* 設置最大寬度 */
+        left: 50%; /* 往左移 50% */
+        transform: translateX(-50%) translateY(10px); /* 居中對齊並往下偏移 */
+        
+        /* 避免預覽框超出視窗邊界 */
+        /* 如果需要，可以調整 top, left, transform 讓它永遠在畫面上可見 */
+        
+        /* 在手機上通常沒有 hover 事件，但為了效果一致性還是保持樣式 */
+        top: 150%; 
+    }
+}

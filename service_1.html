@@ -458,8 +458,10 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 	<script src="jsq/easyzoom.js"></script> 	
 	<script>
-		// Instantiate EasyZoom plugin
-		var $easyzoom = $('.easyzoom').easyZoom();
+		// Instantiate EasyZoom plugin only on non-mobile devices
+		if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			var $easyzoom = $('.easyzoom').easyZoom();
+		}
 	</script>
     <script> 
         $(function() {

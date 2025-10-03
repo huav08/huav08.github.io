@@ -230,48 +230,50 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 	<script src="jsq/easyzoom.js"></script> 	
 	<script>
-		// Instantiate EasyZoom plugin
-		var $easyzoom = $('.easyzoom').easyZoom();
+		// Instantiate EasyZoom plugin only on non-mobile devices
+		if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			var $easyzoom = $('.easyzoom').easyZoom();
+		}
 	</script>
-    <script> 
-        $(function() {
-            // 啟用 Dialog 小部件
-            $("#dialog-image").dialog({
-                autoOpen: false, // 預設不開啟
-                modal: true,    // 設置為模態，強制用戶互動
-                width: 850,     // 設置 Dialog 寬度
-                height: 600,    // 設置 Dialog 高度
-                open: function() {
-                    // 讓 Dialog 內容可以滾動，以便查看長圖
-                    $(this).parent().css({
-                        'overflow': 'auto'
-                    });
-                }
-            });
-            // 點擊按鈕或連結時開啟 Dialog
-            $("#view-cert-dialog").on("click", function(event) {
-                event.preventDefault(); // 阻止連結跳轉
-                $("#dialog-image").dialog("open");
-            });
-        });
-    </script>  
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('.mymultiplediv').mouseover(function() {
-          myvar = this.id;
-          $("div.mydiv").hide();
-          $("div.mydiv2").hide();
-          $('#div'+myvar).show();
-        });
-        /* $('.mymultiplediv2').mouseover(function() {
-          myvar2 = this.id;
-            
-          $('#div'+myvar2).css("position","absolute");
-          $('#div'+myvar2).css("left","550px");
-          $('#div'+myvar2).css("z-index","999");
-          $('#div'+myvar2).show();
-        }); */
+  <script> 
+      $(function() {
+          // 啟用 Dialog 小部件
+          $("#dialog-image").dialog({
+              autoOpen: false, // 預設不開啟
+              modal: true,    // 設置為模態，強制用戶互動
+              width: 850,     // 設置 Dialog 寬度
+              height: 600,    // 設置 Dialog 高度
+              open: function() {
+                  // 讓 Dialog 內容可以滾動，以便查看長圖
+                  $(this).parent().css({
+                      'overflow': 'auto'
+                  });
+              }
+          });
+          // 點擊按鈕或連結時開啟 Dialog
+          $("#view-cert-dialog").on("click", function(event) {
+              event.preventDefault(); // 阻止連結跳轉
+              $("#dialog-image").dialog("open");
+          });
       });
-    </script>
+  </script>  
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.mymultiplediv').mouseover(function() {
+        myvar = this.id;
+        $("div.mydiv").hide();
+        $("div.mydiv2").hide();
+        $('#div'+myvar).show();
+      });
+      /* $('.mymultiplediv2').mouseover(function() {
+        myvar2 = this.id;
+          
+        $('#div'+myvar2).css("position","absolute");
+        $('#div'+myvar2).css("left","550px");
+        $('#div'+myvar2).css("z-index","999");
+        $('#div'+myvar2).show();
+      }); */
+    });
+  </script>
 </body>
 </html>

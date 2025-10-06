@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>景丰科技 SIMULATION | 生態檢核 | 107年度彰化縣生態檢核工作計畫委託專業服務</title>
+	<meta name="keywords" content="生態檢核 | 107年度彰化縣生態檢核工作計畫委託專業服務"/>    
+   <!-- 網頁描述 -->
+	<meta name="description" content="生態檢核 | 107年度彰化縣生態檢核工作計畫委託專業服務"/>
+	<meta name="Author" content="景丰科技股份有限公司, Jih-Li Hua"/>
+	<meta name="copyright" content="Copyright © 2012 SIMLATION CO., LTD. All Rights Reserved">
+	<link rel="stylesheet" href="./css/show_more_list.css" />
+	<link rel="stylesheet" href="./css/flip-card.css" />
+	<link rel="stylesheet" href="./css/imgs_hide_show.css">
+  <link rel="stylesheet" href="./css/default.css" />
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">   
+  <link rel="stylesheet" href="./css/jquery-ui.min.css" />  
+  <link rel="stylesheet" href="./css/award.css" />
+  <link rel="stylesheet" href="./css/easyzoom.css" /> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+	<link rel="stylesheet" href="css/easyzoom.css" />
+  <style>
+      /* 讓影片最大寬度不超過容器，並置中 */
+      .video-container {
+          position: relative; /* 或 absolute, fixed */
+          left: 5px;
+          max-width: 800px;
+          margin: 20px auto;
+      }
+      video {
+          width: 100%;
+          height: auto;
+          display: block;
+      }      
+      .container {
+          display: flex;
+          width: 40vw;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+      }
+      .panel {
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 500px;
+          border-radius: 50px;
+          color: #fff;
+          cursor: pointer;
+          flex: 0.5;
+          margin: 10px;
+          position: relative;
+          transition: all 700ms ease-in;
+      }
+      .panel h3 {
+          font-size: 24px;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          margin: 0;
+          opacity: 0;
+      }
+      .panel.active {
+          flex: 5;
+      }
+      .panel.active h3 {
+          opacity: 1;
+          transition: opacity 0.3s ease-in 0.4s;
+      }
+      @media (max-width: 480px) {
+          .container {
+              width: 100vw;
+          }
+          .panel:nth-of-type(4),
+          .panel:nth-of-type(5) {
+              display: none;
+          }
+      }
+  </style>
+	<script type="text/javascript" src="./jsq/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="./jsq/swfobject.js"></script>
+  <script type="text/javascript" src="./jsq/show-more.js"></script>	
+	<script type="text/javascript" src="./jsq/show-more.js"></script>
+	<script type="text/javascript" src="./jsq/show-more-2.js"></script>
+	<script type="text/javascript" src="./jsq/show-more-3.js"></script>
+<!-- Google Analytics Script碼(start) 要放在</head>之前 -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async  src="https://www.googletagmanager.com/gtag/js?id=G-FLZZF2NJC6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-FLZZF2NJC6");
+    </script>    
+    <!-- Google Analytics Script碼(End) --> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>           
+ </head>
+<body id="about">
+
+    <header class="header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="./images/sieenvi_logo.png" alt="景丰科技股份有限公司logo" />
+                    <div class="logo-text">
+                        <h1>景丰科技股份有限公司</h1>
+                        <h2>ENVIRONMENTAL SIMULATION CO. LTD. </h2>
+                    </div>
+                </a>
+                <div class="topArea">
+                  <a href="index.html" target="_parent">回首頁</a>
+                  <span class="separator">|</span>
+                  <a href="https://www.simenvi.com.tw/images/date_img/myimage.gif" target="_blank" title="空氣品質預報 (另開新視窗)">空氣品質預報</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <input tabindex="1" type="search" name="search" id="search_e" class="search form-control" placeholder="搜尋 ..." />
+                    <button id="search-bar" class="search-button search-button-v2" accesskey="s"><i class="fas fa-search"></i></button>
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="nav-links" id="nav-links">
+                        <li class="has-submenu">
+                            <a href="#">關於景丰</a>
+                            <ul class="submenu">
+                        <li><a href="about.html">公司簡介</a></li>
+                        <li><a href="award.html">榮譽認證</a></li>
+                        <li><a href="human.html">人力資源</a></li>
+                        <li><a href="organiz.html">組織結構</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#">服務項目與實績</a>
+                            <ul class="submenu">
+                                <li><a href="service_1.html">環境影響評估及環境監測</a></li>
+                                <li><a href="service_2.html">空氣品質及河川水質之模擬</a></li>
+                                <li><a href="service_3.html">空氣污染物排放量調查</a></li>
+                                <li><a href="service_4.html">健康風險評估</a></li>
+                                <li><a href="service_5.html">環境管理與資訊系統</a></li>
+                                <li><a href="service_6.html">生態檢核</a></li>
+                                <li><a href="service_7.html">碳盤查及淨零管理</a></li>
+                                <li><a href="service_8.html">氣候變遷風險評估</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#">空污事件模擬</a>
+                            <ul class="submenu">
+				                <li><a href="air_his.html">重大空污事件模擬</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="links.html">人才招募</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="contact.html">聯絡我們</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#">文件下載</a>
+                            <ul class="submenu">
+                                <li><a href="download_simenvi.html">公司介紹</a></li>
+                                <li><a href="download_paper.html">研究發表</a></li>
+                                <li><a href="download_model.html">技術文件</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div id="BannerShow_upon3" class="BannerShow_upon"></div>
+    <main class="main-content">
+        <section class="content-container">
+          <div><h5 class="titleBar_green t_16pt t_B">107年度彰化縣生態檢核工作計畫委託專業服務</h5></div>
+          <div class="copyBasic t_14pt">
+            <blockquote style="text-indent: 32px;">本計畫屬於「前瞻基礎建設計畫-水環境建設」項下「水與安全」主軸之「縣市管河川及區域排水整體改善計畫」，主要係辦理水患改善工作，並兼顧環境改善。期達成降低水患災害，提升地方經濟發展、維護生態環境、有效保障人民生命財產安全、提升居住生活品質，落實國土保育及永續發展等效益。</blockquote>
+					  <br />
+            <blockquote style="text-indent: 32px;">東溝排水改善工程因本公司生態檢核作業執行，以及參與工程設計階段中積極與地方民眾、生態關注團體、工程主辦單位及設計單位彼此溝通協調工程方案，最終得以取得各方共識後方設計定稿，亦避免後續爭議發生，在經濟部108年舉辦之「韌性臺灣-全國治水會議」，東溝排水改善工程之生態檢核案例亦備受肯定，積極以迴避、縮小、減輕、補償各種方案來考量生態保育之功能，使本案成為發揮生態檢核機制的典範。</blockquote>
+					  <br />
+            <table width="100%" class="copyService" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+					      <td>&nbsp;</td>
+                  <td rowspan="2" align="left">
+                    <div class="easyzoom easyzoom--overlay">
+                      <a href="images/6_1/pic_6_1_a1.png">
+                      <img class="service-pic-61" src="images/6_1/pic_6_1_a1.png" width="450" height="500" /> 
+                      </a>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <td valign="bottom" align="right">
+                  <!-- <div class="easyzoom easyzoom--overlay">
+                    <a href="images/6_1/pic_6_1_a.jpg">
+                    <img class="service-pic-61" src="images/6_1/pic_6_1_a.jpg" width="450" height="250"/>
+                    </a>
+                  </div> -->                                                        
+                  <div class="container">
+                    <div class="panel active"
+                        style="background-image: url('./images/6_1/pic_6_1_a.jpg')">
+                        <h3>&nbsp;</h3>
+                    </div>
+                    <div class="panel"
+                        style="background-image: url('./images/6_1/pic_6_1_a2.jpg')">
+                        <h3>&nbsp;</h3>
+                    </div>
+                    <div class="panel"
+                        style="background-image: url('./images/6_1/pic_6_1_a3.jpg')">
+                        <h3>&nbsp;</h3>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!-- <tr>
+                <td align="right">
+                  <div class="easyzoom easyzoom--overlay">
+                    <a href="images/6_1/pic_6_1_a2.jpg">
+                    <img class="service-pic-61" src="images/6_1/pic_6_1_a2.jpg" width="450" height="250" />
+                    </a>
+                  </div>
+                </td>
+                <td align="left">
+                  <div class="easyzoom easyzoom--overlay">
+                    <a href="images/6_1/pic_6_1_a3.jpg">
+                    <img class="service-pic-61" src="images/6_1/pic_6_1_a3.jpg" width="450" height="250" />
+                    </a>
+                  </div>
+                </td>
+              </tr> -->
+            </table> 
+          </div>  
+				  <div class="copyBasic">
+            <!-- ◎&nbsp;<span style="text-decoration:underline; font-weight:bold;">生態檢核介紹</span> : -->
+				    <h5 class="titleBar_green t_16pt t_B">生態檢核介紹</h5>
+            <table width="100%" border="0" cellspacing="0" cellpadding="5" align="center">
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td colspan="2"></td>             
+                  <!-- <img src="images/icon_media_play.png" width="21" height="21" /><a href="download/service6-1-1.mkv">107彰化生態檢核_宣導影片</a>    -->
+                  <div class="video-container">
+                    <h4>｢107彰化生態檢核」宣導影片</h4>
+                    <video 
+                        id="my-mp4-video" 
+                        controls 
+                        preload="auto" 
+                        poster="poster-image.jpg" 
+                        width="800" 
+                        height="450">                   
+                      <source src="./download/service6-1-1.mp4" type="video/mp4" />
+                      <p class="vjs-no-support">
+                          您的瀏覽器不支援此視訊標籤或格式。
+                      </p>
+                    </video>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td width="20%">
+                </td>
+                <td>
+                  <table>                    
+                    <tr>
+                      <td width="2%"><img src="images/icon_pdf.jpg" width="21" height="21" /></td>                
+                      <td><a href="download/service6-1-2.pdf" target="_blank" title="生態檢核制度推廣 (另開新視窗)">生態檢核制度推廣</a></td>
+                    </tr>
+                    <tr>
+                      <td width="2%"><img src="images/icon_pdf.jpg" width="21" height="21" /></td>
+                      <td><a href="download/service6-1-3.pdf" target="_blank" title="彰化縣水利工程生態檢核典範-以東溝排水改善工程為例 (另開新視窗)">彰化縣水利工程生態檢核典範-以東溝排水改善工程為例</a></td>                    
+                    </tr>
+                    <tr>
+                      <td width="20%">&nbsp; </td>
+                      <td></td>
+				            </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+				  </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><span class="lnr lnr-map-marker"></span> 地址：10663 台北市大安區復興南路二段286號4樓</p>
+                <p><span class="lnr lnr-phone-handset"></span> 電話：(02)2377-8011  │ <span class="lnr lnr-printer"></span> 傳真： (02)2739-3446</p>
+            </div>
+            <div class="footer-links">
+                <h3>相關連結</h3>
+                <ul>
+                    <li><a href="download_simenvi.html"><span class="lnr lnr-file-add"></span> 公司介紹</a></li>
+                    <li><a href="download_paper.html"><span class="lnr lnr-graduation-hat"></span> 研究發表</a></li>
+                    <li><a href="links.html"><span class="lnr lnr-users"></span> 人才招募</a></li>
+                    <li><a href="contact.html"><span class="lnr lnr-envelope"></span> 聯絡我們</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>© 2012 景丰科技股份有限公司 版權所有</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Go To Top Button -->
+    <a tabindex="2" href="javascript:;" id="goToTop" class="go-to-top" title="回到最頂層" role="button"><img src="./images/icons8-up3.png" alt="TOP" title="回到最頂層"></a>   
+    
+    <script type="text/javascript" src="./jsq/submenu.js"></script>
+    <script type="text/javascript" src="./jsq/gototop.js"></script>    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>  
+    <script type="text/javascript" src="./jsq/at_cage.js"></script>
+    <script type="text/javascript" src="./jsq/jquery.dlmenu.js"></script>
+    <script type="text/javascript" src="./jsq/action.js?t=20250125"></script>
+    <script type="text/javascript" src="./jsq/jquery.dlmenu.js"></script>     
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="jsq/easyzoom.js"></script> 	
+    <script>
+      // Instantiate EasyZoom plugin only on non-mobile devices
+      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        var $easyzoom = $('.easyzoom').easyZoom();
+      }
+    </script>
+    <script> 
+        $(function() {
+            // 啟用 Dialog 小部件
+            $("#dialog-image").dialog({
+                autoOpen: false, // 預設不開啟
+                modal: true,    // 設置為模態，強制用戶互動
+                width: 850,     // 設置 Dialog 寬度
+                height: 600,    // 設置 Dialog 高度
+                open: function() {
+                    // 讓 Dialog 內容可以滾動，以便查看長圖
+                    $(this).parent().css({
+                        'overflow': 'auto'
+                    });
+                }
+            });
+            // 點擊按鈕或連結時開啟 Dialog
+            $("#view-cert-dialog").on("click", function(event) {
+                event.preventDefault(); // 阻止連結跳轉
+                $("#dialog-image").dialog("open");
+            });
+        });
+    </script>  
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.mymultiplediv').mouseover(function() {
+          myvar = this.id;
+          $("div.mydiv").hide();
+          $("div.mydiv2").hide();
+          $('#div'+myvar).show();
+        });
+        
+        // Panel expanding functionality
+        const panels = document.querySelectorAll('.panel');
+        panels.forEach(panel => {
+            panel.addEventListener('click', () => {
+                removeActiveClasses();
+                panel.classList.add('active');
+            });
+        });
+
+        function removeActiveClasses() {
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+        }
+      });
+    </script>
+</body>
+</html>

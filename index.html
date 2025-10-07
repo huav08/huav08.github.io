@@ -305,9 +305,9 @@
             border-radius: 20px;
         }
         
-        /* .carousel-caption {
-            width: 80%;
-            height: 40%;
+        .carousel-caption {
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -315,7 +315,14 @@
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
-        } */
+            padding: 10px;
+        }
+        .carousel-caption h3 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
         
         .carousel-slide {
             margin: 15px;

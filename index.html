@@ -17,8 +17,207 @@
     <link rel="stylesheet" href="./css/jquery-ui.min.css" />    
 	<link rel="stylesheet" href="./css/news.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/easyzoom.css" />
-    
+    <style>
+        /* 全域樣式與變數 */
+        :root {
+            --primary-color: #2a698a;   /* 深藍 */
+            --secondary-color: #5bb29c; /* 綠色 */
+            --accent-color: #f7b731;    /* 黃色 */
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+            --light-bg-color: #fff;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+        section {
+            padding: 80px 0;
+        }
+
+        /* 主視覺區塊 */
+        .hero-section {
+            width: 100vw;
+            height: 100vh;
+            margin-left: calc(-50vw + 50%);
+            background: url('https://via.placeholder.com/1920x1080.png?text=Environment+Solutions') no-repeat center center/cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e5a42d;
+            transform: scale(1.05);
+        }
+        /* 服務項目區塊 */
+        .services-section {
+            background-color: var(--light-bg-color);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-item {
+            background-color: var(--bg-color);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-item > a {
+            text-decoration: none !important;
+        }
+
+        .service-item i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            color: black;
+        }
+
+        /* --- RWD 響應式設計 --- */
+        @media (max-width: 992px) {
+            .hero-section {
+                height: 80vh;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 70vh;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content {
+                padding: 20px 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-section {
+                height: 60vh;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async  src="https://www.googletagmanager.com/gtag/js?id=G-FLZZF2NJC6"></script>
@@ -103,7 +302,81 @@
         </div>
     </header>
 
-    <main class="main-content">
+    <main class="main-content">        
+
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>為地球永續發展，提供專業環境解決方案</h1>
+                <p>我們的專業團隊專注於環境影響評估、空氣品質管理、生態調查與健康風險評估。</p>
+                <a href="#services" class="cta-button">了解更多服務</a>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2>我們的核心服務</h2>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <a href="service_1.html" target="_self">
+                            <i class="fa fa-leaf"></i>
+                            <h3>環境影響評估及環境監測</h3>
+                            <p>能源事業與工廠之環境影響評估、工業區及科學園區之環境影響評估、交通相關之環境影響評估、建築及土地開發相關之環境影響評估、環境品質監測．．．</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_2.html" target="_self">
+                            <i class="fa fa-wind"></i>
+                            <h3>空氣品質及河川水質之模擬</h3>
+                            <p>不論是評估直接排放的原生性污染物為主的高斯擴散模式或軌跡模式，或是以大氣中生成或轉化的衍生性污染物為主的三維網格模式，均有多年實際執行經驗，且相當多的工作實績。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_3.html" target="_self">
+                            <i class="fa fa-cloud"></i>
+                            <h3>空氣污染物排放量調查</h3>
+                            <p>排放量調查推估工作為空氣污染管制與規劃的根本基礎，不僅是各項防制策略的重要依據，也是環境影響評估案件進行規劃與審查的核心資料來源。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_4.html" target="_self">
+                            <i class="fa fa-heartbeat"></i>
+                            <h3>健康風險評估</h3>
+                            <p>掌握健康風險評估相關訊息，對於健康風險評估相關法令規範、評估技術、調查分析技術以及追蹤管理作業皆十分熟悉。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_5.html" target="_self">
+                            <i class="fa fa-file-invoice"></i>
+                            <h3>環境管理與資訊系統</h3>
+                            <p>協助客戶掌握環境資訊現況，並依據相關紀錄研擬資訊交換及整合規劃作業制度，提供相關硬體、軟體與服務的整體解決方案。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_6.html" target="_self">
+                            <i class="fa fa-dna"></i>
+                            <h3>生態檢核</h3>
+                            <p>減輕公共工程對生態環境造成負面影響，秉生態保育、公民參與及資訊公開之原則，落實生態保育之政策。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_7.html" target="_self">
+                            <i class="fa fa-car"></i>
+                            <h3>碳盤查及淨零管理</h3>
+                            <p>長期致力於環評溫室氣體排放計算、溫室氣體盤查、產品碳足跡量化以及工程碳管理等，從上游政府溫室氣體盤查、減量之政策面，至下游各廠家、業者之溫室氣體盤查或產品碳足跡量，長期具備充足相關執行經驗。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_8.html" target="_self">
+                            <i class="fa fa-umbrella"></i>
+                            <h3>氣候變遷風險評估</h3>
+                            <p>政策與制度設計核心角色、跨部會與專業技術合作、專案與教育訓練經驗豐富、專業網絡與審查熟悉度．．．</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section class="carousel-container">
             <div class="carousel-slide">
                 <div class="carousel-item active">
@@ -248,11 +521,11 @@
                 </div>
             </div>
         </section>
+
         <section class="index-components">
             <div id="indexNews">   
                 <a id="news">&nbsp;</a>             
-                <!-- <div class="airunit">最 新 消 息</div>             -->
-                <div class="container">
+                <div class="news-container">
                     <div class="tab">
                         <button class="tablinks" onclick="openTab(event, 'NewsRelease')" id="defaultOpen">環境部新聞</button>
                         <button class="tablinks" onclick="openTab(event, 'Clarification')">EPA News</button>
@@ -278,6 +551,7 @@
                 </a>
             </div>
         </section>
+        
     </main>
 
     <footer class="footer">

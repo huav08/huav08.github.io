@@ -34,7 +34,7 @@
             margin: 0;
             padding: 0;
         }
-        body {
+        body > .main-content {
             font-family: 'Noto Sans TC', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
@@ -101,7 +101,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgb(87, 85, 85);
         }
 
         .hero-content {
@@ -247,16 +247,20 @@
                 align-items: center;
             }
             .logo img {
-                max-width: 60px;
-                height: auto;
+                /* max-width: 60px; */
+            height: 42px;
+            margin-right: 15px;
             }
             .logo-text {
                 margin-left: 10px;
                 margin-top: 0;
             }
             .logo-text h1 {
-                font-size: 0.8rem;
+                font-size: 1rem;
                 line-height: 1.1;
+            }
+            .topArea {
+                display: block;
             }
         }
         
@@ -275,8 +279,21 @@
                 padding: 12px 24px;
                 font-size: 0.9rem;
             }
+            .logo {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
             .logo img {
-                max-width: 50px;
+                width: 85%;
+                height: auto;
+                position: absolute;
+                top: 12px;
+                left: 50px;
+            }
+            .logo-text {
+                margin-left: 120px;
+                margin-top: 5px;
             }
             .logo-text h1 {
                 font-size: 0.7rem;
@@ -291,6 +308,9 @@
             .prev-btn, .next-btn {
                 top: 125px;
             }
+            .footer .label {
+                display: none;
+            }
         }
         
         /* Carousel 樣式 */
@@ -304,22 +324,24 @@
         }
         
         .carousel-caption {
-            width: 100%;
-            height: 100%;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
-            padding: 10px;
+            bottom: 10px;
+            left: 10px;
+            width: auto;
+            height: auto;
+            background: rgba(0,0,0,0.7);
+            padding: 8px 12px;
+            border-radius: 5px;
         }
         .carousel-caption h3 {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             max-width: 100%;
+            color: white;
+            margin: 0;
+            font-size: 0.9rem;
+            text-align: left;
         }
         
         .carousel-slide {
@@ -344,22 +366,21 @@
     <!-- Google Analytics Script碼(End) -->         
  </head>
 <body>
-    <div id="sky-container"></div>
     <header class="header">
         <div class="header-content">
             <div class="header-top">
-                <a href="index.html" class="logo">
+                <a href="." class="logo">
                     <img src="./images/sieenvi_logo.png" alt="景丰科技股份有限公司logo" />
                     <div class="logo-text">
                         <h1>景丰科技股份有限公司</h1>
                         <h2>ENVIRONMENTAL SIMULATION CO. LTD. </h2>
                     </div>
                 </a>
-                <div class="topArea">
+                <!-- <div class="topArea">
                   <a href="index.html" target="_parent">回首頁</a>
                   <span class="separator">|</span>
                   <a href="https://www.simenvi.com.tw/images/date_img/myimage.gif" target="_blank" title="空氣品質預報 (另開新視窗)">空氣品質預報</a>
-                </div>
+                </div> -->
             </div>
             <div class="header-right">
                 <div class="search-bar">
@@ -501,120 +522,120 @@
                     <a href="service_1.html#env02" target="_self" title="環境影響評估－臺北市萬華區福星段二小段149號等1筆土地都市更新案"><img src="./images/swiper/swiper_1-env02.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_1.html#env02" target="_self">
-                            <h3>環境影響評估</h3>
-                        <h3>－臺北市萬華區福星段二小段149號等1筆土地都市更新案</h3></a>
+                            <h2>環境影響評估</h2>
+                        <h2>－臺北市萬華區福星段二小段149號等1筆土地都市更新案</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <a href="service_2-5.html" target="_self" title="空氣品質之模擬－桃園科技工業區第二期開發計畫環評"><img class="swiper-img" src="./images/swiper/swiper_2-5.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_2-5.html" target="_self" >
-                            <h3>空氣品質之模擬</h3>
-                        <h3>－桃園科技工業區第二期開發計畫環評</h3></a>
+                            <h2>空氣品質之模擬</h2>
+                        <h2>－桃園科技工業區第二期開發計畫環評</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <a href="service_3-1.html" target="_self" title="空氣污染物排放量調查－港區空氣污染物排放清冊"><img class="swiper-img" src="./images/swiper/swiper_3-1.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_3-1.html" target="_self">
-                            <h3>空氣污染物排放量調查</h3>
-                        <h3>－港區空氣污染物排放清冊</h3></a>
+                            <h2>空氣污染物排放量調查</h2>
+                        <h2>－港區空氣污染物排放清冊</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
 				    <a href="service_4-3.html" target="_self" title="健康風險評估－台南縣威致鋼鐵官田廠擴建環評"><img class="swiper-img" src="./images/swiper/swiper_4-3.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_4-3.html" target="_self">
-                            <h3>健康風險評估</h3>
-                        <h3>－台南縣威致鋼鐵官田廠擴建環評</h3></a>
+                            <h2>健康風險評估</h2>
+                        <h2>－台南縣威致鋼鐵官田廠擴建環評</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <a href="https://infotech.simenvi.com.tw/map" target="_blank" title="環境管理與資訊系統－臺南七股環境數據（另開新視窗）"><img class="swiper-img" src="./images/swiper/swiper_infotech.jpg"></a>
                     <div class="carousel-caption">
                         <a href="https://infotech.simenvi.com.tw/map" target="_blank">
-                            <h3>環境管理與資訊系統</h3>
-                        <h3>－臺南七股環境數據</h3></a> 
+                            <h2>環境管理與資訊系統</h2>
+                        <h2>－臺南七股環境數據</h2></a> 
                     </div>
                 </div>
                 <div class="carousel-item">
                     <a href="service_6-4.html" target="_self" title="生態檢核－新竹左岸生態環境與棲地"><img class="swiper-img" src="./images/swiper/swiper_6-4.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_6-4.html" target="_self">
-                            <h3>生態檢核</h3>
-                        <h3>－新竹左岸生態環境與棲地</h3></a>
+                            <h2>生態檢核</h2>
+                        <h2>－新竹左岸生態環境與棲地</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
 				<a href="service_7-1.html" target="_self" title="碳盤查及淨零管理－運輸業碳管理"><br/><img class="swiper-img" src="./images/swiper/swiper_7-1.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_7-1.html" target="_self">
-                            <h3>碳盤查及淨零管理</h3>
-                        <h3>－運輸業碳管理</h3></a>
+                            <h2>碳盤查及淨零管理</h2>
+                        <h2>－運輸業碳管理</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
 				    <a href="service_1.html#env01" target="_self" title="環境影響評估－工業區及科學園區之環境影響評估"><br/><img class="swiper-img" src="./images/swiper/swiper_1-env01.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_1.html#env01" target="_self">
-                            <h3>環境影響評估</h3>
-                        <h3>－工業區及科學園區之環境影響評估</h3></a>
+                            <h2>環境影響評估</h2>
+                        <h2>－工業區及科學園區之環境影響評估</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
 				    <a href="service_2-10.html" target="_self" title="河川水質之模擬－北高雄產業園區"><img class="swiper-img" src="./images/swiper/swiper_2-10.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_2-10.html" target="_self">
-                            <h3>河川水質之模擬</h3>
-                        <h3>－北高雄產業園區</h3></a>
+                            <h2>河川水質之模擬</h2>
+                        <h2>－北高雄產業園區</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
 				    <a href="service_3-2.html" target="_self" title="空氣污染物排放量調查－全國性空氣污染物排放量"><img class="swiper-img" src="./images/swiper/swiper_3-2.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_3-2.html" target="_self">
-                            <h3>空氣污染物排放量調查</h3>
-                        <h3>－全國性空氣污染物排放量</h3></a>
+                            <h2>空氣污染物排放量調查</h2>
+                        <h2>－全國性空氣污染物排放量</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
 				    <a href="service_4-4.html" target="_self" title="健康風險評估－南部科學工業園區"><img class="swiper-img" src="./images/swiper/swiper_4-4.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_4-4.html" target="_self">
-                            <h3>健康風險評估</h3>
-                        <h3>－南部科學工業園區</h3></a>
+                            <h2>健康風險評估</h2>
+                        <h2>－南部科學工業園區</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
 				    <a href="download/Simenvi_20200707.pdf" target="_blank" title="環境管理與資訊系統－核災輻射物質大氣傳輸（另開新視窗）"><img class="swiper-img" src="./images/swiper/swiper_simenvi-20200707.jpg"></a>
                     <div class="carousel-caption">
                         <a href="download/Simenvi_20200707.pdf" target="_blank">
-                            <h3>環境管理與資訊系統</h3>
-                        <h3>－核災輻射物質大氣傳輸</h3></a>
+                            <h2>環境管理與資訊系統</h2>
+                        <h2>－核災輻射物質大氣傳輸</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
 				    <a href="service_6-1.html" target="_self" title="生態檢核－107年度彰化縣生態檢核"><img class="swiper-img" src="./images/swiper/swiper_6-1.jpg""></a>
                     <div class="carousel-caption">
                         <a href="service_6-1.html" target="_self">
-                            <h3>生態檢核</h3>
-                        <h3>－107年度彰化縣生態檢核</h3></a>
+                            <h2>生態檢核</h2>
+                        <h2>－107年度彰化縣生態檢核</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
 				    <a href="service_7-2.html" target="_self" title="碳盤查及淨零管理－三重環北幹線等工程碳盤查與減量"><br/><img class="swiper-img" src="./images/swiper/swiper_7-2.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_7-2.html" target="_self">
-                            <h3>碳盤查及淨零管理</h3>
-                        <h3>－三重環北幹線等工程碳盤查與減量</h3></a>
+                            <h2>碳盤查及淨零管理</h2>
+                        <h2>－三重環北幹線等工程碳盤查與減量</h2></a>
                     </div>
                 </div>
                 <div class="carousel-item">
 				    <a href="service_8.html#principle" target="_self" title="氣候變遷風險評估－環境影響評估階段"><br/><img class="swiper-img" src="./images/swiper/swiper_8-principle.jpg"></a>
                     <div class="carousel-caption">
                         <a href="service_8.html#principle" target="_self"></a>
-                        <h3>氣候變遷風險評估</h3>
-                        <h3>－環境影響評估階段</h3></a>
+                        <h2>氣候變遷風險評估</h2>
+                        <h2>－環境影響評估階段</h2></a>
                     </div>
                 </div>
             </div>
@@ -690,8 +711,8 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-info">
-                <p><span class="lnr lnr-map-marker"></span> 地址：10663 台北市大安區復興南路二段286號4樓</p>
-                <p><span class="lnr lnr-phone-handset"></span> 電話：(02)2377-8011  │ <span class="lnr lnr-printer"></span> 傳真： (02)2739-3446</p>
+                <p><span class="lnr lnr-map-marker"></span> <span class="label">地址：</span>10663 台北市大安區復興南路二段286號4樓</p>
+                <p><span class="lnr lnr-phone-handset"></span> <span class="label">電話：</span>(02)2377-8011  │ <span class="lnr lnr-printer"></span> <span class="label">傳真：</span> (02)2739-3446</p>
             </div>
             <div class="footer-links">
                 <h3>相關連結</h3>

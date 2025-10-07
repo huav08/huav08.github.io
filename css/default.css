@@ -569,8 +569,8 @@ img.t_B2 {
 }
 
 /* Footer */
-.footer {
-		background-color: #333;
+.footer {		
+		background-color: #004d80; /* 模擬環境部藍色 */
 		color: white;
 		padding: 2rem 0;
 		text-align: center;
@@ -1102,6 +1102,8 @@ img.t_B2 {
 				justify-content: space-between;
 				margin-top: 1rem;
 		}
+		
+		.logo img { height: 31px; }		
 
 		.search-bar {
 				flex-grow: 1; 
@@ -1302,19 +1304,18 @@ img.t_B2 {
 				right: 50%;
 				margin-left: -50vw;
 				margin-right: -50vw;
-		}
-		
+		}		
 		.footer-content {
 				flex-direction: column;
 				align-items: flex-start;
 				padding: 0 1rem;
 				max-width: none;
 		}
-
 		.footer-info, .footer-links {
 				width: 100%;
 				margin-bottom: 1.5rem;
 		}
+		.footer .label { display: none; }
 		
 		.go-to-top {
 				bottom: 20px;
@@ -1371,9 +1372,11 @@ img.t_B2 {
 			height: auto;
 			margin: 5px 20px;
 		}
-
+		
 		.logo img {
-				height: 31px;
+			max-width: 60px;
+			height: 31px;
+			margin-right: 15px;
 		}
 
 		.logo-text h1 {
@@ -1408,6 +1411,7 @@ img.t_B2 {
 		.footer {
 				padding: 1.5rem 0;
 		}
+		.footer .label { display: none; }
 
 		.section-title h2 {
 				font-size: 1.5rem;

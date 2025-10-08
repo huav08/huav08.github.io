@@ -953,7 +953,7 @@ img.t_B2 {
 /* 手機設備 (Mobile) */
 @media (max-width: 768px) {
     .titleBar_green.t_16pt.t_B {
-        margin-bottom: 35px;
+        margin-bottom: 55px;
     }
 		.titleBar_img2 { height: 100%; text-align: left;font-size: 12px;} 
 		.service7-800 img {width: 40% !important; height: auto; position: absolute;}
@@ -1336,9 +1336,6 @@ img.t_B2 {
 /* 小尺寸手機設備 (Small Mobile) */
 @media (max-width: 480px) {
     .titleBar_green.t_16pt.t_B {
-        margin-bottom: 35px;
-    }
-    body#service_6-7 .titleBar_green.t_16pt.t_B {
         margin-bottom: 55px;
     }
 		.service7-800 img {width: 40% !important; height: auto; position: absolute;}

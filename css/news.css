@@ -116,3 +116,14 @@
         padding: 20px;
         color: #888;
     }
+
+    /* 新聞區塊樣式 */
+    .news-section {
+        position: relative;
+    }
+
+    .section-title {
+        position: absolute;
+        top: 17px;
+        right: 0;
+    }

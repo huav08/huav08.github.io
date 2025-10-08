@@ -1338,6 +1338,9 @@ img.t_B2 {
     .titleBar_green.t_16pt.t_B {
         margin-bottom: 35px;
     }
+    body#service_6-7 .titleBar_green.t_16pt.t_B {
+        margin-bottom: 55px;
+    }
 		.service7-800 img {width: 40% !important; height: auto; position: absolute;}
   	.service7-600 img {width: 35% !important; height: auto; position: absolute;}
   	.service7-300 img {width: 25% !important; height: auto; position: absolute;} 

@@ -304,7 +304,15 @@
                 object-fit: cover;
             }
             .prev-btn, .next-btn {
-                top: 125px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .prev-btn {
+                left: 10px;
+            }
+            .next-btn {
+                right: 10px;
             }
             .footer .label {
                 display: none;

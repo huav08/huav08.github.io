@@ -489,11 +489,11 @@
                     </div>
                 </a>
                 <div class="topArea">
+                  <!-- <a href="#newsSimenvi">景丰新訊</a>
+                  <span class="separator">|</span>
                   <a href="#services">服務項目</a>
                   <span class="separator">|</span>
-                  <a href="#subservices">主要實績</a>
-                  <span class="separator">|</span>
-                  <a href="#newsSimenvi">景丰新訊</a>
+                  <a href="#subservices">實績</a> -->
                 </div>
             </div>
             <div class="header-right">
@@ -565,76 +565,75 @@
                 <p>我們的專業團隊專注於環境影響評估、空氣品質管理、生態調查與健康風險評估。</p>
                 <a href="#services" class="cta-button">了解更多服務</a>
             </div>
+            <a id="newsSimenvi">&nbsp;</a>
         </section>
 
-        <section id="services" class="services-section">
-            <div class="container">
-                <h3>我們的核心服務</h3>
-                <div class="service-grid">
-                    <div class="service-item">
-                        <a href="service_1.html" target="_self">
-                            <i class="fa fa-leaf"></i>
-                            <h3>環境影響評估及環境監測</h3>
-                            <p>能源事業與工廠之環境影響評估、工業區及科學園區之環境影響評估、交通相關之環境影響評估、建築及土地開發相關之環境影響評估、環境品質監測．．．</p>
-                        </a>
+        <section class="index-components">
+            <div id="indexAir">
+                <div class="airunit">PM2.5 全月模擬 （單位 ug/m^3）</div>
+                <a href="https://www.simenvi.com.tw/images/date_img/myimage.gif" target="_blank">
+                    <div class="indexAirPic">
+                        <img src="https://www.simenvi.com.tw/images/date_img/myimage.gif" width="350" height="437" class="lazyload forecast"/>
                     </div>
-                    <div class="service-item">
-                        <a href="service_2.html" target="_self">
-                            <i class="fa fa-wind"></i>
-                            <h3>空氣品質及河川水質之模擬</h3>
-                            <p>不論是評估直接排放的原生性污染物為主的高斯擴散模式或軌跡模式，或是以大氣中生成或轉化的衍生性污染物為主的三維網格模式，均有多年實際執行經驗，且相當多的工作實績。</p>
-                        </a>
+                </a>
+            </div>
+            <div id="indexNews">              
+                <div class="news-container">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTab(event, 'NewsRelease')" id="defaultOpen">環境部新聞</button>
+                        <button class="tablinks" onclick="openTab(event, 'Clarification')">EPA News</button>
                     </div>
-                    <div class="service-item">
-                        <a href="service_3.html" target="_self">
-                            <i class="fa fa-cloud"></i>
-                            <h3>空氣污染物排放量調查</h3>
-                            <p>排放量調查推估工作為空氣污染管制與規劃的根本基礎，不僅是各項防制策略的重要依據，也是環境影響評估案件進行規劃與審查的核心資料來源。</p>
-                        </a>
+                    <div id="NewsRelease" class="tabcontent">
+                        <ul id="newsReleaseList">
+                            <li class="loading">正在載入新聞發布內容...</li>
+                        </ul>
                     </div>
-                    <div class="service-item">
-                        <a href="service_4.html" target="_self">
-                            <i class="fa fa-heartbeat"></i>
-                            <h3>健康風險評估</h3>
-                            <p>掌握健康風險評估相關訊息，對於健康風險評估相關法令規範、評估技術、調查分析技術以及追蹤管理作業皆十分熟悉。</p>
-                        </a>
-                    </div>
-                    <div class="service-item">
-                        <a href="service_5.html" target="_self">
-                            <i class="fa fa-file-invoice"></i>
-                            <h3>環境管理與資訊系統</h3>
-                            <p>協助客戶掌握環境資訊現況，並依據相關紀錄研擬資訊交換及整合規劃作業制度，提供相關硬體、軟體與服務的整體解決方案。</p>
-                        </a>
-                    </div>
-                    <div class="service-item">
-                        <a href="service_6.html" target="_self">
-                            <i class="fa fa-dna"></i>
-                            <h3>生態檢核</h3>
-                            <p>減輕公共工程對生態環境造成負面影響，秉生態保育、公民參與及資訊公開之原則，落實生態保育之政策。</p>
-                        </a>
-                    </div>
-                    <div class="service-item">
-                        <a href="service_7.html" target="_self">
-                            <i class="fa fa-bus"></i>
-                            <h3>碳盤查及淨零管理</h3>
-                            <p>長期致力於環評溫室氣體排放計算、溫室氣體盤查、產品碳足跡量化以及工程碳管理等，從上游政府溫室氣體盤查、減量之政策面，至下游各廠家、業者之溫室氣體盤查或產品碳足跡量，長期具備充足相關執行經驗。</p>
-                        </a>
-                    </div>
-                    <div class="service-item">
-                        <a href="service_8.html" target="_self">
-                            <i class="fa fa-snowflake"></i>
-                            <h3>氣候變遷風險評估</h3>
-                            <p>政策與制度設計核心角色、跨部會與專業技術合作、專案與教育訓練經驗豐富、專業網絡與審查熟悉度．．．</p>
-                        </a>
+                    <div id="Clarification" class="tabcontent">
+                        <ul id="clarificationList">
+                            <li class="loading">Loading EPA News content...</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <a id="subservices">&nbsp;</a>
+        </section>
+
+        <section class="news-section">
+            <!-- <h3>景丰新訊</h3>
+            <div class="section-title">
+                <span><a href="index.html#news">更多<i class="fas fa-chevron-right"></i></a></span>
+            </div>    -->
+            <div class="news-cards">
+                <div class="card">
+                    <img src="./images/award.jpg" alt="新聞圖片">
+                    <div class="card-content">
+                        <h4>賀!本公司14人通過iPAS淨零碳規劃管理師能力鑑定</h4>
+                        <p>充裕產業創新及產業升級轉型所需關鍵人才，擴大建置....</p>
+                        <a href="https://www.ipas.org.tw/NZ" class="read-more" target="_blank">閱讀全文</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/award03_2024_08_30T08_27_53_356Z.png" alt="新聞圖片">
+                    <div class="card-content">
+                        <h4>榮譽認證：第四屆航港大數據創意應用大賽，榮獲社會組第三名成績</h4>
+                        <p>協同環境部大氣環境司報名參加第四屆航港大數據創意....</p>
+                        <a href="award.html#AWARD03" class="read-more">閱讀全文</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/swiper/uswiper.png" alt="新聞圖片">
+                    <div class="card-content">
+                        <h4>111年至112年環評顧問機構評鑑結果</h4>
+                        <p>景丰科技股份有限公司榮獲環評顧問機構評鑑結果：準A級 ....</p>
+                        <a href="https://www.simenvi.com.tw/download/20240427-111年至112年環評顧問機構評鑑結果.pdf" class="read-more" target="_blank">閱讀全文</a>
+                    </div>
+                </div>
+            </div>
+            <a id="news">&nbsp;</a>  
         </section>
         
-        <section>  
-            <br />
-            <h3>主要實績</h3>
+        <section> 
+            <!-- <h3>實績</h3> -->
+            <h3>我們的核心服務</h3>
             <div class="carousel-container">
                 <div class="carousel-wrapper" id="carouselWrapper">
                     <div class="carousel-slide">
@@ -762,69 +761,69 @@
                 <button class="carousel-nav next-btn" onclick="nextSlide()">›</button>
                 <div class="carousel-dots" id="carouselDots"></div>
             </div>
-            <a id="newsSimenvi">&nbsp;</a>
         </section>
 
-        <section class="news-section"> 
-            <h3>景丰新訊</h3>   
-            <div class="section-title">
-                <span><a href="index.html#news">更多<i class="fas fa-chevron-right"></i></a></span>
-            </div>
-            <div class="news-cards">
-                <div class="card">
-                    <img src="./images/award.jpg" alt="新聞圖片">
-                    <div class="card-content">
-                        <h4>賀!本公司14人通過iPAS淨零碳規劃管理師能力鑑定</h4>
-                        <p>充裕產業創新及產業升級轉型所需關鍵人才，擴大建置....</p>
-                        <a href="https://www.ipas.org.tw/NZ" class="read-more" target="_blank">閱讀全文</a>
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="service-grid">
+                    <div class="service-item">
+                        <a href="service_1.html" target="_self">
+                            <i class="fa fa-leaf"></i>
+                            <h3>環境影響評估及環境監測</h3>
+                            <p>能源事業與工廠之環境影響評估、工業區及科學園區之環境影響評估、交通相關之環境影響評估、建築及土地開發相關之環境影響評估、環境品質監測．．．</p>
+                        </a>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="./images/award03_2024_08_30T08_27_53_356Z.png" alt="新聞圖片">
-                    <div class="card-content">
-                        <h4>榮譽認證：第四屆航港大數據創意應用大賽，榮獲社會組第三名成績</h4>
-                        <p>協同環境部大氣環境司報名參加第四屆航港大數據創意....</p>
-                        <a href="award.html#AWARD03" class="read-more">閱讀全文</a>
+                    <div class="service-item">
+                        <a href="service_2.html" target="_self">
+                            <i class="fa fa-wind"></i>
+                            <h3>空氣品質及河川水質之模擬</h3>
+                            <p>不論是評估直接排放的原生性污染物為主的高斯擴散模式或軌跡模式，或是以大氣中生成或轉化的衍生性污染物為主的三維網格模式，均有多年實際執行經驗，且相當多的工作實績。</p>
+                        </a>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="./images/swiper/uswiper.png" alt="新聞圖片">
-                    <div class="card-content">
-                        <h4>111年至112年環評顧問機構評鑑結果</h4>
-                        <p>景丰科技股份有限公司榮獲環評顧問機構評鑑結果：準A級 ....</p>
-                        <a href="https://www.simenvi.com.tw/download/20240427-111年至112年環評顧問機構評鑑結果.pdf" class="read-more" target="_blank">閱讀全文</a>
+                    <div class="service-item">
+                        <a href="service_3.html" target="_self">
+                            <i class="fa fa-cloud"></i>
+                            <h3>空氣污染物排放量調查</h3>
+                            <p>排放量調查推估工作為空氣污染管制與規劃的根本基礎，不僅是各項防制策略的重要依據，也是環境影響評估案件進行規劃與審查的核心資料來源。</p>
+                        </a>
                     </div>
-                </div>
-            </div>
-            <a id="news">&nbsp;</a>  
-        </section>
-
-        <section class="index-components">
-            <div id="indexNews">              
-                <div class="news-container">
-                    <div class="tab">
-                        <button class="tablinks" onclick="openTab(event, 'NewsRelease')" id="defaultOpen">環境部新聞</button>
-                        <button class="tablinks" onclick="openTab(event, 'Clarification')">EPA News</button>
+                    <div class="service-item">
+                        <a href="service_4.html" target="_self">
+                            <i class="fa fa-heartbeat"></i>
+                            <h3>健康風險評估</h3>
+                            <p>掌握健康風險評估相關訊息，對於健康風險評估相關法令規範、評估技術、調查分析技術以及追蹤管理作業皆十分熟悉。</p>
+                        </a>
                     </div>
-                    <div id="NewsRelease" class="tabcontent">
-                        <ul id="newsReleaseList">
-                            <li class="loading">正在載入新聞發布內容...</li>
-                        </ul>
+                    <div class="service-item">
+                        <a href="service_5.html" target="_self">
+                            <i class="fa fa-file-invoice"></i>
+                            <h3>環境管理與資訊系統</h3>
+                            <p>協助客戶掌握環境資訊現況，並依據相關紀錄研擬資訊交換及整合規劃作業制度，提供相關硬體、軟體與服務的整體解決方案。</p>
+                        </a>
                     </div>
-                    <div id="Clarification" class="tabcontent">
-                        <ul id="clarificationList">
-                            <li class="loading">Loading EPA News content...</li>
-                        </ul>
+                    <div class="service-item">
+                        <a href="service_6.html" target="_self">
+                            <i class="fa fa-dna"></i>
+                            <h3>生態檢核</h3>
+                            <p>減輕公共工程對生態環境造成負面影響，秉生態保育、公民參與及資訊公開之原則，落實生態保育之政策。</p>
+                        </a>
                     </div>
-                </div>
-            </div>
-            <div id="indexAir">
-                <div class="airunit">PM2.5 全月模擬 （單位 ug/m^3）</div>
-                <a href="https://www.simenvi.com.tw/images/date_img/myimage.gif" target="_blank">
-                    <div class="indexAirPic">
-                        <img src="https://www.simenvi.com.tw/images/date_img/myimage.gif" width="350" height="437" class="lazyload forecast"/>
+                    <div class="service-item">
+                        <a href="service_7.html" target="_self">
+                            <i class="fa fa-bus"></i>
+                            <h3>碳盤查及淨零管理</h3>
+                            <p>長期致力於環評溫室氣體排放計算、溫室氣體盤查、產品碳足跡量化以及工程碳管理等，從上游政府溫室氣體盤查、減量之政策面，至下游各廠家、業者之溫室氣體盤查或產品碳足跡量，長期具備充足相關執行經驗。</p>
+                        </a>
                     </div>
-                </a>
+                    <div class="service-item">
+                        <a href="service_8.html" target="_self">
+                            <i class="fa fa-snowflake"></i>
+                            <h3>氣候變遷風險評估</h3>
+                            <p>政策與制度設計核心角色、跨部會與專業技術合作、專案與教育訓練經驗豐富、專業網絡與審查熟悉度．．．</p>
+                        </a>
+                    </div>
+                </div>                
+                <a id="subservices">&nbsp;</a> 
             </div>
         </section>
 

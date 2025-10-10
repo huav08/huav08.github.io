@@ -1077,7 +1077,7 @@ img.t_B2 {
 
 		.nav-links li {
 				margin: 0;
-				width: 100%;
+				width: 90%;
 		}
 
 		.nav-links li a {
@@ -1174,6 +1174,7 @@ img.t_B2 {
 		.submenu.active {
 				display: block;
 				max-height: 500px; /* 大於實際內容高度即可 */
+				background-color: #5e52235e;
 		}
 
 		.submenu li a {

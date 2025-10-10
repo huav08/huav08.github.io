@@ -10,6 +10,7 @@ body {
 		line-height: 1.6;
 		color: #333;
 		background-color: #f4f4f4;
+		/* background-color: white; */
 		margin: 0;
 		padding: 0;
 }
@@ -371,88 +372,6 @@ img.t_B2 {
 }
 #BannerShow_upon5 {
 		background:url(../images/bg_upon_5.jpg) center no-repeat;
-}
-
-/* Carousel */
-.carousel-container {
-		position: relative;
-		max-width: 100%;
-		overflow: hidden;
-		border-radius: 10px;
-		margin-bottom: 2rem;
-}
-
-.carousel-slide {
-		display: flex;
-		transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-		min-width: 100%;
-		position: relative;
-		display: none;
-}
-
-.carousel-item.active {
-		display: block;
-}
-
-.carousel-item img {
-		width: 100%;
-		height: 500px;
-		display: block;
-}
-
-.carousel-caption {
-		position: absolute;
-		bottom: 20px;
-		left: 20px;
-		background-color: rgba(0, 0, 0, 0.5);
-		color: white;
-		padding: 15px 25px;
-		border-radius: 5px;
-}
-
-.carousel-caption h3 {
-		font-size: 1.5rem;
-}
-
-.carousel-caption p {
-		font-size: 1rem;
-		margin-top: 5px;
-}
-
-/* 圓形按鈕樣式 */
-.prev-btn, .next-btn {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		background-color: rgba(0, 0, 0, 0.5);
-		color: white;
-		border: none;
-		padding: 15px;
-		cursor: pointer;
-		font-size: 1.5rem;
-		/* 核心修改：將 border-radius 改為 50% */
-		border-radius: 50%;
-		width: 50px; /* 設定寬高相等以確保是正圓 */
-		height: 50px;
-		display: flex; /* 使用 Flexbox 讓箭頭居中 */
-		align-items: center;
-		justify-content: center;
-		transition: background-color 0.3s ease;
-}
-
-.prev-btn:hover, .next-btn:hover {
-		background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev-btn {
-		left: 20px;
-}
-
-.next-btn {
-		right: 20px;
 }
 
 /* News Section */
@@ -949,6 +868,7 @@ img.t_B2 {
 		}
 		
 		.copyBasic2_R img {max-width:350px !important;height:auto !important;}
+}
 
 /* 手機設備 (Mobile) */
 @media (max-width: 768px) {
@@ -1272,20 +1192,6 @@ img.t_B2 {
 
 		.logo-text h1, .logo-text h2 {
 				font-size: 1rem;
-		}
-
-		.carousel-caption {
-				bottom: 10px;
-				left: 50px;
-				padding: 10px 15px;
-		}
-
-		.carousel-caption h3 {
-				font-size: 1.2rem;
-		}
-
-		.carousel-caption p {
-				font-size: 0.8rem;
 		}
 
 		.news-cards {

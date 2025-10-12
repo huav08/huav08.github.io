@@ -40,9 +40,8 @@
             font-family: 'Noto Sans TC', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: white;
-            /* background: url('https://www.simenvi.com.tw/images/bg_sky_index3.jpg') no-repeat center center/cover; */
-        }
+            background-color: rgba(255,255,255,0.3);
+        } 
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -83,14 +82,27 @@
             height: 100vh;
             margin-left: calc(-50vw + 50%);
             margin-top: 0;
+            background-color: #aaa;
             /* background: url('https://via.placeholder.com/1920x1080.png?text=Environment+Solutions') no-repeat center center/cover; */
-            background: url('https://www.simenvi.com.tw/images/bg_sky_index_01.gif') no-repeat center center/cover;
+            /* background: url('https://www.simenvi.com.tw/images/bg_sky_index_01.gif') no-repeat center center/cover; 
+            background: url('./images/sky_cloud.gif') no-repeat center center/cover; */
+            
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: #fff;
+        }
+        .hero-section video
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
         }
         
         .main-content {
@@ -228,6 +240,17 @@
             }
         }
 
+        /* Tablet 橫屏 */
+        @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+            .hero-section {
+                align-items: flex-end;
+                padding-top: 140px;
+            }
+            .hero-content {
+                margin-bottom: 20px;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-section {
                 height: 70vh;
@@ -271,6 +294,8 @@
             .hero-section {
                 height: 60vh;
                 margin-top: 70px;
+                background-size: cover;
+                background-position: center center;
             }
             .hero-content h1 {
                 font-size: 1.8rem;
@@ -416,6 +441,7 @@
     <main class="main-content">        
 
         <section class="hero-section">
+            <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" muted loop autoplay></video>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1>為地球永續發展，提供專業<br />環境解決方案</h1>

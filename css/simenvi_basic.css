@@ -602,3 +602,10 @@ a.up:focus img {
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
 }
+
+/* Mobile responsive styles */
+@media (max-width: 480px) {
+    .titleBar_green.t_16pt.t_B {
+        margin-bottom: 35px;
+    }
+}

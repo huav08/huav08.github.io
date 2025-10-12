@@ -21,6 +21,7 @@
                 if (submenu) {
                     e.preventDefault(); // 阻止超連結跳轉
                     submenu.classList.toggle('active');
+                    parentLi.classList.toggle('active');
                 }
                 // 沒有子選單的項目（如人才招募、聯絡我們）讓其正常跳轉
             }

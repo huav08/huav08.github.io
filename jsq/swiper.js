@@ -3,9 +3,9 @@ const swiper = new Swiper('.swiper', {
     fadeEffect: {
         crossFade: true
     },
-    speed: 3000,
+    speed: 500,
     autoplay: {
-        delay: 4000,
+        delay: 5000,
         disableOnInteraction: false,
     },
     loop: true,
@@ -32,8 +32,8 @@ const swiper = new Swiper('.swiper', {
                 description.style.animation = 'none';
                 
                 setTimeout(() => {
-                    title.style.animation = 'slideUp 3s ease forwards';
-                    description.style.animation = 'slideUp 3s ease 0.2s forwards';
+                    title.style.animation = 'slideUp 0.5s ease forwards';
+                    description.style.animation = 'slideUp 0.5s ease 0.2s forwards';
                 }, 50);
             }
         }

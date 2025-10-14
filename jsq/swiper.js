@@ -3,7 +3,7 @@ const swiper = new Swiper('.swiper', {
     fadeEffect: {
         crossFade: true
     },
-    speed: 10000,
+    speed: 7000,
     autoplay: {
         delay: 4000,
         disableOnInteraction: false,
@@ -32,8 +32,8 @@ const swiper = new Swiper('.swiper', {
                 description.style.animation = 'none';
                 
                 setTimeout(() => {
-                    title.style.animation = 'slideUp 10s ease forwards';
-                    description.style.animation = 'slideUp 10s ease 0.2s forwards';
+                    title.style.animation = 'slideUp 7s ease forwards';
+                    description.style.animation = 'slideUp 7s ease 0.2s forwards';
                 }, 50);
             }
         }

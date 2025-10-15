@@ -16,9 +16,11 @@
   <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">   
   <link rel="stylesheet" href="./css/jquery-ui.min.css" />  
   <link rel="stylesheet" href="./css/award.css" />
-  <link rel="stylesheet" href="./css/easyzoom.css" /> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-	<link rel="stylesheet" href="css/easyzoom.css" />
+	<!-- <link rel="stylesheet" href="css/easyzoom.css" /> -->
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/coverflow.css" />
   <style>
       .container {
           display: flex;
@@ -170,99 +172,22 @@
           <div><h5 class="titleBar_green t_16pt t_B">苗栗縣生態檢核工作計畫(108-109年度)</h5></div>
           <div class="copyBasic t_14pt">
             <blockquote style="text-indent: 32px;">本計畫為符合公共工程委員會指示並融入生態保育目標，辦理生態檢核工作計畫，於相關治理工程的規劃、設計和監造階段，由具生態背景人員配合進行生態資料蒐集、調查、評析與協助將生態保育的概念融入工程方案，考量迴避、縮小、減輕與補償的策略擬定生態保育措施，並落實公民參與精神，建立民眾協商溝通機制。</blockquote>
-					  <br />
-            <table width="100%" class="copyService" border="0" cellspacing="0" cellpadding="0">
-              <!-- <tr>
-                <td valign="bottom" align="right">
-                  <div>
-                    <a href="images/6_2/pic_6_2_a.jpg">
-                    <img class="service-pic-62" src="images/6_2/pic_6_2_a.jpg" width="450" height="250"/>
-                    </a>
-                  </div>
-                </td>
-                <td align="left">
-                  <div class="easyzoom easyzoom--overlay">
-                    <a href="images/6_2/pic_6_2_a1.jpg">
-                    <img class="service-pic-62" src="images/6_2/pic_6_2_a1.jpg" width="450" height="250" />
-                    </a>
-                  </div>
-                </td>
-              </tr> -->
-              <tr>
-                <td colspan="2" align="center">
-                  <!-- <div class="easyzoom easyzoom--overlay">
-                    <a href="images/6_2/pic_6_2_a2.jpg">
-                    <img class="service-pic-6" src="images/6_2/pic_6_2_a2.jpg" width="900" height="500"  />
-                    </a>
-                  </div> -->                                                        
-                  <div class="container">
-                    <div class="panel active"
-                        style="background-image: url('./images/6_2/pic_6_2_a.jpg')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                    <div class="panel"
-                        style="background-image: url('./images/6_2/pic_6_2_a1.jpg')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                    <div class="panel"
-                        style="background-image: url('./images/6_2/pic_6_2_a2.jpg')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                    <div class="panel"
-                        style="background-image: url('./images/6_2/pic_6_2_a3.jpg')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                  </div>
-                                                                           
-                  <div class="container">
-                    <div class="panel"
-                        style="background-image: url('./images/6_2/pic_6_2_a4.jpg')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                    <div class="panel"
-                        style="background-image: url('./images/6_2/pic_6_2_a5.jpg')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                    <div class="panel"
-                        style="background-image: url('./images/6_2/pic_6_2_a6.jpg')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <!-- <tr>
-                <td align="right">
-                  <div class="easyzoom easyzoom--overlay">
-                    <a href="images/6_2/pic_6_2_a3.jpg">
-                    <img class="service-pic-61" src="images/6_2/pic_6_2_a3.jpg" width="450" height="250" />
-                    </a>
-                  </div>
-                </td>
-                <td align="left">
-                  <div class="easyzoom easyzoom--overlay">
-                    <a href="images/6_2/pic_6_2_a4.jpg">
-                    <img class="service-pic-61" src="images/6_2/pic_6_2_a4.jpg" width="450" height="250" />
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td align="right">
-                  <div class="easyzoom easyzoom--overlay">
-                    <a href="images/6_2/pic_6_2_a5.jpg">
-                    <img class="service-pic-61" src="images/6_2/pic_6_2_a5.jpg" width="450" height="250" />
-                    </a>
-                  </div>
-                </td>
-                          <td align="left">
-                  <div class="easyzoom easyzoom--overlay">
-                    <a href="images/6_2/pic_6_2_a6.jpg">
-                    <img class="service-pic-61" src="images/6_2/pic_6_2_a6.jpg" width="450" height="250" />
-                    </a>
-                  </div>
-                </td>
-              </tr> -->
-            </table>
+					  <br />            
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_2/pic_6_2_a.jpg" data-mobile="./images/rough/6_2/pic_6_2_a.jpg"></div>
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_2/pic_6_2_a1.jpg" data-mobile="./images/rough/6_2/pic_6_2_a1.jpg"></div>
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_2/pic_6_2_a2.jpg" data-mobile="./images/rough/6_2/pic_6_2_a2.jpg"></div>
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_2/pic_6_2_a3.jpg" data-mobile="./images/rough/6_2/pic_6_2_a3.jpg"></div>
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_2/pic_6_2_a4.jpg" data-mobile="./images/rough/6_2/pic_6_2_a4.jpg"></div>
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_2/pic_6_2_a5.jpg" data-mobile="./images/rough/6_2/pic_6_2_a5.jpg"></div>
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_2/pic_6_2_a6.jpg" data-mobile="./images/rough/6_2/pic_6_2_a6.jpg"></div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
 				  </div>
         </section>
     </main>
@@ -300,7 +225,11 @@
     <script type="text/javascript" src="./jsq/action.js?t=20250125"></script>
     <script type="text/javascript" src="./jsq/jquery.dlmenu.js"></script>     
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script src="jsq/easyzoom.js"></script> 	
+    <!-- <script type="text/javascript" src="jsq/easyzoom.js"></script>  -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="./jsq/coverflow.js"></script>
+    <script type="text/javascript" src="./jsq/ismobileimg.js"></script>	
     <script>
       // Instantiate EasyZoom plugin only on non-mobile devices
       if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

@@ -16,9 +16,11 @@
   <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">   
   <link rel="stylesheet" href="./css/jquery-ui.min.css" />  
   <link rel="stylesheet" href="./css/award.css" />
-  <link rel="stylesheet" href="./css/easyzoom.css" /> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-	<link rel="stylesheet" href="css/easyzoom.css" />
+	<!-- <link rel="stylesheet" href="css/easyzoom.css" /> -->
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/coverflow.css" />
   <style>
       /* 讓影片最大寬度不超過容器，並置中 */
       .video-container {
@@ -77,6 +79,7 @@
           }
       }
   </style>
+  
 	<script type="text/javascript" src="./jsq/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="./jsq/swfobject.js"></script>
   <script type="text/javascript" src="./jsq/show-more.js"></script>	
@@ -184,62 +187,19 @@
             <blockquote style="text-indent: 32px;">本計畫屬於「前瞻基礎建設計畫-水環境建設」項下「水與安全」主軸之「縣市管河川及區域排水整體改善計畫」，主要係辦理水患改善工作，並兼顧環境改善。期達成降低水患災害，提升地方經濟發展、維護生態環境、有效保障人民生命財產安全、提升居住生活品質，落實國土保育及永續發展等效益。</blockquote>
 					  <br />
             <blockquote style="text-indent: 32px;">東溝排水改善工程因本公司生態檢核作業執行，以及參與工程設計階段中積極與地方民眾、生態關注團體、工程主辦單位及設計單位彼此溝通協調工程方案，最終得以取得各方共識後方設計定稿，亦避免後續爭議發生，在經濟部108年舉辦之「韌性臺灣-全國治水會議」，東溝排水改善工程之生態檢核案例亦備受肯定，積極以迴避、縮小、減輕、補償各種方案來考量生態保育之功能，使本案成為發揮生態檢核機制的典範。</blockquote>
-					  <br />
-            <table width="100%" class="copyService" border="0" cellspacing="0" cellpadding="0">
-              <!-- <tr>
-					      <td>&nbsp;</td>
-                  <td rowspan="2" align="left">
-                    <div class="easyzoom easyzoom--overlay">
-                      <a href="images/6_1/pic_6_1_a1.png">
-                      <img class="service-pic-61" src="images/6_1/pic_6_1_a1.png" width="450" height="500" /> 
-                      </a>
-                    </div>
-                  </td>
-              </tr> -->
-              <tr>
-                <td colspan="2" align="center">
-                  <!-- <div class="easyzoom easyzoom--overlay">
-                    <a href="images/6_1/pic_6_1_a.jpg">
-                    <img class="service-pic-61" src="images/6_1/pic_6_1_a.jpg" width="450" height="250"/>
-                    </a>
-                  </div> -->                                                         
-                  <div class="container">
-                    <div class="panel active"
-                        style="background-image: url('./images/6_1/pic_6_1_a.jpg')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                    <div class="panel"
-                        style="background-image: url('./images/6_1/pic_6_1_a2.jpg')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                    <div class="panel"
-                        style="background-image: url('./images/6_1/pic_6_1_a3.jpg')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                    <div class="panel"
-                        style="background: no-repeat center url('./images/6_1/pic_6_1_a1.png')">
-                        <h3>&nbsp;</h3>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <!-- <tr>
-                <td align="right">
-                  <div class="easyzoom easyzoom--overlay">
-                    <a href="images/6_1/pic_6_1_a2.jpg">
-                    <img class="service-pic-61" src="images/6_1/pic_6_1_a2.jpg" width="450" height="250" />
-                    </a>
-                  </div>
-                </td>
-                <td align="left">
-                  <div class="easyzoom easyzoom--overlay">
-                    <a href="images/6_1/pic_6_1_a3.jpg">
-                    <img class="service-pic-61" src="images/6_1/pic_6_1_a3.jpg" width="450" height="250" />
-                    </a>
-                  </div>
-                </td>
-              </tr> -->
-            </table> 
+					  <br />            
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_1/pic_6_1_a.jpg" data-mobile="./images/rough/6_1/pic_6_1_a.jpg"></div>
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_1/pic_6_1_a2.jpg" data-mobile="./images/rough/6_1/pic_6_1_a2.jpg"></div>
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_1/pic_6_1_a3.jpg" data-mobile="./images/rough/6_1/pic_6_1_a3.jpg"></div>
+                <div class="swiper-slide"><img class="responsive-img" src="./images/6_1/pic_6_1_a1.png" data-mobile="./images/rough/6_1/pic_6_1_a1.png"></div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>            
           </div>  
 				  <div class="copyBasic">
             <!-- ◎&nbsp;<span style="text-decoration:underline; font-weight:bold;">生態檢核介紹</span> : -->
@@ -326,7 +286,11 @@
     <script type="text/javascript" src="./jsq/action.js?t=20250125"></script>
     <script type="text/javascript" src="./jsq/jquery.dlmenu.js"></script>     
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script src="jsq/easyzoom.js"></script> 	
+    <!-- <script type="text/javascript" src="jsq/easyzoom.js"></script>  -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="./jsq/coverflow.js"></script>
+    <script type="text/javascript" src="./jsq/ismobileimg.js"></script>	
     <script>
       // Instantiate EasyZoom plugin only on non-mobile devices
       if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

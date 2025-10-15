@@ -1,0 +1,22 @@
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+}
+
+.swiper-slide img {
+  display: block;
+  height: 100%;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(177, 177, 174, 0.7) !important;
+}

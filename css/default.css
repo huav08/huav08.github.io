@@ -394,6 +394,7 @@ img.t_B2 {
 .section-title span a {
 		color: #555;
 		font-size: 1rem;
+		text-decoration: none !important;
 }
 
 .news-cards {

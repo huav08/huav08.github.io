@@ -396,7 +396,7 @@ img.t_B2 {
 		font-size: 1rem;
 }
 
-.section-title span a:link, .section-title span a:visited {
+a:link,  a:visited {
 		text-decoration: none !important;
 }
 

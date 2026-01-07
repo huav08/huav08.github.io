@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -13,16 +14,16 @@
     <!-- iCon圖示 -->
 	<link rel="shortcut icon" href="favicon.ico" /> 
     <link rel="stylesheet" href="./css/animate.min.css">
-    <link rel="stylesheet" href="./css/default.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">   
-    <link rel="stylesheet" href="./css/jquery-ui.min.css" />    
+    <link rel="stylesheet" href="./css/jquery-ui.min.css" />  
+    <!-- <link rel="stylesheet" href="./css/bootstrap.min.css">   -->
 	<link rel="stylesheet" href="./css/news.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./css/easyzoom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/swiper.css" />
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/default.css" />
     <style>
         /* 全域樣式與變數 */
         :root {
@@ -178,9 +179,10 @@
                 background: transparent;
                 border-radius: 2px;
                 color: #fff;
+                border: 1px solid white;
                 font-size: 16px;
                 font-weight: bold;
-                margin-top: 20px;
+                margin-top: 50px;
                 width: 180px;
                 height: 60px;
                 padding-top: 18px;
@@ -196,9 +198,14 @@
             height: 60px;
             font-size: 16px;
             color: white;
+                margin-bottom: 50px;
         }
         .fadeIn {
             color: white;
+            width: 66%;
+            line-height: 1.1; /* 縮小行間距，數值越小越擠 */
+            display: block;   /* 確保它是區塊元素 */
+            margin-bottom: 20px;
         }
         /* end home */
         /* 服務項目區塊 */
@@ -246,35 +253,6 @@
         .service-item p {
             color: black;
         }
-        
-        /* Logo 文字段落間距 */
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: auto;
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
-        }
-        
-        .logo-text h1 {
-            margin: 0;
-            line-height: 1;
-            flex: 1;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-text h1:first-child {
-            margin-bottom: 2px;
-        }
 
         /* --- RWD 響應式設計 --- */
         @media (max-width: 992px) {
@@ -318,23 +296,6 @@
             .hero-content {
                 padding: 20px 15px;
             }
-            .logo {
-                flex-direction: row;
-                align-items: center;
-            }
-            .logo img {
-                /* max-width: 60px; */
-                height: 42px;
-                margin-right: 15px;
-            }
-            .logo-text {
-                margin-left: 10px;
-                margin-top: 0;
-            }
-            .logo-text h1 {
-                font-size: 1rem;
-                line-height: 1.1;
-            }
             .topArea {
                 display: block;
             }
@@ -356,19 +317,6 @@
             .cta-button {
                 padding: 12px 24px;
                 font-size: 0.9rem;
-            }
-            .logo {
-                position: relative;
-                width: 100%;
-                height: auto;
-            }
-            .logo img {      
-                max-width: 60px;
-                height: 31px;
-                margin-right: 15px;
-            }
-            .logo-text h1 {
-                font-size: 1rem;
             }
             
             .dot {
@@ -394,6 +342,47 @@
             background: white;
             transform: scale(1.2);
         }
+
+        /* 確保 Header 文字大小不受 Bootstrap 影響
+        .header .logo-text h1 {
+            font-size: 24px !important;
+            margin: 0 !important;
+            line-height: 1.2 !important;
+            font-weight: 700 !important;
+        }
+        .header .logo-text h2 {
+            font-size: 15px !important;
+            margin: 0 !important;
+            line-height: 1.2 !important;
+            font-weight: normal !important;
+        }
+        .header .nav-links li a {
+            font-size: 14px !important;
+        }
+        .header .submenu li a {
+            font-size: 14px !important;
+        }
+        .header .topArea {
+            font-size: 0.9rem !important;
+        }
+        .header .search-bar input {
+            font-size: 1rem !important;
+        }
+
+        @media (max-width: 768px) {
+            .header .logo-text h1, .header .logo-text h2 {
+                font-size: 1rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header .logo-text h1 {
+                font-size: 1rem !important;
+            }
+            .header .logo-text h2 {
+                font-size: 0.7rem !important;
+            }
+        } */
     </style>
     <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -491,13 +480,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
-                    <h1 class="wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">為地球永續發展，提供專業環境<span>解決方案</span></h1>
+                    <h1 class="wow fadeIn bx" data-wow-offset="50" data-wow-delay="0.9s">為地球永續發展，提供專業環境<span>解決方案</span></h1>
                     <div class="element">
                         <div class="sub-element">我們的專業團隊專注於：</div>
                         <div class="sub-element">環境影響評估及環境監測、空氣品質及河川水質之模擬、空氣污染物排放量調查、</div>
                         <div class="sub-element">健康風險評估、環境管理與資訊系統、生態檢核、碳盤查及淨零管理、氣候變遷風險評估。</div>
                     </div>
-                    <a data-scroll href="#services" class="btn btn-default wow fadeInUp" data-wow-offset="50" data-wow-delay="0.6s">了解更多服務</a>
+                    <a href="#services" class="cta-button btn">了解更多服務</a>
                 </div>
             </div>
         </div>

@@ -520,7 +520,7 @@
         </div>
     </header>
     <section id="home">
-        <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" preload="auto" muted loop autoplay></video>
+        <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" preload="auto" muted autoplay></video>
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
@@ -863,15 +863,27 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="./jsq/swiper.js"></script>
     <script type="text/javascript" src="./jsq/ismobileimg.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-single-page-nav/1.2.1/jquery.singlePageNav.min.js"></script>
+    <script type="text/javascript" src="./jsq/jquery.singlePageNav.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.nav').singlePageNav();
             
-            // 10秒後淡出影片，顯示靜態背景
-            setTimeout(function() {
-                $('#home video').addClass('fade-out');
-            }, 10000);
+            // 影片播放次數計數器
+            let playCount = 0;
+            const video = $('#home video')[0];
+            
+            // 監聽影片播放結束事件
+            video.addEventListener('ended', function() {
+                playCount++;
+                if (playCount < 3) {
+                    // 重新播放影片
+                    this.currentTime = 0;
+                    this.play();
+                } else {
+                    // 播放3遍後淡出影片
+                    $(this).addClass('fade-out');
+                }
+            });
         });
     </script>
 </body>

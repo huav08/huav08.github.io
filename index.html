@@ -151,6 +151,50 @@
             background-color: #e5a42d;
             transform: scale(1.05);
         }
+        /* start home */
+        #home
+            {
+                background: url('../images/home-bg.jpg') no-repeat;
+                background-size: cover;
+                padding-top: 160px;
+                padding-bottom: 100px;
+                min-height: 650px;
+            }
+        #home h1
+            {
+                font-weight: 300;
+                font-size: 70px;
+                padding-bottom: 10px;
+            }
+        #home h1 span
+            {
+                color: #28a7e9;
+                font-weight: bold;
+            }
+        #home .btn
+            {
+                background: transparent;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 20px;
+                width: 180px;
+                height: 60px;
+                padding-top: 18px;
+                -webkit-transition: all 0.4s ease-in-out;
+                        transition: all 0.4s ease-in-out;
+            }
+        #home .btn:hover
+            {
+                background: #28a7e9;
+                border-color: transparent;
+            }
+        .element {
+            height: 60px;
+            font-size: 16px;
+        }
+        /* end home */
         /* 服務項目區塊 */
         .services-section {
             background-color: var(--light-bg-color);
@@ -440,7 +484,7 @@
 
     <main class="main-content">        
 
-        <section class="hero-section">
+        <!-- <section class="hero-section">
             <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" preload="auto" muted loop autoplay></video>
             <div class="hero-overlay"></div>
             <div class="hero-content">
@@ -448,7 +492,22 @@
                 <p>我們的專業團隊專注於環境影響評估、空氣品質管理、生態調查與健康風險評估。</p>
                 <a href="#services" class="cta-button">了解更多服務</a>
             </div>
-        </section>
+        </section> -->
+        <section id="home">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-offset-2 col-md-8">
+    					<h1 class="wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">為地球永續發展，提供專業環境<span>解決方案</span></h1>
+    					<div class="element">
+                            <div class="sub-element">我們的專業團隊專注於：</div>
+                            <div class="sub-element">環境影響評估及環境監測、空氣品質及河川水質之模擬、空氣污染物排放量調查、</div>
+                            <div class="sub-element">健康風險評估、環境管理與資訊系統、生態檢核、碳盤查及淨零管理、氣候變遷風險評估。</div>
+                        </div>
+    					<a data-scroll href="#about" class="btn btn-default wow fadeInUp" data-wow-offset="50" data-wow-delay="0.6s">了解更多服務</a>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
 
         <section id="services" class="services-section">
             <h3>我們的核心服務</h3>

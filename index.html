@@ -158,12 +158,26 @@
         /* start home */
         #home
             {
-                background: url('../images/home-bg.jpg') no-repeat;
-                background-size: cover;
+                position: relative;
                 padding-top: 160px;
                 padding-bottom: 100px;
                 min-height: 650px;
+                overflow: hidden;
+                background: url('./images/home-bg.jpg') no-repeat center center/cover;
             }
+        #home video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            transition: opacity 1s ease-out;
+        }
+        #home video.fade-out {
+            opacity: 0;
+        }
         #home h1
             {
                 font-weight: 300;
@@ -506,6 +520,7 @@
         </div>
     </header>
     <section id="home">
+        <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" preload="auto" muted loop autoplay></video>
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
@@ -534,7 +549,7 @@
         </section> -->
 
         <section id="services" class="services-section">
-            <h3>我們的核心服務</h3>
+            <h3>我們的專業領域</h3>
             <div class="container">
                 <div class="service-grid">
                     <div class="service-item">
@@ -839,7 +854,7 @@
     <script type="text/javascript" src="./jsq/submenu.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script> 
-	<script type="text/javascript" src="./jsq/bootstrap.min.js"></script>
+	<!-- <script type="text/javascript" src="./jsq/bootstrap.min.js"></script> -->
 	<script type="text/javascript" src="./jsq/typed.js"></script>
 	<script type="text/javascript" src="./jsq/wow.min.js"></script>
 	<script type="text/javascript" src="./jsq/custom.js"></script>
@@ -852,6 +867,11 @@
     <script>
         $(document).ready(function() {
             $('.nav').singlePageNav();
+            
+            // 10秒後淡出影片，顯示靜態背景
+            setTimeout(function() {
+                $('#home video').addClass('fade-out');
+            }, 30000);
         });
     </script>
 </body>

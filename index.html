@@ -875,6 +875,7 @@
             // 監聽影片播放結束事件
             video.addEventListener('ended', function() {
                 playCount++;
+                
                 if (playCount < 3) {
                     // 重新播放影片
                     this.currentTime = 0;

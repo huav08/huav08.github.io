@@ -133,7 +133,12 @@ img.t_B2 {
 }
 /* Header */
 .header {
-		background-color: #004d80; /* 模擬環境部藍色 */
+		/* background-color: #004d80;  模擬環境部藍色 */
+		/* 1. 背景必須是半透明的，建議使用 rgba */
+		background: rgba(0, 77, 128, 0.8);     
+		/* 2. 核心屬性：讓後方背景模糊 */
+		-webkit-backdrop-filter: blur(10px);	
+		backdrop-filter: blur(10px);
 		color: white;
 		padding: 1.2rem 0;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -288,7 +293,12 @@ img.t_B2 {
 		top: 100%;
 		left: 0;
 		list-style: none;
-		background-color: #003366;
+		/* background-color: #003366; */
+		/* 1. 背景必須是半透明的，建議使用 rgba */
+		background: rgba(0, 77, 128, 0.8);     
+		/* 2. 核心屬性：讓後方背景模糊 */
+		-webkit-backdrop-filter: blur(10px);	
+		backdrop-filter: blur(10px);
 		min-width: 300px;
 		border-radius: 0 0 5px 5px;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -495,7 +505,13 @@ a:link,  a:visited {
 
 /* Footer */
 .footer {		
-		background-color: #004d80; /* 模擬環境部藍色 */
+		/* background-color: #004d80; 模擬環境部藍色  */
+		/* 模擬環境部藍色 */
+		/* 1. 背景必須是半透明的，建議使用 rgba */
+		background: rgba(0, 77, 128, 0.8);     
+		/* 2. 核心屬性：讓後方背景模糊 */
+		-webkit-backdrop-filter: blur(10px);	
+		backdrop-filter: blur(10px);
 		color: white;
 		padding: 2rem 0;
 		text-align: center;

@@ -2,9 +2,19 @@
     // 導覽列漢堡選單功能
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.querySelector('.main-nav');
+    const searchBar = document.querySelector('.search-bar');
     
     hamburger.addEventListener('click', () => {
         mainNav.classList.toggle('active');
+        
+        // 在 mobile 設備上切換 search-bar 的顯示/隱藏
+        if (window.innerWidth <= 768) {
+            if (mainNav.classList.contains('active')) {
+                searchBar.style.display = 'none';
+            } else {
+                searchBar.style.display = 'flex';
+            }
+        }
     });
 
     // 行動裝置子選單切換功能

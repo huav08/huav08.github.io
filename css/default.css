@@ -310,6 +310,14 @@ img.t_B2 {
 		white-space: nowrap;
 }
 
+.ui-menu {	
+		/* 1. 背景必須是半透明的，建議使用 rgba */
+		background: rgba(255, 255, 255, 0.9);     
+		/* 2. 核心屬性：讓後方背景模糊 */
+		-webkit-backdrop-filter: blur(10px);	
+		backdrop-filter: white(10px);
+}
+
 .nav-links li:hover > .submenu {
 		display: block;
 		opacity: 1;

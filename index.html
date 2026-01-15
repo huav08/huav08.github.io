@@ -234,43 +234,77 @@
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
 
         .service-item {
-            background-color: var(--bg-color);
-            padding: 30px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            background: linear-gradient(180deg, #1a5a7e 0%, #2d7ba8 100%);
+            padding: 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
             transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .service-item::before {
+            content: attr(data-number);
+            position: absolute;
+            top: -30px;
+            right: 15px;
+            font-size: 180px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.06);
+            line-height: 1;
+            z-index: 0;
         }
 
         .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.35);
         }
 
         .service-item > a {
             text-decoration: none !important;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            z-index: 1;
         }
 
         .service-item i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            color: #fff;
+            margin: 35px 0 25px;
+            display: block;
+            text-align: center;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
         }
 
         .service-item h3 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            color: #fff;
+            font-size: 1.25rem;
+            margin: 0 30px 20px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid rgba(255,255,255,0.25);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .service-item h3::after {
+            display: none;
         }
 
         .service-item p {
-            color: black;
+            color: rgba(255,255,255,0.95);
+            padding: 0 30px 35px;
+            text-align: left;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            flex-grow: 1;
         }
 
         /* --- RWD 響應式設計 --- */
@@ -556,56 +590,56 @@
             <h3>我們的專業領域</h3>
             <div class="container">
                 <div class="service-grid">
-                    <div class="service-item">
+                    <div class="service-item" data-number="1">
                         <a href="service_1.html" target="_self">
                             <i class="fa fa-leaf"></i>
                             <h3>環境影響評估及環境監測</h3>
                             <p>能源事業與工廠之環境影響評估、工業區及科學園區之環境影響評估、交通相關之環境影響評估、建築及土地開發相關之環境影響評估、環境品質監測．．．</p>
                         </a>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item" data-number="2">
                         <a href="service_2.html" target="_self">
                             <i class="fa fa-wind"></i>
                             <h3>空氣品質及河川水質之模擬</h3>
                             <p>不論是評估直接排放的原生性污染物為主的高斯擴散模式或軌跡模式，或是以大氣中生成或轉化的衍生性污染物為主的三維網格模式，均有多年實際執行經驗，且相當多的工作實績。</p>
                         </a>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item" data-number="3">
                         <a href="service_3.html" target="_self">
                             <i class="fa fa-cloud"></i>
                             <h3>空氣污染物排放量調查</h3>
                             <p>排放量調查推估工作為空氣污染管制與規劃的根本基礎，不僅是各項防制策略的重要依據，也是環境影響評估案件進行規劃與審查的核心資料來源。</p>
                         </a>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item" data-number="4">
                         <a href="service_4.html" target="_self">
                             <i class="fa fa-heartbeat"></i>
                             <h3>健康風險評估</h3>
                             <p>掌握健康風險評估相關訊息，對於健康風險評估相關法令規範、評估技術、調查分析技術以及追蹤管理作業皆十分熟悉。</p>
                         </a>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item" data-number="5">
                         <a href="service_5.html" target="_self">
                             <i class="fa fa-file-invoice"></i>
                             <h3>環境管理與資訊系統</h3>
                             <p>協助客戶掌握環境資訊現況，並依據相關紀錄研擬資訊交換及整合規劃作業制度，提供相關硬體、軟體與服務的整體解決方案。</p>
                         </a>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item" data-number="6">
                         <a href="service_6.html" target="_self">
                             <i class="fa fa-dna"></i>
                             <h3>生態檢核</h3>
                             <p>減輕公共工程對生態環境造成負面影響，秉生態保育、公民參與及資訊公開之原則，落實生態保育之政策。</p>
                         </a>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item" data-number="7">
                         <a href="service_7.html" target="_self">
                             <i class="fa fa-bus"></i>
                             <h3>碳盤查及淨零管理</h3>
                             <p>長期致力於環評溫室氣體排放計算、溫室氣體盤查、產品碳足跡量化以及工程碳管理等，從上游政府溫室氣體盤查、減量之政策面，至下游各廠家、業者之溫室氣體盤查或產品碳足跡量，長期具備充足相關執行經驗。</p>
                         </a>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item" data-number="8">
                         <a href="service_8.html" target="_self">
                             <i class="fa fa-snowflake"></i>
                             <h3>氣候變遷風險評估</h3>

@@ -1,0 +1,895 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景丰科技 SIMULATION</title>
+	<meta name="keywords" content="景丰科技股份有限公司, 工程"/>     
+	<meta http-equiv="Cache-control" content="max-age=604800, private"> 
+    <!-- 網頁描述 -->
+	<meta name="description" content="景丰科技股份有限公司成立於民國92 年，為行政院公共工程委員會核可之「工程技術顧問公司」，由一群資深的環境專業人員共同組成，主要的專業領域包括環境影響評估及環境監測、環境規劃管理、環境品質模擬、生態調查評估、許可申請等。藉由專業與誠信的服務， 凡承辦過的工作都能圓滿達成， 在業主與同業之間均獲得高度的評價。"/>
+	<meta name="Author" content="景丰科技股份有限公司, Jih-Li Hua"/>
+	<meta name="copyright" content="Copyright © 2012 ENVIRONMENTAL SIMULATION CO., LTD. All Rights Reserved">
+    <!-- iCon圖示 -->
+	<link rel="shortcut icon" href="favicon.ico" /> 
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">   
+    <link rel="stylesheet" href="./css/jquery-ui.min.css" />  
+    <!-- <link rel="stylesheet" href="./css/bootstrap.min.css">   -->
+	<link rel="stylesheet" href="./css/news.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/easyzoom.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+    <style>
+        /* 全域樣式與變數 */
+        :root {
+            --primary-color: #2a698a;   /* 深藍 */
+            --secondary-color: #5bb29c; /* 綠色 */
+            --accent-color: #f7b731;    /* 黃色 */
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+            --light-bg-color: #fff;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body > .main-content {
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: rgba(255,255,255,0.3);
+        } 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h3 {
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: center;
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+        section {
+            padding: 40px 0;
+        }       
+
+        .logo {
+            /* font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color); */
+            text-decoration: none;
+        }
+
+        /* 主視覺區塊 */
+        .hero-section {
+            width: 100vw;
+            height: 100vh;
+            margin-left: calc(-50vw + 50%);
+            margin-top: 0;
+            background-color: #aaa;
+            /* background: url('https://via.placeholder.com/1920x1080.png?text=Environment+Solutions') no-repeat center center/cover; */
+            /* background: url('https://www.simenvi.com.tw/images/bg_sky_index_01.gif') no-repeat center center/cover; 
+            background: url('./images/sky_cloud.gif') no-repeat center center/cover; */
+            
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .hero-section video
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        
+        .main-content {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background-color: rgb(87, 85, 85); */
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e5a42d;
+            transform: scale(1.05);
+        }
+        /* start home */
+        #home  {
+                position: relative;
+                padding-top: 160px;
+                padding-bottom: 100px;
+                min-height: 650px;
+                overflow: hidden;
+                background: url('./images/home-bg.jpg') no-repeat center center/cover;
+                border-radius: 20px;
+        }
+        
+        #home video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            transition: opacity 1s ease-out;
+        }
+        #home video.fade-out {
+            opacity: 0;
+        }
+        #home h1
+            {
+                font-weight: 300;
+                font-size: 68px;
+                font-weight: bold;
+                padding-bottom: 0;
+            }
+        #home h1 span
+            {
+                color: #28a7e9;
+                font-weight: bold;
+            }
+        #home .btn
+            {
+                background: transparent;
+                border-radius: 2px;
+                color: white;
+                border: 1px solid white;
+                font-size: 20px;
+                font-weight: bold;
+                margin-top: 50px;
+                width: 180px;
+                height: 60px;
+                padding-top: 18px;
+                -webkit-transition: all 0.4s ease-in-out;
+                        transition: all 0.4s ease-in-out;
+            }
+        #home .btn:hover
+            {
+                background: #28a7e9;
+                border-color: transparent;
+            }
+        .element {
+            height: 60px;
+            font-size: 20px;
+            color: white;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+            font-weight: bold;
+            margin-bottom: 45px;
+        }
+        .fadeIn {
+            color: white;
+            width: 66%;
+            line-height: 1.1; /* 縮小行間距，數值越小越擠 */
+            display: block;   /* 確保它是區塊元素 */
+            margin: 20px 0;
+        }
+        /* end home */
+        /* 服務項目區塊 */
+        .services-section {
+            background-color: var(--light-bg-color);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-item {
+            background-color: var(--bg-color);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-item > a {
+            text-decoration: none !important;
+        }
+
+        .service-item i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            color: black;
+        }
+
+        /* --- RWD 響應式設計 --- */
+        @media (max-width: 992px) {
+            .hero-section {
+                height: 80vh;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .fadeIn {
+                color: white;
+                width: 90%;
+                line-height: 1.1; /* 縮小行間距，數值越小越擠 */
+                display: block;   /* 確保它是區塊元素 */
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Tablet 橫屏 */
+        @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+            .hero-section {
+                align-items: flex-end;
+                padding-top: 140px;
+            }
+            .hero-content {
+                margin-bottom: 20px;
+            }
+            .fadeIn {
+                color: white;
+                width: 94%;
+                line-height: 1.1; /* 縮小行間距，數值越小越擠 */
+                display: block;   /* 確保它是區塊元素 */
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 70vh;
+                margin-top: 80px;
+            }
+            h3 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 30px 0;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content {
+                padding: 20px 15px;
+            }
+            .topArea {
+                display: block;
+            }
+            .fadeIn {
+                color: white;
+                width: 94%;
+                line-height: 1.1; /* 縮小行間距，數值越小越擠 */
+                display: block;   /* 確保它是區塊元素 */
+                margin-bottom: 10px;
+            }
+        }
+                
+        @media (max-width: 480px) {
+            .hero-section {
+                height: 60vh;
+                margin-top: 70px;
+                background-size: cover;
+                background-position: center center;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+            
+            .dot {
+                width: 10px;
+                height: 10px;
+            }
+
+            .footer .label {
+                display: none;
+            }
+            .fadeIn {
+                color: white;
+                width: 88%;
+                line-height: 1.1; /* 縮小行間距，數值越小越擠 */
+                display: block;   /* 確保它是區塊元素 */
+                margin-bottom: 10px;
+            }
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* 確保 Header 文字大小不受 Bootstrap 影響
+        .header .logo-text h1 {
+            font-size: 24px !important;
+            margin: 0 !important;
+            line-height: 1.2 !important;
+            font-weight: 700 !important;
+        }
+        .header .logo-text h2 {
+            font-size: 15px !important;
+            margin: 0 !important;
+            line-height: 1.2 !important;
+            font-weight: normal !important;
+        }
+        .header .nav-links li a {
+            font-size: 14px !important;
+        }
+        .header .submenu li a {
+            font-size: 14px !important;
+        }
+        .header .topArea {
+            font-size: 0.9rem !important;
+        }
+        .header .search-bar input {
+            font-size: 1rem !important;
+        }
+
+        @media (max-width: 768px) {
+            .header .logo-text h1, .header .logo-text h2 {
+                font-size: 1rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header .logo-text h1 {
+                font-size: 1rem !important;
+            }
+            .header .logo-text h2 {
+                font-size: 0.7rem !important;
+            }
+        } */
+    </style>
+    <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async  src="https://www.googletagmanager.com/gtag/js?id=G-FLZZF2NJC6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-FLZZF2NJC6");
+    </script>    
+    <!-- Google Analytics Script碼(End) -->         
+ </head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="." class="logo">
+                    <img src="./images/sieenvi_logo.png" alt="景丰科技股份有限公司logo" />
+                    <div class="logo-text">
+                        <h1>景丰科技股份有限公司</h1>
+                        <h2>ENVIRONMENTAL SIMULATION CO. LTD. </h2>
+                    </div>
+                </a>
+                <div class="topArea">
+                  <!-- <a href="#newsSimenvi">景丰新訊</a>
+                  <span class="separator">|</span>
+                  <a href="#services">服務項目</a>
+                  <span class="separator">|</span>
+                  <a href="#subservices">實績</a> -->
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <input tabindex="1" type="search" name="search" id="search_e" class="search form-control" placeholder="請輸入或選擇關鍵字." />
+                    <button id="search-bar" class="search-button search-button-v2" accesskey="s"><i class="fas fa-search"></i></button>
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="nav-links" id="nav-links">
+                        <li class="has-submenu">
+                            <a href="#">關於景丰</a>
+                            <ul class="submenu">
+                        <li><a href="about.html">公司簡介</a></li>
+                        <li><a href="award.html">榮譽認證</a></li>
+                        <li><a href="human.html">人力資源</a></li>
+                        <li><a href="organiz.html">組織結構</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#">服務項目與實績</a>
+                            <ul class="submenu">
+                                <li><a href="service_1.html">環境影響評估及環境監測</a></li>
+                                <li><a href="service_2.html">空氣品質及河川水質之模擬</a></li>
+                                <li><a href="service_3.html">空氣污染物排放量調查</a></li>
+                                <li><a href="service_4.html">健康風險評估</a></li>
+                                <li><a href="service_5.html">環境管理與資訊系統</a></li>
+                                <li><a href="service_6.html">生態檢核</a></li>
+                                <li><a href="service_7.html">碳盤查及淨零管理</a></li>
+                                <li><a href="service_8.html">氣候變遷風險評估</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#">空污事件模擬</a>
+                            <ul class="submenu">
+				                <li><a href="air_his.html">重大空污事件模擬</a></li>
+				                <li><a href="http://210.68.245.182:8871" target="_blank">區域性空氣污染擴散快速模擬系統</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="links.html">人才招募</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="contact.html">聯絡我們</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#">文件下載</a>
+                            <ul class="submenu">
+                                <li><a href="download_simenvi.html">公司介紹</a></li>
+                                <li><a href="download_paper.html">研究發表</a></li>
+                                <li><a href="download_model.html">技術文件</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <section id="home">
+        <!-- <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" preload="auto" muted autoplay></video> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <h1 class="wow fadeIn bx" data-wow-offset="50" data-wow-delay="0.9s">為地球永續發展，提供專業環境<span>解決方案</span></h1>
+                    <div class="element">
+                        <div class="sub-element">我們的專業團隊專注於：</div>
+                        <div class="sub-element">環境影響評估及環境監測、空氣品質及河川水質之模擬、空氣污染物排放量調查、</div>
+                        <div class="sub-element">健康風險評估、環境管理與資訊系統、生態檢核、碳盤查及淨零管理、氣候變遷風險評估。</div>
+                    </div>
+                    <a href="#services" class="cta-button btn">了解更多</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">        
+
+        <!-- <section class="hero-section">
+            <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" preload="auto" muted loop autoplay></video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>為地球永續發展，提供專業<br />環境解決方案</h1>
+                <p>我們的專業團隊專注於環境影響評估、空氣品質管理、生態調查與健康風險評估。</p>
+                <a href="#services" class="cta-button">了解更多服務</a>
+            </div>
+        </section> -->
+
+        <section id="services" class="services-section">
+            <h3>我們的專業領域</h3>
+            <div class="container">
+                <div class="service-grid">
+                    <div class="service-item">
+                        <a href="service_1.html" target="_self">
+                            <i class="fa fa-leaf"></i>
+                            <h3>環境影響評估及環境監測</h3>
+                            <p>能源事業與工廠之環境影響評估、工業區及科學園區之環境影響評估、交通相關之環境影響評估、建築及土地開發相關之環境影響評估、環境品質監測．．．</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_2.html" target="_self">
+                            <i class="fa fa-wind"></i>
+                            <h3>空氣品質及河川水質之模擬</h3>
+                            <p>不論是評估直接排放的原生性污染物為主的高斯擴散模式或軌跡模式，或是以大氣中生成或轉化的衍生性污染物為主的三維網格模式，均有多年實際執行經驗，且相當多的工作實績。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_3.html" target="_self">
+                            <i class="fa fa-cloud"></i>
+                            <h3>空氣污染物排放量調查</h3>
+                            <p>排放量調查推估工作為空氣污染管制與規劃的根本基礎，不僅是各項防制策略的重要依據，也是環境影響評估案件進行規劃與審查的核心資料來源。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_4.html" target="_self">
+                            <i class="fa fa-heartbeat"></i>
+                            <h3>健康風險評估</h3>
+                            <p>掌握健康風險評估相關訊息，對於健康風險評估相關法令規範、評估技術、調查分析技術以及追蹤管理作業皆十分熟悉。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_5.html" target="_self">
+                            <i class="fa fa-file-invoice"></i>
+                            <h3>環境管理與資訊系統</h3>
+                            <p>協助客戶掌握環境資訊現況，並依據相關紀錄研擬資訊交換及整合規劃作業制度，提供相關硬體、軟體與服務的整體解決方案。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_6.html" target="_self">
+                            <i class="fa fa-dna"></i>
+                            <h3>生態檢核</h3>
+                            <p>減輕公共工程對生態環境造成負面影響，秉生態保育、公民參與及資訊公開之原則，落實生態保育之政策。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_7.html" target="_self">
+                            <i class="fa fa-bus"></i>
+                            <h3>碳盤查及淨零管理</h3>
+                            <p>長期致力於環評溫室氣體排放計算、溫室氣體盤查、產品碳足跡量化以及工程碳管理等，從上游政府溫室氣體盤查、減量之政策面，至下游各廠家、業者之溫室氣體盤查或產品碳足跡量，長期具備充足相關執行經驗。</p>
+                        </a>
+                    </div>
+                    <div class="service-item">
+                        <a href="service_8.html" target="_self">
+                            <i class="fa fa-snowflake"></i>
+                            <h3>氣候變遷風險評估</h3>
+                            <p>政策與制度設計核心角色、跨部會與專業技術合作、專案與教育訓練經驗豐富、專業網絡與審查熟悉度．．．</p>
+                        </a>
+                    </div>
+                </div>                
+                <a id="subservices">&nbsp;</a> 
+            </div>
+        </section>
+        
+        <section> 
+            <!-- <h3>實績</h3> -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_1-env02.png" data-mobile="./images/swiper/tswiper_1-env02.png" alt="環境影響評估－臺北市萬華區福星段二小段149號等1筆土地都市更新案">
+                        <div class="slide-content">
+                            <a href="service_1.html#env02" target="_self">
+                                <h2>環境影響評估－</h2>
+                                <p class="slide-description">臺北市萬華區福星段二小段149號等1筆土地都市更新案</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_2-5.png" data-mobile="./images/swiper/tswiper_2-5.png" alt="空氣品質之模擬－桃園科技工業區第二期開發計畫環評">
+                        <div class="slide-content">
+                            <a href="service_2-5.html" target="_self">
+                                <h2>空氣品質之模擬－</h2>
+                                <p class="slide-description">桃園科技工業區第二期開發計畫環評</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_3-1.png" data-mobile="./images/swiper/tswiper_3-1.png" alt="空氣污染物排放量調查－港區空氣污染物排放清冊">
+                        <div class="slide-content">
+                            <a href="service_3-1.html" target="_self">
+                                <h2>空氣污染物排放量調查－</h2>
+                                <p class="slide-description">港區空氣污染物排放清冊</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_4-3.png" data-mobile="./images/swiper/tswiper_4-3.png" alt="健康風險評估－台南縣威致鋼鐵官田廠擴建環評"><
+                        <div class="slide-content">
+                            <a href="service_4-3.html" target="_self">
+                                <h2>健康風險評估－</h2>
+                                <p class="slide-description">台南縣威致鋼鐵官田廠擴建環評</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_infotech.png" data-mobile="./images/swiper/tswiper_infotech.png" alt="環境管理與資訊系統－臺南七股環境數據（另開新視窗）">
+                        <div class="slide-content">
+                            <a href="https://infotech.simenvi.com.tw/map" target="_blank">
+                                <h2>環境管理與資訊系統－</h2>
+                                <p class="slide-description">臺南七股環境數據</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_6-4.png" data-mobile="./images/swiper/tswiper_6-4.png" alt="生態檢核－新竹左岸生態環境與棲地">
+                        <div class="slide-content">
+                            <a href="service_6-4.html" target="_self">
+                                <h2>生態檢核－</h2>
+                                <p class="slide-description">新竹左岸生態環境與棲地</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_7-1.png" data-mobile="./images/swiper/tswiper_7-1.png" alt="碳盤查及淨零管理－運輸業碳管理">
+                        <div class="slide-content">
+                            <a href="service_7-1.html" target="_self">
+                                <h2>碳盤查及淨零管理－</h2>
+                                <p class="slide-description">運輸業碳管理</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_1-env01.png" data-mobile="./images/swiper/tswiper_1-env01.png" alt="環境影響評估－工業區及科學園區之環境影響評估">
+                        <div class="slide-content">
+                            <a href="service_1.html#env01" target="_self">
+                                <h2>環境影響評估－</h2>
+                                <p class="slide-description">工業區及科學園區之環境影響評估</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_2-10.png" data-mobile="./images/swiper/tswiper_2-10.png" alt="河川水質之模擬－北高雄產業園區">
+                        <div class="slide-content">
+                            <a href="service_2-10.html" target="_self">
+                                <h2>河川水質之模擬－</h2>
+                                <p class="slide-description">北高雄產業園區</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_3-2.png" data-mobile="./images/swiper/tswiper_3-2.png" alt="空氣污染物排放量調查－全國性空氣污染物排放量">
+                        <div class="slide-content">
+                            <a href="service_3-2.html" target="_self">
+                                <h2>空氣污染物排放量調查－</h2>
+                                <p class="slide-description">全國性空氣污染物排放量</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_4-4.png" data-mobile="./images/swiper/tswiper_4-4.png" alt="健康風險評估－南部科學工業園區">
+                        <div class="slide-content">
+                            <a href="service_4-4.html" target="_self">
+                                <h2>健康風險評估－</h2>
+                                <p class="slide-description">南部科學工業園區</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_simenvi-20200707.png" data-mobile="./images/swiper/tswiper_simenvi-20200707.png" alt="環境管理與資訊系統－核災輻射物質大氣傳輸（另開新視窗）">
+                        <div class="slide-content">
+                            <a href="download/Simenvi_20200707.pdf" target="_blank">
+                                <h2>環境管理與資訊系統－</h2>
+                                <p class="slide-description">核災輻射物質大氣傳輸</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_7-2.png" data-mobile="./images/swiper/tswiper_7-2.png" alt="碳盤查及淨零管理－三重環北幹線等工程碳盤查與減量">
+                        <div class="slide-content">
+                            <a href="service_7-2.html" target="_self">
+                                <h2>碳盤查及淨零管理－</h2>
+                                <p class="slide-description">三重環北幹線等工程碳盤查與減量</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="responsive-img" src="./images/swiper/uswiper_8-principle.png" data-mobile="./images/swiper/tswiper_8-principle.png" alt="氣候變遷風險評估－環境影響評估階段">
+                        <div class="slide-content">
+                            <a href="service_8.html#principle" target="_self">
+                                <h2 class="slide-title">氣候變遷風險評估－</h2>
+                                <p class="slide-description">環境影響評估階段</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- <img src="./images/swiper/uswiper_6-1.png" alt="生態檢核－107年度彰化縣生態檢核"> -->
+                        <video src="./download/service6-1-1.mp4" poster="./images/6_1/poster-image.jpg" preload="auto" muted loop autoplay></video>
+                        <div class="slide-content">
+                            <a href="service_6-1.html" target="_self">
+                                <h2>生態檢核－</h2>
+                                <p class="slide-description">107年度彰化縣生態檢核</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <a id="news">&nbsp;</a>
+        </section>
+
+        <section class="index-components">
+            <div id="indexNews">              
+                <div class="news-container">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTab(event, 'NewsRelease')" id="defaultOpen">環境部新聞</button>
+                        <button class="tablinks" onclick="openTab(event, 'Clarification')">EPA News</button>
+                    </div>
+                    <div id="NewsRelease" class="tabcontent">
+                        <ul id="newsReleaseList">
+                            <li class="loading">正在載入新聞發布內容...</li>
+                        </ul>
+                    </div>
+                    <div id="Clarification" class="tabcontent">
+                        <ul id="clarificationList">
+                            <li class="loading">Loading EPA News content...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="indexAir">
+                <div class="airunit">PM2.5 全月模擬 （單位 ug/m^3）</div>
+                <a href="https://www.simenvi.com.tw/images/date_img/myimage.gif" target="_blank">
+                    <div class="indexAirPic">
+                        <img src="https://www.simenvi.com.tw/images/date_img/myimage.gif" width="350" height="437" class="lazyload forecast"/>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="simenvinews" class="news-section">
+            <h3>景丰新訊</h3>
+            <div class="section-title">
+                <span><a href="#news">更多<i class="fas fa-chevron-right"></i></a></span>
+            </div>   
+            <div class="news-cards">
+                <div class="card">
+                    <img src="./images/award.jpg" alt="新聞圖片">
+                    <div class="card-content">
+                        <h4>賀!本公司14人通過iPAS淨零碳規劃管理師能力鑑定</h4>
+                        <p>充裕產業創新及產業升級轉型所需關鍵人才，擴大建置....</p>
+                        <a href="https://www.ipas.org.tw/NZ" class="read-more" target="_blank">閱讀全文</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/award03_2024_08_30T08_27_53_356Z.png" alt="新聞圖片">
+                    <div class="card-content">
+                        <h4>榮譽認證：第四屆航港大數據創意應用大賽，榮獲社會組第三名成績</h4>
+                        <p>協同環境部大氣環境司報名參加第四屆航港大數據創意....</p>
+                        <a href="award.html#AWARD03" class="read-more">閱讀全文</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/swiper/uswiper.png" alt="新聞圖片">
+                    <div class="card-content">
+                        <h4>111年至112年環評顧問機構評鑑結果</h4>
+                        <p>景丰科技股份有限公司榮獲環評顧問機構評鑑結果：準A級 ....</p>
+                        <a href="https://www.simenvi.com.tw/download/20240427-111年至112年環評顧問機構評鑑結果.pdf" class="read-more" target="_blank">閱讀全文</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><span class="lnr lnr-map-marker"></span> <span class="label">地址：</span>10663 台北市大安區復興南路二段286號4樓</p>
+                <p><span class="lnr lnr-phone-handset"></span> <span class="label">電話：</span>(02)2377-8011  │ <span class="lnr lnr-printer"></span> <span class="label">傳真：</span> (02)2739-3446</p>
+            </div>
+            <div class="footer-links">
+                <h4 style="font-size: 1.1rem;">相關連結</h4>
+                <ul>
+                    <li><a href="download_simenvi.html"><span class="lnr lnr-file-add"></span> 公司介紹</a></li>
+                    <li><a href="download_paper.html"><span class="lnr lnr-graduation-hat"></span> 研究發表</a></li>
+                    <li><a href="links.html"><span class="lnr lnr-users"></span> 人才招募</a></li>
+                    <li><a href="contact.html"><span class="lnr lnr-envelope"></span> 聯絡我們</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>© 2012 景丰科技股份有限公司 ENVIRONMENTAL SIMULATION CO. LTD. </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Go To Top Button -->
+    <a tabindex="2" href="javascript:;" id="goToTop" class="go-to-top" title="回到最頂層" role="button"><img src="./images/icons8-up3.png" alt="TOP" title="回到最頂層"></a>
+    
+    <script type="text/javascript" src="./jsq/news.js"></script>
+    <script type="text/javascript" src="./jsq/submenu.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script> 
+	<!-- <script type="text/javascript" src="./jsq/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="./jsq/typed.js"></script>
+	<script type="text/javascript" src="./jsq/wow.min.js"></script>
+	<script type="text/javascript" src="./jsq/custom.js"></script>
+    <script type="text/javascript" src="./jsq/at_cage.js"></script>
+    <script type="text/javascript" src="./jsq/gototop.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="./jsq/swiper.js"></script>
+    <script type="text/javascript" src="./jsq/ismobileimg.js"></script>
+    <script type="text/javascript" src="./jsq/jquery.singlePageNav.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.nav').singlePageNav();
+            
+           /*  // 影片播放次數計數器
+            let playCount = 0;
+            const video = $('#home video')[0];
+            
+            // 監聽影片播放結束事件
+            video.addEventListener('ended', function() {
+                playCount++;
+                
+                if (playCount < 3) {
+                    // 重新播放影片
+                    this.currentTime = 0;
+                    this.play();
+                } else {
+                    // 播放3遍後淡出影片
+                    $(this).addClass('fade-out');
+                }
+            });
+        }); */
+    </script>
+</body>
+</html>

@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/swiper.css" />
     <link rel="stylesheet" href="./css/default.css" />
+    <link rel="stylesheet" href="./css/flow.css" />
     <style>
         /* 全域樣式與變數 */
         :root {
@@ -44,7 +45,7 @@
             font-family: 'Noto Sans TC', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: rgba(255,255,255,0.3);
+            /* background-color: rgba(255,255,255,0.3); */
         } 
         .container {
             max-width: 1200px;
@@ -229,7 +230,9 @@
         /* end home */
         /* 服務項目區塊 */
         .services-section {
-            background-color: var(--light-bg-color);
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .service-grid {
@@ -513,6 +516,21 @@
     <!-- Google Analytics Script碼(End) -->         
  </head>
 <body>
+    <!-- 流動背景：START -->
+    <div class="fluid-bg-container">
+        <div class="fluid-bg-blob"></div>
+        <div class="fluid-bg-blob"></div>
+        <div class="fluid-bg-blob"></div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="fluid-svg-filters">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="goo" />
+            </filter>
+        </defs>
+    </svg>
+    <!-- 流動背景：END -->
     <header class="header">
         <div class="header-content">
             <div class="header-top">
@@ -956,8 +974,8 @@
                     // 播放3遍後淡出影片
                     $(this).addClass('fade-out');
                 }
-            });
-        }); */
+            }); */
+        }); 
     </script>
 </body>
 </html>

@@ -1,8 +1,8 @@
 :root {
-  --color-bg: #ffffff;      /* 純白底色 */
-  --color1: #ebe0ff;        /* 淺天藍 */
-  --color2: #f4e9ff;        /* 淺粉紅 */
-  --color3: #f8f0ff;        /* 淺薄荷綠 */
+  --color-bg: #fff;      /* 純白底色 */
+  --color1: #07d3f7;        /* 淺天藍 */
+  --color2: #1174b6;        /* 淺粉紅 */
+  --color3: #0ad6b4;        /* 淺薄荷綠 */
 }
 
 .fluid-bg-container {
@@ -12,6 +12,7 @@
   width: 100vw;
   height: 100vh;
   background: var(--color-bg);
+  backdrop-filter: blur(10px);
   overflow: hidden;
   z-index: -1;
   /* 增加模糊度，讓光斑邊緣更柔和 */

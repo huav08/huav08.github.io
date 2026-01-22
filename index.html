@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -25,7 +23,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/swiper.css" />
     <link rel="stylesheet" href="./css/default.css" />
-    <!-- <link rel="stylesheet" href="./css/flow.css" /> -->
     <style>
         /* 全域樣式與變數 */
         :root {
@@ -459,47 +456,6 @@
             background: white;
             transform: scale(1.2);
         }
-
-        /* 確保 Header 文字大小不受 Bootstrap 影響
-        .header .logo-text h1 {
-            font-size: 24px !important;
-            margin: 0 !important;
-            line-height: 1.2 !important;
-            font-weight: 700 !important;
-        }
-        .header .logo-text h2 {
-            font-size: 15px !important;
-            margin: 0 !important;
-            line-height: 1.2 !important;
-            font-weight: normal !important;
-        }
-        .header .nav-links li a {
-            font-size: 14px !important;
-        }
-        .header .submenu li a {
-            font-size: 14px !important;
-        }
-        .header .topArea {
-            font-size: 0.9rem !important;
-        }
-        .header .search-bar input {
-            font-size: 1rem !important;
-        }
-
-        @media (max-width: 768px) {
-            .header .logo-text h1, .header .logo-text h2 {
-                font-size: 1rem !important;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header .logo-text h1 {
-                font-size: 1rem !important;
-            }
-            .header .logo-text h2 {
-                font-size: 0.7rem !important;
-            }
-        } */
     </style>
     <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -516,21 +472,6 @@
     <!-- Google Analytics Script碼(End) -->         
  </head>
 <body>
-    <!-- 流動背景：START -->
-    <!-- <div class="fluid-bg-container">
-        <div class="fluid-bg-blob"></div>
-        <div class="fluid-bg-blob"></div>
-        <div class="fluid-bg-blob"></div>
-    </div>
-    <svg xmlns="http://www.w3.org/2000/svg" class="fluid-svg-filters">
-        <defs>
-            <filter id="goo">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="goo" />
-            </filter>
-        </defs>
-    </svg> -->
-    <!-- 流動背景：END -->
     <header class="header">
         <div class="header-content">
             <div class="header-top">
@@ -542,11 +483,7 @@
                     </div>
                 </a>
                 <div class="topArea">
-                  <!-- <a href="#newsSimenvi">景丰新訊</a>
-                  <span class="separator">|</span>
-                  <a href="#services">服務項目</a>
-                  <span class="separator">|</span>
-                  <a href="#subservices">實績</a> -->
+                  &nbsp;
                 </div>
             </div>
             <div class="header-right">
@@ -957,24 +894,6 @@
     <script>
         $(document).ready(function() {
             $('.nav').singlePageNav();
-            
-           /*  // 影片播放次數計數器
-            let playCount = 0;
-            const video = $('#home video')[0];
-            
-            // 監聽影片播放結束事件
-            video.addEventListener('ended', function() {
-                playCount++;
-                
-                if (playCount < 3) {
-                    // 重新播放影片
-                    this.currentTime = 0;
-                    this.play();
-                } else {
-                    // 播放3遍後淡出影片
-                    $(this).addClass('fade-out');
-                }
-            }); */
         }); 
     </script>
 </body>

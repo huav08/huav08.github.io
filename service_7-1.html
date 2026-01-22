@@ -51,18 +51,25 @@
 
     .swiper-button-next,
     .swiper-button-prev {
-      color: #fff;
-      background: rgba(42, 105, 138, 0.85);
+      color: rgb(4, 107, 242);
+      background: rgba(255,255,255,0.2);
       width: 50px;
       height: 50px;
       border-radius: 50%;
+      backdrop-filter: blur(10px);
       transition: all 0.3s ease;
     }
 
     .swiper-button-next:hover,
     .swiper-button-prev:hover {
-      background: rgba(42, 105, 138, 1);
+      background: rgba(255,255,255,0.3);
       transform: scale(1.1);
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 18px;
+      font-weight: bold;
     }
 
     .swiper-pagination-bullet {

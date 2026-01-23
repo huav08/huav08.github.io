@@ -3,6 +3,7 @@
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.querySelector('.main-nav');
     const searchBar = document.querySelector('.search-bar');
+    const fonthBtn = document.querySelector('.font-btn');
     
     hamburger.addEventListener('click', () => {
         mainNav.classList.toggle('active');
@@ -11,8 +12,10 @@
         if (window.innerWidth <= 768) {
             if (mainNav.classList.contains('active')) {
                 searchBar.style.display = 'none';
+                fonthBtn.style.display = 'none';
             } else {
                 searchBar.style.display = 'flex';
+                fonthBtn.style.display = 'flex';
             }
         }
     });

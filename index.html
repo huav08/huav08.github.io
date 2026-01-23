@@ -492,6 +492,10 @@
                     <button id="search-bar" class="search-button search-button-v2" accesskey="s"><i class="fas fa-search"></i></button>
                 </div>
 
+                <div class="font-size-controls">
+                    <button id="font-decrease" class="font-btn" title="縮小字體">A-</button>
+                    <button id="font-increase" class="font-btn" title="放大字體">A+</button>
+                </div>
                 <nav class="main-nav">
                     <ul class="nav-links" id="nav-links">
                         <li class="has-submenu">
@@ -562,17 +566,7 @@
         </div>
     </section>
 
-    <main class="main-content">        
-
-        <!-- <section class="hero-section">
-            <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" preload="auto" muted loop autoplay></video>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>為地球永續發展，提供專業<br />環境解決方案</h1>
-                <p>我們的專業團隊專注於環境影響評估、空氣品質管理、生態調查與健康風險評估。</p>
-                <a href="#services" class="cta-button">了解更多服務</a>
-            </div>
-        </section> -->
+    <main class="main-content">
 
         <section id="services" class="services-section">
             <h3>服務項目與實績</h3>
@@ -795,7 +789,6 @@
                         <button class="tablinks" onclick="openTab(event, 'NewsRelease')" id="defaultOpen">環境部新聞</button>
                         <button class="tablinks" onclick="openTab(event, 'Clarification')">EPA News</button>
                     </div>
-                    <!-- <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" preload="auto" muted loop autoplay></video>   -->
                     <div id="NewsRelease" class="tabcontent">
                         <ul id="newsReleaseList">
                             <li class="loading">正在載入新聞發布內容...</li>
@@ -897,6 +890,7 @@
     <script type="text/javascript" src="./jsq/swiper.js"></script>
     <script type="text/javascript" src="./jsq/ismobileimg.js"></script>
     <script type="text/javascript" src="./jsq/jquery.singlePageNav.min.js"></script>
+    <script type="text/javascript" src="./jsq/font-size-control.js"></script>
     <script>
         $(document).ready(function() {
             $('.nav').singlePageNav();

@@ -265,6 +265,35 @@ img.t_B2 {
 		position: relative; /* 子選單定位用 */
 }
 
+/* 文字大小控制按鈕 */
+.font-size-controls {
+		display: flex !important;
+		gap: 5px;
+		align-items: center;
+		visibility: visible !important;
+		opacity: 1 !important;
+}
+
+.font-btn {
+		background: rgba(255, 255, 255, 0.2) !important;
+		border: 1px solid rgba(255, 255, 255, 0.3) !important;
+		color: white !important;
+		padding: 6px 10px !important;
+		border-radius: 4px !important;
+		cursor: pointer !important;
+		font-size: 0.9rem !important;
+		font-weight: bold !important;
+		transition: all 0.3s ease !important;
+		display: inline-block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+}
+
+.font-btn:hover {
+		background: rgba(255, 255, 255, 0.3) !important;
+		transform: translateY(-1px) !important;
+}
+
 .main-nav .nav-links {
 		list-style: none;
 		display: flex;
@@ -1116,6 +1145,11 @@ a:link,  a:visited {
 				flex-shrink: 0;
 				/* 調整按鈕的視覺效果，使其與輸入框對齊 */
 				margin-left: -1px; /* 微調以消除間隙 */
+		}
+
+		.font-size-controls {
+				order: -1;
+				margin-bottom: 10px;
 		}
 
 		.main-nav {

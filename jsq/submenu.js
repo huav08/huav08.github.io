@@ -3,7 +3,9 @@
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.querySelector('.main-nav');
     const searchBar = document.querySelector('.search-bar');
-    const fonthBtn = document.querySelector('.font-btn');
+    const fonthBar = document.querySelector('.font-btn');
+    const fonthdBar = document.querySelector('#font-decrease');
+    const fonthiBar = document.querySelector('#font-increase');
     
     hamburger.addEventListener('click', () => {
         mainNav.classList.toggle('active');
@@ -12,10 +14,14 @@
         if (window.innerWidth <= 768) {
             if (mainNav.classList.contains('active')) {
                 searchBar.style.display = 'none';
-                fonthBtn.style.display = 'none';
+                fonthBar.style.display = 'none';
+                fonthdBar.style.display = 'none';
+                fonthiBar.style.display = 'none';
             } else {
                 searchBar.style.display = 'flex';
-                fonthBtn.style.display = 'flex';
+                fonthBar.style.display = 'flex';
+                fonthdBar.style.display = 'flex';
+                fonthiBar.style.display = 'flex';
             }
         }
     });

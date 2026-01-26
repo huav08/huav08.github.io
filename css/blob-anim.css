@@ -90,3 +90,18 @@
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+/* Mobile Performance Optimization */
+@media (max-width: 768px) {
+    .blob {
+        filter: none !important; /* Disable expensive blur */
+        opacity: 0.3 !important; /* Lower opacity to keep it subtle */
+        animation-duration: 20s, 25s !important; /* Slow down animation */
+    }
+    
+    /* Hide extra blobs to save GPU/CPU */
+    .blob:nth-child(3),
+    .blob:nth-child(4) {
+        display: none !important;
+    }
+}

@@ -482,6 +482,7 @@
             background-position: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             border: none;
+            will-change: width; /* Optimization hint */
         }
         .accordion-container .card.active {
             width: 100%;
@@ -550,6 +551,7 @@
                 width: 100% !important;
                 height: 100px;
                 transition: height 0.7s ease;
+                will-change: height; /* Optimization hint for mobile */
             }
             .accordion-container .card.active {
                 height: 350px;

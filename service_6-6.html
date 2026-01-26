@@ -19,8 +19,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 	<link rel="stylesheet" href="css/easyzoom.css" />
   <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/coverflow.css" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+  <!-- <link rel="stylesheet" href="css/coverflow.css" /> -->
+  <link rel="stylesheet" href="./css/slide-custom.css" />
   <style>
       .container {
           display: flex;
@@ -188,17 +189,38 @@
                 </td>
               </tr>
             </table>            
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_6/pic_6_6_a1.jpg" data-mobile="./images/rough/6_6/pic_6_6_a1.jpg"></div>
-                    <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_6/pic_6_6_a2.jpg" data-mobile="./images/rough/6_6/pic_6_6_a2.jpg"></div>
-                    <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_6/pic_6_6_a3.jpg" data-mobile="./images/rough/6_6/pic_6_6_a3.jpg"></div>
-                    <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_6/pic_6_6_a4.jpg" data-mobile="./images/rough/6_6/pic_6_6_a4.jpg"></div>
+            <!-- Slide Custom -->
+            <div class="slide-container">
+                <div id="slide" class="slide">
+                    <div class="item" style="background-image: url('./images/6_6/pic_6_6_a1.jpg');">
+                        <div class="content">
+                            <div class="name">縣道166及162甲</div>
+                            <div class="des">道路拓寬改善工程</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('./images/6_6/pic_6_6_a2.jpg');">
+                        <div class="content">
+                            <div class="name">縣道166及162甲</div>
+                            <div class="des">道路拓寬改善工程</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('./images/6_6/pic_6_6_a3.jpg');">
+                        <div class="content">
+                            <div class="name">縣道166及162甲</div>
+                            <div class="des">道路拓寬改善工程</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('./images/6_6/pic_6_6_a4.jpg');">
+                        <div class="content">
+                            <div class="name">縣道166及162甲</div>
+                            <div class="des">道路拓寬改善工程</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <div class="buttons">
+                    <button id="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
             </div> 
             <br /><br />
             <table width="100%" height="300" border="0" cellspacing="10" cellpadding="1">
@@ -280,15 +302,16 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="jsq/easyzoom.js"></script> 
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="./jsq/coverflow.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <!-- <script type="text/javascript" src="./jsq/coverflow.js"></script> -->
+    <script type="text/javascript" src="./jsq/slide-custom.js"></script>
     <script type="text/javascript" src="./jsq/ismobileimg.js"></script>	 	
     <!-- <script type="text/javascript" src="./jsq/font-size-control.js"></script>  -->	
     <script>
-      // Instantiate EasyZoom plugin only on non-mobile devices
+      /* Instantiate EasyZoom plugin only on non-mobile devices
       if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         var $easyzoom = $('.easyzoom').easyZoom();
-      }
+      } */
     </script>
     <script> 
         $(function() {

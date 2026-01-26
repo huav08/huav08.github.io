@@ -19,8 +19,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 	<!-- <link rel="stylesheet" href="css/easyzoom.css" /> -->
   <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/coverflow.css" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+  <!-- <link rel="stylesheet" href="css/coverflow.css" /> -->
+  <link rel="stylesheet" href="./css/slide-custom.css" />
   <style>
       .container {
           display: flex;
@@ -179,20 +180,56 @@
 					  <br />
             <blockquote style="text-indent: 32px;">本案獲得由關注河溪健康之專家學者及NGO成員所組成之臺灣河溪網評鑑為第四屆「全國水環境改善計畫」之金蘋果獎，其中於生態檢核執行程序之評分獲得7.75/10分，並明顯提升周邊環境生態，獲得高度肯定。</blockquote>
 					  <br /> 
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_4/pic_6_4_a.jpg" data-mobile="./images/rough/6_4/pic_6_4_a.jpg"></div>
-                <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_4/pic_6_4_a1.jpg" data-mobile="./images/rough/6_4/pic_6_4_a1.jpg"></div>
-                <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_4/pic_6_4_a2.jpg" data-mobile="./images/rough/6_4/pic_6_4_a2.jpg"></div>
-                <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_4/pic_6_4_a3.jpg" data-mobile="./images/rough/6_4/pic_6_4_a3.jpg"></div>
-                <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_4/pic_6_4_a5.jpg" data-mobile="./images/rough/6_4/pic_6_4_a5.jpg"></div>
-                <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_4/pic_6_4_a6.jpg" data-mobile="./images/rough/6_4/pic_6_4_a6.jpg"></div>
-                <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/6_4/pic_6_4_a4.jpg" data-mobile="./images/rough/6_4/pic_6_4_a4.jpg"></div>
-              </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-pagination"></div>
+            <!-- Slide Custom -->
+            <div class="slide-container">
+                <div id="slide" class="slide">
+                    <div class="item" style="background-image: url('./images/6_4/pic_6_4_a.jpg');">
+                        <div class="content">
+                            <div class="name">新竹左岸</div>
+                            <div class="des">生態環境與棲地改善</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('./images/6_4/pic_6_4_a1.jpg');">
+                        <div class="content">
+                            <div class="name">新竹左岸</div>
+                            <div class="des">生態環境與棲地改善</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('./images/6_4/pic_6_4_a2.jpg');">
+                        <div class="content">
+                            <div class="name">新竹左岸</div>
+                            <div class="des">生態環境與棲地改善</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('./images/6_4/pic_6_4_a3.jpg');">
+                        <div class="content">
+                            <div class="name">新竹左岸</div>
+                            <div class="des">生態環境與棲地改善</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('./images/6_4/pic_6_4_a5.jpg');">
+                        <div class="content">
+                            <div class="name">新竹左岸</div>
+                            <div class="des">生態環境與棲地改善</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('./images/6_4/pic_6_4_a6.jpg');">
+                        <div class="content">
+                            <div class="name">新竹左岸</div>
+                            <div class="des">生態環境與棲地改善</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('./images/6_4/pic_6_4_a4.jpg');">
+                        <div class="content">
+                            <div class="name">新竹左岸</div>
+                            <div class="des">生態環境與棲地改善</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button id="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
             </div>  
 				  </div>
         </section>
@@ -233,15 +270,16 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <!-- <script type="text/javascript" src="jsq/easyzoom.js"></script>  -->
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="./jsq/coverflow.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <!-- <script type="text/javascript" src="./jsq/coverflow.js"></script> -->
+    <script type="text/javascript" src="./jsq/slide-custom.js"></script>
     <script type="text/javascript" src="./jsq/ismobileimg.js"></script> 
     <!-- <script type="text/javascript" src="./jsq/font-size-control.js"></script>  -->	
     <script>
-      // Instantiate EasyZoom plugin only on non-mobile devices
+      /* Instantiate EasyZoom plugin only on non-mobile devices
       if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         var $easyzoom = $('.easyzoom').easyZoom();
-      }
+      } */
     </script>
     <script> 
         $(function() {

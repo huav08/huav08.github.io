@@ -457,6 +457,106 @@
             background: white;
             transform: scale(1.2);
         }
+
+        /* --- Accordion Styles for News --- */
+        #simenvinews {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .accordion-container {
+            display: flex;
+            width: 100%;
+            height: 500px;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .accordion-container .card {
+            position: relative;
+            height: 100%;
+            width: 120px;
+            border-radius: 20px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: none;
+        }
+        .accordion-container .card.active {
+            width: 100%;
+            cursor: default;
+        }
+        .accordion-container .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+            opacity: 0.3;
+            transition: opacity 0.5s;
+        }
+        .accordion-container .card.active::before {
+            opacity: 1;
+        }
+        .accordion-container .card .card-content {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+            transition-delay: 0.3s;
+            background: transparent;
+            padding: 0;
+        }
+        .accordion-container .card.active .card-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .accordion-container .card h4 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .accordion-container .card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            max-width: 600px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .accordion-container .card .read-more {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .accordion-container .card .read-more:hover {
+            transform: scale(1.05);
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .accordion-container {
+                flex-direction: column;
+                height: auto;
+            }
+            .accordion-container .card {
+                width: 100% !important;
+                height: 100px;
+                transition: height 0.7s ease;
+            }
+            .accordion-container .card.active {
+                height: 350px;
+            }
+            .accordion-container .card h4 { font-size: 1.3rem; }
+            .accordion-container .card p { font-size: 0.9rem; }
+        }
     </style>
     <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -826,33 +926,32 @@
         </section>
 
         <section id="simenvinews" class="news-section">
-            <h3>景丰新訊</h3>
-            <div class="section-title">
-                <span><a href="#news">更多<i class="fas fa-chevron-right"></i></a></span>
-            </div>   
-            <div class="news-cards">
-                <div class="card">
-                    <img src="./images/award.jpg" alt="iPAS淨零碳規劃管理師能力鑑定" loading="lazy" decoding="async">
-                    <div class="card-content">
-                        <h4>賀!本公司14人通過iPAS淨零碳規劃管理師能力鑑定</h4>
-                        <p>充裕產業創新及產業升級轉型所需關鍵人才，擴大建置....</p>
-                        <a href="https://www.ipas.org.tw/NZ" class="read-more" target="_blank">閱讀全文</a>
+            <div class="container">
+                <h3>景丰新訊</h3>
+                <div class="section-title">
+                    <span><a href="#news">更多<i class="fas fa-chevron-right"></i></a></span>
+                </div>   
+                <div class="accordion-container" id="newsAccordion">
+                    <div class="card active" style="background-image: url('./images/award.jpg');">
+                        <div class="card-content">
+                            <h4>賀!本公司14人通過iPAS淨零碳規劃管理師能力鑑定</h4>
+                            <p>充裕產業創新及產業升級轉型所需關鍵人才，擴大建置淨零碳規劃管理專業人才。</p>
+                            <a href="https://www.ipas.org.tw/NZ" class="read-more" target="_blank">閱讀全文</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="./images/award03_2024_08_30T08_27_53_356Z.png" alt="第四屆航港大數據創意應用大賽第三名" loading="lazy" decoding="async">
-                    <div class="card-content">
-                        <h4>榮譽認證：第四屆航港大數據創意應用大賽，榮獲社會組第三名成績</h4>
-                        <p>協同環境部大氣環境司報名參加第四屆航港大數據創意....</p>
-                        <a href="award.html#AWARD03" class="read-more">閱讀全文</a>
+                    <div class="card" style="background-image: url('./images/award03_2024_08_30T08_27_53_356Z.png');">
+                        <div class="card-content">
+                            <h4>榮譽認證：第四屆航港大數據創意應用大賽第三名</h4>
+                            <p>協同環境部大氣環境司報名參加第四屆航港大數據創意應用大賽，榮獲社會組第三名成績。</p>
+                            <a href="award.html#AWARD03" class="read-more">閱讀全文</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="./images/swiper/uswiper.png" alt="環評顧問機構評鑑結果準A級" loading="lazy" decoding="async">
-                    <div class="card-content">
-                        <h4>111年至112年環評顧問機構評鑑結果</h4>
-                        <p>景丰科技股份有限公司榮獲環評顧問機構評鑑結果：準A級 ....</p>
-                        <a href="https://www.simenvi.com.tw/download/20240427-111年至112年環評顧問機構評鑑結果.pdf" class="read-more" target="_blank">閱讀全文</a>
+                    <div class="card" style="background-image: url('./images/swiper/uswiper.png');">
+                        <div class="card-content">
+                            <h4>111年至112年環評顧問機構評鑑結果</h4>
+                            <p>景丰科技股份有限公司榮獲環評顧問機構評鑑結果：準A級。感謝同仁辛勞與業主支持。</p>
+                            <a href="https://www.simenvi.com.tw/download/20240427-111年至112年環評顧問機構評鑑結果.pdf" class="read-more" target="_blank">閱讀全文</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -903,6 +1002,17 @@
     <script>
         $(document).ready(function() {
             $('.nav').singlePageNav();
+
+            // Accordion Logic
+            const newsCards = document.querySelectorAll('#newsAccordion .card');
+            newsCards.forEach(card => {
+                const activateCard = () => {
+                    newsCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                };
+                card.addEventListener('mouseenter', activateCard);
+                card.addEventListener('click', activateCard);
+            });
         }); 
     </script>
 </body>

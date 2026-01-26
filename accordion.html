@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Vertical Accordion Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --expanded-width: 600px;
+            --collapsed-width: 100px;
+            --container-height: 500px;
+            --transition-speed: 0.7s;
+            --accent-color: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #121212; /* 深色背景更顯現代感 */
+        }
+
+        .accordion-container {
+            display: flex;
+            width: 95%;
+            max-width: 1100px;
+            height: var(--container-height);
+            gap: 15px;
+        }
+
+        .card {
+            position: relative;
+            height: 100%;
+            width: var(--collapsed-width);
+            border-radius: 30px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: width var(--transition-speed) cubic-bezier(0.2, 0.8, 0.2, 1);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* 展開狀態 */
+        .card.active {
+            width: var(--expanded-width);
+            cursor: default;
+        }
+
+        /* 遮罩層：讓照片上的文字更清晰 */
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .card.active::before {
+            opacity: 1;
+        }
+
+        /* 文字內容 */
+        .content {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            right: 40px;
+            color: var(--accent-color);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+            transition-delay: 0.3s;
+            white-space: nowrap; /* 縮合時不換行以防亂跳 */
+        }
+
+        .card.active .content {
+            opacity: 1;
+            transform: translateY(0);
+            white-space: normal;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+            max-width: 450px;
+        }
+
+        /* 響應式：手機版改為垂直堆疊 */
+        @media (max-width: 768px) {
+            .accordion-container {
+                flex-direction: column;
+                height: 80vh;
+            }
+            .card {
+                width: 100% !important;
+                height: 80px;
+                transition: height var(--transition-speed) ease;
+            }
+            .card.active {
+                height: 400px;
+            }
+            .content h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="accordion-container" id="accordion">
+        
+        <div class="card active" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2070&auto=format&fit=crop');">
+            <div class="content">
+                <h2>Alpine Lake</h2>
+                <p>探索隱藏在雪山之中的寧靜湖泊，體驗大自然最原始的靜謐與純粹。這裡是心靈療癒的絕佳去處。</p>
+            </div>
+        </div>
+
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop');">
+            <div class="content">
+                <h2>Yosemite Valley</h2>
+                <p>著名的優勝美地山谷，擁有壯麗的岩層與瀑布。每一處轉角都是令人驚嘆的視覺饗宴。</p>
+            </div>
+        </div>
+
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1974&auto=format&fit=crop');">
+            <div class="content">
+                <h2>Mist Forest</h2>
+                <p>漫步在晨霧繚繞的森林，呼吸著濕潤的空氣，感受萬物復甦的生命力與神祕氛圍。</p>
+            </div>
+        </div>
+
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop');">
+            <div class="content">
+                <h2>Starry Peak</h2>
+                <p>站在巔峰之上仰望繁星。遠離城市喧囂，在與星空對話的瞬間找回自我。</p>
+            </div>
+        </div>
+
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1974&auto=format&fit=crop');">
+            <div class="content">
+                <h2>Deep Valley</h2>
+                <p>壯麗的深谷與蜿蜒的溪流，自然界的鬼斧神工在此展露無遺，讓人感嘆生命的偉大。</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        // 為每張卡片添加事件
+        cards.forEach(card => {
+            // 切換函數
+            const activateCard = () => {
+                // 移除其他卡片的 active 狀態
+                cards.forEach(c => c.classList.remove('active'));
+                // 為當前卡片添加 active 狀態
+                card.classList.add('active');
+            };
+
+            // 滑鼠移入觸發 (Mouseover)
+            card.addEventListener('mouseenter', activateCard);
+            
+            // 點擊觸發 (Click) - 增加在觸控設備上的相容性
+            card.addEventListener('click', activateCard);
+        });
+    </script>
+</body>
+</html>

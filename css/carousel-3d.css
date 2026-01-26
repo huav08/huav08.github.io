@@ -1,0 +1,204 @@
+:root {
+    --card-width: 600px;
+    --card-height: 400px; /* Matched from swiper.css */
+    --accent-color: #6366f1;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden; /* Ensure no overflow */
+    background-color: rgba(255, 255, 255, 0.05); /* Optional: slight background to distinguish section */
+    padding: 20px 0;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Matched --card-height */
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-card {
+    position: absolute;
+    width: var(--card-width);
+    height: var(--card-height);
+    border-radius: 20px;
+    background-color: #000;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0; 
+    z-index: 0;
+    transform: translateX(0) scale(0.5);
+}
+
+.carousel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.carousel-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* 閃電標籤 - Removed as it's not in index.html content */
+
+/* 狀態類別 */
+.carousel-card.center { opacity: 1; z-index: 10; transform: translateX(0) scale(1); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+.carousel-card.left-1 { opacity: 1; z-index: 5; transform: translateX(-40%) scale(0.85); filter: brightness(0.9); }
+.carousel-card.right-1 { opacity: 1; z-index: 5; transform: translateX(40%) scale(0.85); filter: brightness(0.9); }
+.carousel-card.left-2 { opacity: 0.6; z-index: 1; transform: translateX(-70%) scale(0.7); filter: brightness(0.8); }
+.carousel-card.right-2 { opacity: 0.6; z-index: 1; transform: translateX(70%) scale(0.7); filter: brightness(0.8); }
+
+/* 導覽按鈕樣式 */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+    font-size: 20px;
+    color: rgb(4, 107, 242);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.nav-btn:hover { background: rgba(255, 255, 255, 0.3); color: rgb(4, 107, 242); transform: translateY(-50%) scale(1.1); }
+.prev-btn { left: 5%; }
+.next-btn { right: 5%; }
+
+/* 指示點 */
+.pagination { display: flex; gap: 12px; margin-top: 30px; z-index: 10; }
+.dot { 
+    width: 12px; 
+    height: 12px; 
+    background-color: rgba(42, 105, 138, 0.5); 
+    border-radius: 50%; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+.dot.active { 
+    background-color: #2a698a; 
+    transform: scale(1.3); 
+}
+
+
+/* Content Styling from swiper.css */
+.slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 60px 40px 40px;
+    z-index: 2;
+    text-align: left; /* Ensure text alignment */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.carousel-card.center .slide-content {
+    opacity: 1; /* Show only when center */
+    pointer-events: auto;
+}
+
+.slide-content a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.slide-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    /* Removed animation for simplicity/compatibility with new carousel structure, or keep if desire */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.slide-description {
+    font-size: 2.2rem;
+    /* Removed animation */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+
+/* RWD 響應式設計 */
+@media (max-width: 992px) {
+    :root {
+         --card-width: 500px;
+         --card-height: 333px;
+    }
+    .carousel-track { height: 333px; }
+    .carousel-container { height: 450px; }
+    
+    .carousel-card.left-1 { transform: translateX(-35%) scale(0.85); }
+    .carousel-card.right-1 { transform: translateX(35%) scale(0.85); }
+}
+
+@media (max-width: 768px) {
+    :root { 
+        --card-width: 80vw; 
+        --card-height: 60vw; 
+    }
+    .carousel-track { height: 60vw; }
+    .carousel-container { height: calc(60vw + 100px); }
+
+    .nav-btn { width: 40px; height: 40px; }
+    
+    .slide-content {
+        padding: 40px 20px 20px;
+    }
+    .slide-content h2 {
+        font-size: 1.8rem;
+    }
+    .slide-description {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-content {
+        padding: 20px 15px 15px;
+    }
+    .slide-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+    }
+    .slide-description {
+        font-size: 1rem;
+    }
+}

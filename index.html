@@ -19,13 +19,13 @@
 	<link rel="stylesheet" href="./css/news.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="./css/easyzoom.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./css/swiper.css" />
-    <link rel="stylesheet" href="./css/default.css" />
-    <style>
-        /* 全域樣式與變數 */
-        :root {
+	    <link rel="stylesheet" href="./css/easyzoom.css" />
+	    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> -->
+	    <!-- <link rel="stylesheet" href="./css/swiper.css" /> -->
+	    <link rel="stylesheet" href="./css/carousel-3d.css" />
+	    <link rel="stylesheet" href="./css/default.css" />
+	    <style>
+	        /* 全域樣式與變數 */        :root {
             --primary-color: #2a698a;   /* 深藍 */
             --secondary-color: #5bb29c; /* 綠色 */
             --accent-color: #f7b731;    /* 黃色 */
@@ -492,10 +492,10 @@
                     <button id="search-bar" class="search-button search-button-v2" accesskey="s"><i class="fas fa-search"></i></button>
                 </div>
 
-                <div class="font-size-controls">
+                <!-- <div class="font-size-controls">
                     <button id="font-decrease" class="font-btn" title="縮小字體">A-</button>
                     <button id="font-increase" class="font-btn" title="放大字體">A+</button>
-                </div>
+                </div> -->
                 <nav class="main-nav">
                     <ul class="nav-links" id="nav-links">
                         <li class="has-submenu">
@@ -635,10 +635,13 @@
         
         <section> 
             <!-- <h3>實績</h3> -->
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_1-env02.png" data-mobile="./images/swiper/tswiper_1-env02.png" alt="環境影響評估－臺北市萬華區福星段二小段149號等1筆土地都市更新案" loading="lazy" decoding="async">
+            <div class="carousel-container">
+                <button class="nav-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="carousel-track" id="track">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_1-env02.png" data-mobile="./images/swiper/tswiper_1-env02.png" alt="環境影響評估－臺北市萬華區福星段二小段149號等1筆土地都市更新案">
                         <div class="slide-content">
                             <a href="service_1.html#env02" target="_self">
                                 <h2>環境影響評估－</h2>
@@ -646,8 +649,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_2-5.png" data-mobile="./images/swiper/tswiper_2-5.png" alt="空氣品質之模擬－桃園科技工業區第二期開發計畫環評" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_2-5.png" data-mobile="./images/swiper/tswiper_2-5.png" alt="空氣品質之模擬－桃園科技工業區第二期開發計畫環評">
                         <div class="slide-content">
                             <a href="service_2-5.html" target="_self">
                                 <h2>空氣品質之模擬－</h2>
@@ -655,8 +658,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_3-1.png" data-mobile="./images/swiper/tswiper_3-1.png" alt="空氣污染物排放量調查－港區空氣污染物排放清冊" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_3-1.png" data-mobile="./images/swiper/tswiper_3-1.png" alt="空氣污染物排放量調查－港區空氣污染物排放清冊">
                         <div class="slide-content">
                             <a href="service_3-1.html" target="_self">
                                 <h2>空氣污染物排放量調查－</h2>
@@ -664,8 +667,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_4-3.png" data-mobile="./images/swiper/tswiper_4-3.png" alt="健康風險評估－台南縣威致鋼鐵官田廠擴建環評" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_4-3.png" data-mobile="./images/swiper/tswiper_4-3.png" alt="健康風險評估－台南縣威致鋼鐵官田廠擴建環評">
                         <div class="slide-content">
                             <a href="service_4-3.html" target="_self">
                                 <h2>健康風險評估－</h2>
@@ -673,8 +676,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_infotech.png" data-mobile="./images/swiper/tswiper_infotech.png" alt="環境管理與資訊系統－臺南七股環境數據（另開新視窗）" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_infotech.png" data-mobile="./images/swiper/tswiper_infotech.png" alt="環境管理與資訊系統－臺南七股環境數據（另開新視窗）">
                         <div class="slide-content">
                             <a href="https://infotech.simenvi.com.tw/map" target="_blank">
                                 <h2>環境管理與資訊系統－</h2>
@@ -682,8 +685,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_6-4.png" data-mobile="./images/swiper/tswiper_6-4.png" alt="生態檢核－新竹左岸生態環境與棲地" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_6-4.png" data-mobile="./images/swiper/tswiper_6-4.png" alt="生態檢核－新竹左岸生態環境與棲地">
                         <div class="slide-content">
                             <a href="service_6-4.html" target="_self">
                                 <h2>生態檢核－</h2>
@@ -691,8 +694,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_7-1.png" data-mobile="./images/swiper/tswiper_7-1.png" alt="碳盤查及淨零管理－運輸業碳管理" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_7-1.png" data-mobile="./images/swiper/tswiper_7-1.png" alt="碳盤查及淨零管理－運輸業碳管理">
                         <div class="slide-content">
                             <a href="service_7-1.html" target="_self">
                                 <h2>碳盤查及淨零管理－</h2>
@@ -700,8 +703,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_1-env01.png" data-mobile="./images/swiper/tswiper_1-env01.png" alt="環境影響評估－工業區及科學園區之環境影響評估" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_1-env01.png" data-mobile="./images/swiper/tswiper_1-env01.png" alt="環境影響評估－工業區及科學園區之環境影響評估">
                         <div class="slide-content">
                             <a href="service_1.html#env01" target="_self">
                                 <h2>環境影響評估－</h2>
@@ -709,8 +712,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_2-10.png" data-mobile="./images/swiper/tswiper_2-10.png" alt="河川水質之模擬－北高雄產業園區" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_2-10.png" data-mobile="./images/swiper/tswiper_2-10.png" alt="河川水質之模擬－北高雄產業園區">
                         <div class="slide-content">
                             <a href="service_2-10.html" target="_self">
                                 <h2>河川水質之模擬－</h2>
@@ -718,8 +721,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_3-2.png" data-mobile="./images/swiper/tswiper_3-2.png" alt="空氣污染物排放量調查－全國性空氣污染物排放量" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_3-2.png" data-mobile="./images/swiper/tswiper_3-2.png" alt="空氣污染物排放量調查－全國性空氣污染物排放量">
                         <div class="slide-content">
                             <a href="service_3-2.html" target="_self">
                                 <h2>空氣污染物排放量調查－</h2>
@@ -727,8 +730,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_4-4.png" data-mobile="./images/swiper/tswiper_4-4.png" alt="健康風險評估－南部科學工業園區" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_4-4.png" data-mobile="./images/swiper/tswiper_4-4.png" alt="健康風險評估－南部科學工業園區">
                         <div class="slide-content">
                             <a href="service_4-4.html" target="_self">
                                 <h2>健康風險評估－</h2>
@@ -736,8 +739,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_simenvi-20200707.png" data-mobile="./images/swiper/tswiper_simenvi-20200707.png" alt="環境管理與資訊系統－核災輻射物質大氣傳輸（另開新視窗）" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_simenvi-20200707.png" data-mobile="./images/swiper/tswiper_simenvi-20200707.png" alt="環境管理與資訊系統－核災輻射物質大氣傳輸（另開新視窗）">
                         <div class="slide-content">
                             <a href="download/Simenvi_20200707.pdf" target="_blank">
                                 <h2>環境管理與資訊系統－</h2>
@@ -745,8 +748,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_7-2.png" data-mobile="./images/swiper/tswiper_7-2.png" alt="碳盤查及淨零管理－三重環北幹線等工程碳盤查與減量" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_7-2.png" data-mobile="./images/swiper/tswiper_7-2.png" alt="碳盤查及淨零管理－三重環北幹線等工程碳盤查與減量">
                         <div class="slide-content">
                             <a href="service_7-2.html" target="_self">
                                 <h2>碳盤查及淨零管理－</h2>
@@ -754,8 +757,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img class="responsive-img" loading=“lazy” decoding=“async” src="./images/swiper/uswiper_8-principle.png" data-mobile="./images/swiper/tswiper_8-principle.png" alt="氣候變遷風險評估－環境影響評估階段" loading="lazy" decoding="async">
+                    <div class="carousel-card">
+                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_8-principle.png" data-mobile="./images/swiper/tswiper_8-principle.png" alt="氣候變遷風險評估－環境影響評估階段">
                         <div class="slide-content">
                             <a href="service_8.html#principle" target="_self">
                                 <h2 class="slide-title">氣候變遷風險評估－</h2>
@@ -763,7 +766,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="carousel-card">
                         <!-- <img src="./images/swiper/uswiper_6-1.png" alt="生態檢核－107年度彰化縣生態檢核"> -->
                         <video src="./download/service6-1-1.mp4" poster="./images/6_1/poster-image.jpg" preload="auto" muted loop autoplay></video>
                         <div class="slide-content">
@@ -774,10 +777,8 @@
                         </div>
                     </div>
                 </div>
-        
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+
+                <div class="pagination" id="pagination"></div>
             </div>
             <a id="news">&nbsp;</a>
         </section>
@@ -886,11 +887,12 @@
 	<script type="text/javascript" src="./jsq/custom.js"></script>
     <script type="text/javascript" src="./jsq/at_cage.js"></script>
     <script type="text/javascript" src="./jsq/gototop.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="./jsq/swiper.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <!-- <script type="text/javascript" src="./jsq/swiper.js"></script> -->
+    <script type="text/javascript" src="./jsq/carousel-3d.js"></script>
     <script type="text/javascript" src="./jsq/ismobileimg.js"></script>
     <script type="text/javascript" src="./jsq/jquery.singlePageNav.min.js"></script>
-    <script type="text/javascript" src="./jsq/font-size-control.js"></script>
+    <!-- <script type="text/javascript" src="./jsq/font-size-control.js"></script> -->
     <script>
         $(document).ready(function() {
             $('.nav').singlePageNav();

@@ -190,14 +190,15 @@
         bottom: 30px;
     }
     .content .name {
-        font-size: 24px;
+        font-size: 18px;
     }
     .content .des {
-        font-size: 14px;
+        font-size: 10.5px;
     }
     .item .content {
         left: 40px; /* 手機版也增加邊距 */
         width: 80%;
+        transform: translate(0, calc(-50% - 50px));
     }
     .slide .item:nth-child(3) {
         left: calc(100% - 470px);

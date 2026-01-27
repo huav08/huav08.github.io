@@ -292,7 +292,8 @@
             right: 15px;
             font-size: 180px;
             font-weight: 900;
-            color: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.5);  
+            backdrop-filter: blur(10px);
             line-height: 1;
             z-index: 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
@@ -301,7 +302,8 @@
         .service-item:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 45px rgba(0,0,0,0.3);
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);  
+            backdrop-filter: blur(10px);
         }
 
         .service-item > a {
@@ -1028,6 +1030,7 @@
         <section class="index-components">
             <div id="indexNews">            
                 <div class="news-container">
+                    <!-- <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" preload="auto" muted autoplay></video> -->
                     <div class="tab">
                         <button class="tablinks" onclick="openTab(event, 'NewsRelease')" id="defaultOpen">環境部新聞</button>
                         <button class="tablinks" onclick="openTab(event, 'Clarification')">EPA News</button>

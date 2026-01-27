@@ -892,7 +892,8 @@ a:link,  a:visited {
 		.BannerShow_upon,
 		#BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
 				height: 150px;
-				top: 130px;
+				top: 0;
+				margin-top: 130px;
 		}
 
 		.nav-links li {
@@ -955,7 +956,7 @@ a:link,  a:visited {
 		}
 		
 		#about .main-content {
-				margin-top: 280px;
+				margin-top: 0;
 		}
 		
 		.copyBasic2_R img {max-width:350px !important;height:auto !important;}
@@ -1108,7 +1109,8 @@ a:link,  a:visited {
 		.BannerShow_upon,
 		#BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
 				height: 120px;
-				top: 160px;
+				top: 0;
+				margin-top: 160px;
 		}
 
 		.header-right {
@@ -1423,7 +1425,7 @@ a:link,  a:visited {
 		}
 		
 		#about .main-content {
-				margin-top: 280px;
+				margin-top: 0;
 		}
 		
 		.titleBar_blue {
@@ -1462,7 +1464,8 @@ a:link,  a:visited {
 		.BannerShow_upon,
 		#BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
 				height: 100px;
-				top: 160px;
+				top: 0;
+				margin-top: 160px;
 		}
 		.copyBasic2_R img {max-width:200px !important;height:auto !important;}
 }

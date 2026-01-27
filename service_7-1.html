@@ -17,96 +17,52 @@
   <link rel="stylesheet" href="./css/jquery-ui.min.css" />  
   <link rel="stylesheet" href="./css/award.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-	<!-- <link rel="stylesheet" href="css/easyzoom.css" /> -->
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- <link rel="stylesheet" href="css/coverflow.css" /> -->
   <style>
-    .swiper {
-      width: 100%;
-      padding: 60px 0;
-      /* background: linear-gradient(135deg, #e8f4f8 0%, #d4e7f0 100%);
-      border-radius: 20px; */
+    .three-slider-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px 0;
     }
-
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 850px;
-      height: 550px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 15px;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.25);
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: rgb(4, 107, 242);
-      background: rgba(255,255,255,0.2);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-
-    .swiper-button-next:hover,
-    .swiper-button-prev:hover {
-      background: rgba(255,255,255,0.3);
-      transform: scale(1.1);
-    }
-
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .swiper-pagination-bullet {
-      width: 12px;
-      height: 12px;
-      background: rgba(42, 105, 138, 0.5);
-      opacity: 1;
-    }
-
-    .swiper-pagination-bullet-active {
-      background: #2a698a;
-      transform: scale(1.3);
-    }
-
-    @media (max-width: 768px) {
-      .swiper {
-        padding: 40px 0;
-      }
-      .swiper-slide {
-        width: 550px;
-        height: 400px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .swiper {
-        padding: 30px 0;
+    .three-slider-container {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        /* background: #f0f0f0; Fallback */
         border-radius: 15px;
-      }
-      .swiper-slide {
-        width: 320px;
-        height: 240px;
-      }
-      .swiper-button-next,
-      .swiper-button-prev {
-        display: none;
-      }
+        overflow: hidden;
+    }
+    .slider-nav {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 20px;
+        z-index: 10;
+    }
+    .slider-nav button {
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        color: #333;
+        padding: 8px 25px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 30px;
+        transition: 0.3s;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .slider-nav button:hover {
+        background: #333;
+        color: white;
+    }
+    @media (max-width: 768px) {
+        .three-slider-container { height: 300px; }
+    }
+    @media (max-width: 480px) {
+        .three-slider-container { height: 220px; }
     }
   </style>
 	<script type="text/javascript" src="./jsq/jquery-3.6.0.min.js"></script>
@@ -221,34 +177,26 @@
             <div class="copyBasic t_14pt">
               <blockquote style="text-indent: 32px;">依循國際運輸業碳管理發展趨勢，本公司近年協助環境部氣候變遷署，協助執行運輸業碳管理策略規劃，以強化國內低碳運具導入，並培養業者自主碳管理能力，執行內容包含評估車輛溫室氣體效能標準策略推動、以生命週期觀點解析低碳車輛對溫室氣體減碳效益、協助規劃運輸業溫室氣體盤查制度及撰擬《運輸業溫室氣體盤查指引》，並提供業者溫室氣體及碳足跡盤查輔導服務等。除公路運輸外，本公司亦協助交通部航港局，研議在海運減碳趨勢下，並透過與國內航商、燃料供應商及技術研發業者多次討論，建立海運低碳化整體藍圖及具體的溫室氣體減碳措施，深化運輸部門減碳。</blockquote>
               <br />
-              <!-- Swiper -->
-              <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/7_1/01.png" data-mobile="./images/rough/7_1/01.png"></div>
-                  <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/7_1/02.png" data-mobile="./images/rough/7_1/02.png"></div>
-                  <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/7_1/03.png" data-mobile="./images/rough/7_1/03.png"></div>
-                  <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/7_1/04.png" data-mobile="./images/rough/7_1/04.png"></div>
-                  <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/7_1/05.png" data-mobile="./images/rough/7_1/05.png"></div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+              <!-- Three.js Slider 1 -->
+              <div class="three-slider-wrapper">
+                  <div class="three-slider-container" id="slider1"></div>
+                  <div class="slider-nav">
+                      <button id="prevBtn1">Prev</button>
+                      <button id="nextBtn1">Next</button>
+                  </div>
               </div>
             </div><BR>
             <div><blockquote><img  loading="lazy" decoding="async" src="images\7_1\icon01.png" width="16" height="16" />&nbsp;<span class="t_24pt t_B">輔導及訓練</span></blockquote></div>
             <div class="copyBasic t_14pt">
               <blockquote style="text-indent: 32px;">本公司配合交通部公路局推動貨運三業（包含汽車貨運、汽車路線貨運及汽車貨櫃貨運）、公路汽車客運業與遊覽車客運業之綠色轉型，協助進行碳足跡、碳標籤等綠色運輸推動之前期規劃與訓練工作。</blockquote>
               <blockquote style="text-indent: 32px;">長期舉辦多場業者座談會之實績，聚焦於知識傳遞以及政府與民間之間的雙向溝通，並由專業師資協助業者深入理解淨零排放政策、碳盤查相關概念與實務做法，強化其在實務層面的應用能力。同時，亦彙整座談會中的交流成果與意見回饋，研提具實務基礎與可行性的政策建議，作為政府部門規劃下一階段碳減量措施之參考依據。</blockquote>          
-              <!-- Swiper -->
-              <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/7_1/06.png" data-mobile="./images/rough/7_1/06.png"></div>
-                  <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/7_1/061.png" data-mobile="./images/rough/7_1/061.png"></div>
-                  <div class="swiper-slide"><img class="responsive-img" loading=“lazy” decoding=“async” src="./images/7_1/07.png" data-mobile="./images/rough/7_1/07.png"></div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+              <!-- Three.js Slider 2 -->
+              <div class="three-slider-wrapper">
+                  <div class="three-slider-container" id="slider2"></div>
+                  <div class="slider-nav">
+                      <button id="prevBtn2">Prev</button>
+                      <button id="nextBtn2">Next</button>
+                  </div>
               </div>
             </div>
         </section>
@@ -288,35 +236,31 @@
     <script type="text/javascript" src="./jsq/jquery.dlmenu.js"></script>     
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 	  <!-- <script type="text/javascript" src="jsq/easyzoom.js"></script>  -->
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Initialize Swiper -->
+    <!-- Three.js & GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="./jsq/three-slider.js"></script>
     <script>
-      var swiper = new Swiper(".mySwiper", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        coverflowEffect: {
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true
-        },
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        },
-        loop: true
+      document.addEventListener("DOMContentLoaded", function() {
+        // Slider 1
+        const slider1 = new ExplosionSlider('slider1', [
+          './images/7_1/01.png',
+          './images/7_1/02.png',
+          './images/7_1/03.png',
+          './images/7_1/04.png',
+          './images/7_1/05.png'
+        ]);
+        document.getElementById('prevBtn1').addEventListener('click', () => slider1.prev());
+        document.getElementById('nextBtn1').addEventListener('click', () => slider1.next());
+
+        // Slider 2
+        const slider2 = new ExplosionSlider('slider2', [
+          './images/7_1/06.png',
+          './images/7_1/061.png',
+          './images/7_1/07.png'
+        ]);
+        document.getElementById('prevBtn2').addEventListener('click', () => slider2.prev());
+        document.getElementById('nextBtn2').addEventListener('click', () => slider2.next());
       });
     </script>
     <script type="text/javascript" src="./jsq/ismobileimg.js"></script>	    

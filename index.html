@@ -602,15 +602,19 @@
         .accordion-container .card .read-more {
             background-color: var(--accent-color);
             color: #fff;
-            padding: 8px 16px;
+            padding: 8px 20px; /* Slightly more padding for touch targets */
             border-radius: 4px;
             display: inline-block;
+            width: auto; /* Ensure it doesn't stretch */
+            max-width: 100%;
             text-decoration: none;
             font-size: 0.9rem;
             margin-top: 10px;
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.3s;
+            pointer-events: auto; /* Restore clickability blocked by parent */
+            cursor: pointer;
         }
 
         .accordion-container .card:hover .read-more,
@@ -628,39 +632,55 @@
         @media (max-width: 768px) {
             .accordion-container {
                 flex-direction: column;
-                height: 700px; /* Increase height for vertical stack */
+                height: 600px; /* Adjust height for mobile */
             }
             
             .accordion-container .card {
-                width: 100% !important; /* Force full width */
-                flex: 1 !important; /* Even distribution */
+                width: 100% !important;
+                flex: 1; /* Allow flexing */
                 border-right: none;
                 border-bottom: 1px solid rgba(255,255,255,0.1);
             }
             
-            /* Disable the "expand" effect on mobile for better UX? 
-               Or keep it? accordion.html mobile CSS just stacks them.
-               If we stack them, flex: 4 on hover might be weird on scrolling.
-               Let's make them even size or slightly larger on click if we had JS.
-               With pure CSS, maybe just static list is better for mobile.
-            */
-            
+            /* Enable Vertical Accordion on Mobile (Tap to expand) */
             .accordion-container .card:hover {
-                flex: 1; /* Disable hover expansion on mobile */
-            }
-            .accordion-container .card:first-child {
-                flex: 1; /* Disable default expansion */
+                flex: 3; /* Expand vertically on tap */
             }
             
-            .accordion-container .card p,
-            .accordion-container .card .read-more {
-                display: block; /* Always show content on mobile? Or clamp? */
-                opacity: 1;
-                transform: translateY(0);
-            }
+            /* Reset Default First Child Expansion on Mobile if desired, 
+               or keep it consistent with desktop. Let's keep it to hint interaction. */
             
             .accordion-container .card .card-content {
-                 background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+                 /* Reset the performance hack min-width for mobile screens */
+                 min-width: auto; 
+                 width: 100%;
+                 background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0)); /* Darker bg for readability */
+            }
+
+            /* Ensure text is hidden by default on mobile too, until tapped */
+            .accordion-container .card p,
+            .accordion-container .card .read-more {
+                display: block; 
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            .accordion-container .card:hover p,
+            .accordion-container .card:hover .read-more,
+            .accordion-container .card:first-child p,
+            .accordion-container .card:first-child .read-more {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            /* Handle the case where another card is tapped */
+            .accordion-container:hover .card:first-child:not(:hover) {
+                flex: 1;
+            }
+            .accordion-container:hover .card:first-child:not(:hover) p,
+            .accordion-container:hover .card:first-child:not(:hover) .read-more {
+                opacity: 0;
+                visibility: hidden;
             }
         }
     </style>

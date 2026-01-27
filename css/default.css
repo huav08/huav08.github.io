@@ -414,12 +414,12 @@ img.t_B2 {
 
 /* About page with BannerShow */
 #about .main-content {
-		margin-top: 330px;
+		margin-top: 0;
 }
 
 /* Award page with BannerShow */
 #award .main-content {
-		margin-top: 330px;
+		margin-top: 0;
 		min-height: 1200px;
 }
 
@@ -428,14 +428,15 @@ img.t_B2 {
 #BannerShow_upon1, #BannerShow_upon2, #BannerShow_upon3, #BannerShow_upon4, #BannerShow_upon5 {
 		width: 100vw;
 		height: 190px;
-		position: fixed;
-		top: 140px;
+		position: relative; /* 改為相對定位 */
+		margin-top: 140px;  /* 增加邊距以避開固定 Header */
+		top: 0;            /* 頂部設為0，使其跟隨內容流 */
 		left: 50%;
 		transform: translateX(-50%);
 		background-size: cover !important;
 		background-position: center !important;
 		z-index: 999;
-}
+} 
 #BannerShow_upon1 {
 		background:url(../images/bg_upon_1.jpg) center no-repeat;
 }

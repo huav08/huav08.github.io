@@ -25,11 +25,11 @@ $(function(){
 
     /* start navigation top js */
     $(window).scroll(function(){
-        if($(this).scrollTop()>58){
-            $(".templatemo-nav").addClass("sticky");
+        if($(this).scrollTop()>20){
+            $(".header").addClass("sticky");
         }
         else{
-            $(".templatemo-nav").removeClass("sticky");
+            $(".header").removeClass("sticky");
         }
     });
     

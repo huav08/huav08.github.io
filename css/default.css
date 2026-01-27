@@ -435,6 +435,7 @@ img.t_B2 {
 		transform: translateX(-50%);
 		background-size: cover !important;
 		background-position: center !important;
+		border-radius: 20px;
 		z-index: 999;
 } 
 #BannerShow_upon1 {

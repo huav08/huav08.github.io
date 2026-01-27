@@ -3,185 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Vertical Accordion Slider</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>工程專案展示 Accordion</title>
     <style>
-        :root {
-            --expanded-width: 600px;
-            --collapsed-width: 100px;
-            --container-height: 500px;
-            --transition-speed: 0.7s;
-            --accent-color: #ffffff;
-        }
-
+        /* 基礎設定 */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
+            font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+            background-color: #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background: #121212; /* 深色背景更顯現代感 */
+            height: 100vh;
+            margin: 0;
         }
 
-        .accordion-container {
+        /* 圖片容器 */
+        .gallery-container {
             display: flex;
             width: 95%;
-            max-width: 1100px;
-            height: var(--container-height);
-            gap: 15px;
-        }
-
-        .card {
-            position: relative;
-            height: 100%;
-            width: var(--collapsed-width);
-            border-radius: 30px;
-            cursor: pointer;
+            max-width: 1600px;
+            height: 600px; /* 您可以根據需要調整高度 */
             overflow: hidden;
-            transition: width var(--transition-speed) cubic-bezier(0.2, 0.8, 0.2, 1);
-            background-size: cover;
-            background-position: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* 展開狀態 */
-        .card.active {
-            width: var(--expanded-width);
-            cursor: default;
+        /* 個別卡片設定 */
+        .card {
+            position: relative;
+            flex: 1; /* 預設寬度比例為 1 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* 平滑過渡效果 */
+            cursor: pointer;
+            overflow: hidden;
+            border-right: 1px solid rgba(255,255,255,0.1); /* 分隔線 */
         }
 
-        /* 遮罩層：讓照片上的文字更清晰 */
-        .card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
-            opacity: 0;
-            transition: opacity 0.5s;
+        /* 最後一個卡片不需要右邊框 */
+        .card:last-child {
+            border-right: none;
         }
 
-        .card.active::before {
-            opacity: 1;
+        /* Hover 效果：滑鼠指到的變寬，其他的自動變窄 */
+        .card:hover {
+            flex: 4; /* 展開寬度比例，數值越大展開越寬 */
         }
 
-        /* 文字內容 */
+        /* 為了模擬圖中效果，我們可以讓第一個預設就是展開的 (可選) */
+        /* 如果希望全部等寬，請刪除下面這段 .card:first-child */
+        .card:first-child {
+            flex: 2.5; 
+        }
+        .gallery-container:hover .card:first-child {
+            flex: 1; /* 當滑鼠進入容器但不在第一個上時，恢復預設 */
+        }
+        .gallery-container:hover .card:first-child:hover {
+            flex: 4; /* 當滑鼠確實在第一個上時，展開 */
+        }
+
+        /* 文字區域設定 */
         .content {
             position: absolute;
-            bottom: 40px;
-            left: 40px;
-            right: 40px;
-            color: var(--accent-color);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.5s ease;
-            transition-delay: 0.3s;
-            white-space: nowrap; /* 縮合時不換行以防亂跳 */
-        }
-
-        .card.active .content {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 20px;
+            /* 黑色漸層背景，讓白字更清楚，模擬原圖樣式 */
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+            color: white;
             opacity: 1;
-            transform: translateY(0);
-            white-space: normal;
+            transition: opacity 0.3s ease;
         }
 
-        .content h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .content h3 {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            margin: 0;
+            
+            /* 確保文字在窄的時候也能盡量顯示，或者截斷 */
+            white-space: normal; 
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* 限制顯示兩行 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
-        .content p {
-            font-size: 1rem;
-            line-height: 1.6;
-            opacity: 0.8;
-            max-width: 450px;
-        }
-
-        /* 響應式：手機版改為垂直堆疊 */
+        /* 手機版適配：改為垂直堆疊 */
         @media (max-width: 768px) {
-            .accordion-container {
+            .gallery-container {
                 flex-direction: column;
-                height: 80vh;
+                height: 100vh;
+                width: 100%;
             }
+            
             .card {
-                width: 100% !important;
-                height: 80px;
-                transition: height var(--transition-speed) ease;
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
-            .card.active {
-                height: 400px;
+
+            .content h3 {
+                font-size: 1rem;
             }
-            .content h2 { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="accordion-container" id="accordion">
+    <div class="gallery-container">
         
-        <div class="card active" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2070&auto=format&fit=crop');">
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');">
             <div class="content">
-                <h2>Alpine Lake</h2>
-                <p>探索隱藏在雪山之中的寧靜湖泊，體驗大自然最原始的靜謐與純粹。這裡是心靈療癒的絕佳去處。</p>
+                <h3>資源再生中心整建工程先期規劃委託技術服務</h3>
             </div>
         </div>
 
-        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop');">
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop');">
             <div class="content">
-                <h2>Yosemite Valley</h2>
-                <p>著名的優勝美地山谷，擁有壯麗的岩層與瀑布。每一處轉角都是令人驚嘆的視覺饗宴。</p>
+                <h3>無機再生粒料應用管理與推廣專案工作計畫</h3>
             </div>
         </div>
 
-        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=2067&auto=format&fit=crop');">
             <div class="content">
-                <h2>Mist Forest</h2>
-                <p>漫步在晨霧繚繞的森林，呼吸著濕潤的空氣，感受萬物復甦的生命力與神祕氛圍。</p>
+                <h3>民生水資源再生中心暨下水道環境教育館新建工程概念設計</h3>
             </div>
         </div>
 
-        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop');">
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2144&auto=format&fit=crop');">
             <div class="content">
-                <h2>Starry Peak</h2>
-                <p>站在巔峰之上仰望繁星。遠離城市喧囂，在與星空對話的瞬間找回自我。</p>
-            </div>
-        </div>
-
-        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1974&auto=format&fit=crop');">
-            <div class="content">
-                <h2>Deep Valley</h2>
-                <p>壯麗的深谷與蜿蜒的溪流，自然界的鬼斧神工在此展露無遺，讓人感嘆生命的偉大。</p>
+                <h3>中部科學園區二林園區環境監測計畫</h3>
             </div>
         </div>
 
     </div>
 
-    <script>
-        const cards = document.querySelectorAll('.card');
-
-        // 為每張卡片添加事件
-        cards.forEach(card => {
-            // 切換函數
-            const activateCard = () => {
-                // 移除其他卡片的 active 狀態
-                cards.forEach(c => c.classList.remove('active'));
-                // 為當前卡片添加 active 狀態
-                card.classList.add('active');
-            };
-
-            // 滑鼠移入觸發 (Mouseover)
-            card.addEventListener('mouseenter', activateCard);
-            
-            // 點擊觸發 (Click) - 增加在觸控設備上的相容性
-            card.addEventListener('click', activateCard);
-        });
-    </script>
 </body>
 </html>

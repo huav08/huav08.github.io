@@ -463,101 +463,205 @@
             padding: 60px 0;
             background: rgba(255, 255, 255, 0.1);
         }
+        
         .accordion-container {
             display: flex;
             width: 100%;
+            max-width: 1600px; 
             height: 500px;
-            gap: 15px;
+            gap: 0;
             margin-top: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            
+            /* PERFORMANCE: Isolate layout */
+            contain: layout paint; 
         }
+
         .accordion-container .card {
             position: relative;
-            height: 100%;
-            width: 120px;
-            border-radius: 20px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+            flex: 1; 
             background-size: cover;
             background-position: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            border: none;
-            will-change: width; /* Optimization hint */
+            background-repeat: no-repeat;
+            
+            /* PERFORMANCE: GPU acceleration */
+            transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: flex;
+            transform: translateZ(0); 
+            
+            cursor: pointer;
+            overflow: hidden;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0;
+            min-width: 0; /* Allow flex item to shrink below content size */
+            height: 100%;
         }
-        .accordion-container .card.active {
-            width: 100%;
-            cursor: default;
+
+        .accordion-container .card:last-child {
+            border-right: none;
         }
+
+        /* Hover Effect */
+        .accordion-container .card:hover {
+            flex: 4;
+        }
+
+        /* Default Open State */
+        .accordion-container .card:first-child {
+            flex: 2.5; 
+        }
+        
+        .accordion-container:hover .card:first-child {
+            flex: 1; 
+        }
+        .accordion-container:hover .card:first-child:hover {
+            flex: 4; 
+        }
+
+        /* Overlay */
         .accordion-container .card::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
-            opacity: 0.3;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+            opacity: 1; 
             transition: opacity 0.5s;
         }
-        .accordion-container .card.active::before {
-            opacity: 1;
-        }
+
+        /* Content Styling - CRITICAL PERFORMANCE FIX */
         .accordion-container .card .card-content {
             position: absolute;
-            bottom: 30px;
-            left: 30px;
-            right: 30px;
-            color: #fff;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.5s ease;
-            transition-delay: 0.3s;
-            background: transparent;
-            padding: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%; 
+            min-width: 400px; 
+            padding: 30px 20px;
+            
+            /* Visual Adjustment: Dim by default */
+            color: rgba(255, 255, 255, 0.6); 
+            opacity: 0.8;
+            
+            transition: all 0.4s ease;
+            transform: translateZ(0);
+            pointer-events: none; /* Let clicks pass to the card */
         }
-        .accordion-container .card.active .card-content {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        
         .accordion-container .card h4 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: inherit; /* Follow parent opacity */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            font-weight: 700;
+            
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.4s ease;
         }
+
         .accordion-container .card p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            opacity: 0.9;
-            max-width: 600px;
-            color: #fff;
-            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: inherit;
+            margin-bottom: 15px;
+            
+            /* Performance: Use opacity+visibility instead of display:none */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s 0.1s, visibility 0.3s;
         }
+
+        /* Highlight text on Hover/Active */
+        .accordion-container .card:hover .card-content,
+        .accordion-container .card:first-child .card-content {
+            color: #ffffff;
+            opacity: 1;
+        }
+
+        .accordion-container .card:hover p,
+        .accordion-container .card:first-child p {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Reset first child when other is hovered */
+        .accordion-container:hover .card:first-child:not(:hover) .card-content {
+            color: rgba(255, 255, 255, 0.6);
+            opacity: 0.8;
+        }
+
+        .accordion-container:hover .card:first-child:not(:hover) p {
+            opacity: 0;
+            visibility: hidden;
+        }
+
         .accordion-container .card .read-more {
             background-color: var(--accent-color);
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 8px 16px;
+            border-radius: 4px;
             display: inline-block;
-            transition: transform 0.3s;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
         }
-        .accordion-container .card .read-more:hover {
-            transform: scale(1.05);
-            color: #fff;
+
+        .accordion-container .card:hover .read-more,
+        .accordion-container .card:first-child .read-more {
+            opacity: 1;
+            transform: translateY(0);
         }
+        
+        .accordion-container:hover .card:first-child:not(:hover) .read-more {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        /* --- Responsive Design --- */
         @media (max-width: 768px) {
             .accordion-container {
                 flex-direction: column;
-                height: auto;
+                height: 700px; /* Increase height for vertical stack */
             }
+            
             .accordion-container .card {
-                width: 100% !important;
-                height: 100px;
-                transition: height 0.7s ease;
-                will-change: height; /* Optimization hint for mobile */
+                width: 100% !important; /* Force full width */
+                flex: 1 !important; /* Even distribution */
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
-            .accordion-container .card.active {
-                height: 350px;
+            
+            /* Disable the "expand" effect on mobile for better UX? 
+               Or keep it? accordion.html mobile CSS just stacks them.
+               If we stack them, flex: 4 on hover might be weird on scrolling.
+               Let's make them even size or slightly larger on click if we had JS.
+               With pure CSS, maybe just static list is better for mobile.
+            */
+            
+            .accordion-container .card:hover {
+                flex: 1; /* Disable hover expansion on mobile */
             }
-            .accordion-container .card h4 { font-size: 1.3rem; }
-            .accordion-container .card p { font-size: 0.9rem; }
+            .accordion-container .card:first-child {
+                flex: 1; /* Disable default expansion */
+            }
+            
+            .accordion-container .card p,
+            .accordion-container .card .read-more {
+                display: block; /* Always show content on mobile? Or clamp? */
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .accordion-container .card .card-content {
+                 background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+            }
         }
     </style>
     <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
@@ -750,7 +854,7 @@
 
                 <div class="carousel-track" id="track">
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_1-env02.png" data-mobile="./images/swiper/tswiper_1-env02.png" alt="環境影響評估－臺北市萬華區福星段二小段149號等1筆土地都市更新案">
+                        <img class="responsive-img" src="./images/swiper/uswiper_1-env02.png" data-mobile="./images/swiper/tswiper_1-env02.png" alt="環境影響評估－臺北市萬華區福星段二小段149號等1筆土地都市更新案">
                         <div class="slide-content">
                             <a href="service_1.html#env02" target="_self">
                                 <h2>環境影響評估－</h2>
@@ -759,7 +863,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_2-5.png" data-mobile="./images/swiper/tswiper_2-5.png" alt="空氣品質之模擬－桃園科技工業區第二期開發計畫環評">
+                        <img class="responsive-img" src="./images/swiper/uswiper_2-5.png" data-mobile="./images/swiper/tswiper_2-5.png" alt="空氣品質之模擬－桃園科技工業區第二期開發計畫環評">
                         <div class="slide-content">
                             <a href="service_2-5.html" target="_self">
                                 <h2>空氣品質之模擬－</h2>
@@ -768,7 +872,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_3-1.png" data-mobile="./images/swiper/tswiper_3-1.png" alt="空氣污染物排放量調查－港區空氣污染物排放清冊">
+                        <img class="responsive-img" src="./images/swiper/uswiper_3-1.png" data-mobile="./images/swiper/tswiper_3-1.png" alt="空氣污染物排放量調查－港區空氣污染物排放清冊">
                         <div class="slide-content">
                             <a href="service_3-1.html" target="_self">
                                 <h2>空氣污染物排放量調查－</h2>
@@ -777,7 +881,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_4-3.png" data-mobile="./images/swiper/tswiper_4-3.png" alt="健康風險評估－台南縣威致鋼鐵官田廠擴建環評">
+                        <img class="responsive-img" src="./images/swiper/uswiper_4-3.png" data-mobile="./images/swiper/tswiper_4-3.png" alt="健康風險評估－台南縣威致鋼鐵官田廠擴建環評">
                         <div class="slide-content">
                             <a href="service_4-3.html" target="_self">
                                 <h2>健康風險評估－</h2>
@@ -786,7 +890,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_infotech.png" data-mobile="./images/swiper/tswiper_infotech.png" alt="環境管理與資訊系統－臺南七股環境數據（另開新視窗）">
+                        <img class="responsive-img" src="./images/swiper/uswiper_infotech.png" data-mobile="./images/swiper/tswiper_infotech.png" alt="環境管理與資訊系統－臺南七股環境數據（另開新視窗）">
                         <div class="slide-content">
                             <a href="https://infotech.simenvi.com.tw/map" target="_blank">
                                 <h2>環境管理與資訊系統－</h2>
@@ -795,7 +899,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_6-4.png" data-mobile="./images/swiper/tswiper_6-4.png" alt="生態檢核－新竹左岸生態環境與棲地">
+                        <img class="responsive-img" src="./images/swiper/uswiper_6-4.png" data-mobile="./images/swiper/tswiper_6-4.png" alt="生態檢核－新竹左岸生態環境與棲地">
                         <div class="slide-content">
                             <a href="service_6-4.html" target="_self">
                                 <h2>生態檢核－</h2>
@@ -804,7 +908,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_7-1.png" data-mobile="./images/swiper/tswiper_7-1.png" alt="碳盤查及淨零管理－運輸業碳管理">
+                        <img class="responsive-img" src="./images/swiper/uswiper_7-1.png" data-mobile="./images/swiper/tswiper_7-1.png" alt="碳盤查及淨零管理－運輸業碳管理">
                         <div class="slide-content">
                             <a href="service_7-1.html" target="_self">
                                 <h2>碳盤查及淨零管理－</h2>
@@ -813,7 +917,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_1-env01.png" data-mobile="./images/swiper/tswiper_1-env01.png" alt="環境影響評估－工業區及科學園區之環境影響評估">
+                        <img class="responsive-img" src="./images/swiper/uswiper_1-env01.png" data-mobile="./images/swiper/tswiper_1-env01.png" alt="環境影響評估－工業區及科學園區之環境影響評估">
                         <div class="slide-content">
                             <a href="service_1.html#env01" target="_self">
                                 <h2>環境影響評估－</h2>
@@ -822,7 +926,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_2-10.png" data-mobile="./images/swiper/tswiper_2-10.png" alt="河川水質之模擬－北高雄產業園區">
+                        <img class="responsive-img" src="./images/swiper/uswiper_2-10.png" data-mobile="./images/swiper/tswiper_2-10.png" alt="河川水質之模擬－北高雄產業園區">
                         <div class="slide-content">
                             <a href="service_2-10.html" target="_self">
                                 <h2>河川水質之模擬－</h2>
@@ -831,7 +935,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_3-2.png" data-mobile="./images/swiper/tswiper_3-2.png" alt="空氣污染物排放量調查－全國性空氣污染物排放量">
+                        <img class="responsive-img" src="./images/swiper/uswiper_3-2.png" data-mobile="./images/swiper/tswiper_3-2.png" alt="空氣污染物排放量調查－全國性空氣污染物排放量">
                         <div class="slide-content">
                             <a href="service_3-2.html" target="_self">
                                 <h2>空氣污染物排放量調查－</h2>
@@ -840,7 +944,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_4-4.png" data-mobile="./images/swiper/tswiper_4-4.png" alt="健康風險評估－南部科學工業園區">
+                        <img class="responsive-img" src="./images/swiper/uswiper_4-4.png" data-mobile="./images/swiper/tswiper_4-4.png" alt="健康風險評估－南部科學工業園區">
                         <div class="slide-content">
                             <a href="service_4-4.html" target="_self">
                                 <h2>健康風險評估－</h2>
@@ -849,7 +953,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_simenvi-20200707.png" data-mobile="./images/swiper/tswiper_simenvi-20200707.png" alt="環境管理與資訊系統－核災輻射物質大氣傳輸（另開新視窗）">
+                        <img class="responsive-img" src="./images/swiper/uswiper_simenvi-20200707.png" data-mobile="./images/swiper/tswiper_simenvi-20200707.png" alt="環境管理與資訊系統－核災輻射物質大氣傳輸（另開新視窗）">
                         <div class="slide-content">
                             <a href="download/Simenvi_20200707.pdf" target="_blank">
                                 <h2>環境管理與資訊系統－</h2>
@@ -858,7 +962,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_7-2.png" data-mobile="./images/swiper/tswiper_7-2.png" alt="碳盤查及淨零管理－三重環北幹線等工程碳盤查與減量">
+                        <img class="responsive-img" src="./images/swiper/uswiper_7-2.png" data-mobile="./images/swiper/tswiper_7-2.png" alt="碳盤查及淨零管理－三重環北幹線等工程碳盤查與減量">
                         <div class="slide-content">
                             <a href="service_7-2.html" target="_self">
                                 <h2>碳盤查及淨零管理－</h2>
@@ -867,7 +971,7 @@
                         </div>
                     </div>
                     <div class="carousel-card">
-                        <img class="responsive-img" loading="lazy" decoding="async" src="./images/swiper/uswiper_8-principle.png" data-mobile="./images/swiper/tswiper_8-principle.png" alt="氣候變遷風險評估－環境影響評估階段">
+                        <img class="responsive-img" src="./images/swiper/uswiper_8-principle.png" data-mobile="./images/swiper/tswiper_8-principle.png" alt="氣候變遷風險評估－環境影響評估階段">
                         <div class="slide-content">
                             <a href="service_8.html#principle" target="_self">
                                 <h2 class="slide-title">氣候變遷風險評估－</h2>
@@ -934,7 +1038,7 @@
                     <span><a href="#news">更多<i class="fas fa-chevron-right"></i></a></span>
                 </div>   
                 <div class="accordion-container" id="newsAccordion">
-                    <div class="card active" style="background-image: url('./images/award.jpg');">
+                    <div class="card" style="background-image: url('./images/award.jpg');">
                         <div class="card-content">
                             <h4>賀!本公司14人通過iPAS淨零碳規劃管理師能力鑑定</h4>
                             <p>充裕產業創新及產業升級轉型所需關鍵人才，擴大建置淨零碳規劃管理專業人才。</p>
@@ -1005,16 +1109,7 @@
         $(document).ready(function() {
             $('.nav').singlePageNav();
 
-            // Accordion Logic
-            const newsCards = document.querySelectorAll('#newsAccordion .card');
-            newsCards.forEach(card => {
-                const activateCard = () => {
-                    newsCards.forEach(c => c.classList.remove('active'));
-                    card.classList.add('active');
-                };
-                card.addEventListener('mouseenter', activateCard);
-                card.addEventListener('click', activateCard);
-            });
+
         }); 
     </script>
 </body>

@@ -1,74 +1,118 @@
-/* Blob Background Animation: Heavenly Maiden Scattering Flowers (Gather & Scatter) */
-.blob-container {
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* Removed overflow: hidden to allow scrolling */
+    /* overflow: hidden; */ 
+    /* background-color: #000; */ /* Removed black background to blend with site design if needed, or keep it */
+}
+
+.blobs {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -100;
-    /* Clean white/grey background to let colors pop */
-    background: #f4f7f6; 
-    overflow: hidden;
-    pointer-events: none; /* Ensure clicks pass through */
+    z-index: -1;
+    overflow: hidden; /* Ensure blobs don't cause scrollbars */
 }
 
-/* Base Blob Style - Now with Fluid Morphing */
+.blobs-items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Performance Fix: Use filter instead of backdrop-filter */
+    filter: blur(80px); 
+    opacity: 0.8;
+}
+
 .blob {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    /* Start with an irregular blob shape */
-    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
-    mix-blend-mode: multiply; 
-    filter: blur(40px);
-    opacity: 0; 
-    transform-origin: center center;
-    will-change: transform, opacity, border-radius; 
+    border-radius: 50%;
+    will-change: transform;
+    opacity: 0.8;
+    animation: blob-float infinite ease-in-out alternate;
 }
 
-@keyframes celestial-scatter {
-    /* Stage 1: Far away (Scattered + Shape A) */
-    0% {
-        transform: translate3d(calc(-50% + var(--x-dest)), calc(-50% + var(--y-dest)), 0) scale(1.5) rotate(0deg);
-        border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
-        opacity: 0;
-    }
-    
-    /* Stage 2: Gathering Inward (Fading In + Morphing) */
-    40% {
-        opacity: 0.4;
-    }
+/* Define slightly different sizes and animations for variety */
+.blob:nth-child(1) { width: 600px; height: 600px; left: -100px; top: -100px; animation-duration: 25s; }
+.blob:nth-child(2) { width: 500px; height: 500px; right: -50px; top: 10%; animation-duration: 28s; animation-direction: alternate-reverse; }
+.blob:nth-child(3) { width: 550px; height: 550px; left: 20%; bottom: -100px; animation-duration: 32s; }
+.blob:nth-child(4) { width: 450px; height: 450px; right: 10%; bottom: 10%; animation-duration: 22s; animation-direction: alternate-reverse; }
+.blob:nth-child(5) { width: 400px; height: 400px; left: 40%; top: 30%; animation-duration: 35s; }
+.blob:nth-child(6) { width: 300px; height: 300px; right: 30%; top: 40%; animation-duration: 30s; animation-direction: alternate-reverse; }
 
-    /* Stage 3: The Convergence (Center + Shape B) */
-    50% {
-        transform: translate3d(-50%, -50%, 0) scale(0.6) rotate(180deg);
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        opacity: 0.9;
-    }
 
-    /* Stage 4: Exploding Outward (Shape C) */
-    60% {
-        opacity: 0.6;
-    }
-
-    /* Stage 5: Far away again (Scattered + Shape D) */
-    100% {
-        transform: translate3d(calc(-50% + var(--x-dest)), calc(-50% + var(--y-dest)), 0) scale(2.2) rotate(360deg);
-        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-        opacity: 0;
-    }
+/* 顏色設定 */
+.blue { background-color: rgba(192, 192, 192, 0.8); }
+.purple { background-color: rgba(0, 77, 128, 0.8); }
+.pink { background-color: rgba(86, 84, 119, 0.8); }
+.white { 
+    background-color: #ffffff; 
+    z-index: 2; 
 }
 
-/* Mobile Optimization */
-@media (max-width: 768px) {
-    .blob {
-        filter: blur(20px); /* Reduce blur radius for performance */
-        mix-blend-mode: normal; /* Simpler blending */
-    }
-    
-    /* Reduce number of particles on mobile if needed, or just make them smaller */
-    .blob {
-        width: 250px;
-        height: 250px;
-    }
+/* 
+   We don't need the glass layer for the blur anymore, 
+   but we can keep it as a transparent overlay if needed, 
+   or just hide it. 
+*/
+.blobs-glass {
+    display: none; 
+}
+
+@keyframes blob-float {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+/* More complex movement if the simple float isn't enough, 
+   but keep displacements relative and small to avoid layout issues 
+   or large paints. 
+   Actually, let's make them move across the screen more like the JS version 
+   but smoothly.
+*/
+.blob:nth-child(1) { animation-name: float-1; }
+.blob:nth-child(2) { animation-name: float-2; }
+.blob:nth-child(3) { animation-name: float-3; }
+.blob:nth-child(4) { animation-name: float-4; }
+.blob:nth-child(5) { animation-name: float-5; }
+.blob:nth-child(6) { animation-name: float-6; }
+
+@keyframes float-1 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(40vw, 30vh) rotate(180deg); }
+    100% { transform: translate(10vw, 50vh) rotate(360deg); }
+}
+
+@keyframes float-2 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-30vw, 40vh) rotate(-180deg); }
+    100% { transform: translate(-10vw, 10vh) rotate(-360deg); }
+}
+
+@keyframes float-3 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30vw, -30vh) scale(1.2); }
+    100% { transform: translate(50vw, 0) scale(1); }
+}
+
+@keyframes float-4 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-40vw, -20vh) scale(0.8); }
+    100% { transform: translate(-20vw, 20vh) scale(1); }
+}
+
+@keyframes float-5 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(20vw, 20vh); }
+    100% { transform: translate(-20vw, -20vh); }
+}
+
+@keyframes float-6 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-20vw, 20vh); }
+    100% { transform: translate(20vw, -20vh); }
 }

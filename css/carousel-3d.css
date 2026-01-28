@@ -142,11 +142,15 @@
 }
 
 .slide-content h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 15px;
     /* Removed animation for simplicity/compatibility with new carousel structure, or keep if desire */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.slide-content p {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
 }
 
 .slide-description {
@@ -183,7 +187,10 @@
         padding: 40px 20px 20px;
     }
     .slide-content h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+    .slide-content p {
+        font-size: 1.2rem;
     }
     .slide-description {
         font-size: 1.2rem;
@@ -195,7 +202,11 @@
         padding: 20px 15px 15px;
     }
     .slide-content h2 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+    .slide-content p {
+        font-size: 1rem;
         margin-bottom: 5px;
     }
     .slide-description {

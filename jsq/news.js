@@ -17,17 +17,18 @@ function openTab(evt, tabName) {
 const rssFeeds = [
     {
         // 由於瀏覽器安全性限制 (CORS)，我們需要透過代理伺服器來取得 RSS 內容
-        url: 'https://corsproxy.io/?' + encodeURIComponent('https://service.ema.gov.tw/Rss/RssChannel/zh-tw/215'),
+        // 改用 api.allorigins.win 以避免 403 錯誤
+        url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://service.ema.gov.tw/Rss/RssChannel/zh-tw/215'),
         listId: 'newsReleaseList',
         useMinguo: true // 使用民國年
     },
     {
-        url: 'https://corsproxy.io/?' + encodeURIComponent('https://www.epa.ie/resources/rss/index-90474.xml'),
+        url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://www.epa.ie/resources/rss/index-90474.xml'),
         listId: 'clarificationList',
         useMinguo: false // 使用西元年
     } /* ,
     {
-        url: 'https://corsproxy.io/?' + encodeURIComponent('https://www.simenvi.com.tw/rss/simenvinews.xml'),
+        url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://www.simenvi.com.tw/rss/simenvinews.xml'),
         listId: 'newsSimenviList',
         useMinguo: true // 使用民國年
     } */

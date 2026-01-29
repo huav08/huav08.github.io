@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI Prism Style Mockup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --accent-1: rgba(173, 255, 184, 0.4); /* 淺綠 */
+            --accent-2: rgba(184, 229, 255, 0.4); /* 淺藍 */
+            --accent-3: rgba(255, 236, 184, 0.3); /* 淺黃 */
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+        }
+
+        /* --- 動態背景層 --- */
+        .prism-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            filter: blur(80px); /* 關鍵：高斯模糊創造流體感 */
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            animation: move 20s infinite alternate;
+        }
+
+        .blob-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--accent-1);
+            top: -100px;
+            left: -100px;
+        }
+
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent-2);
+            bottom: -100px;
+            right: -100px;
+            animation-duration: 25s;
+        }
+
+        .blob-3 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-3);
+            top: 40%;
+            left: 30%;
+            animation-duration: 30s;
+        }
+
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(100px, 50px) scale(1.1); }
+        }
+
+        /* --- 前景內容層 --- */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            backdrop-filter: blur(10px); /* 導航列磨砂效果 */
+            background: rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .hero-section {
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 64px;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+            color: #111;
+        }
+
+        p {
+            font-size: 20px;
+            color: #444;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: 50px;
+        }
+
+        .cta-button {
+            background: #000;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="prism-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- <nav>
+        <span>Research</span>
+        <span>Products</span>
+        <span>Safety</span>
+        <span>Company</span>
+    </nav> -->
+
+    <!-- <div class="container">
+        <div class="hero-section">
+            <h1>Prism</h1>
+            <p>
+                Introducing Prism, a collaborative workspace designed to accelerate scientific research with the power of GPT-5.2.
+            </p>
+            <a href="#" class="cta-button">Get started for free</a>
+        </div>
+
+        <div class="glass-card">
+            <h2 style="margin-top:0">The future of research</h2>
+            <p style="font-size: 16px;">Prism acts as an AI word processor for scientists, supporting advanced LaTeX, diagram generation, and full project context management.</p>
+        </div>
+    </div> -->
+
+</body>
+</html>

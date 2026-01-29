@@ -732,39 +732,87 @@ a:link,  a:visited {
 }
 
 /* Go To Top Button */
+@keyframes wobble1 {
+    0%, 100% { border-radius: 46% 54% 68% 32% / 45% 41% 59% 55%; }
+    25%      { border-radius: 54% 46% 57% 43% / 52% 48% 54% 46%; }
+    50%      { border-radius: 41% 59% 40% 60% / 57% 41% 59% 43%; }
+    75%      { border-radius: 55% 45% 48% 52% / 49% 55% 45% 51%; }
+}
+
 .go-to-top {
-		position: fixed;
-		bottom: 30px;
-		right: 30px;
-		width: 50px;
-		height: 50px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-decoration: none;
-		opacity: 0;
-		visibility: hidden;
-		transform: translateY(20px);
-		transition: all 0.3s ease;
-		z-index: 1000;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 65px !important;
+    height: 65px !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 46% 54% 68% 32% / 45% 41% 59% 55% !important;
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+                15px 25px 10px rgba(0, 0, 0, 0.05),
+                15px 20px 20px rgba(0, 0, 0, 0.05),
+                inset -10px -10px 15px rgba(255, 255, 255, 0.9) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background-color 0.3s !important;
+    z-index: 9999 !important;
 }
 
 .go-to-top.show {
-		opacity: 1;
-		visibility: visible;
-		transform: translateY(0);
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+.go-to-top:hover {
+    animation: wobble1 4s ease-in-out infinite;
+    transform: translateY(-5px) scale(1.1) !important;
 }
 
 .go-to-top img {
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		transition: all 0.3s ease;
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 0 !important;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    background: transparent !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    position: relative;
+    z-index: 3;
 }
 
-.go-to-top:hover img {
-		transform: translateY(-2px);
-		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+.go-to-top::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.9;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.go-to-top::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 24px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.9;
+    z-index: 2;
+    pointer-events: none;
 }
 
 /* News Date Badge */

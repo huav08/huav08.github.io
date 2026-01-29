@@ -44,9 +44,9 @@ body, html {
 
 
 /* 顏色設定 */
-.blue { background-color: rgb(231, 240, 241); }
+.blue { background-color: rgb(238, 247, 248); }
 .purple { background-color: rgb(245, 244, 236); }
-.pink { background-color: rgb(245, 244, 220); }
+.pink { background-color: rgb(246, 247, 235); }
 .white { 
     background-color: #fff; 
     z-index: 2; 

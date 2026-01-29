@@ -78,7 +78,7 @@ const rssFeeds = [
         });
 
         let html = '';
-        sortedItems.forEach(item => {
+        sortedItems.slice(0, 24).forEach(item => {
             const titleEl = item.querySelector('title');
             const linkEl = item.querySelector('link');
             let pubDateEl = item.querySelector('pubDate');

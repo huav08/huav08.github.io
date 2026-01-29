@@ -26,6 +26,30 @@
     <link rel="stylesheet" href="./css/blob-anim.css" />
     <link rel="stylesheet" href="./css/default.css" />
     <style>
+        /* Landscape Background Styles */
+        .landscape-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffffff 0%, #f1f8f3 40%, #e6f2e8 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            z-index: -999;
+            pointer-events: none;
+        }
+        .landscape-svg {
+            width: 100%;
+            height: auto;
+            min-height: 50vh;
+            max-height: 90vh;
+            display: block;
+        }
+
+        body { background-color: transparent !important; }
+
 	            /* 全域樣式與變數 */        :root {
             --primary-color: #2a698a;   /* 深藍 */
             --secondary-color: #5bb29c; /* 綠色 */
@@ -531,9 +555,15 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
-            opacity: 1; 
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+            opacity: 0.7; 
             transition: opacity 0.5s;
+        }
+
+        /* Brighten on Hover/Active */
+        .accordion-container .card:hover::before,
+        .accordion-container .card.default-active::before {
+            opacity: 0.4;
         }
 
         /* Content Styling - CRITICAL PERFORMANCE FIX */
@@ -570,7 +600,8 @@
         }
 
         .accordion-container .card p {
-            font-size: 1.2rem;
+            font-size: 1.2rem;  
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
             line-height: 1.5;
             color: inherit;
             margin-bottom: 15px;
@@ -705,6 +736,47 @@
     <!-- Google Analytics Script碼(End) -->         
  </head>
 <body>
+    <div class="landscape-container">
+        <svg class="landscape-svg" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <g id="tree-round">
+                    <rect x="-2" y="0" width="4" height="25" fill="#6b8e23" opacity="0.6"/> <circle cx="0" cy="-10" r="15" fill="#7cb342" /> </g>
+                <g id="tree-oval">
+                    <rect x="-2" y="0" width="4" height="30" fill="#558b2f" opacity="0.6"/>
+                    <ellipse cx="0" cy="-15" rx="12" ry="20" fill="#689f38" />
+                </g>
+            </defs>
+            <path d="M0,350 C300,320 600,380 900,340 C1200,300 1440,360 1440,360 L1440,600 L0,600 Z" fill="#c5e1a5" opacity="0.8"/>
+            <use href="#tree-round" x="200" y="340" transform="scale(0.8)" />
+            <use href="#tree-oval" x="850" y="340" transform="scale(0.7)" />
+            <use href="#tree-round" x="1200" y="360" transform="scale(0.9)" />
+            <path d="M0,420 C400,380 800,450 1440,390 L1440,600 L0,600 Z" fill="#9ccc65" />
+            <use href="#tree-oval" x="100" y="420" transform="scale(1.0)" />
+            <use href="#tree-round" x="450" y="400" transform="scale(1.2)" />
+            <use href="#tree-round" x="1300" y="400" transform="scale(1.1)" />
+            <use href="#tree-oval" x="700" y="430" transform="scale(0.9)" />
+            <path d="M0,600 C300,480 600,520 900,480 C1200,440 1440,500 1440,600 L0,600 Z" fill="#8bc34a" />
+            <g transform="translate(50, 600)">
+                <rect x="10" y="-60" width="8" height="60" fill="#558b2f" opacity="0.5"/>
+                <circle cx="14" cy="-70" r="35" fill="#689f38" />
+                <circle cx="30" cy="-50" r="25" fill="#7cb342" />
+            </g>
+            <g transform="translate(250, 560) scale(1.5)">
+                <rect x="0" y="0" width="4" height="20" fill="#33691e" opacity="0.4"/>
+                <circle cx="2" cy="-10" r="15" fill="#558b2f" />
+            </g>
+            <g transform="translate(1300, 600)">
+                <rect x="-10" y="-80" width="10" height="80" fill="#33691e" opacity="0.5"/>
+                <ellipse cx="-5" cy="-90" rx="40" ry="50" fill="#558b2f" />
+                <circle cx="-35" cy="-60" r="30" fill="#7cb342" />
+            </g>
+             <g transform="translate(1100, 540) scale(1.2)">
+                <rect x="0" y="0" width="5" height="30" fill="#33691e" opacity="0.4"/>
+                <circle cx="2" cy="-20" r="20" fill="#689f38" />
+                 <circle cx="15" cy="-15" r="15" fill="#8bc34a" />
+            </g>
+        </svg>
+    </div>
     <div class="blobs">
         <div class="blobs-items">
             <div class="blob blue"></div>

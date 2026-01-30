@@ -748,7 +748,7 @@ a:link,  a:visited {
     background: rgba(255, 255, 255, 0.5) !important;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border-radius: 46% 54% 68% 32% / 45% 41% 59% 55% !important;
+    border-radius: 46% 54% 68% 32% / 45% 41% 59% 55%;
     box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
                 15px 25px 10px rgba(0, 0, 0, 0.05),
                 15px 20px 20px rgba(0, 0, 0, 0.05),
@@ -760,7 +760,7 @@ a:link,  a:visited {
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background-color 0.3s !important;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.3s, background-color 0.3s !important;
     z-index: 9999 !important;
 }
 
@@ -772,7 +772,12 @@ a:link,  a:visited {
 
 .go-to-top:hover {
     animation: wobble1 4s ease-in-out infinite;
-    transform: translateY(-5px) scale(1.1) !important;
+    transform: translateY(-5px) !important;
+    box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
+                25px 35px 20px rgba(0, 0, 0, 0.05),
+                25px 30px 30px rgba(0, 0, 0, 0.05),
+                inset -20px -20px 25px rgba(255, 255, 255, 0.9),
+                0px 0px 20px rgba(0, 77, 128, 0.5) !important;
 }
 
 .go-to-top img {
@@ -795,7 +800,7 @@ a:link,  a:visited {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #fff;
+    background: transparent;
     opacity: 0.9;
     z-index: 2;
     pointer-events: none;
@@ -809,7 +814,7 @@ a:link,  a:visited {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #fff;
+    background: transparent;
     opacity: 0.9;
     z-index: 2;
     pointer-events: none;

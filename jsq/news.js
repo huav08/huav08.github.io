@@ -17,13 +17,13 @@ function openTab(evt, tabName) {
 const rssFeeds = [
     {
         // 由於瀏覽器安全性限制 (CORS)，我們需要透過代理伺服器來取得 RSS 內容
-        // 改用 api.allorigins.win 以避免 403 錯誤
-        url: 'https://corsproxy.io/?' + encodeURIComponent('https://service.ema.gov.tw/Rss/RssChannel/zh-tw/215'),
+        // 改用 api.allorigins.win (JSON mode) 以避免 CORS 和空內容問題
+        url: 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://service.ema.gov.tw/Rss/RssChannel/zh-tw/215'),
         listId: 'newsReleaseList',
         useMinguo: true // 使用民國年
     },
     {
-        url: 'https://corsproxy.io/?' + encodeURIComponent('https://www.epa.ie/resources/rss/index-90474.xml'),
+        url: 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.epa.ie/resources/rss/index-90474.xml'),
         listId: 'clarificationList',
         useMinguo: false // 使用西元年
     } /* ,
@@ -45,10 +45,26 @@ const rssFeeds = [
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const text = await response.text();
+        
+        // 使用 allorigins.win/get (JSON) 方式取得內容，內容在 data.contents 中
+        const data = await response.json();
+        const text = data.contents;
+
+        if (!text || text.trim().length === 0) {
+            throw new Error('RSS 來源返回空內容');
+        }
+
         const parser = new DOMParser();
         const xml = parser.parseFromString(text, 'text/xml');
         
+        // 檢查 XML 解析錯誤
+        const parserError = xml.querySelector('parsererror');
+        if (parserError) {
+            console.warn('XML 解析可能有誤:', parserError.textContent);
+            // 某些瀏覽器即使解析有誤也會返回部分內容，我們可以繼續嘗試查找 item
+            // 但如果是致命錯誤，items 可能為空
+        }
+
         const items = xml.querySelectorAll('item');
         if (items.length === 0) {
             listElement.innerHTML = '<li>目前沒有新聞內容。</li>';

@@ -17,31 +17,30 @@ function openTab(evt, tabName) {
 const rssFeeds = [
     {
         // 由於瀏覽器安全性限制 (CORS)，我們需要透過代理伺服器來取得 RSS 內容
-        // 改用 api.allorigins.win (JSON mode) 以避免 CORS 和空內容問題
-        url: 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://service.ema.gov.tw/Rss/RssChannel/zh-tw/215'),
+        // 使用 api.allorigins.win (JSON mode) 以避免 CORS 問題
+        targetUrl: 'https://service.ema.gov.tw/Rss/RssChannel/zh-tw/215',
         listId: 'newsReleaseList',
         useMinguo: true // 使用民國年
     },
     {
-        url: 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.epa.ie/resources/rss/index-90474.xml'),
+        targetUrl: 'https://www.epa.ie/resources/rss/index-90474.xml',
         listId: 'clarificationList',
         useMinguo: false // 使用西元年
-    } /* ,
-    {
-        url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://www.simenvi.com.tw/rss/simenvinews.xml'),
-        listId: 'newsSimenviList',
-        useMinguo: true // 使用民國年
-    } */
+    }
 ];
 
 /**
  * 取得並顯示 RSS 內容
- * @param {object} feed - 包含 url、listId 和 useMinguo 的物件
+ * @param {object} feed - 包含 targetUrl、listId 和 useMinguo 的物件
  */
-    const fetchAndDisplayRss = async (feed) => {
+const fetchAndDisplayRss = async (feed) => {
     const listElement = document.getElementById(feed.listId);
     try {
-        const response = await fetch(feed.url);
+        const targetUrl = encodeURIComponent(feed.targetUrl);
+        // 加入 cache buster (t=...) 確保獲取最新狀態
+        const proxyUrl = `https://api.allorigins.win/get?url=${targetUrl}&t=${new Date().getTime()}`;
+        
+        const response = await fetch(proxyUrl);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

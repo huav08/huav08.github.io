@@ -129,7 +129,7 @@ const fetchAndDisplayRss = async (feed) => {
         // 30秒後自動重新抓取
         setTimeout(() => {
             fetchAndDisplayRss(feed);
-        }, 30000);
+        }, 10000);
     }
 };
 

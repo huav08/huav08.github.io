@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             mainTitle.innerText = slide.title;
             mainTitle.setAttribute('data-text', slide.title);
             subTitle.innerText = slide.subtitle;
-            infoTitle.innerText = `${slide.id}. ${slide.main}`;
+            infoTitle.innerText = `${slide.id} ${slide.main}`;
             infoDesc.innerText = slide.desc;
 
             [mainTitle, subTitle, infoTitle, infoDesc].forEach(el => el.classList.add('animate-text'));

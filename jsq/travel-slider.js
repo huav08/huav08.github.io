@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitle: "Innovation", 
             main: "全方位整合與一站式服務", 
             desc: "跨越合規與轉型，您的全方位環境智庫 —— 從環評監測、生態檢核到淨零路徑規劃。", 
-            image: "https://images.unsplash.com/photo-1552993873-0dd1110e025f?q=80&w=2071&auto=format&fit=crop" 
+            image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop" 
         },
         { 
             id: "", 

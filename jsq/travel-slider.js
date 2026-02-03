@@ -112,21 +112,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll Switch Logic
     let isScrolling = false;
     sliderSection.addEventListener('wheel', (e) => {
-        // Only intercept scroll if the user is interacting with the slider heavily, 
-        // but typically for a full-screen slider, preventing default is standard 
-        // to avoid scrolling past it while trying to change slides.
-        // However, if the slider is not full viewport height, this might be annoying.
-        // Given the request "like flipping a page", we prevent default.
-        e.preventDefault(); 
-        
         if (isScrolling) return;
 
+        // If scrolling down at the last slide, let the page scroll
+        if (e.deltaY > 0 && currentIndex === slides.length - 1) {
+            return; 
+        }
+
+        // If scrolling up at the first slide, let the page scroll
+        if (e.deltaY < 0 && currentIndex === 0) {
+            return;
+        }
+
+        // Otherwise, intercept scroll to change slides
+        e.preventDefault(); 
         isScrolling = true;
         
         if (e.deltaY > 0) {
-            currentIndex = (currentIndex + 1) % slides.length;
+            currentIndex++;
         } else {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            currentIndex--;
         }
         updateSlide(currentIndex);
 

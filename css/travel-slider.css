@@ -7,6 +7,7 @@
     /* Adjust height to fit nicely within the page structure */
     height: 85vh; 
     min-height: 650px;
+    margin-top: 140px; /* Align with header height */
     padding: 0 !important; /* Override existing padding */
     display: flex;
     justify-content: center;

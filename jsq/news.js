@@ -125,7 +125,7 @@ const fetchAndDisplayRss = async (feed) => {
         listElement.innerHTML = html;
     } catch (error) {
         console.error('抓取 RSS 來源時發生錯誤:', error);
-        listElement.innerHTML = '<li>系統目前無法取得新聞內容，稍後將重新載入。</li>';
+        listElement.innerHTML = '<li>請稍後系統正在載入新聞內容．．．</li>';
         // 30秒後自動重新抓取
         setTimeout(() => {
             fetchAndDisplayRss(feed);

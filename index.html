@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./css/carousel-3d.css" />
     <link rel="stylesheet" href="./css/blob-anim.css" />
     <link rel="stylesheet" href="./css/default.css" />
+    <link rel="stylesheet" href="./css/travel-slider.css" />
     <style>
         /* Landscape Background Styles */
         .landscape-container {
@@ -933,19 +934,25 @@
         </div>
     </header>
     <section id="home">
-        <!-- <video src="https://www.simenvi.com.tw/images/video/sky01.mp4" preload="auto" muted autoplay></video> -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    <h1 class="wow fadeIn bx" data-wow-offset="50" data-wow-delay="0.9s">我們致力以科學方法解決複雜的<span>環境課題</span></h1>
-                    <div class="element">
-                        <div class="sub-element">以精準數據驅動環境治理，從污染模擬到氣候風險，為永續決策提供堅實依據。</div>
-                        <div class="sub-element">跨越合規與轉型，您的全方位環境智庫 —— 從環評監測、生態檢核到淨零路徑規劃。</div>
-                        <div class="sub-element">深耕環境監測與生態檢核，佈局淨零碳排與氣候韌性，守護環境健康的專業推手。</div>
-                    </div>
-                    <a href="#services" class="cta-button btn">了解更多</a>
-                </div>
+        <img src="https://images.unsplash.com/photo-1470004914212-05527e49370b?q=80&w=2070&auto=format&fit=crop" class="bg-image" id="bg-img" alt="Background">
+        <div class="glass-overlay"></div>
+
+        <div class="slider-content">
+            <div class="main-title">
+                <h1 id="main-title" data-text="SimEnvi">SimEnvi</h1>
+                <h2 id="sub-title">Innovation</h2>
             </div>
+        </div>
+        <div class="info-box">
+            <h3 id="info-title" class="wow fadeIn bx">我們致力以科學方法解決複雜的<span>環境課題</span></h3>
+            <p id="info-desc" class="element">以精準數據驅動環境治理，從污染模擬到氣候風險，為永續決策提供堅實依據。跨越合規與轉型，您的全方位環境智庫 —— 從環評監測、生態檢核到淨零路徑規劃。深耕環境監測與生態檢核，佈局淨零碳排與氣候韌性，守護環境健康的專業推手。</p>
+        </div>
+
+        <div class="scroll-indicator">景丰科技股份有限公司 ENVIRONMENTAL SIMULATION CO. LTD.</span></div>
+
+        <div class="controls">
+            <div id="prev-btn"><i class="fas fa-arrow-left"></i></div>
+            <div id="next-btn"><i class="fas fa-arrow-right"></i></div>
         </div>
     </section>
 
@@ -1291,6 +1298,7 @@
     <script type="text/javascript" src="./jsq/jquery.singlePageNav.min.js"></script>
     <!-- <script type="text/javascript" src="./jsq/font-size-control.js"></script> -->
     <script type="text/javascript" src="./jsq/blobs-anim.js"></script>
+    <script type="text/javascript" src="./jsq/travel-slider.js"></script>
     <script>
         $(document).ready(function() {
             $('.nav').singlePageNav();

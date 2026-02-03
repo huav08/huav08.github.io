@@ -1,0 +1,186 @@
+/* Travel Slider Styles - Ported from slide4.html and scoped to #home */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+#home {
+    position: relative;
+    width: 100%;
+    /* Adjust height to fit nicely within the page structure */
+    height: 85vh; 
+    min-height: 650px;
+    padding: 0 !important; /* Override existing padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #111;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #fff; /* Ensure text is white by default in this section */
+}
+
+#home * {
+    box-sizing: border-box;
+}
+
+#home .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 1;
+}
+
+#home .glass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%; 
+    height: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.3);
+}
+
+#home .slider-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home .main-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+
+#home .main-title h1 {
+    font-size: 10vw; /* Slightly smaller than 13vw to fit potential long words */
+    line-height: 0.8;
+    color: #fff;
+    position: relative;
+    mix-blend-mode: overlay; 
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+#home .main-title h1::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    mix-blend-mode: normal;
+    z-index: -1;
+}
+
+#home .main-title h2 {
+    font-size: 2.5vw;
+    color: #fff;
+    font-weight: 300;
+    margin-top: 15px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+#home .info-box {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    max-width: 400px;
+    color: #fff;
+    z-index: 10;
+    text-align: left;
+}
+
+#home .info-box h3 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-align: left;
+    padding-bottom: 0; /* Override global h3 padding */
+    white-space: nowrap;
+}
+#home .info-box h3::after {
+    display: none; /* Remove global h3 underline */
+}
+
+#home .info-box p {
+    font-size: 28px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    color: #fff;
+    text-align: left;
+    white-space: nowrap;
+}
+
+#home .controls {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+#home .controls div {
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#home .controls div:hover {
+    background: #fff;
+    color: #111;
+}
+
+/* 滾動提示指標 */
+#home .scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 18px;
+    opacity: 0.5;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 動畫 */
+#home .animate-text { animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    #home .glass-overlay { width: 100%; height: 50%; bottom: 0; top: auto; }
+    #home .main-title h1 { font-size: 15vw; }
+    #home .info-box { bottom: 120px; left: 20px; }
+    #home .controls { right: 20px; bottom: 30px; }
+}

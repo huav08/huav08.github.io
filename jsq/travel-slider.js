@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentIndex = 0;
     let autoPlayTimer;
+    let typewriterInterval;
 
     const bgImg = document.getElementById('bg-img');
     const mainTitle = document.getElementById('main-title');
@@ -47,11 +48,32 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    function typeWriter(text, element, speed = 30) {
+        element.innerText = "";
+        let i = 0;
+        clearInterval(typewriterInterval);
+        typewriterInterval = setInterval(() => {
+            if (i < text.length) {
+                element.innerText += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(typewriterInterval);
+            }
+        }, speed);
+    }
+
     function updateSlide(index) {
         const slide = slides[index];
         bgImg.style.opacity = '0';
         
-        [mainTitle, subTitle, infoTitle, infoDesc].forEach(el => el.classList.remove('animate-text'));
+        // Stop any active typing
+        clearInterval(typewriterInterval);
+        infoDesc.innerText = ""; 
+
+        [mainTitle, subTitle, infoTitle, infoDesc].forEach(el => {
+            el.classList.remove('animate-text');
+            el.style.opacity = '0';
+        });
 
         setTimeout(() => {
             bgImg.src = slide.image;
@@ -64,9 +86,15 @@ document.addEventListener('DOMContentLoaded', function() {
             mainTitle.setAttribute('data-text', slide.title);
             subTitle.innerText = slide.subtitle;
             infoTitle.innerText = `${slide.id} ${slide.main}`;
-            infoDesc.innerText = slide.desc;
+            // infoDesc text is set via typeWriter below
 
-            [mainTitle, subTitle, infoTitle, infoDesc].forEach(el => el.classList.add('animate-text'));
+            // Animate other elements with fade-in
+            [mainTitle, subTitle, infoTitle].forEach(el => el.classList.add('animate-text'));
+            
+            // Handle infoDesc separately for typewriter effect
+            infoDesc.style.opacity = '1'; // Ensure it's visible for typing
+            typeWriter(slide.desc, infoDesc);
+
         }, 300);
 
         startAutoPlay(); // Reset timer on interaction

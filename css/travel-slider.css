@@ -198,10 +198,10 @@
 }
 
 /* 動畫 */
-#home .animate-text { animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-@keyframes fadeUp {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
+#home .animate-text { animation: fadeIn 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @media (max-width: 1024px) {

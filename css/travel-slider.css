@@ -14,7 +14,7 @@
     align-items: center;
     overflow: hidden;
     background: #111;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     font-family: 'Poppins', sans-serif;
     color: #fff; /* Ensure text is white by default in this section */
 }

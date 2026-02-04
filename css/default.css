@@ -246,11 +246,12 @@ img.t_B2 {
 		color: white;
 		outline: none;
 		width: 220px;
+		font-size: 1.3rem;
 }
 
 .search-bar input::placeholder {
 		color: rgba(255, 255, 255, 0.８);
-		font-size: 1rem;
+		font-size: 1.3rem;
 }
 
 .search-bar button {

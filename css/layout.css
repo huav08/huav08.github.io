@@ -49,7 +49,7 @@
   display: none;
 }
 #footer { display: block;float:inherit; color:white !important;} 
-#mobileFooter { display: none; text-align: center; font-size: 14px; color:white !important;}
+#mobileFooter { display: none; text-align: center; font-size: 21px; color:white !important;}
 .copyBasic2 {height:260px;position:relative; left:5px !important;}
 .copyBasic2_L { 	height:170px !important; width:700px !important;}
 /* 2025-09-05 */
@@ -236,7 +236,7 @@
   #slide {
     display: none;
   }
-  #footer { display: none; font-size: 14.5px;} 
+  #footer { display: none; font-size: 21.75px;} 
   #mobileFooter { display: block; max-width:100%; height:auto;margin-top: 15px; background-color: #1d2087;z-index: 990; }
   .dl-menuwrapper li a {
     font-size: 18px;

@@ -1,0 +1,212 @@
+/* Styles mimicked from slide5.html for the Swiper implementation */
+
+.swiper-section {
+    position: relative;
+    width: 100%;
+    height: 650px; /* Fixed height for vertical slider */
+    margin: 40px 0;
+    overflow: hidden;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Text on left */
+    overflow: hidden;
+    /* background-color: rgba(255,255,255,0.3); */
+    background-color: transparent;
+}
+
+.swiper-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* Initial clip-path, will be animated by GSAP */
+    clip-path: circle(70% at 80% 50%);
+    z-index: 1;
+}
+
+.swiper-image::after {
+    /* Optional overlay if needed for contrast, though slide5 seemed clean */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+.heading-wrapper {
+    position: relative;
+    z-index: 2;
+    padding-left: 8%;
+    max-width: 45%;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.top-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--primary-color, #2a698a);
+    transform-style: preserve-3d;
+}
+
+.top-heading a {
+    text-decoration: none;
+    color: white;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+.top-heading a:hover {
+    color: var(--accent-color, #31f7f7);
+}
+
+.author-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-color, #333);
+    transform-style: preserve-3d;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 4px;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+    white-space: nowrap;
+}
+
+/* Navigation Buttons */
+.left-arrow, .right-arrow {
+    position: absolute;
+    bottom: 50px;
+    width: 65px;
+    height: 65px;
+    /* Water Drop Base Style */
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 46% 54% 68% 32% / 45% 41% 59% 55%;
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+                15px 25px 10px rgba(0, 0, 0, 0.05),
+                15px 20px 20px rgba(0, 0, 0, 0.05),
+                inset -10px -10px 15px rgba(255, 255, 255, 0.9);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    color: var(--primary-color, #2a698a); /* Icon color blue-ish */
+}
+
+/* Water Drop Highlights */
+.left-arrow::before, .right-arrow::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 0.9;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.left-arrow::after, .right-arrow::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 24px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 0.9;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.left-arrow {
+    left: 8%;
+}
+
+.right-arrow {
+    left: calc(8% + 80px); /* Adjusted spacing for larger buttons */
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    /* Wobble Animation */
+    animation: wobble1 4s ease-in-out infinite;
+    transform: translateY(-5px);
+    
+    /* Hover Shadows */
+    box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
+                25px 35px 20px rgba(0, 0, 0, 0.05),
+                25px 30px 30px rgba(0, 0, 0, 0.05),
+                inset -20px -20px 25px rgba(255, 255, 255, 0.9),
+                0px 0px 20px rgba(0, 77, 128, 0.5);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.left-arrow i, .right-arrow i {
+    font-size: 1.5rem; /* Slightly larger icon */
+    position: relative;
+    z-index: 3;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .swiper-section {
+        height: 500px;
+    }
+    
+    .swiper-image {
+        clip-path: none !important; /* Reset clip path on mobile for better visibility */
+        opacity: 0.3; /* Fade image so text pops */
+    }
+    
+    .heading-wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .top-heading {
+        font-size: 2rem;
+    }
+    
+    .author-text {
+        font-size: 1.1rem;
+    }
+    
+    .left-arrow, .right-arrow {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .left-arrow {
+        margin-left: -40px;
+    }
+    .right-arrow {
+        margin-left: 40px;
+    }
+}

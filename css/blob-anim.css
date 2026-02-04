@@ -48,7 +48,7 @@ body, html {
 .blue { background-color: rgba(173, 255, 184, 0.4); /* 淺綠 */ }
 .pink { background-color: rgba(184, 229, 255, 0.4); /* 淺藍 */ }
 .white { 
-    background-color: #fff; 
+    background-color: #ccc; 
     z-index: 2; 
 }
 

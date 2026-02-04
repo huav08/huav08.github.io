@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let currentIndex = 0; 
     let autoPlayTimer;
-    const autoPlayDelay = 5000;
+    const autoPlayDelay = 10000;
 
     function init() {
         // 建立指示點

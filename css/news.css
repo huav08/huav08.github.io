@@ -146,14 +146,15 @@
 
     /* 新聞連結樣式 */
     .indexNewsList a {
-        color: #005a31;
+        color: black;
         text-decoration: none !important;
         font-size: 1.1rem;
         font-weight: 500;
     }
 
     .indexNewsList a:hover {
-        text-decoration: underline !important;
+        /* text-decoration: underline !important; */
+        color: #005a31;
     }
 
     /* 讀取中提示樣式 */

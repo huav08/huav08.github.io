@@ -48,6 +48,10 @@
         background-color: rgba(249, 249, 249, 0.95);
     }
 
+    #indexNews .tab button {
+        border-radius: 10px 10px 0 0;
+    }
+
     #indexNews .tabcontent {
         position: relative;
         z-index: 2;

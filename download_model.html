@@ -192,8 +192,14 @@
             flex-direction: column;
         }
         .slides-container {
-            width: 100%;
+            width: 100% !important; /* Force full width */
             padding-right: 0;
+            transform: none !important; /* Reset the left shift */
+            margin-left: 0 !important; /* Reset margin */
+        }
+        .swiper-slide {
+            width: 260px; /* Smaller card for mobile */
+            height: 360px;
         }
         .menu-container {
             display: none; /* Hide custom menu on mobile, allow swipe */

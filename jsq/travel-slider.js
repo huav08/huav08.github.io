@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             main: "技術權威與精準治理",
             subtitle: "Innovation", 
             desc: "以精準數據驅動環境治理，從污染模擬到氣候風險，為永續決策提供堅實依據。", 
-            image: "https://images.unsplash.com/photo-1470004914212-05527e49370b?q=80&w=2070&auto=format&fit=crop" 
+            image: "../images/photo-1470004914212-05527e49370b.png" 
         },
         { 
             id: "", 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitle: "Innovation", 
             main: "全方位整合與一站式服務", 
             desc: "跨越合規與轉型，您的全方位環境智庫　－－　從環評監測、生態檢核到淨零路徑規劃。", 
-            image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop" 
+            image: "../images/photo-1473341304170-971dccb5ac1e.png" 
         },
         { 
             id: "", 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitle: "Innovation",  
             main: "守護與前瞻", 
             desc: "深耕環境監測與生態檢核，佈局淨零碳排與氣候韌性，守護環境健康的專業推手。", 
-            image: "https://images.unsplash.com/photo-1596562095861-2dc048e9f546?q=80&w=2070&auto=format&fit=crop" 
+            image: "../images/home-bg.jpg" 
         }
     ];
 

@@ -1,10 +1,19 @@
 import re
 import os
 
-file_path = r"d:\Dev\soft\GitHub\huav08.github.io\download_paper.html"
+import logging
+logging.basicConfig(filename='debug_log.txt', level=logging.DEBUG)
 
-with open(file_path, 'r', encoding='utf-8') as f:
-    content = f.read()
+file_path = r"d:\Dev\soft\GitHub\huav08.github.io\download_paper.html"
+logging.info(f"Starting conversion for {file_path}")
+
+try:
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    logging.info(f"Read {len(content)} bytes")
+except Exception as e:
+    logging.error(f"Failed to read file: {e}")
+    exit()
 
 # 1. Add CSS/JS Links if not present
 swiper_css = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />'

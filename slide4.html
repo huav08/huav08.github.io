@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taiwan Travel - Interactive Slider</title>
+    <title>China Forest Tour - Split Style</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -36,22 +36,23 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: 0.8s ease-in-out;
             z-index: 1;
         }
 
+        /* 玻璃模糊層 (左半邊) */
         .glass-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            width: 45%; 
+            width: 45%; /* 與文字切割點對齊 */
             height: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
             z-index: 2;
-            box-shadow: 10px 0 30px rgba(0,0,0,0.3);
+            box-shadow: 10px 0 30px rgba(0,0,0,0.2);
         }
 
         .content {
@@ -81,25 +82,37 @@
             font-weight: 700;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
+            letter-spacing: 1px;
             display: flex;
-            gap: 30px;
+            align-items: center;
+            gap: 20px;
         }
 
-        .nav-links a {
-            text-decoration: none;
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .social-icons i {
+            width: 35px;
+            height: 35px;
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             color: #fff;
             font-size: 14px;
-            letter-spacing: 1px;
-            opacity: 0.8;
+            cursor: pointer;
             transition: 0.3s;
         }
+        .social-icons i:hover { background: #fff; color: #333; }
 
-        .nav-links a:hover { opacity: 1; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: #fff; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { opacity: 0.7; }
 
+        /* --- 標題樣式核心修改 --- */
         .main-title {
             position: absolute;
             top: 50%;
@@ -113,31 +126,35 @@
         .main-title h1 {
             font-size: 13vw;
             line-height: 0.8;
-            color: #fff;
-            position: relative;
-            mix-blend-mode: overlay; 
             font-weight: 800;
             text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+            /* 移除之前的 mix-blend-mode，因為我們要手動控制顏色 */
         }
 
-        .main-title h1::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            color: rgba(255, 255, 255, 0.8);
-            mix-blend-mode: normal;
-            z-index: -1;
+        /* 左邊：鏤空樣式 (Chi) */
+        .outline-text {
+            color: transparent;
+            -webkit-text-stroke: 2px #fff;
+            text-stroke: 2px #fff;
+        }
+
+        /* 右邊：實心樣式 (na) */
+        .solid-text {
+            color: #fff;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         .main-title h2 {
-            font-size: 3vw;
+            font-size: 4vw;
             color: #fff;
-            font-weight: 300;
-            margin-top: 15px;
-            letter-spacing: 10px;
-            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 10px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
+        /* 資訊區與按鈕 */
         .info-box {
             position: absolute;
             bottom: 50px;
@@ -147,160 +164,199 @@
             z-index: 10;
         }
 
-        .info-box h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+        .info-box h3 { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+        .info-box p { font-size: 14px; line-height: 1.6; margin-bottom: 20px; opacity: 0.8; }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #fff;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: 0.3s;
         }
-
-        .info-box p {
-            font-size: 14px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            opacity: 0.7;
-        }
+        .btn:hover { background: #f0f0f0; transform: translateY(-2px); }
 
         .controls {
             position: absolute;
-            bottom: 50px;
-            right: 50px;
-            display: flex;
-            gap: 15px;
+            bottom: 50px; right: 50px;
+            display: flex; gap: 20px;
             z-index: 10;
         }
-
         .controls div {
-            width: 55px;
-            height: 55px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            cursor: pointer;
-            transition: 0.4s;
+            width: 50px; height: 50px;
+            border: 2px solid #fff; border-radius: 4px;
+            display: flex; justify-content: center; align-items: center;
+            color: #fff; cursor: pointer; transition: 0.3s;
         }
+        .controls div:hover { background: #fff; color: #333; }
 
-        .controls div:hover {
-            background: #fff;
-            color: #111;
-        }
-
-        /* 滾動提示指標 */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #fff;
-            font-size: 12px;
-            opacity: 0.5;
-            z-index: 10;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* 動畫 */
-        .animate-text { animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .animate-text { animation: fadeUp 0.8s ease-in-out forwards; }
         @keyframes fadeUp {
-            0% { opacity: 0; transform: translateY(40px); }
+            0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
-            .glass-overlay { width: 100%; height: 50%; bottom: 0; top: auto; }
+            .glass-overlay { width: 100%; height: 50%; top: auto; bottom: 0; }
             .main-title h1 { font-size: 18vw; }
-            .info-box { bottom: 120px; left: 20px; }
-            .controls { right: 20px; bottom: 30px; }
+            .info-box { bottom: 120px; left: 20px; right: 20px; }
+            header { padding: 20px; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <section id="slider-section">
-        <img src="https://images.unsplash.com/photo-1470004914212-05527e49370b?q=80&w=2070&auto=format&fit=crop" class="bg-image" id="bg-img" alt="Background">
+    <section>
+        <img src="https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?q=80&w=2070&auto=format&fit=crop" class="bg-image" id="bg-img" alt="Background">
         <div class="glass-overlay"></div>
 
-        <!-- <header>
-            <div class="logo">FORMOSA</div>
+        <header>
+            <div class="logo">
+                TOURS.
+                <div class="social-icons">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
             <nav class="nav-links">
-                <a href="#">NORTH</a><a href="#">SOUTH</a><a href="#">NATURE</a>
+                <a href="#">Destinations</a>
+                <a href="#">Booking</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
             </nav>
-        </header> -->
+        </header>
 
         <div class="content">
             <div class="main-title">
-                <h1 id="main-title" data-text="Taipei">Taipei</h1>
-                <h2 id="sub-title">Capital</h2>
+                <h1 id="main-title"></h1>
+                <h2 id="sub-title">Forest</h2>
             </div>
         </div>
 
         <div class="info-box">
-            <h3 id="info-title">01. Taipei City Tour</h3>
-            <p id="info-desc">Experience the vibrant heartbeat of Taiwan. From the towering Taipei 101 to the bustling night markets.</p>
+            <h3 id="info-title">01. China Forest Tour</h3>
+            <p id="info-desc">Explore the misty bamboo forests and ancient trees of China.</p>
+            <a href="#" class="btn">More Details</a>
         </div>
 
-        <div class="scroll-indicator">Scroll to Explore</div>
-
         <div class="controls">
-            <div id="prev-btn"><i class="fas fa-arrow-left"></i></div>
-            <div id="next-btn"><i class="fas fa-arrow-right"></i></div>
+            <div id="prev-btn"><i class="fas fa-chevron-left"></i></div>
+            <div id="next-btn"><i class="fas fa-chevron-right"></i></div>
         </div>
     </section>
 
     <script>
         const slides = [
-            { id: "01", title: "Taipei", subtitle: "Capital", desc: "Experience the vibrant heartbeat of Taiwan. From the towering Taipei 101 to the bustling night markets.", image: "https://images.unsplash.com/photo-1470004914212-05527e49370b?q=80&w=2070&auto=format&fit=crop" },
-            { id: "02", title: "Tainan", subtitle: "History", desc: "Walk through the ancient capital where history lives. Explore centuries-old temples and culinary heritage.", image: "https://images.unsplash.com/photo-1552993873-0dd1110e025f?q=80&w=2071&auto=format&fit=crop" },
-            { id: "03", title: "Taiwan", subtitle: "Nature", desc: "Discover the breathtaking landscapes of Formosa. From misty peaks to marble cliffs.", image: "https://images.unsplash.com/photo-1596562095861-2dc048e9f546?q=80&w=2070&auto=format&fit=crop" }
+            {
+                id: "01",
+                title: "China",
+                subtitle: "Forest",
+                desc: "Explore the misty bamboo forests and ancient trees of China. A serene journey into nature's heart.",
+                image: "https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?q=80&w=2070&auto=format&fit=crop",
+                splitAt: 3 // 指定 "Chi" (前3字) 為鏤空
+            },
+            {
+                id: "02",
+                title: "Japan",
+                subtitle: "Sakura",
+                desc: "Experience the breathtaking beauty of cherry blossoms in Kyoto. A pink wonderland awaits you.",
+                image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop",
+                splitAt: 3 // Jap (鏤空) / an (實心)
+            },
+            {
+                id: "03",
+                title: "Swiss",
+                subtitle: "Alps",
+                desc: "Discover the majestic peaks of the Swiss Alps. Snow-capped mountains and crystal clear lakes.",
+                image: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=2070&auto=format&fit=crop",
+                splitAt: 3 // Swi (鏤空) / ss (實心)
+            }
         ];
 
         let currentIndex = 0;
-        let isScrolling = false; // 防抖動鎖
         let autoPlayTimer;
+        let isScrolling = false;
 
         const bgImg = document.getElementById('bg-img');
         const mainTitle = document.getElementById('main-title');
         const subTitle = document.getElementById('sub-title');
         const infoTitle = document.getElementById('info-title');
         const infoDesc = document.getElementById('info-desc');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
 
         function updateSlide(index) {
             const slide = slides[index];
-            bgImg.style.opacity = '0';
-            
-            [mainTitle, subTitle, infoTitle, infoDesc].forEach(el => el.classList.remove('animate-text'));
 
+            // 1. 圖片切換
+            bgImg.style.opacity = '0';
             setTimeout(() => {
                 bgImg.src = slide.image;
-                bgImg.onload = () => bgImg.style.opacity = '1';
+                bgImg.onload = () => { bgImg.style.opacity = '1'; };
+            }, 200);
 
-                mainTitle.innerText = slide.title;
-                mainTitle.setAttribute('data-text', slide.title);
+            // 2. 文字重置動畫
+            resetAnimation(mainTitle);
+            resetAnimation(subTitle);
+            resetAnimation(infoTitle);
+            resetAnimation(infoDesc);
+
+            setTimeout(() => {
+                // --- 核心邏輯：切割標題文字 ---
+                // 根據 slide.splitAt 數值，將標題切為前後兩段
+                const splitIndex = slide.splitAt || Math.ceil(slide.title.length / 2);
+                const part1 = slide.title.substring(0, splitIndex); // 例如 "Chi"
+                const part2 = slide.title.substring(splitIndex);    // 例如 "na"
+
+                // 注入 HTML：前半段用 .outline-text，後半段用 .solid-text
+                mainTitle.innerHTML = `<span class="outline-text">${part1}</span><span class="solid-text">${part2}</span>`;
+                
                 subTitle.innerText = slide.subtitle;
-                infoTitle.innerText = `${slide.id}. ${slide.title} Tour`;
+                infoTitle.innerText = `${slide.id}. ${slide.title} ${slide.subtitle} Tour`;
                 infoDesc.innerText = slide.desc;
+                
+                // 觸發進場動畫
+                mainTitle.classList.add('animate-text');
+                subTitle.classList.add('animate-text');
+                infoTitle.classList.add('animate-text');
+                infoDesc.classList.add('animate-text');
+            }, 200);
 
-                [mainTitle, subTitle, infoTitle, infoDesc].forEach(el => el.classList.add('animate-text'));
-            }, 300);
-
-            startAutoPlay(); // 每次切換後重置計時器
+            resetAutoPlay();
         }
 
-        // 自動輪播：30秒
-        function startAutoPlay() {
+        function resetAnimation(element) {
+            element.classList.remove('animate-text');
+        }
+
+        // 自動輪播與防抖動
+        function resetAutoPlay() {
             clearInterval(autoPlayTimer);
             autoPlayTimer = setInterval(() => {
                 currentIndex = (currentIndex + 1) % slides.length;
                 updateSlide(currentIndex);
-            }, 30000); 
+            }, 30000); // 30秒
         }
 
-        // 滾輪切換邏輯
-        window.addEventListener('wheel', (e) => {
-            if (isScrolling) return; // 如果正在切換中，則無視滾輪動作
+        // 事件監聽
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide(currentIndex);
+        });
 
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlide(currentIndex);
+        });
+
+        // 滾輪控制
+        window.addEventListener('wheel', (e) => {
+            if (isScrolling) return;
             isScrolling = true;
             if (e.deltaY > 0) {
                 currentIndex = (currentIndex + 1) % slides.length;
@@ -308,26 +364,14 @@
                 currentIndex = (currentIndex - 1 + slides.length) % slides.length;
             }
             updateSlide(currentIndex);
-
-            // 1秒後解鎖，避免滾輪一次觸發多頁
             setTimeout(() => { isScrolling = false; }, 1000);
-        });
-
-        // 按鈕點擊
-        document.getElementById('next-btn').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlide(currentIndex);
-        });
-
-        document.getElementById('prev-btn').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateSlide(currentIndex);
         });
 
         // 初始化
         window.onload = () => {
             updateSlide(0);
         };
+
     </script>
 </body>
 </html>

@@ -75,9 +75,9 @@
     font-size: 10vw;
     /* Slightly smaller than 13vw to fit potential long words */
     line-height: 0.8;
-    color: #fff;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
     position: relative;
-    mix-blend-mode: overlay;
     font-weight: 800;
     text-transform: uppercase;
     margin: 0;
@@ -91,9 +91,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    color: rgba(255, 255, 255, 0.8);
-    mix-blend-mode: normal;
-    z-index: -1;
+    color: #fff;
+    -webkit-text-stroke: 0px;
+    clip-path: inset(0 0 0 45%);
+    z-index: 1;
 }
 
 #home .main-title h2 {
@@ -240,6 +241,10 @@
 
     #home .main-title h1 {
         font-size: 15vw;
+    }
+
+    #home .main-title h1::after {
+        clip-path: inset(0 0 50% 0);
     }
 
     #home .info-box {

@@ -76,12 +76,15 @@
     /* Slightly smaller than 13vw to fit potential long words */
     line-height: 0.8;
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.8);
     position: relative;
     font-weight: 800;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 #home .main-title h1::after {
@@ -93,7 +96,7 @@
     height: 100%;
     color: #fff;
     -webkit-text-stroke: 0px;
-    clip-path: inset(0 0 0 45%);
+    clip-path: inset(0 55% 0 0);
     z-index: 1;
 }
 
@@ -244,7 +247,7 @@
     }
 
     #home .main-title h1::after {
-        clip-path: inset(0 0 50% 0);
+        clip-path: inset(50% 0 0 0);
     }
 
     #home .info-box {

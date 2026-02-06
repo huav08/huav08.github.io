@@ -238,7 +238,7 @@
     }
 
     #home .main-title {
-        top: calc(40% + 12px);
+        top: calc(40% - 8px);
         transform: translate(-50%, -50%);
     }
 
@@ -251,7 +251,7 @@
     }
 
     #home .info-box {
-        bottom: 98px;
+        bottom: 88px;
         left: 20px;
         right: 20px;
         max-width: calc(100% - 40px);
@@ -265,7 +265,7 @@
     }
 
     #home .info-box p {
-        font-size: 18px;
+        font-size: 16px;
         white-space: normal;
         margin-bottom: 20px;
         overflow-wrap: anywhere;

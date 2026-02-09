@@ -21,48 +21,95 @@
     .three-slider-wrapper {
         position: relative;
         width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 20px 0;
+        max-width: 100%;
+        margin: 30px auto;
+        padding: 0;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        background: #fff;
     }
     .three-slider-container {
         width: 100%;
-        height: 500px;
+        height: 600px;
         position: relative;
-        /* background: #f0f0f0; Fallback */
-        border-radius: 15px;
-        overflow: hidden;
     }
     .slider-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        padding: 0 25px;
+        z-index: 10;
+        pointer-events: none;
+    }
+    .slider-nav button {
+        pointer-events: auto;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: rgb(74, 147, 241);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        font-size: 24px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .slider-nav button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+    .slider-dots {
         position: absolute;
         bottom: 30px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
-        gap: 20px;
+        gap: 15px;
         z-index: 10;
-    }
-    .slider-nav button {
-        background: rgba(0, 0, 0, 0.6);
-        color: white;
-        font-weight: bolder;
-        border: none;
-        padding: 8px 25px;
-        cursor: pointer;
-        text-transform: uppercase;
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
         border-radius: 30px;
-        transition: 0.3s;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .slider-nav button:hover {
-        background: rgba(255, 255, 255, 0.77);
-        color: #5a6fe6;
+    .dot {
+        width: 12px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .dot.active {
+        background: #fff;
+        width: 35px;
+        border-radius: 6px;
+        box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+    @media (max-width: 1024px) {
+        .three-slider-container { height: 500px; }
     }
     @media (max-width: 768px) {
-        .three-slider-container { height: 300px; }
+        .three-slider-container { height: 400px; }
+        .slider-nav button { width: 45px; height: 45px; font-size: 18px; }
+        .three-slider-wrapper { margin: 20px auto; }
     }
     @media (max-width: 480px) {
-        .three-slider-container { height: 220px; }
+        .three-slider-container { height: 300px; }
+        .slider-nav { padding: 0 15px; }
+        .slider-dots { bottom: 20px; gap: 10px; padding: 6px 15px; }
+        .dot { width: 8px; height: 8px; }
+        .dot.active { width: 25px; }
     }
   </style>
 	<script type="text/javascript" src="./jsq/jquery-3.6.0.min.js"></script>
@@ -184,6 +231,7 @@
                       <button id="prevBtn1">＜</button>
                       <button id="nextBtn1">＞</button>
                   </div>
+                  <div class="slider-dots" id="dots1"></div>
               </div>
             </div><BR>
             <div><blockquote><img  loading="lazy" decoding="async" src="images\7_1\icon01.png" width="16" height="16" />&nbsp;<span class="t_24pt t_B">輔導及訓練</span></blockquote></div>
@@ -197,6 +245,7 @@
                       <button id="prevBtn2">＜</button>
                       <button id="nextBtn2">＞</button>
                   </div>
+                  <div class="slider-dots" id="dots2"></div>
               </div>
             </div>
         </section>
@@ -249,7 +298,7 @@
           './images/7_1/03.png',
           './images/7_1/04.png',
           './images/7_1/05.png'
-        ]);
+        ], { dotsContainerId: 'dots1', interval: 6000 });
         document.getElementById('prevBtn1').addEventListener('click', () => slider1.prev());
         document.getElementById('nextBtn1').addEventListener('click', () => slider1.next());
 
@@ -258,7 +307,7 @@
           './images/7_1/06.png',
           './images/7_1/061.png',
           './images/7_1/07.png'
-        ]);
+        ], { dotsContainerId: 'dots2', interval: 7000 });
         document.getElementById('prevBtn2').addEventListener('click', () => slider2.prev());
         document.getElementById('nextBtn2').addEventListener('click', () => slider2.next());
       });

@@ -4,7 +4,7 @@
  */
 
 class ExplosionSlider {
-    constructor(containerId, images) {
+    constructor(containerId, images, options = {}) {
         this.container = document.getElementById(containerId);
         if (!this.container) {
             console.error(`Container ${containerId} not found`);
@@ -14,9 +14,23 @@ class ExplosionSlider {
         this.currentIndex = 0;
         this.isAnimating = false;
         
+        this.options = Object.assign({
+            autoplay: true,
+            interval: 5000,
+            dotsContainerId: null
+        }, options);
+
         this.init();
         this.animate();
         this.handleResize();
+        
+        if (this.options.autoplay) {
+            this.startAutoplay();
+        }
+
+        if (this.options.dotsContainerId) {
+            this.createDots();
+        }
     }
 
     init() {
@@ -39,7 +53,7 @@ class ExplosionSlider {
 
         // Geometry (40x25 as per slide3 reference, adjust if needed)
         // Increasing segments for smoother explosion
-        this.geometry = this.createExplosionGeometry(40, 25, 30, 20);
+        this.geometry = this.createExplosionGeometry(40, 25, 40, 30); // Increased segments
 
         // Shaders
         const vertexShader = `
@@ -69,7 +83,7 @@ class ExplosionSlider {
                 pos = (rotMat * vec4(pos, 1.0)).xyz;
                 vec3 dir = normalize(aCenter); 
                 dir.z += aRandom.z * 2.0; 
-                pos += aCenter + dir * prog * 30.0 * aRandom.x; 
+                pos += aCenter + dir * prog * 40.0 * aRandom.x; // Increased distance
                 gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
             }
         `;
@@ -170,33 +184,37 @@ class ExplosionSlider {
         this.isAnimating = true;
 
         const nextIndex = (index + this.images.length) % this.images.length;
-        
+        if (nextIndex === this.currentIndex) {
+            this.isAnimating = false;
+            return;
+        }
+
         this.nextMesh.material.uniforms.uTexture.value = this.textures[nextIndex];
         this.nextMesh.material.uniforms.uProgress.value = 1;
-        this.nextMesh.position.z = -5;
+        this.nextMesh.position.z = -10; // Start further back
         this.nextMesh.visible = true;
 
         // Current mesh explodes
         gsap.to(this.activeMesh.material.uniforms.uProgress, {
             value: 1,
-            duration: 1.5,
+            duration: 1.2,
             ease: "power2.inOut"
         });
         gsap.to(this.activeMesh.position, {
-            z: 10,
-            duration: 1.5,
+            z: 20, // Move closer to camera
+            duration: 1.2,
             ease: "power2.inOut"
         });
 
         // Next mesh assembles
         gsap.to(this.nextMesh.material.uniforms.uProgress, {
             value: 0,
-            duration: 1.5,
+            duration: 1.2,
             ease: "power2.inOut"
         });
         gsap.to(this.nextMesh.position, {
             z: 0,
-            duration: 1.5,
+            duration: 1.2,
             ease: "power2.inOut",
             onComplete: () => {
                 this.isAnimating = false;
@@ -208,8 +226,14 @@ class ExplosionSlider {
                 this.nextMesh = temp;
                 
                 this.currentIndex = nextIndex;
+                this.updateDots();
             }
         });
+
+        if (this.options.autoplay) {
+            this.stopAutoplay();
+            this.startAutoplay();
+        }
     }
 
     next() {
@@ -220,13 +244,57 @@ class ExplosionSlider {
         this.goToSlide(this.currentIndex - 1);
     }
 
+    startAutoplay() {
+        this.autoplayTimer = setInterval(() => {
+            this.next();
+        }, this.options.interval);
+    }
+
+    stopAutoplay() {
+        if (this.autoplayTimer) {
+            clearInterval(this.autoplayTimer);
+        }
+    }
+
+    createDots() {
+        const dotsContainer = document.getElementById(this.options.dotsContainerId);
+        if (!dotsContainer) return;
+        
+        dotsContainer.innerHTML = '';
+        this.dots = [];
+        
+        this.images.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === this.currentIndex) dot.classList.add('active');
+            dot.addEventListener('click', () => this.goToSlide(i));
+            dotsContainer.appendChild(dot);
+            this.dots.push(dot);
+        });
+    }
+
+    updateDots() {
+        if (!this.dots) return;
+        this.dots.forEach((dot, i) => {
+            if (i === this.currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
     updateCameraZ(width, height) {
         const aspect = width / height;
         const vFOV = (this.camera.fov * Math.PI) / 180;
         const targetWidth = 40; // The width of our geometry
-        // Make the image occupy 85% of the viewport width
-        // Formula: z = (targetWidth / percentage) / (2 * tan(vFOV/2) * aspect)
-        this.camera.position.z = (targetWidth / 0.85) / (2 * Math.tan(vFOV / 2) * aspect);
+        
+        // Dynamic percentage based on aspect ratio
+        let percentage = 0.9;
+        if (aspect < 1) percentage = 0.95; // Portrait
+        if (aspect > 2) percentage = 0.7; // Ultra-wide
+        
+        this.camera.position.z = (targetWidth / percentage) / (2 * Math.tan(vFOV / 2) * aspect);
     }
 
     handleResize() {
@@ -242,7 +310,6 @@ class ExplosionSlider {
     }
 
     animate() {
-        // Use arrow function to bind 'this'
         const loop = () => {
             requestAnimationFrame(loop);
             this.renderer.render(this.scene, this.camera);

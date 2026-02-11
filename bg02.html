@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic Water Drops on Glass</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* 背景層：使用您提供的圖檔 */
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 請確保圖片路徑正確，或將圖片轉為 Base64 嵌入 */
+            background-image: url('./images/grassland.png'); 
+            background-size: cover;
+            background-position: center;
+            filter: blur(1px); /* 輕微模糊背景，增加真實景深 */
+            z-index: 0;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            /* 調整混合模式，讓生成的水珠與背景圖片融合 */
+            mix-blend-mode: overlay; 
+            opacity: 0.9;
+        }
+
+        .drop {
+            fill: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-image"></div>
+
+    <svg id="water-overlay">
+        <defs>
+            <filter id="liquid-filter" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" seed="5" result="noise"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" result="distorted"/>
+
+                <feGaussianBlur in="distorted" stdDeviation="2" result="blur"/>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="gooey"/>
+
+                <feSpecularLighting in="gooey" surfaceScale="5" specularConstant="1" specularExponent="35" lighting-color="#ffffff" result="specular">
+                    <fePointLight x="-500" y="-1000" z="1000"/>
+                </feSpecularLighting>
+                <feComposite in="specular" in2="gooey" operator="in" result="specularOut"/>
+                
+                <feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+            </filter>
+        </defs>
+
+        <g id="drop-group" filter="url(#liquid-filter)"></g>
+    </svg>
+
+    <script>
+        const group = document.getElementById('drop-group');
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function init() {
+            group.innerHTML = '';
+
+            // 1. 生成垂直垂流 (Streaks) - 配合圖片中的長條水痕
+            const streakCount = Math.floor(width / 60); 
+            for (let i = 0; i < streakCount; i++) {
+                const x = random(0, width);
+                const startY = random(-200, height * 0.2);
+                const len = random(height * 0.5, height * 1.5);
+                
+                let d = `M ${x} ${startY}`;
+                let currY = startY;
+                let currX = x;
+                while (currY < startY + len) {
+                    currY += random(20, 50);
+                    currX += random(-10, 10);
+                    // 使用曲線路徑模擬重力蜿蜒
+                    d += ` Q ${currX + random(-15, 15)} ${currY - 10}, ${currX} ${currY}`;
+                }
+
+                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                path.setAttribute("d", d);
+                path.setAttribute("fill", "none");
+                path.setAttribute("stroke", "white");
+                path.setAttribute("stroke-width", random(10, 30));
+                path.setAttribute("stroke-linecap", "round");
+                path.setAttribute("opacity", random(0.2, 0.5));
+                group.appendChild(path);
+            }
+
+            // 2. 生成極度密集的不規則水珠 (Droplets)
+            const dropCount = Math.floor((width * height) / 1000); 
+            for (let i = 0; i < dropCount; i++) {
+                const cx = random(0, width);
+                const cy = random(0, height);
+                // 模擬圖片中大小錯落的視覺
+                const r = Math.pow(Math.random(), 3) * 18 + 2; 
+
+                const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", cx);
+                circle.setAttribute("cy", cy);
+                circle.setAttribute("r", r);
+                circle.setAttribute("class", "drop");
+                group.appendChild(circle);
+            }
+        }
+
+        init();
+
+        window.addEventListener('resize', () => {
+            clearTimeout(window.rt);
+            window.rt = setTimeout(init, 200);
+        });
+    </script>
+</body>
+</html>

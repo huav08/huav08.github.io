@@ -191,6 +191,83 @@
             background-color: #e5a42d;
             transform: scale(1.05);
         }
+        /* start home */
+        #home  {
+                position: relative;
+                padding-top: 160px;
+                padding-bottom: 100px;
+                min-height: 650px;
+                overflow: hidden;
+                /*  background: url('./images/photo-101.jpg') no-repeat center center/cover;
+                background: #555555;  */
+                background-color: #95959500;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOWU5ZTllIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=);
+                -webkit-transition: left 500ms;
+                transition: left 500ms;
+        }
+        
+        #home video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            transition: opacity 1s ease-out;
+        }
+        #home video.fade-out {
+            opacity: 0;
+        }
+        #home h1
+            {
+                font-weight: 300;
+                font-size: 68px;
+                font-weight: bold;
+                padding-bottom: 0;
+            }
+        #home h1 span
+            {
+                color: #28a7e9;
+                font-weight: bold;
+            }
+        #home .btn
+            {
+                background: transparent;
+                border-radius: 2px;
+                color: white;
+                border: 1px solid white;
+                font-size: 20px;
+                font-weight: bold;
+                margin-top: 55px;
+                width: 180px;
+                height: 60px;
+                padding-top: 18px;
+                -webkit-transition: all 0.4s ease-in-out;
+                        transition: all 0.4s ease-in-out;
+            }
+        #home .btn:hover
+            {
+                background: #58b9ec;
+                color: white;
+                border-color: transparent;
+            }
+        .element {
+            height: 60px;
+            font-size: 20px;
+            color: white;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+        .fadeIn {
+            color: white;
+            width: 66%;
+            line-height: 1.1; /* 縮小行間距，數值越小越擠 */
+            display: block;   /* 確保它是區塊元素 */
+            margin: 20px 0;
+        }
+        /* end home */
         /* 服務項目區塊 */
        /*  .services-section {
             background-color: rgba(255, 255, 255, 0);
@@ -847,13 +924,6 @@
         </div>
     </header>
     <section id="home">
-        <div class="slide-item-wrap">
-            <div class="slide-row-item"><div class="darkcover first"></div></div>
-            <div class="slide-row-item"><div class="darkcover second"></div></div>
-            <div class="slide-row-item"><div class="darkcover third"></div></div>
-            <div class="slide-row-item"><div class="darkcover fourth"></div></div>
-            <div class="slide-row-item last"><div class="darkcover fifth"></div></div>
-        </div>
         <img src="./images/photo-1470004914212-05527e49370b.png" class="bg-image" id="bg-img" alt="Background">
         <div class="glass-overlay"></div>
 

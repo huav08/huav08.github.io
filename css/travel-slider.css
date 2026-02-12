@@ -214,51 +214,6 @@
     letter-spacing: 2px;
 }
 
-/* Curtain Effect Styles */
-#home .slide-item-wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    z-index: 8; /* Above bg-image and glass-overlay but below controls */
-    pointer-events: none;
-}
-
-#home .slide-row-item {
-    flex: 1;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-#home .darkcover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%; /* Default opened */
-    height: 100%;
-    background-color: #111; 
-    transition: width 0.8s cubic-bezier(0.7, 0, 0.3, 1);
-}
-
-/* Animation classes */
-#home.curtain-closing .darkcover {
-    width: 100%;
-}
-
-#home.curtain-opening .darkcover {
-    width: 0%;
-}
-
-/* Staggered delays */
-#home .darkcover.first { transition-delay: 0s; }
-#home .darkcover.second { transition-delay: 0.1s; }
-#home .darkcover.third { transition-delay: 0.2s; }
-#home .darkcover.fourth { transition-delay: 0.3s; }
-#home .darkcover.fifth { transition-delay: 0.4s; }
-
 /* 動畫 */
 #home .animate-text {
     animation: fadeIn 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;

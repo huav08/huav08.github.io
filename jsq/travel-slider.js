@@ -64,8 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateSlide(index) {
         const slide = slides[index];
-        bgImg.style.opacity = '0';
         
+        // Trigger curtain closing
+        sliderSection.classList.remove('curtain-opening');
+        sliderSection.classList.add('curtain-closing');
+
         // Stop any active typing
         clearInterval(typewriterInterval);
         infoDesc.innerText = ""; 
@@ -75,27 +78,31 @@ document.addEventListener('DOMContentLoaded', function() {
             el.style.opacity = '0';
         });
 
+        // Wait for curtains to close before updating content (approx 0.8s - 1.2s)
         setTimeout(() => {
             bgImg.src = slide.image;
-            // Handle image load to ensure smooth transition
-            bgImg.onload = () => bgImg.style.opacity = '1';
-            // Fallback if cached or instant load
-            if(bgImg.complete) bgImg.style.opacity = '1';
-
+            
             mainTitle.innerText = slide.title;
             mainTitle.setAttribute('data-text', slide.title);
             subTitle.innerText = slide.subtitle;
             infoTitle.innerText = `${slide.id} ${slide.main}`;
-            // infoDesc text is set via typeWriter below
 
-            // Animate other elements with fade-in
+            // Trigger curtain opening
+            sliderSection.classList.remove('curtain-closing');
+            sliderSection.classList.add('curtain-opening');
+
+            // Handle image load to ensure smooth transition
+            bgImg.onload = () => bgImg.style.opacity = '1';
+            if(bgImg.complete) bgImg.style.opacity = '1';
+
+            // Animate text elements with fade-in
             [mainTitle, subTitle, infoTitle].forEach(el => el.classList.add('animate-text'));
             
             // Handle infoDesc separately for typewriter effect
-            infoDesc.style.opacity = '1'; // Ensure it's visible for typing
+            infoDesc.style.opacity = '1'; 
             typeWriter(slide.desc, infoDesc);
 
-        }, 300);
+        }, 1000); // 1000ms to ensure curtains are mostly closed
 
         startAutoPlay(); // Reset timer on interaction
     }

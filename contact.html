@@ -123,28 +123,28 @@
               	<input type="hidden" name="sendaction" id="sendaction" value="true"/>
 				<!-- <div class="table-responsive"> -->
 				  <div class="form-group">
-                    <label for="name" class="required">中文姓名</label>
-                    <input type="text" id="name" name="entry.357966767" required>
+                    <label for="userName" class="required">中文姓名</label>
+                    <input type="text" name="userName" id="userName" required>
                 </div>
 
                 <div class="form-group">
                     <label class="required">性 別</label>
                     <div class="radio-group">
-                        <input type="radio" id="gender_m" name="entry.1957485384" value="男" checked>
+                        <input type="radio" name="sex" id="gender_m" value="Male" checked>
                         <label for="gender_m">男</label>
-                        <input type="radio" id="gender_f" name="entry.1957485384" value="女">
+                        <input type="radio" name="sex" id="gender_f" value="Female">
                         <label for="gender_f">女</label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="unit">任職單位</label>
-                    <input type="text" id="unit" name="entry.1419603257">
+                    <label for="userUnits">任職單位</label>
+                    <input type="text" name="userUnits" id="userUnits">
                 </div>
 
                 <div class="form-group">
-                    <label for="phone" class="required">連絡電話</label>
-                    <input type="tel" id="phone" name="entry.1768474319" required 
+                    <label for="userPhone" class="required">連絡電話</label>
+                    <input type="tel" name="userPhone" id="userPhone" required 
                           pattern="^[\d\s\-\(\)]{7,15}$" 
                           title="請輸入正確的電話號碼格式 (例如: 09XX-XXXXXX 或 (02)XXXX-XXXX)">
                     <div id="phone-error" class="error-message">電話號碼格式不正確。</div>
@@ -152,13 +152,13 @@
 
                 <div class="form-group">
                     <label for="email" class="required">E-mail</label>
-                    <input type="email" id="email" name="entry.1448383671" required>
+                    <input type="email" name="userEmail" id="userEmail" required>
                     <div id="email-error" class="error-message">E-mail 格式不正確。</div>
                 </div>
 
                 <div class="form-group">
                     <label for="inquiry" class="required">洽詢事項</label>
-                    <textarea id="inquiry" name="entry.1178002190" rows="5" required></textarea>
+                    <textarea name="question" id="question" rows="5" required></textarea>
                 </div>
                 <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
                     <canvas id="canvas" style="width:150px; height:35px; cursor: pointer;" class="poscenter" title="按下重新產生驗證碼"></canvas> 

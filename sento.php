@@ -143,7 +143,6 @@ use PHPMailer\PHPMailer\Exception;
 			$mailer->Host = "mail.simenvi.com.tw";// mail的SMTP主機
 			$mailer->Port = 587;// mail的SMTP主機的寄信port為587；mail的SMTP主機的寄信port為995
 			$mailer->Username = "simenvi_it@simenvi.com.tw";// 設定驗證帳號
-			$mailer->Password = "QR3d8qDZY2";// 設定驗證密碼 
 			$mailer->CharSet = "utf-8";// 設定郵件編碼
 			$mailer->Subject = $subject;// 設定郵件標題
 			$mailer->From = $from;// 設定寄件者信箱

@@ -95,12 +95,13 @@ use PHPMailer\PHPMailer\Exception;
 			// ini_set('display_startup_errors', 1);
 			// error_reporting(E_ALL); 
 			$to   = "simenvi_it@simenvi.com.tw";
+			$from   = "simenvi_it@simenvi.com.tw";
 			// $from   = "simenvi_it@simenvi.com.tw";
 			// List of recipients
-				// "simenvi_it@simenvi.com.tw" => "客服",
-				// "jim@simenvi.com.tw" => "管理部",
-				// "chien@simenvi.com.tw" => "管理部",
 			$recipients = array(
+				"simenvi_it@simenvi.com.tw" => "客服",
+				"jim@simenvi.com.tw" => "管理部",
+				"chien@simenvi.com.tw" => "管理部",
 				"h63882@simenvi.com.tw" => "管理部",
 				"huav08@simenvi.com.tw" => "管理部",
 			);
@@ -166,7 +167,7 @@ use PHPMailer\PHPMailer\Exception;
 							// echo "<script>alert('寄信失敗!')</script>";
                             $success = "";
                             $errors = "失敗";
-                            $message = "寄信失敗!";
+                            $message = "寄信失敗! 錯誤原因: " . $mailer->ErrorInfo;
 						}
 					}
 					else {			

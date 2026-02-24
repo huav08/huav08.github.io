@@ -9,13 +9,12 @@
 	<meta name="description" content="聯絡我們"/>
 	<meta name="Author" content="景丰科技股份有限公司, Jih-Li Hua"/>
 	<meta name="copyright" content="Copyright © 2012 SIMLATION CO., LTD. All Rights Reserved">
-    <link rel="stylesheet" href="./css/default.css" />
-    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">  
-    <link rel="stylesheet" href="./css/jquery-ui.min.css" />  
-    <link rel="stylesheet" href="./css/contact.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="./css/default.css" />
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">  
+  <link rel="stylesheet" href="./css/jquery-ui.min.css" />  
+  <link rel="stylesheet" href="./css/contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 	<link rel="stylesheet" href="css/easyzoom.css" />
-    
 <!-- Google Analytics Script碼(start) 要放在</head>之前 -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async  src="https://www.googletagmanager.com/gtag/js?id=G-FLZZF2NJC6"></script>
@@ -119,10 +118,13 @@
             <blockquote style="text-indent: 32px;">歡迎您來信洽詢任何問題，[景丰科技] 將有專人竭誠為您服務，謝謝您！ 您所留下的個人資料，本公司僅用來答覆您的意見回饋，不會使用於其他用途。</blockquote><br />
           </div> 
           <div class="container">            
-            <form action="" target="_self" method="post" id="sendtoForm">
-              	<input type="hidden" name="sendaction" id="sendaction" value="true"/>
-				<!-- <div class="table-responsive"> -->
-				  <div class="form-group">
+            <form id="contactForm" 
+                  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe-R4YLq0ujtwJPhst6DrBu4pDOSYqOpHuEIrFUzkV8ocK1FQ/formResponse" 
+                  method="POST" 
+                  target="hidden_iframe" 
+                  onsubmit="return validateForm();">
+
+                <div class="form-group">
                     <label for="name" class="required">中文姓名</label>
                     <input type="text" id="name" name="entry.357966767" required>
                 </div>
@@ -160,20 +162,9 @@
                     <label for="inquiry" class="required">洽詢事項</label>
                     <textarea id="inquiry" name="entry.1178002190" rows="5" required></textarea>
                 </div>
-                <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
-                    <canvas id="canvas" style="width:150px; height:35px; cursor: pointer;" class="poscenter" title="按下重新產生驗證碼"></canvas> 
-                    <button style="width:50px; height:35px; background:black; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; padding: 0;" onclick="speak1('.intro')" title="語音撥放" alt="語音撥放">&#x1F50A;</button>                 
-                    <article class="intro">    </article>                 
-                 </div>
-                <div class="form-group">
-                    <label for="checkcode1" class="required">驗證碼</label>
-                    <input type="text" id="checkcode1" name ="checkcode1" tabindex="1" placeholder="輸入驗證碼" style="width:90%;" class="input-val"/>
-                </div>
 
-                <!-- <input type="button" value="" name="go" border="0" class="btn_Send-out" onclick="return validateForm()" onmouseover="this.className='btn_Send-over'" onmouseout="this.className='btn_Send-out'">
-				<input type="reset" value="" border="0" class="btn_Clean-out" onmouseover="this.className='btn_Clean-over'" onmouseout="this.className='btn_Clean-out'" /> -->
-				<button type="submit" onclick="return validateForm()">送出表單</button>
-  			  </form>
+                <button type="submit">送出表單</button>
+            </form>
             <div id="form-status"></div>
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
           </div>
@@ -227,174 +218,6 @@
     <script type="text/javascript" src="jsq/articulate.js"></script>
     <script type="text/javascript" src="jsq/ajax-loading.js"></script>  
     <script type="text/javascript" src="jsq/contact.js"></script>
-    <!-- <script type="text/javascript" src="./jsq/font-size-control.js"></script>  -->   
-  <script> 
-    var tabName;
-    var checkcode2;
-	var sendtoForm = document.getElementById("sendtoForm");
-	
-    let loading = $.loading();
-    $(document).ready(function () {
-        $.ajaxSetup({ cache: false });
-        //驗證
-        $(function () {
-            var show_num = [];
-            draw(show_num);
-            $("#canvas").on('click', function () {
-                draw(show_num);
-            })           
-        })
-        //生成並渲染出驗證碼圖形
-        function draw(show_num) {
-            $.get('captcha_code.php', function(code) {
-                var canvas_width = $('#canvas').width();
-                var canvas_height = $('#canvas').height();
-                var canvas = document.getElementById("canvas");//獲取到canvas的對象，演員
-                var context = canvas.getContext("2d");//獲取到canvas畫圖的環境，演員表演的舞臺
-                canvas.width = canvas_width;
-                canvas.height = canvas_height;
-                
-                checkcode2 = code.toLowerCase();
-                var txts = code.toUpperCase().split("");
-                
-                for (var i = 0; i < txts.length; i++) {
-                    var deg = Math.random() - 0.9; //產生一個隨機弧度
-                    var txt = txts[i];
-                    show_num[i] = txt.toLowerCase();
-                    var x = 12 + i * 30;//文字在canvas上的x座標
-                    var y = 25 + Math.random() * 3;//文字在canvas上的y座標
-                    context.font = "bold 28px 微軟雅黑";
-                    context.translate(x, y);
-                    context.rotate(deg);
-                    context.fillStyle = "rgb(4,48,130)";
-                    context.fillText(txt, 0, 0);
-                    context.rotate(-deg);
-                    context.translate(-x, -y);
-                }
-                
-                for (var i = 0; i <= 7; i++) { //驗證碼上顯示線條
-                    context.strokeStyle = randomColor();
-                    context.beginPath();
-                    context.moveTo(Math.random() * canvas_width, Math.random() * canvas_height);
-                    context.lineTo(Math.random() * canvas_width, Math.random() * canvas_height);
-                    context.stroke();
-                }
-                for (var i = 0; i <= 120; i++) { //驗證碼上顯示小點
-                    context.strokeStyle = randomColor();
-                    context.beginPath();
-                    var x = Math.random() * canvas_width;
-                    var y = Math.random() * canvas_height;
-                    context.moveTo(x, y);
-                    context.lineTo(x + 1, y + 1);
-                    context.stroke();
-                }
-            });
-        }
-        //得到隨機的顏色值
-        function randomColor() {
-            var r = Math.floor(Math.random() * 256);
-            var g = Math.floor(Math.random() * 256);
-            var b = Math.floor(Math.random() * 256);
-            return "rgb(" + r + "," + g + "," + b + ")";
-        }
-
-        //驗證 end
-        //
-        var nAgt = navigator.userAgent;
-        var verOffset, browserName;
-        if ((verOffset = nAgt.indexOf("OPR")) !== -1) { browserName = "Opera"; }
-        else if ((verOffset = nAgt.indexOf("MSIE")) !== -1) { browserName = "IE"; }
-        else if ((verOffset = nAgt.indexOf("Edg")) !== -1) { browserName = "Edge"; }
-        else if ((verOffset = nAgt.indexOf("Chrome")) !== -1) { browserName = "Chrome"; }
-        else if ((verOffset = nAgt.indexOf("Safari")) !== -1) { browserName = "Safari"; }
-        else if ((verOffset = nAgt.indexOf("Firefox")) !== -1) { browserName = "Firefox"; }
-        //
-        if (browserName === "Opera" || browserName === "Chrome" || browserName === "Safari" || browserName === "Firefox" || browserName === "Edge") { $("#logbrowser").val(browserName); }
-        else { alert("請使用 FireFox,Chrome,Edge(Chromium)或 Opera"); $("#block").css('display', 'none'); return; }
-        //
-        $("#userid").focus();
-        $.ajaxSetup({ cache: false });
-        //enter skip
-        // when press ENTER key, accept the inputed value.
-        $('#userName,#userUnits').keydown(function (event) {
-            tabName = jQuery(this).attr("id");
-            if (event.keyCode === 13 || event.keyCode === 40) {
-                if (tabName === "userName") { $("#userUnits").focus(); }
-                if (tabName === "userUnits") { $("#userPhone").focus(); }
-                if (tabName === "userPhone") { $("#userEmail").focus(); }
-                if (tabName === "userEmail") { $("#question").focus(); }
-            }
-        });//enter skip
-    });	 
-    //close server section
-    function validateForm() {	
-        checkcode1 = $('#checkcode1').val().toLowerCase();
-        event.preventDefault();
-        if (checkcode1 === checkcode2) { 
-			// if($("#userName").val().trim() != '' && $("#userUnits").val().trim() != '' && $("#userPhone").val().trim() != '' && $("#userEmail").val().trim() != '' && $("#question").val().trim() != '') {
-				// sendtoForm.submit();
-				// let formData = sendtoForm.serialize();
-				
-				setTimeout(function () {
-					loading.ajax(true);//enable
-					$.ajax({
-						url: 'sento.php',
-						type: "POST",
-						data: {sendaction: $("#sendaction").val(), sex: $('input[name="sex"]:checked').val(), userName: $("#userName").val(), userUnits: $("#userUnits").val(), userPhone: $("#userPhone").val(), userEmail: $("#userEmail").val(), question: $("#question").val(), checkcode1: $("#checkcode1").val()},
-						success: function (data) {
-							var response = JSON.parse(data);
-							console.log(response);
-							if (response['success']) {
-								// $("#error").hide();
-								// $("#success").html(response['success']);
-								alert(response['general_message']);
-								// $("#success").toggleClass("alert alert-success");
-							} else {
-								// $("#error").html(response['errors']);
-								alert(response['general_message']);
-								// if(!$("#error").hasClass("alert alert-danger"))
-								// {	$("#error").toggleClass("alert alert-danger"); }
-							}
-							loading.ajax(false);//disable
-							$("#userName").val('');
-							$("#userUnits").val('');
-							$("#userPhone").val('');
-							$("#userEmail").val('');
-							$("#question").val('');
-							$('input[name="sex"]:checked').checked = false;
-							setTimeout(function(){
-								$('#canvas').trigger('click');
-							}, 1000);
-						},
-						error: function ( data ) {
-                            loading.ajax(false);//disable
-							alert("Error occurd!");
-						}
-					});
-				}, 50);
-				
-				return true;
-			// } else {				
-			//	alert("欄位必須填寫資料"); 
-				return false;
-			// }          
-        }
-        else { 
-			alert("驗證碼錯誤請重新輸入"); 			
-			return false;
-		}
-    };
-
-    // text to speak
-    function speak1(obj) {
-        event.preventDefault();        
-        $(".intro").text(checkcode2); 
-        $(".intro").hide();
-        $(obj).articulate('speak');        
-        $(".intro").text("");
-
-        return false;
-    };  
-  </script>
+    <!-- <script type="text/javascript" src="./jsq/font-size-control.js"></script>  -->
 </body>
 </html>

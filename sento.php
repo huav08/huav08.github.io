@@ -1,4 +1,17 @@
 <?php
+// SMTP 憑證設定
+if (file_exists('config.php')) {
+    require_once 'config.php';
+} else {
+    // 若 config.php 不存在，可以使用環境變數或其他方式作為 fallback
+    if (!defined('SMTP_HOST')) define('SMTP_HOST', 'mail.simenvi.com.tw');
+    if (!defined('SMTP_PORT')) define('SMTP_PORT', 587);
+    if (!defined('SMTP_USERNAME')) define('SMTP_USERNAME', '');
+    if (!defined('SMTP_PASSWORD')) define('SMTP_PASSWORD', '');
+    if (!defined('SMTP_FROM_EMAIL')) define('SMTP_FROM_EMAIL', 'simenvi_it@simenvi.com.tw');
+    if (!defined('SMTP_FROM_NAME')) define('SMTP_FROM_NAME', '景丰官方網站信件');
+}
+
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -140,13 +153,14 @@ use PHPMailer\PHPMailer\Exception;
 				'allow_self_signed' => true
 				)
 			);
-			$mailer->Host = "mail.simenvi.com.tw";// mail的SMTP主機
-			$mailer->Port = 587;// mail的SMTP主機的寄信port為587；mail的SMTP主機的寄信port為995
-			$mailer->Username = "simenvi_it@simenvi.com.tw";// 設定驗證帳號
+			$mailer->Host = SMTP_HOST;// mail的SMTP主機
+			$mailer->Port = SMTP_PORT;// mail的SMTP主機的寄信port為587；mail的SMTP主機的寄信port為995
+			$mailer->Username = SMTP_USERNAME;// 設定驗證帳號
+			$mailer->Password = SMTP_PASSWORD;// 設定驗證密碼 
 			$mailer->CharSet = "utf-8";// 設定郵件編碼
 			$mailer->Subject = $subject;// 設定郵件標題
-			$mailer->From = $from;// 設定寄件者信箱
-			$mailer->FromName = "景丰官方網站信件";// 設定寄件者姓名或標題
+			$mailer->From = SMTP_FROM_EMAIL;// 設定寄件者信箱
+			$mailer->FromName = SMTP_FROM_NAME;// 設定寄件者姓名或標題
 			$mailer->Body = $message;				
 			
 			// Send a message to each recipient.

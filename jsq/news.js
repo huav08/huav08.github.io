@@ -16,14 +16,13 @@ function openTab(evt, tabName) {
 // RSS 來源設定
 const rssFeeds = [
     {
-        // 由於瀏覽器安全性限制 (CORS)，我們需要透過代理伺服器來取得 RSS 內容
-        // 使用 api.allorigins.win (JSON mode) 以避免 CORS 問題
-        targetUrl: 'https://service.ema.gov.tw/Rss/RssChannel/zh-tw/215',
+        // 由於瀏覽器安全性限制 (CORS)，我們透過本地代理伺服器 (rss_proxy.php) 來取得外部 RSS 內容
+        url: 'rss_proxy.php?url=' + encodeURIComponent('https://service.ema.gov.tw/Rss/RssChannel/zh-tw/215'),
         listId: 'newsReleaseList',
         useMinguo: true // 使用民國年
     },
     {
-        targetUrl: 'https://www.epa.ie/resources/rss/index-90474.xml',
+        url: 'rss_proxy.php?url=' + encodeURIComponent('https://www.epa.ie/resources/rss/index-90474.xml'),
         listId: 'clarificationList',
         useMinguo: false // 使用西元年
     }
@@ -31,39 +30,19 @@ const rssFeeds = [
 
 /**
  * 取得並顯示 RSS 內容
- * @param {object} feed - 包含 targetUrl、listId 和 useMinguo 的物件
+ * @param {object} feed - 包含 url、listId 和 useMinguo 的物件
  */
-const fetchAndDisplayRss = async (feed) => {
+    const fetchAndDisplayRss = async (feed) => {
     const listElement = document.getElementById(feed.listId);
     try {
-        const targetUrl = encodeURIComponent(feed.targetUrl);
-        // 加入 cache buster (t=...) 確保獲取最新狀態
-        const proxyUrl = `https://api.allorigins.win/get?url=${targetUrl}&t=${new Date().getTime()}`;
-        
-        const response = await fetch(proxyUrl);
+        const response = await fetch(feed.url);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
-        // 使用 allorigins.win/get (JSON) 方式取得內容，內容在 data.contents 中
-        const data = await response.json();
-        const text = data.contents;
-
-        if (!text || text.trim().length === 0) {
-            throw new Error('RSS 來源返回空內容');
-        }
-
+        const text = await response.text();
         const parser = new DOMParser();
         const xml = parser.parseFromString(text, 'text/xml');
         
-        // 檢查 XML 解析錯誤
-        const parserError = xml.querySelector('parsererror');
-        if (parserError) {
-            console.warn('XML 解析可能有誤:', parserError.textContent);
-            // 某些瀏覽器即使解析有誤也會返回部分內容，我們可以繼續嘗試查找 item
-            // 但如果是致命錯誤，items 可能為空
-        }
-
         const items = xml.querySelectorAll('item');
         if (items.length === 0) {
             listElement.innerHTML = '<li>目前沒有新聞內容。</li>';
@@ -93,7 +72,7 @@ const fetchAndDisplayRss = async (feed) => {
         });
 
         let html = '';
-        sortedItems.slice(0, 24).forEach(item => {
+        sortedItems.forEach(item => {
             const titleEl = item.querySelector('title');
             const linkEl = item.querySelector('link');
             let pubDateEl = item.querySelector('pubDate');
@@ -125,11 +104,7 @@ const fetchAndDisplayRss = async (feed) => {
         listElement.innerHTML = html;
     } catch (error) {
         console.error('抓取 RSS 來源時發生錯誤:', error);
-        listElement.innerHTML = '<li>請稍後系統正在載入新聞內容．．．</li>';
-        // 30秒後自動重新抓取
-        setTimeout(() => {
-            fetchAndDisplayRss(feed);
-        }, 5000);
+        listElement.innerHTML = '<li>無法載入新聞內容，請稍後再試。</li>';
     }
 };
 
